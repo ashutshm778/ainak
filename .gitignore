@@ -1,0 +1,6 @@
+/.env
+/.htaccess
+/.well-known
+/composer.lock
+/vendor
+/well-known.zip
