@@ -1,13 +1,26 @@
 @php $product_price = homePrice($data->id); @endphp <div class="row">
   <div class="single-pro-img single-pro-img-no-sidebar">
     <div class="single-product-scroll">
-      <div class="single-product-cover"> @php $gallery_images = explode(',', $data->gallery_image); @endphp @foreach ($gallery_images as $new_key => $gallery_image) <div class="single-slide zoom-image-hover">
-          <img src="{{ asset('public/' . api_asset($gallery_image)) }}" class="img-responsive">
-        </div> @endforeach </div>
-      <div class="single-nav-thumb"> @foreach ($gallery_images as $new_key => $gallery_image) <div class="single-slide">
-          <img src="{{ asset('public/' . api_asset($gallery_image)) }}" class="img-responsive" alt="">
-        </div> @endforeach </div>
-    </div>
+      <div class="single-product-cover">
+          @php
+              $gallery_images=explode(',',$data->gallery_image);
+          @endphp
+          <div class="imgBox">
+              <img src="{{asset('public/'.api_asset($gallery_images[0]))}}" data-origin="{{asset('public/'.api_asset($gallery_images[0]))}}" id="show-img">
+          </div>
+      </div>
+      <div class="small-img">
+          <img src="{{ asset('public/frontend/assets/images/online_icon_right@2x.png') }}"class="icon-left" alt="" id="prev-img" />
+          <div class="small-container">
+              <div id="small-img-roll">
+                  @foreach ($gallery_images as $new_key=>$gallery_image)
+                          <img src="{{asset('public/'.api_asset($gallery_image))}}"   class="show-small-img">
+                  @endforeach
+              </div>
+          </div>
+          <img src="{{ asset('public/frontend/assets/images/online_icon_right@2x.png') }}" class="icon-right" id="next-img" />
+      </div>
+  </div>
   </div>
   <div class="single-pro-desc single-pro-desc-no-sidebar">
     <div class="single-pro-content">

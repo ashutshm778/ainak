@@ -23,6 +23,7 @@
     </div>
     <!-- Ec breadcrumb end -->
 
+    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/zoom-main.css')}}" />
     <!-- Sart Single product -->
 
     <section class="ec-page-content section-space-p">
@@ -144,8 +145,9 @@
     </section>
 
     <script src="{{ asset('public/frontend/assets/js/zoom-image.js') }}"></script>
+    <script src="{{ asset('public/frontend/assets/js/zoom-main.js/')}}"></script>
     <script type="text/javascript">
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1920) {
             $('.imgBox').imgZoom({
                 boxWidth: 500,
                 boxHeight: 500,
