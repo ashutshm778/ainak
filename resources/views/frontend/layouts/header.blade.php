@@ -149,7 +149,7 @@
     <div class="ec-header-bottom d-lg-none">
         <div class="container position-relative">
             <div class="row ">
-                <div class="col">
+                <div class="col-10">
                     <div class="header-logo">
                         <a href="{{ route('index') }}">
                             <img src="{{ asset('public/' . api_asset(optional($logo)->image)) }}" alt="Site Logo" />
@@ -158,6 +158,14 @@
                         </a>
                     </div>
                 </div>
+                    <div class="col-2 header-top-res d-lg-none">
+                        <div class="ec-header-bottons">
+                            <a href="#ec-mobile-menu" class="ec-header-btn ec-side-toggle d-lg-none">
+                            <i class="ecicon eci-bars" style="color: #333;"></i>
+                       </a>
+                   </div>
+               </div>
+                
                 <div class="col align-self-center ec-header-search">
                     <div class="header-search">
                         <form class="ec-search-group-form" action="{{ route('product-search') }}" method="GET"

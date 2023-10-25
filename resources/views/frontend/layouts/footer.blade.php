@@ -12,7 +12,7 @@
         <div class="footer-top section-space-footer-p">
             <div class="container">
                 <div class="row">
-                  
+
                     <div class="col-sm-12 col-lg-3 ec-footer-news">
                         <div class="ec-footer-widget">
                             <h4 class="ec-footer-heading">Our Company </h4>
@@ -66,24 +66,30 @@
                             </div>
                         </div>
                     </div>
-                  <div class="col-sm-12 col-lg-3 ec-footer-contact">
+                    <div class="col-sm-12 col-lg-3 ec-footer-contact">
                         <div class="ec-footer-widget">
                             <h4 class="ec-footer-heading">Contact</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
 
-                                     @php
+                                    @php
                                         $phone = App\Models\Admin\WebsiteSetting::where('type', 'phone')->first();
                                     @endphp
-                                    <li class="ec-footer-link"><span><i class="ecicon eci-phone"></i></span><a href="tel:+{{ optional($phone)->image }}">{{ optional($phone)->image }}</a></li>
-                                     @php
-                                    $email = App\Models\Admin\WebsiteSetting::where('type', 'email')->first();
-                                    @endphp
-                                    <li class="ec-footer-link"><span><i class="ecicon eci-envelope"></i></span><a href="mailto:{{ optional($email)->image }}">{{ optional($email)->image }}</a></li>
+                                    <li class="ec-footer-link"><span><i class="ecicon eci-phone"></i></span><a
+                                            href="tel:+{{ optional($phone)->image }}">{{ optional($phone)->image }}</a>
+                                    </li>
                                     @php
-                                    $address = App\Models\Admin\WebsiteSetting::where('type', 'address')->first();
+                                        $email = App\Models\Admin\WebsiteSetting::where('type', 'email')->first();
                                     @endphp
-                                    <li class="ec-footer-link"><span><i class="ecicon eci-map-marker"></i></span>{{ optional($address)->image }}</li>
+                                    <li class="ec-footer-link"><span><i class="ecicon eci-envelope"></i></span><a
+                                            href="mailto:{{ optional($email)->image }}">{{ optional($email)->image }}</a>
+                                    </li>
+                                    @php
+                                        $address = App\Models\Admin\WebsiteSetting::where('type', 'address')->first();
+                                    @endphp
+                                    <li class="ec-footer-link"><span><i
+                                                class="ecicon eci-map-marker"></i></span>{{ optional($address)->image }}
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -198,6 +204,40 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
+<a href="#" class="buy-now-btn" data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
+    data-bs-target="#appointment_modal"> <i class="fa fa-envelope-open"></i> Appointment</a>
+<!-- Modal -->
+<div class="modal fade" id="appointment_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            <div class="modal-body">
+                <form action="#" method="post">
+                        <div class="row">
+                        <h2 class="ec-offer-stitle text-center">Book Appointment</h2>
+                        <div class="form-group mb-3">
+                            <input type="text" name="name" placeholder="Enter your name" required="">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="email" name="email" placeholder="Enter your email address"
+                                required="">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" name="phonenumber" placeholder="Enter your phone number"
+                                required="">
+                        </div>
+                        <div class="form-group mb-2">
+                            <textarea name="address" placeholder="Please leave your messege here.."></textarea>
+                        </div>
+                        <div class="ec-offer-btn"><a href="#" class="btn btn-lg btn-primary w-100">Pay ₹.99/-
+                                Only <i class="ecicon eci-chevron-right"></i></a></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal end -->
 
 <div class="modal fade" id="ec_quickview_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -328,7 +368,7 @@
                 if (new_qty <= range_qty) {
                     $('.qty_value_' + product_id).val(new_qty);
                     getVariantPrice();
-                    @if(Auth::guard('customer')->check())
+                    @if (Auth::guard('customer')->check())
                         change_qty(product_id, new_qty)
                     @endif
                 } else {
@@ -337,8 +377,8 @@
             } else {
                 $('.qty_value_' + product_id).val(new_qty);
                 getVariantPrice();
-                @if(Auth::guard('customer')->check())
-                 change_qty(product_id, new_qty)
+                @if (Auth::guard('customer')->check())
+                    change_qty(product_id, new_qty)
                 @endif
             }
         } else {
@@ -346,8 +386,8 @@
             if (new_qty >= range_qty) {
                 $('.qty_value_' + product_id).val(new_qty);
                 getVariantPrice();
-                @if(Auth::guard('customer')->check())
-                  change_qty(product_id, new_qty)
+                @if (Auth::guard('customer')->check())
+                    change_qty(product_id, new_qty)
                 @endif
             } else {
                 alert('Minimum Quantity Reached');
@@ -458,7 +498,7 @@
     }
 
     $('#product_detail_form input').on('change', function() {
-       // getVariantPrice();
+        // getVariantPrice();
     });
 
     function selectVaraint(value, id) {
@@ -474,18 +514,18 @@
                 $('#product_variant_div').empty();
                 $('#product_variant_div').html(data);
                 $(".single-product-cover").slick({
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: !1,
-                    fade: !1,
-                    asNavFor: ".single-nav-thumb"
-                }),
-                $(".single-nav-thumb").slick({
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    asNavFor: ".single-product-cover",
-                    focusOnSelect: !0,
-                })
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: !1,
+                        fade: !1,
+                        asNavFor: ".single-nav-thumb"
+                    }),
+                    $(".single-nav-thumb").slick({
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        asNavFor: ".single-product-cover",
+                        focusOnSelect: !0,
+                    })
 
             }
         });
@@ -499,7 +539,7 @@
             data: {
                 color: element.value,
                 product_group_id: id,
-                attr:attr
+                attr: attr
             },
             success: function(data) {
                 $('#product_variant_div').empty();
@@ -508,5 +548,4 @@
             }
         });
     }
-
 </script>

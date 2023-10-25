@@ -303,7 +303,7 @@
                             </div>
                         </div>
                             <div class="row setup-content" id="step-3">
-                                <div class="col-md-10 col-sm-12 col-xs-12 m-auto mt-5">
+                                <div class="col-md-12 col-sm-12 col-xs-12 m-auto mt-5">
                                     <table class="table ">
                                         <tbody>
                                             <tr>

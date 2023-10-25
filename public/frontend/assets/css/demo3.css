@@ -581,7 +581,7 @@ body {
 hr {
   margin: 10px 0;
   color: inherit;
-  background-color: #ffffff;
+  background-color: #333;
   border: 0;
   opacity: 0.25;
 }
@@ -13697,7 +13697,7 @@ li {
 
   .container {
     max-width: 100%;
-    padding: 0 75px;
+    padding: 0 50px;
   }
 
   .col-xl {
@@ -18553,11 +18553,18 @@ border-color: #fff;
 }
 
 button.btn-close.qty_close {
+  float: right;
+  padding: 5px !important;
+  border-radius: 20px;
+  top: -12px;
+  opacity: 1;
+  right: -10px;
   position: absolute;
-  left: auto;
-  right: 10px;
-  top: 10px;
+  background: #e3450a !important;
+  color: #fff;
+  font-size: 13px;
   z-index: 9999;
+  line-height: 1.25;
 }
 
 .ec-product-inner{
@@ -20127,6 +20134,7 @@ section.ec-instagram-section {
     margin-left: 0px;
     -ms-flex-pack: end;
     justify-content: start;
+    margin-top: 25px;
 }
 
   .ec-category-block {
@@ -20478,7 +20486,7 @@ section.ec-instagram-section {
   }
 
   .ec-header-bottons .ec-header-btn {
-    margin-left: 5px;
+    margin-left: 0;
   }
 
 
@@ -20826,7 +20834,7 @@ section.ec-instagram-section {
   }
 
   .header-logo {
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: 0px;
   }
 
@@ -20910,7 +20918,7 @@ a.wishlist .svg_img.pro_svg {
   }
 
   .banner-block img {
-    height: 220px;
+    height: auto;
   }
 
   .ec-fb-style .fb-panel {

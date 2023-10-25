@@ -521,7 +521,7 @@
   text-align: left;
 }
 .header-logo img {
-  width: 230px;
+  width: 175px;
   height:75px;
 }
 
@@ -554,25 +554,25 @@
           justify-content: flex-end;
 }
 .ec-header-bottons .ec-header-btn {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    text-decoration: none;
-    color: #000;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 0 9px;
-    -webkit-transition: none;
-    transition: none;
-    padding-top: 1px;
-    margin-left: 15px;
-    -webkit-transition: all 0.3s ease-in-out !important;
-    transition: all 0.3s ease-in-out !important;
-    border: 1px solid rgba(0,0,0,0.105);
-    width: 42px !important;
-    border-radius: 3px !important;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 9px;
+  -webkit-transition: none;
+  transition: none;
+  padding-top: 1px;
+  margin-left: 15px;
+  -webkit-transition: all 0.3s ease-in-out !important;
+  transition: all 0.3s ease-in-out !important;
+  border: 1px solid rgba(0,0,0,0.105);
+  width: 42px !important;
+  border-radius: 3px !important;
 }
 .ec-header-bottons .ec-header-btn .header-icon {
   position: relative;
@@ -2546,11 +2546,11 @@ div#ec_news_signup {
 }
 
 .ec-header-bottons .ec-header-btn {
-    margin-left: 5px;
+    margin-left: 0;
 }
 
 .ec-header-bottons .ec-header-btn {
-    padding: 0 4px;
+    padding: 0 10px;
     min-height: 35px;
 }
 
@@ -2784,4 +2784,27 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
     max-height: 100%!important;
     padding: 0!important;
     margin: 0;
+}
+
+.buy-now-btn {
+  z-index: 99;
+  left: 0;
+  top: 50%;
+  position: fixed;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border-radius: 0px 20px 20px 0;
+  display: inline-block;
+  color: #fff;
+  background-color: #fc6b36;
+  padding: 15px 8px 15px 4px;
+  -webkit-box-shadow: 0 1px 20px 1px #fc6a3b;
+  box-shadow: 0 1px 20px 1px #fd5f2e96;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
