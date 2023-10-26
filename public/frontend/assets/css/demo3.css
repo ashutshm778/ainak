@@ -10138,8 +10138,11 @@ li {
 
     .ec_cat_inner {
         padding: 0px !important;
+        margin-bottom: 10px;
     }
-
+    .ec-cat-descs a {
+      font-size: 11px;
+  }
     .ec_cat_inner .ec-cat-descs {
         font-size: 12px;
         padding: 0px;
@@ -20004,7 +20007,7 @@ section.ec-instagram-section {
 
   .ec-category-section img
    {
-      margin-bottom: 8px;
+      /* margin-bottom: 8px; */
    }
 
   .footer-mid
@@ -20665,6 +20668,10 @@ section.ec-instagram-section {
     -webkit-box-pack: left;
         -ms-flex-pack: left;
             justify-content: left;
+            width: 100%;
+  }
+  .section-title-block {
+    margin-bottom: 20px;
   }
   .ec-pro-tab-nav .nav-item {
     font-size: 14px;
@@ -21086,8 +21093,8 @@ a.wishlist .svg_img.pro_svg {
   }
 
   .section-title .ec-title {
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 20px ;
   }
   .section-title .sub-title {
     font-size: 13px;

@@ -1804,7 +1804,7 @@ progress {
 .ec-cat-image img {
     max-height: 100%;
     width: 100%;
-    height: 125px;
+    height: auto;
     border-bottom: 1px solid #ddd;
 }
 
