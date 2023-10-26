@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/liveadsgyan/public_html/
+    - export DEPLOYPATH=/home/ainak/public_html/
     - /bin/cp -R * $DEPLOYPATH
