@@ -192,7 +192,7 @@
             <div class="row">
                 <div class="col-sm-12 ec-main-menu-block align-self-center d-none d-lg-block">
                     <div class="ec-main-menu">
-                        <ul>
+                        <ul class="nav-divided">
                             <li>
                                 <a href="{{ route('index') }}">Home</a>
                             </li>

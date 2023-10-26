@@ -27,7 +27,7 @@
                         <div class="col-md-6 ec-grid-list">
                             <div class="col header-top-res d-lg-none">
                                 <div class="ec-header-bottons">
-                                    <a href="#ec-filters" class="ec-header-btn ec-side-toggle text-dark d-lg-none">
+                                    <a href="#ec-filters" class="ec-header-btn ec-side-toggle text-dark d-lg-none" style="width: auto !important;">
                                         <i class="ecicon eci-filter text-dark"></i>&nbsp; Filters
                                     </a>
                                 </div>

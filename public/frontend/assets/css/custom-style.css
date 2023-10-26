@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
 :root {
     --main-font-family: 'Lexend Deca', sans-serif;
-    --main-color: #00579d;
-    --main-border-color: #00579d;
-    --optional-color: #16528b;
+    --main-color: #1f70be;
+    --main-border-color: #1f70be;
+    --optional-color: #1f70be;
     --white-color: #ffffff;
     --black-color: #000;
     --paragraph-color: #000;
@@ -1028,7 +1028,7 @@
 div#ec-main-menu-desk {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background: #fff;
+    background: #ff6240;
 }
 
 .ec-main-menu {
@@ -1222,7 +1222,7 @@ div#ec-main-menu-desk {
     line-height: 50px;
     text-decoration: none;
     text-transform: uppercase;
-    color: #000;
+    color: #fff;
     display: block;
     position: relative;
 }
@@ -1375,7 +1375,7 @@ div#ec-main-menu-desk {
 }
 
 .ec-main-menu > ul > li:hover > a {
-  color: var(--main-color);
+  color: #fff;
 }
 .ec-main-menu > ul > li:hover > a:before {
   background: var(--main-color);
@@ -1388,8 +1388,8 @@ div#ec-main-menu-desk {
 
 /*-----  Header Search  -----*/
 .header-search {
-  width: 75%;
-  margin-left: 13%;
+  width: 70%;
+  margin-left: 15%;
   border-radius: 3px;
   position: relative;
   border: 1px solid #dddddd;
@@ -1612,6 +1612,7 @@ body.ec-open:before {
   font-size: 30px;
   line-height: 1;
   color: #142f41;
+  background:none;
 }
 .ec-side-cart .ec-cart-inner .ec-cart-bottom .cart_btn {
   display: -webkit-box;
@@ -2064,7 +2065,7 @@ i.ecicon.eci-star {
     right: 0;
     left: 0;
     height: 1px;
-    border-bottom: 1px solid #e58487;
+    border-bottom: 1px solid #ff5a47;
     bottom: 0;
     width: 50px;
 }
@@ -2915,4 +2916,18 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 }
 .brdr{
   border: 1px solid #ddd; 
+}
+
+.nav-divided li a:first-child {
+  border: 0 !important;
+}
+.nav-divided li a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 1px;
+  border-left: 1px solid #ffffff7d;
+  height: 12px;
+  margin-top: -7px;
+  left: 0px;
 }

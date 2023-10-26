@@ -362,7 +362,7 @@
                     <!-- End Category Box Layout  -->
 
                     <!-- Start Category Box Layout  -->
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
                             <div class="inner">
                                 <div class="mb-2">

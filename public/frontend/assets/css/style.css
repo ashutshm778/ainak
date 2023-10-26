@@ -18948,7 +18948,7 @@ i.ecicon.eci-star.fill {
     width: 35px;
     position: absolute;
     right: 15px;
-    bottom: 65px;
+    bottom: 50px;
     margin: 0;
     padding: 0;
     font-size: 0;
@@ -18959,8 +18959,8 @@ i.ecicon.eci-star.fill {
   }
   .ec-product-inner .ec-pro-image .ec-pro-actions .wishlist {
     position: absolute;
-    right: 3px;
-    bottom: -22px;
+    right: 15px;
+    bottom: 15px;
 }
   .ec-product-inner .ec-pro-image .ec-pro-actions .compare {
     position: absolute;
@@ -18970,7 +18970,7 @@ i.ecicon.eci-star.fill {
   .ec-product-inner .ec-pro-image a.quickview {
     position: absolute;
     top: auto !important;
-    bottom: 65px;
+    bottom: 30px !important;
     right: 15px;
     left: auto;
     border-radius: 0 0 10px 10px;
@@ -31960,9 +31960,9 @@ body.ec-open:before {
 }
 
 .contact-info-icon i {
-    border: 2px solid #d81e05;
+    border: 2px solid #ff5a47;
     border-radius: 50px;
-    color: #d81e05;
+    color: #ff5a47;
     display: inline-block;
     font-size: 30px;
     height: 60px;
@@ -31971,8 +31971,8 @@ body.ec-open:before {
     width: 60px;
 }
 .contact-info-wrapper:hover .contact-info-icon i {
-    border: 2px solid #d81e05;
-    background-color: #d81e05;
+    border: 2px solid #ff5a47;
+    background-color: #ff5a47;
     color: #fff;
 }
 .contact-info-content h5 {

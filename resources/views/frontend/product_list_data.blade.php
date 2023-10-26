@@ -45,7 +45,7 @@
                                     Add To Cart
                                  </button>
                                 @endif
-                                <a class="ec-btn-group quickview" title="quickview" onclick="open_product_model({{$data->id}})">
+                                <a class="ec-btn-group quickview" title="quickview"">
                                     <img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" />
                                 </a>
                                 @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
