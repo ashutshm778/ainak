@@ -521,7 +521,7 @@
   text-align: left;
 }
 .header-logo img {
-  width: 175px;
+  /* width: 175px; */
   height:75px;
 }
 
@@ -2807,4 +2807,112 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   -ms-writing-mode: tb-lr;
   writing-mode: vertical-lr;
   text-orientation: upright;
+}
+
+
+/* Modal */
+.lense-container.grid {
+  display: grid;
+  margin: 55px;
+  margin-top: 0;
+  grid-template-columns: 23% 77%;
+}
+.sticky-lenseInfoBlock {
+  border-top: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+}
+.sticky-lenseInfoBlock .slide-container {
+  text-align: left;
+}
+.sticky-lenseInfoBlock .slide-header {
+  display: flex;
+  padding: 15px;
+  justify-content: space-around;
+  line-height: 28px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.slide-header {
+  height: 248px;
+  padding: 10px 15px;
+}
+.wrap-additional-note {
+  max-width: 562px;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  box-shadow: 0 4px 3px rgb(231 226 226 / 60%);
+}
+.wrap-additional-note {
+  display: flex;
+  clear: both;
+  align-items: center;
+  background: #fff;
+  margin: 12px 10px;
+  margin: 0;
+  padding-left: 15px;
+}
+ .additional-note-pres-upload {
+  margin-left: 8px;
+  padding-right: 8px;
+}
+.sticky-lenseInfoBlock .slide-container .title {
+  font-weight: var(--font-semibold);
+  font-size: 32px;
+  line-height: 27px;
+  width: 100%;
+  max-height: unset;
+  position: relative;
+  display: block;
+  color: var(--text-color);
+}
+.sticky-lenseInfoBlock .slide-container .title span {
+  font-size: 20px;
+  display: block;
+  line-height: 28px;
+  position: absolute;
+  left: 2px;
+}
+.slide-container .slide-content.sidebar-featureList li.featureList {
+  font-weight: var(--font-bold);
+  font-size: 14px;
+  line-height: 17px;
+  color: #5b5b5b;
+}
+.slide-container .slide-content.sidebar-featureList li.featureList img.feature-icon {
+  margin: 0 8px 0 5px;
+  min-width: 19px;
+  min-height: 19px;
+  width: 20px;
+}
+.slide-container .slide-content li.featureList {
+  border-top: 1px solid #f0f0f0;
+  height: 40px;
+  padding: 5px 10px;
+  padding-right: 2px;
+  display: -webkit-box!important;
+  display: -ms-flexbox!important;
+  display: flex!important;
+  align-items: center;
+}
+.slide-container .slide-content li.featureList {
+  position: relative;
+  font-size: 13px;
+  line-height: 13px;
+}
+.category-items {
+  display: flex;
+  height: 100%;
+  border-top: 1px solid #f0f0f0;
+}
+.category-box-inner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+.brdr{
+  border: 1px solid #ddd; 
 }

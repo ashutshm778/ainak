@@ -219,7 +219,7 @@
                             <input type="text" name="name" placeholder="Enter your name" required="">
                         </div>
                         <div class="form-group mb-3">
-                            <input type="email" name="email" placeholder="Enter your email address"
+                            <input type="email" class="form-control" name="email" placeholder="Enter your email address"
                                 required="">
                         </div>
                         <div class="form-group mb-3">
