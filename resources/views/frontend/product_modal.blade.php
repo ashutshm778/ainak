@@ -128,9 +128,6 @@
         line-height: 1.25;
     }
 
-    .modal-body {
-        min-height: 800px
-    }
     .specification-note::before {
     content: "";
     width: 22px;
@@ -215,7 +212,7 @@
     <div class="modal-dialog full_modal-dialog">
         <div class="modal-content">
             <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close">X</button>
-            <div class="modal-body">
+            <div class="modal-body" style="min-height: 800px">
 
                 <div class="container">
                     <div class="stepwizard">
