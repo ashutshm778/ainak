@@ -196,14 +196,14 @@
     </div>
 </div>
 
-<!--<div class="ec-right-bottom">-->
-<!--    <div class="ec-box">-->
-<!--        <div class="ec-button rotateBackward">-->
-<!--            <a href="https://wa.me/+917307098502" target="_blank"> <img-->
-<!--                    src="{{ asset('public/frontend/assets/images/whatsapp.png') }}" alt="whatsapp icon"></a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="ec-right-bottom">
+    <div class="ec-box">
+        <div class="ec-button rotateBackward">
+            <a href="https://wa.me/+911234567890" target="_blank"> <img
+                    src="{{ asset('public/frontend/assets/images/whatsapp.png') }}" alt="whatsapp icon"></a>
+        </div>
+    </div>
+</div>
 <a href="#" class="buy-now-btn" data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
     data-bs-target="#appointment_modal"> <i class="fa fa-envelope-open"></i> Appointment</a>
 <!-- Modal -->
@@ -214,7 +214,7 @@
             <div class="modal-body">
                 <form action="#" method="post">
                         <div class="row">
-                        <h2 class="ec-offer-stitle text-center">Book Appointment</h2>
+                        <h3 class="bk_amt text-center">Book Appointment</h3>
                         <div class="form-group mb-3">
                             <input type="text" name="name" placeholder="Enter your name" required="">
                         </div>

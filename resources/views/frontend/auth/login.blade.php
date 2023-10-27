@@ -69,8 +69,8 @@
                                 <span class="ec-register-wrap ec-register-btn">
                                     <button class="btn btn-primary" type="submit">Login</button>
                                     <div class="text-center">
-                                        <p class="mt-2">Don't have an account ?  <a href="{{ route('user.register') }}"> Register</a></p>
-                                        <p>Lost your password ? <a href="{{ route('user.register') }}"> Click Here</a></p>
+                                        <p class="mt-2 mb-1">Don't have an account ?  <a href="{{ route('user.register') }}" style="color: #ff5a47;"> Register</a></p>
+                                        <p>Lost your password ? <a href="{{ route('user.register') }}" style="color: #ff5a47;"> Click Here</a></p>
                                     </div>
                                 </span>
 

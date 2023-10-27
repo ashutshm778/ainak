@@ -105,7 +105,7 @@
                                 <span class="ec-register-wrap ec-register-btn">
                                     <button class="btn btn-primary" type="button" onclick="verifyOtp()">Register</button>
                                     <div class="text-center">
-                                        <p class="mt-2">Already have an account? <a href="{{ route('user.login') }}"> Login</a></p>
+                                        <p class="mt-2">Already have an account? <a href="{{ route('user.login') }}" style="color: #ff5a47;"> Login</a></p>
                                     </div>
                                 </span>
 

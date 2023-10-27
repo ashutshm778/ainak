@@ -15498,6 +15498,9 @@ li {
   }
 }
 @media (max-width: 767.98px) {
+  .image-contain {
+    display: none !important;
+  }
   .table-responsive-md {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;

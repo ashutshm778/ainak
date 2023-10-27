@@ -174,7 +174,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 section-title-block">
-                    <div class="section-title">
+                    <div class="section-title mtt-0">
                         <h2 class="ec-title">Trending Products</h2>
                     </div>
                     <div class="section-btn">
@@ -244,83 +244,6 @@
     @endif
     <!-- Banner Section End -->
 
-    <!-- Trending Item Start -->
-{{-- <section class="section ec-trend-product section-space-p">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 section-title-block">
-                    <div class="section-title">
-                        <h2 class="ec-title">Living Room Furniture</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-md-6 col-sm-6 col-xs-12 pb-2">
-                    <div class="ec-pro">
-                        <a href="{{ route('product-search') }}">
-                            <img class="main-image" src="{{ asset('public/frontend/assets/images/side-img.jpg') }}"
-                                alt="Product" />
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <div class="ec-pro-image">
-                                    <a href="{{ route('search','sofas-a87f') }}?type=subcategory">
-                                        <img class="main-image"
-                                            src="{{ asset('public/frontend/assets/images/living-furniture-2.jpg') }}"
-                                            alt="Product" />
-                                    </a>
-                                </div>
-                                <div class="ec-pro-content">
-                                    <h5 class="ec-pro-title"><a href="{{ route('search','sofas-a87f') }}?type=subcategory">Sofas</a></h5>
-                                </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <div class="ec-pro-image">
-                                    <a href="{{ route('search','sofas-a87f') }}?type=subcategory" >
-                                        <img class="main-image"
-                                            src="{{ asset('public/frontend/assets/images/living-furniture-3.jpg') }}"
-                                            alt="Product" />
-                                    </a>
-                                </div>
-                                <div class="ec-pro-content">
-                                    <h5 class="ec-pro-title"><a href="{{ route('search','sofas-a87f') }}?type=subcategory">Sofa Cum Beds</a></h5>
-                                </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <div class="ec-pro-image">
-                                    <a href="{{ route('search','tv-unit-c4ca') }}?type=subcategory">
-                                        <img class="main-image"
-                                            src="{{ asset('public/frontend/assets/images/living-furniture-4.jpg') }}"
-                                            alt="Product" />
-                                    </a>
-                                </div>
-                                <div class="ec-pro-content">
-                                    <h5 class="ec-pro-title"><a href="{{ route('search','tv-unit-c4ca') }}?type=subcategory">TV Units</a></h5>
-                                </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <div class="ec-pro-image">
-                                <a href="{{ route('search','study-&-computer-table-c81e') }}?type=subcategory">
-                                    <img class="main-image"
-                                        src="{{ asset('public/frontend/assets/images/living-furniture-5.jpg') }}"
-                                        alt="Product" />
-                                </a>
-                            </div>
-                            <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="{{ route('search','study-&-computer-table-c81e') }}?type=subcategory">Study Tables</a></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- Trending Item end -->
-
 <section class="section ec-trend-product section-space-p">
         <div class="container">
             <div class="row">
@@ -363,7 +286,7 @@
 
                     <!-- Start Category Box Layout  -->
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                        <a class="rbt-cat-box rbt-cat-box-1 text-center mbb-0" href="#">
                             <div class="inner">
                                 <div class="mb-2">
                                     <img src="{{ asset('public/frontend/assets/images/prescription-guide.webp')}}" alt="Icons Images">
@@ -595,7 +518,7 @@
     @endif
     <!-- Banner Item end -->
     <!-- Other Category -->
-    <section class="other-categories section-space-p">
+    <section class="other-categories section-space-p pbb-0">
         <div class="container"> 
           <div class="row other-categories-list">
             @foreach (App\Models\Admin\Category::where('is_active',1)->orderBy('bottom_priority','asc')->take(3)->get() as $bottom_category)
@@ -635,7 +558,7 @@
                     <div class="ec-common-wrapper glass-initial mt-3 mb-3">
                     <div class="ec-contact-leftside">
                         <div class="ec-contact-container">
-                        <h2 class="ec-offer-stitle text-center">Book Appointment</h2>
+                        <h2 class="ec-offer-stitle text-center bk_amt1">Book Appointment</h2>
                         <p class="text-center txt-shdw">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                             <div class="ec-contact-form">
                                 <form action="#" method="post">

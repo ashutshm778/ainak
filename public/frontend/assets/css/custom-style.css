@@ -2931,3 +2931,73 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   margin-top: -7px;
   left: 0px;
 }
+.bk_amt{
+  color: #f43b1c;
+  margin-bottom: 20px;
+}
+.bk_amt:before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent 0%, #00315a 50%, transparent 100%);
+  background-image: -o-linear-gradient(left, transparent 0%, #00315a 50%, transparent 100%);
+  background-image: linear-gradient(to right, transparent 0%, #00315a 50%, transparent 100%);
+  top: 60px;
+  left: 50%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.bk_amt:after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #035799), to(transparent));
+  background-image: -o-linear-gradient(left, transparent 0%, #035799 50%, transparent 100%);
+  background-image: linear-gradient(to right, transparent 0%, #035799 50%, transparent 100%);
+  top: 63px;
+  left: 50%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+
+.bk_amt1:before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent 0%, #00315a 50%, transparent 100%);
+  background-image: -o-linear-gradient(left, transparent 0%, #00315a 50%, transparent 100%);
+  background-image: linear-gradient(to right, transparent 0%, #00315a 50%, transparent 100%);
+  top: 87px;
+  left: 50%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.bk_amt1:after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #035799), to(transparent));
+  background-image: -o-linear-gradient(left, transparent 0%, #035799 50%, transparent 100%);
+  background-image: linear-gradient(to right, transparent 0%, #035799 50%, transparent 100%);
+  top: 90px;
+  left: 50%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
