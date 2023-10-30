@@ -196,6 +196,14 @@
     </div>
 </div>
 
+{{-- Whatsapp Start --}}
+<div class="whatsapp">
+    <a href="https://wa.me/+911234567890" target="_blank">
+        <img src="{{ asset('public/frontend/assets/images/whtsp.png') }}" alt="whatsapp">
+    </a>
+</div>
+{{-- Whatsapp End --}}
+
 {{-- <div class="ec-right-bottom">
     <div class="ec-box">
         <div class="ec-button rotateBackward">
