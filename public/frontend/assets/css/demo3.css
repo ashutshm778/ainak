@@ -20160,7 +20160,7 @@ section.ec-instagram-section {
     margin-left: 0px;
     -ms-flex-pack: end;
     justify-content: start;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
   .ec-category-block {
@@ -20885,7 +20885,7 @@ section.ec-instagram-section {
 }
 
 .ec-product-inner .ec-pro-image .image img {
-    height: 150px;
+    /* height: 150px; */
 }
 
 .ec-product-inner .ec-pro-image .ec-pro-actions > * {
@@ -20943,10 +20943,7 @@ a.wishlist .svg_img.pro_svg {
 .section-title .subsub-title {
     font-size: 15px;
 }
-  .header-logo a img {
-    /* width: 170px; */
-    margin: 7px 0;
-  }
+
 
   .ec-main-slider * {
     direction: ltr;

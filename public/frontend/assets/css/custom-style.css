@@ -521,8 +521,7 @@
   text-align: left;
 }
 .header-logo img {
-  /* width: 175px; */
-  height:75px;
+  width: 250px;
 }
 
 .header_svg {
@@ -1389,7 +1388,7 @@ div#ec-main-menu-desk {
 /*-----  Header Search  -----*/
 .header-search {
   width: 70%;
-  margin-left: 15%;
+  margin-left: 12.5%;
   border-radius: 3px;
   position: relative;
   border: 1px solid #dddddd;
@@ -2553,6 +2552,7 @@ div#ec_news_signup {
 .ec-header-bottons .ec-header-btn {
     padding: 0 10px;
     min-height: 35px;
+    margin-top: 5px;
 }
 
 .welcome-section
@@ -3000,4 +3000,10 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+
+@media only screen and (max-width: 767px) {
+.header-logo img {
+  width: 175px;
+}
 }

@@ -2146,9 +2146,6 @@
     width: 100%;
   }
 
-  .header-logo a img {
-    width: 170px;
-  }
 
   .ec-banner-block {
     width: 100%;
@@ -2473,9 +2470,6 @@
     margin-right: auto;
   }
 
-  .pro-gl-content .ec-product-inner .ec-pro-image .add-to-cart {
-    font-size: 0;
-  }
   .pro-gl-content .add-to-cart .svg_img.pro_svg {
     margin-right: 0;
   }
@@ -2875,6 +2869,7 @@
 
   .pro-gl-content .ec-product-inner .ec-pro-image .add-to-cart {
     font-size: 0;
+    bottom: 44px;
   }
   .pro-gl-content .add-to-cart .svg_img.pro_svg {
     margin-right: 0;

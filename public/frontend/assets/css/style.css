@@ -18963,7 +18963,7 @@ i.ecicon.eci-star.fill {
   .ec-product-inner .ec-pro-image .ec-pro-actions .wishlist {
     position: absolute;
     right: 15px;
-    bottom: 15px;
+    bottom: 12px;
 }
   .ec-product-inner .ec-pro-image .ec-pro-actions .compare {
     position: absolute;
@@ -18973,7 +18973,7 @@ i.ecicon.eci-star.fill {
   .ec-product-inner .ec-pro-image a.quickview {
     position: absolute;
     top: auto !important;
-    bottom: 30px !important;
+    bottom: 27px !important;
     right: 15px;
     left: auto;
     border-radius: 0 0 10px 10px;
