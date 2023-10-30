@@ -18014,9 +18014,9 @@ li {
 .ec-breadcrumb {
   margin: 0 0 50px;
   font-size: 20px;
-  padding-top: 55px;
+  padding-top: 70px;
   background-size: cover;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
   background-position: center;
   background-image: url(../../../../public/frontend/assets/images/header.jpg);
 }

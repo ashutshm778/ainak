@@ -10121,7 +10121,7 @@ li {
 }
 @media (max-width: 767px) {
     .fc-16 {
-    font-size: 14px !important;
+    font-size: 13px !important;
     }
     .rbt-cat-box-1 .inner {
     padding: 10px !important;
@@ -18323,7 +18323,7 @@ border-color: #fff;
 }
 
 .ec-offer-section {
-  height: 80vh;
+  /* height: 80vh; */
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20386,7 +20386,7 @@ section.ec-instagram-section {
   }
 
   .ec-offer-section {
-    height: 65vh;
+    /* height: 65vh; */
   }
 }
 @media only screen and (max-width: 991px) and (min-width: 768px) {
@@ -20432,6 +20432,9 @@ section.ec-instagram-section {
   }
 }
 @media only screen and (max-width: 767px) {
+  .m_hide{
+    display: none !important;
+  }
     .pt_5{
         padding-top:10px;
     }
@@ -20812,7 +20815,7 @@ section.ec-instagram-section {
   }
 
   .ec-offer-section {
-    height: 55vh;
+    /* height: 55vh; */
   }
   .bk_amt1:after {
     top: 70px;
@@ -21560,3 +21563,6 @@ a.wishlist .svg_img.pro_svg {
         border-top: 1px solid #eee;
 }
 
+.m_hide{
+  display: block;
+}

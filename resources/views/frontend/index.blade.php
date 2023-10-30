@@ -552,7 +552,7 @@
     <!--  services Section Start -->
     <section class="section ec-offer-section">
         <img src="{{ asset('public/frontend/assets/images/appointment.jpg')}}" alt="" class="offer_bg">
-        <div class="ec-offer-inner">
+        <div class="ec-offer-inner m_hide">
             <div class="row justify-content-end">
                 <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 align-self-center">
                     <div class="ec-common-wrapper glass-initial mt-3 mb-3">
