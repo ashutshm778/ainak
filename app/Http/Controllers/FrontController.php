@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Session;
 use Exception;
 use Carbon\Carbon;
+use App\Models\Lens;
 use App\Models\Customer;
 use App\Models\Admin\Brnad;
 use App\Models\Admin\Offer;
@@ -273,4 +274,11 @@ class FrontController extends Controller
 
         return back()->with('success', 'Profile Updated Successfully!');
     }
+
+    public function get_lens(Request $request){
+        $power_type=$request->power_type;
+        $lenses=Lens::where('power_type', $power_type)->get();
+        return view('frontend.lens',compact('lenses'))->render();
+;    }
+
 }

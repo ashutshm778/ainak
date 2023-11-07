@@ -21,6 +21,10 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
+        $lens_id=0;
+        if(!empty($request->lens_id)){
+         $lens_id=$request->lens_id;
+        }
         if($request->product_qty)
         {
             $qty = $request->product_qty;
@@ -31,7 +35,8 @@ class CartController extends Controller
         }
         Cart::updateOrCreate([
             'user_id'=>Auth::guard('customer')->user()->id,
-            'product_id'=>$request->product_id
+            'product_id'=>$request->product_id,
+            'lens_id'=>$lens_id,
         ],
         [
             'quantity'=>$qty

@@ -54,6 +54,9 @@ Route::group(['middleware' => 'auth:customer'], function () {
     Route::post('store-customer-address',[CustomerAddressController::class,'store'])->name('store.customer.address');
     Route::get('delete-customer-address/{id}',[CustomerAddressController::class,'destroy'])->name('delete.customer.address');
     Route::post('customer-store-order',[OrderController::class,'store'])->name('customer.store.order');
+
+    Route::get('get_lens',[FrontController::class,'get_lens'])->name('product.get_lens');
+
     Route::get('order-summary',function(){
         $order = Order::where('user_id',Auth::guard('customer')->user()->id)->latest()->with('order_details.product')->first();
         return view('frontend.order_thankyou_page',compact('order'));

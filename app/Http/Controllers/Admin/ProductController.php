@@ -132,9 +132,9 @@ class ProductController extends Controller
                 $colors='colors'.$num;
                 $product->colors=$request->$colors;
                 $choice_attributes='choice_attributes_'.$num;
-                if($request->$choice_attributes)
+                if($request->choice_attributes)
                 {
-                    $product->attribute=$request->$choice_attributes;
+                    $product->attribute=$request->choice_attributes;
                 }
                 else
                 {
@@ -169,54 +169,16 @@ class ProductController extends Controller
             $product->gallery_image=$request->gallery_image[$key];
             // $product->purchase_price=$request->purchase_price[$key];
             // $product->mrp_price=$request->mrp_price[$key];
-            if(featureActivation('retailer') == '1'){
-                if($request->retailer_selling_price[$key]){
-                    $product->retailer_selling_price=$request->retailer_selling_price[$key];
-                }
-                $product->retailer_discount_type=$request->retailer_discount_type[$key];
-                if($request->retailer_discount[$key]){
-                    $product->retailer_discount=$request->retailer_discount[$key];
-                }
-                $product->retailer_min_qty=$request->retailer_min_qty[$key];
-                $product->retailer_max_qty=$request->retailer_max_qty[$key];
-                if(featureActivation('mlm') == '1'){
-                    if($request->retailer_point[$key]){
-                        $product->retailer_point=$request->retailer_point[$key];
-                    }
-                }
+            if($request->retailer_selling_price[$key]){
+                $product->retailer_selling_price=$request->retailer_selling_price[$key];
             }
+            $product->retailer_discount_type=$request->retailer_discount_type[$key];
+            if($request->retailer_discount[$key]){
+                $product->retailer_discount=$request->retailer_discount[$key];
+            }
+            $product->retailer_min_qty=$request->retailer_min_qty[$key];
+            $product->retailer_max_qty=$request->retailer_max_qty[$key];
 
-            if(featureActivation('distributor') == '1'){
-                if($request->distributor_selling_price[$key]){
-                    $product->distributor_selling_price=$request->distributor_selling_price[$key];
-                }
-                $product->distributor_discount_type=$request->distributor_discount_type[$key];
-                if($request->distributor_discount[$key]){
-                    $product->distributor_discount=$request->distributor_discount[$key];
-                }
-                $product->distributor_min_qty=$request->distributor_min_qty[$key];
-                if(featureActivation('mlm') == '1'){
-                    if($request->distributor_point[$key]){
-                        $product->distributor_point=$request->distributor_point[$key];
-                    }
-                }
-            }
-
-            if(featureActivation('wholeseller') == '1'){
-                if($request->wholeseller_selling_price[$key]){
-                    $product->wholeseller_selling_price=$request->wholeseller_selling_price[$key];
-                }
-                $product->wholeseller_discount_type=$request->wholeseller_discount_type[$key];
-                if($request->wholeseller_discount[$key]){
-                    $product->wholeseller_discount=$request->wholeseller_discount[$key];
-                }
-                $product->wholeseller_min_qty=$request->wholeseller_min_qty[$key];
-                if(featureActivation('mlm') == '1'){
-                    if($request->wholeseller_point[$key]){
-                        $product->wholeseller_point=$request->wholeseller_point[$key];
-                    }
-                }
-            }
 
             $product->unit=$request->unit;
             $product->hsn_code=$request->hsn_code;
@@ -303,6 +265,7 @@ class ProductController extends Controller
 
     public function update(Request $request,$id)
     {
+        // return $request;
         $product_group_id=Product::select('product_group_id')->where('id',$id)->first();
 
         $product_group_id=$product_group_id->product_group_id;
@@ -371,54 +334,15 @@ class ProductController extends Controller
             $product->gallery_image=$request->gallery_image[$key];
             // $product->purchase_price=$request->purchase_price[$key];
             // $product->mrp_price=$request->mrp_price[$key];
-            if(featureActivation('retailer') == '1'){
-                if($request->retailer_selling_price[$key]){
-                    $product->retailer_selling_price=$request->retailer_selling_price[$key];
-                }
-                $product->retailer_discount_type=$request->retailer_discount_type[$key];
-                if($request->retailer_discount[$key]){
-                    $product->retailer_discount=$request->retailer_discount[$key];
-                }
-                $product->retailer_min_qty=$request->retailer_min_qty[$key];
-                $product->retailer_max_qty=$request->retailer_max_qty[$key];
-                if(featureActivation('mlm') == '1'){
-                    if($request->retailer_point[$key]){
-                        $product->retailer_point=$request->retailer_point[$key];
-                    }
-                }
+            if($request->retailer_selling_price[$key]){
+                $product->retailer_selling_price=$request->retailer_selling_price[$key];
             }
-
-            if(featureActivation('distributor') == '1'){
-                if($request->distributor_selling_price[$key]){
-                    $product->distributor_selling_price=$request->distributor_selling_price[$key];
-                }
-                $product->distributor_discount_type=$request->distributor_discount_type[$key];
-                if($request->distributor_discount[$key]){
-                    $product->distributor_discount=$request->distributor_discount[$key];
-                }
-                $product->distributor_min_qty=$request->distributor_min_qty[$key];
-                if(featureActivation('mlm') == '1'){
-                    if($request->distributor_point[$key]){
-                        $product->distributor_point=$request->distributor_point[$key];
-                    }
-                }
+            $product->retailer_discount_type=$request->retailer_discount_type[$key];
+            if($request->retailer_discount[$key]){
+                $product->retailer_discount=$request->retailer_discount[$key];
             }
-
-            if(featureActivation('distributor') == '1'){
-                if($request->wholeseller_selling_price[$key]){
-                    $product->wholeseller_selling_price=$request->wholeseller_selling_price[$key];
-                }
-                $product->wholeseller_discount_type=$request->wholeseller_discount_type[$key];
-                if($request->wholeseller_discount[$key]){
-                    $product->wholeseller_discount=$request->wholeseller_discount[$key];
-                }
-                $product->wholeseller_min_qty=$request->wholeseller_min_qty[$key];
-                if(featureActivation('mlm') == '1'){
-                    if($request->wholeseller_point[$key]){
-                        $product->wholeseller_point=$request->wholeseller_point[$key];
-                    }
-                }
-            }
+            $product->retailer_min_qty=$request->retailer_min_qty[$key];
+            $product->retailer_max_qty=$request->retailer_max_qty[$key];
 
             $product->unit=$request->unit;
             $product->hsn_code=$request->hsn_code;

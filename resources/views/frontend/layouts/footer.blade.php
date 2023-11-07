@@ -366,6 +366,35 @@
 </script>
 
 <script>
+    function getVariantPrice() {
+        @if (request()->route()->getName() != 'index' &&
+                request()->route()->getName() != 'cart')
+            $.ajax({
+                type: "GET",
+                url: '{{ route('product.get_varinat_price') }}',
+                data: $('#product_detail_form').serializeArray(),
+                success: function(data) {
+
+                    $('#product_variant_div').empty();
+                    $('#product_variant_div').html(data);
+                    $(".single-product-cover").slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: !1,
+                            fade: !1,
+                            asNavFor: ".single-nav-thumb"
+                        }),
+                        $(".single-nav-thumb").slick({
+                            slidesToShow: 4,
+                            slidesToScroll: 1,
+                            asNavFor: ".single-product-cover",
+                            focusOnSelect: !0,
+                        })
+                }
+            });
+        @endif
+    }
+
     function update_qty(type, product_id, range_qty, is_change) {
         var qty_id = '.qty_value_' + product_id;
         var qty_value = $(qty_id).val();
@@ -407,6 +436,7 @@
             $("#addtocart_toast").addClass("show");
             $('#ec-side-cart').html(data.cart_detail)
             $('#cart-summary-div').html(data.cart_summary)
+            $('#cart_data').html(data.cart_data);
         });
     }
 
@@ -448,7 +478,61 @@
             success: function(data) {
                 $('#ec-side-cart').html(data.html)
                 $("#addtocart_toast").addClass("show");
-                $('.header_cart_count').text(data.cart_count)
+                $('.header_cart_count').text(data.cart_count);
+                if (type == 'new_arrival_form') {
+                     location.reload();
+                 }
+            },
+            error: function(error) {
+                @if (featureActivation('retailer') == '1' ||
+                        featureActivation('distributor') == '1' ||
+                        featureActivation('wholesaler') == '1')
+                    window.location.href = "{{ route('user.login') }}";
+                @endif
+            }
+        });
+    }
+
+    function buyNow(product_ids, type) {
+        if (type == 'flash_form') {
+            form_id = '#flash_form_' + product_ids
+        }
+        if (type == 'new_arrival_form') {
+            form_id = '#new_arrival_form_' + product_ids
+        }
+        if (type == 'feature_form') {
+            form_id = '#feature_form_' + product_ids
+        }
+        if (type == 'best_seller_form') {
+            form_id = '#best_seller_form_' + product_ids
+        }
+        if (type == 'product_model_form') {
+            form_id = '#product_model_form'
+        }
+        if (type == 'product_detail_form') {
+            form_id = '#product_detail_form'
+        }
+        if (type == 'featured_category_form') {
+            form_id = '#featured_category_form_' + product_ids
+        }
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
+        var formData = new FormData($(form_id)[0]);
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('add.to.cart') }}",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                $('#ec-side-cart').html(data.html)
+                $("#addtocart_toast").addClass("show");
+                $('.header_cart_count').text(data.cart_count);
+                window.location.href = "{{ route('checkout') }}";
             },
             error: function(error) {
                 @if (featureActivation('retailer') == '1' ||
@@ -552,6 +636,40 @@
                 $('#product_variant_div').empty();
                 $('#product_variant_div').html(data);
 
+            }
+        });
+    }
+
+
+    function buyLens(lense_id) {
+       
+        form_id = '#product_detail_form';
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
+        var formData = new FormData($(form_id)[0]);
+        formData.append('lens_id', lense_id);
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('add.to.cart') }}",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                $('#ec-side-cart').html(data.html)
+                $("#addtocart_toast").addClass("show");
+                $('.header_cart_count').text(data.cart_count);
+                window.location.href = "{{ route('checkout') }}";
+            },
+            error: function(error) {
+                @if (featureActivation('retailer') == '1' ||
+                        featureActivation('distributor') == '1' ||
+                        featureActivation('wholesaler') == '1')
+                    window.location.href = "{{ route('user.login') }}";
+                @endif
             }
         });
     }

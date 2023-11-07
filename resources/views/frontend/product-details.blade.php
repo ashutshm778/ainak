@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    {{-- <div class="row ec_breadcrumb_inner">
+                    <div class="row ec_breadcrumb_inner">
                         <div class="col-md-6 col-sm-12">
                             <h2 class="ec-breadcrumb-title">{{ $data->name }}</h2>
                         </div>
@@ -16,14 +16,13 @@
                             </ul>
                             <!-- ec-breadcrumb-list end -->
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Ec breadcrumb end -->
 
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/zoom-main.css')}}" />
     <!-- Sart Single product -->
 
     <section class="ec-page-content section-space-p">
@@ -47,15 +46,15 @@
                                 <ul class="nav nav-tabs">
                                     <li class="nav-item">
                                         <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#ec-spt-nav-details"
-                                            role="tablist">Features</a>
+                                            role="tablist">Detail</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ec-spt-nav-info"
-                                            role="tablist">Specifications</a>
+                                            role="tablist">More Information</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ec-spt-nav-review"
-                                            role="tablist">Description</a>
+                                            role="tablist">Reviews</a>
                                     </li>
                                 </ul>
                             </div>
@@ -70,12 +69,71 @@
                                         {!! $data->specification !!}
                                     </div>
                                 </div>
+
                                 <div id="ec-spt-nav-review" class="tab-pane fade">
-                                    <div class="ec-single-pro-tab-moreinfo">
-                                        {!! $data->specification !!}
+                                    <div class="row">
+                                        <div class="ec-t-review-wrapper">
+                                            <div class="ec-t-review-item">
+                                                <div class="ec-t-review-avtar">
+                                                    <img src="{{ asset('public/frontend/assets/images/review-image/1.jpg') }}"
+                                                        alt="" />
+                                                </div>
+                                                <div class="ec-t-review-content">
+                                                    <div class="ec-t-review-top">
+                                                        <div class="ec-t-review-name">Jeny Doe</div>
+                                                        <div class="ec-t-review-rating">
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star-o"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ec-t-review-bottom">
+                                                        <p>... </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ec-ratting-content">
+                                            <h3>Add a Review</h3>
+                                            <div class="ec-ratting-form">
+                                                <form action="#">
+                                                    <div class="ec-ratting-star">
+                                                        <span>Your rating:</span>
+                                                        <div class="ec-t-review-rating">
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star-o"></i>
+                                                            <i class="ecicon eci-star-o"></i>
+                                                            <i class="ecicon eci-star-o"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="ec-ratting-input">
+                                                                <input name="your-name" placeholder="Name" type="text" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="ec-ratting-input">
+                                                                <input name="your-email" placeholder="Email*" type="email"
+                                                                    required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ec-ratting-input form-submit">
+                                                        <textarea name="your-commemt" placeholder="Enter Your Comment"></textarea>
+                                                        <button class="btn btn-primary" type="submit"
+                                                            value="Submit">Submit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
@@ -145,9 +203,8 @@
     </section>
 
     <script src="{{ asset('public/frontend/assets/js/zoom-image.js') }}"></script>
-    <script src="{{ asset('public/frontend/assets/js/zoom-main.js/')}}"></script>
     <script type="text/javascript">
-        if (window.innerWidth > 1920) {
+        if (window.innerWidth > 768) {
             $('.imgBox').imgZoom({
                 boxWidth: 500,
                 boxHeight: 500,
@@ -161,35 +218,6 @@
                 $('#show-img').attr('data-origin', $(this).attr('src'));
             });
         });
-
-        function getVariantPrice() {
-
-            $.ajax({
-                type: "GET",
-                url: '{{ route('product.get_varinat_price') }}',
-                data: $('#product_detail_form').serializeArray(),
-                success: function(data) {
-
-                        $('#product_variant_div').empty();
-                        $('#product_variant_div').html(data);
-                        $(".single-product-cover").slick({
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                arrows: !1,
-                                fade: !1,
-                                asNavFor: ".single-nav-thumb"
-                            }),
-                            $(".single-nav-thumb").slick({
-                                slidesToShow: 4,
-                                slidesToScroll: 1,
-                                asNavFor: ".single-product-cover",
-                                focusOnSelect: !0,
-                            })
-                }
-            });
-
-        }
-
 
         function getVaiantPriceData(product_group_id,attribute_id,attribute_value){
             var quanity=$('#quantity').val();
@@ -258,6 +286,23 @@
         $(document).ready(function() {
             getVariantPrice();
         });
+
+
+        function select_lens(power_type){
+            $.ajax({
+                type: "GET",
+                url: '{{ route('product.get_lens') }}',
+                data: {
+                    power_type:power_type,
+                },
+                success: function(data) {
+
+                        $('#step-3').empty();
+                        $('#step-3').html(data);
+                }
+            });
+        }
+
     </script>
 
     {{-- <script src="{{asset('public/frontend/assets/js/zoom-main.js')}}"></script> --}}

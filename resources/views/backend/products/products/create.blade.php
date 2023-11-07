@@ -16,7 +16,7 @@
                 <div class="row m-1">
                     <div class="col-sm-6">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{route('admin.home')}}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="">Home</a></li>
                             <li class="breadcrumb-item active"><a href="{{route('admin.products.index')}}">Product List</a></li>
                             <li class="breadcrumb-item active">Add Product</li>
                         </ol>
@@ -146,6 +146,20 @@
                                                         <textarea class="form-control summernote" name="specification"></textarea>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6 form_div">
+                                                    <div class="form-group">
+                                                        <label class="aiz-switch aiz-switch-success mb-0">
+                                                            <input type="checkbox" id="color_button">
+                                                            <span></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 form_div">
+                                                    <div class="form-group">
+                                                        <label for="specification">Attribute</label>
+                                                        <select class="form-control select2" name="choice_attributes[]" id="attribute" data-placeholder="Attribute" multiple></select>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="single">
                                                 <div class="row" id="single_product_price_div">
@@ -207,124 +221,40 @@
                                                             <input type="text" class="form-control" name="sku[]" placeholder="SKU...">
                                                         </div>
                                                     </div>
-                                                    @if(featureActivation('retailer') == '1')
-                                                        <div class="col-md-2 form_div">
-                                                            <div class="form-group">
-                                                                <label for="retailer_selling_price">Retailer Selling Price</label>
-                                                                <input type="text" class="form-control" name="retailer_selling_price[]" value="0.00" placeholder="Selling Price...">
-                                                            </div>
+                                                    <div class="col-md-2 form_div">
+                                                        <div class="form-group">
+                                                            <label for="retailer_selling_price">Retailer Selling Price</label>
+                                                            <input type="text" class="form-control" name="retailer_selling_price[]" value="0.00" placeholder="Selling Price...">
                                                         </div>
-                                                        <div class="col-md-4 form_div">
-                                                            <div class="input-group">
-                                                                <div class="form-group" style="width: 49%;">
-                                                                    <label for="retailer_discount_type">Discount Type</label>
-                                                                    <select name="retailer_discount_type[]" class="form-control">
-                                                                        <option value="amount">Flat</option>
-                                                                        <option value="percent">Percent</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="retailer_discount">Discount</label>
-                                                                    <input type="text" class="form-control" name="retailer_discount[]" value="0.00" min="0.00" placeholder="Discount...">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-2 form_div">
-                                                            <div class="form-group">
-                                                                <label for="retailer_min_qty">Min Qty</label>
-                                                                <input type="text" class="form-control" name="retailer_min_qty[]" value="1" min="1" placeholder="Selling Price..." required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-2 form_div">
-                                                            <div class="form-group">
-                                                                <label for="retailer_max_qty">Max Qty</label>
-                                                                <input type="text" class="form-control" name="retailer_max_qty[]" placeholder="Max Qty...">
-                                                            </div>
-                                                        </div>
-                                                        @if(featureActivation('mlm') == '1')
-                                                            <div class="col-md-2 form_div">
-                                                                <div class="form-group">
-                                                                    <label for="retailer_point">Point</label>
-                                                                    <input type="text" class="form-control" name="retailer_point[]" value="0" min="0" placeholder="Point...">
-                                                                </div>
-                                                            </div>
-                                                        @endif
-                                                    @endif
-                                                    @if(featureActivation('distributor') == '1')
-                                                        <div class="col-md-4 form_div">
-                                                            <div class="form-group">
-                                                                <label for="distributor_selling_price">Distributor Selling Price</label>
-                                                                <input type="text" class="form-control" name="distributor_selling_price[]" value="0.00" placeholder="Selling Price...">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 form_div">
-                                                            <div class="input-group">
-                                                                <div class="form-group">
-                                                                    <label for="distributor_discount_type">Discount Type</label>
-                                                                    <select name="distributor_discount_type[]" class="form-control" style="width: 192px;">
-                                                                        <option value="amount">Flat</option>
-                                                                        <option value="percent">Percent</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="distributor_discount">Discount</label>
-                                                                    <input type="text" class="form-control" name="distributor_discount[]" value="0.00" min="0.00" placeholder="Discount...">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-2 form_div">
-                                                            <div class="form-group">
-                                                                <label for="distributor_min_qty">Min Qty</label>
-                                                                <input type="text" class="form-control" name="distributor_min_qty[]" value="1" min="1" placeholder="Min Qty..." required>
-                                                            </div>
-                                                        </div>
-                                                        @if(featureActivation('mlm') == '1')
-                                                            <div class="col-md-2 form_div">
-                                                                <div class="form-group">
-                                                                    <label for="distributor_point">Point</label>
-                                                                    <input type="text" class="form-control" name="distributor_point[]" value="0" min="0" placeholder="Point...">
-                                                                </div>
-                                                            </div>
-                                                        @endif
-                                                    @endif
-                                                    @if(featureActivation('wholeseller') == '1')
-                                                        <div class="col-md-4 form_div">
-                                                            <div class="form-group">
-                                                                <label for="wholeseller_selling_price">Wholeseller Selling Price</label>
-                                                                <input type="text" class="form-control" name="wholeseller_selling_price[]" value="0.00" placeholder="Selling Price...">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 form_div">
-                                                            <div class="input-group">
-                                                            <div class="form-group">
-                                                                <label for="wholeseller_discount_type">Discount Type</label>
-                                                                <select name="wholeseller_discount_type[]" class="form-control" style="width: 192px;">
+                                                    </div>
+                                                    <div class="col-md-4 form_div">
+                                                        <div class="input-group">
+                                                            <div class="form-group" style="width: 49%;">
+                                                                <label for="retailer_discount_type">Discount Type</label>
+                                                                <select name="retailer_discount_type[]" class="form-control">
                                                                     <option value="amount">Flat</option>
                                                                     <option value="percent">Percent</option>
                                                                 </select>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="wholeseller_discount">Discount</label>
-                                                                <input type="text" class="form-control" name="wholeseller_discount[]" value="0.00" min="0.00" placeholder="Discount...">
+                                                                <label for="retailer_discount">Discount</label>
+                                                                <input type="text" class="form-control" name="retailer_discount[]" value="0.00" min="0.00" placeholder="Discount...">
                                                             </div>
                                                         </div>
+                                                    </div>
+
+                                                    <div class="col-md-2 form_div">
+                                                        <div class="form-group">
+                                                            <label for="retailer_min_qty">Min Qty</label>
+                                                            <input type="text" class="form-control" name="retailer_min_qty[]" value="1" min="1" placeholder="Selling Price..." required>
                                                         </div>
-                                                        <div class="col-md-2 form_div">
-                                                            <div class="form-group">
-                                                                <label for="wholeseller_min_qty">Min Qty</label>
-                                                                <input type="text" class="form-control" name="wholeseller_min_qty[]" value="1" min="1" placeholder="Min Qty..." required>
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-md-2 form_div">
+                                                        <div class="form-group">
+                                                            <label for="retailer_max_qty">Max Qty</label>
+                                                            <input type="text" class="form-control" name="retailer_max_qty[]" placeholder="Max Qty...">
                                                         </div>
-                                                        @if(featureActivation('mlm') == '1')
-                                                            <div class="col-md-2 form_div">
-                                                                <div class="form-group">
-                                                                    <label for="wholeseller_point">Point</label>
-                                                                    <input type="text" class="form-control" name="wholeseller_point[]" value="0" min="0" placeholder="Point...">
-                                                                </div>
-                                                            </div>
-                                                        @endif
-                                                    @endif
+                                                    </div>
                                                 </div>
                                             </div>
                                             <hr>
@@ -356,8 +286,6 @@
 
 <script src="{{ asset('public/dashboard_css/plugins/jquery/jquery.min.js') }}"></script>
 
-
-
 <script type="text/javascript">
     $(document).ready(function()
     {
@@ -369,7 +297,7 @@
         //Once add button is clicked
         $(addButton).click(function()
         {
-            $('.field_wrapper').addClass('variant')
+            $('.field_wrapper').addClass('variant');
             var category_ids=$('#category_id').val();
             var name=$('#name').val();
             if(category_ids.length  == 0)
@@ -381,29 +309,23 @@
             {
                 $('#single_product_price_div').remove();
             }
+            if(!$('#color_button').is(':checked'))
+            {
+                var enable_color_input = 'd-none';
+            }
+            else
+            {
+                var enable_color_input = '';
+            }
             var fieldHTML ='<div class="row">'+
-                                '<div class="col-md-5 form_div">'+
+                                '<div class="col-md-5 form_div '+enable_color_input+'">'+
                                     '<div class="form-group">'+
                                         '<label for="colors">Colors</label>'+
-                                        '<select class="form-control select2 colors_'+x+'"  name="colors'+x+'" data-placeholder="Color" disabled>'+
+                                        '<select class="form-control select2 colors_input"  name="colors'+x+'" data-placeholder="Color">'+
                                             '@foreach (\App\Models\Admin\Color::orderBy('name', 'asc')->get() as $key => $color)'+
                                                 '<option  value="{{ $color->code }}">{{$color->name}}</option>'+
                                             '@endforeach'+
                                         '</select>'+
-                                    '</div>'+
-                                '</div>'+
-                                '<div class="col-md-1 form_div">'+
-                                    '<div class="form-group d-flex justify-content-center" style="padding-top: 60%;">'+
-                                        '<label class="aiz-switch aiz-switch-success mb-0">'+
-                                            '<input value="1" type="checkbox" name="colors_active[]" onchange="color_change('+x+')" class="color_button_'+x+'">'+
-                                            '<span></span>'+
-                                        '</label>'+
-                                    '</div>'+
-                                '</div>'+
-                                '<div class="col-md-6 form_div">'+
-                                    '<div class="form-group">'+
-                                        '<label for="specification">Attribute</label>'+
-                                        '<select class="form-control select2" name="choice_attributes_'+x+'[]" id="attribute_'+x+'" data-placeholder="Attribute" multiple onchange="get_attribute_value('+x+')"></select>'+
                                     '</div>'+
                                 '</div>'+
 
@@ -476,123 +398,39 @@
                                     '<input type="text" class="form-control" name="video_link[]" placeholder="Video Link...">'+
                                 '</div>'+
                             '</div>'+
-                            @if(featureActivation('retailer') == '1')
-                                '<div class="col-md-2 form_div">'+
-                                    '<div class="form-group">'+
-                                        '<label for="retailer_selling_price">Retailer Selling Price</label>'+
-                                        '<input type="text" class="form-control" name="retailer_selling_price[]" value="0.00" placeholder="Selling Price...">'+
-                                    '</div>'+
-                                '</div>'+
-                                '<div class="col-md-4 form_div">'+
-                                    '<div class="input-group">'+
-                                        '<div class="form-group" style="width: 49%;">'+
-                                            '<label for="retailer_discount_type">Discount Type</label>'+
-                                            '<select name="retailer_discount_type[]" class="form-control">'+
-                                                '<option value="amount">Flat</option>'+
-                                                '<option value="percent">Percent</option>'+
-                                            '</select>'+
-                                        '</div>'+
-                                        '<div class="form-group">'+
-                                            '<label for="retailer_discount">Discount</label>'+
-                                            '<input type="text" class="form-control" name="retailer_discount[]" value="0.00" min="0.00" placeholder="Discount...">'+
-                                        '</div>'+
-                                    '</div>'+
-                                '</div>'+
-                                '<div class="col-md-2 form_div">'+
-                                    '<div class="form-group">'+
-                                        '<label for="retailer_min_qty">Min Qty</label>'+
-                                        '<input type="text" class="form-control" name="retailer_min_qty[]" value="1" min="1" placeholder="Min Qty..." required>'+
-                                    '</div>'+
-                                '</div>'+
-                                '<div class="col-md-2 form_div">'+
-                                    '<div class="form-group">'+
-                                        '<label for="retailer_max_qty">Max Qty</label>'+
-                                        '<input type="text" class="form-control" name="retailer_max_qty[]" placeholder="Max Qty...">'+
-                                    '</div>'+
-                                '</div>'+
-                                @if(featureActivation('mlm') == '1')
-                                    '<div class="col-md-2 form_div">'+
-                                        '<div class="form-group">'+
-                                            '<label for="retailer_point">Point</label>'+
-                                            '<input type="text" class="form-control" name="retailer_point[]" value="0" min="0" placeholder="Point...">'+
-                                        '</div>'+
-                                    '</div>'+
-                                @endif
-                            @endif
-                            @if(featureActivation('distributor') == '1')
-                            '<div class="col-md-4 form_div">'+
-                                '<div class="form-group">'+
-                                    '<label for="distributor_selling_price">Distributor Selling Price</label>'+
-                                    '<input type="text" class="form-control" name="distributor_selling_price[]" value="0.00" placeholder="Selling Price...">'+
-                                '</div>'+
-                           '</div>'+
-                            '<div class="col-md-4 form_div">'+
-                                '<div class="input-group">'+
-                                '<div class="form-group">'+
-                                    '<label for="distributor_discount_type">Discount Type</label>'+
-                                    '<select name="distributor_discount_type[]" class="form-control" style="width: 192px;">'+
-                                        '<option value="amount">Flat</option>'+
-                                        '<option value="percent">Percent</option>'+
-                                    '</select>'+
-                                '</div>'+
-                                '<div class="form-group">'+
-                                    '<label for="distributor_discount">Discount</label>'+
-                                    '<input type="text" class="form-control" name="distributor_discount[]" value="0.00" min="0.00" placeholder="Discount...">'+
-                                '</div>'+
-                                '</div>'+
-                           '</div>'+
                             '<div class="col-md-2 form_div">'+
                                 '<div class="form-group">'+
-                                    '<label for="distributor_min_qty">Min Qty</label>'+
-                                    '<input type="text" class="form-control" name="distributor_min_qty[]" value="1" min="1" placeholder="Min Qty..." required>'+
-                                '</div>'+
-                            '</div>'+
-                            @if(featureActivation('mlm') == '1')
-                                '<div class="col-md-2 form_div">'+
-                                    '<div class="form-group">'+
-                                        '<label for="distributor_point">Point</label>'+
-                                        '<input type="text" class="form-control" name="distributor_point[]" value="0" min="0" placeholder="Point...">'+
-                                    '</div>'+
-                                '</div>'+
-                            @endif
-                            @endif
-                            @if(featureActivation('wholeseller') == '1')
-                            '<div class="col-md-4 form_div">'+
-                                '<div class="form-group">'+
-                                    '<label for="wholeseller_selling_price">Wholeseller Selling Price</label>'+
-                                    '<input type="text" class="form-control" name="wholeseller_selling_price[]" value="0.00" placeholder="Selling Price...">'+
+                                    '<label for="retailer_selling_price">Retailer Selling Price</label>'+
+                                    '<input type="text" class="form-control" name="retailer_selling_price[]" value="0.00" placeholder="Selling Price...">'+
                                 '</div>'+
                             '</div>'+
                             '<div class="col-md-4 form_div">'+
                                 '<div class="input-group">'+
-                                    '<div class="form-group">'+
-                                        '<label for="wholeseller_discount_type">Discount Type</label>'+
-                                        '<select name="wholeseller_discount_type[]" class="form-control" style="width: 192px;">'+
+                                    '<div class="form-group" style="width: 49%;">'+
+                                        '<label for="retailer_discount_type">Discount Type</label>'+
+                                        '<select name="retailer_discount_type[]" class="form-control">'+
                                             '<option value="amount">Flat</option>'+
                                             '<option value="percent">Percent</option>'+
                                         '</select>'+
                                     '</div>'+
                                     '<div class="form-group">'+
-                                        '<label for="wholeseller_discount">Discount</label>'+
-                                        '<input type="text" class="form-control" name="wholeseller_discount[]" value="0.00" min="0.00" placeholder="Discount...">'+
+                                        '<label for="retailer_discount">Discount</label>'+
+                                        '<input type="text" class="form-control" name="retailer_discount[]" value="0.00" min="0.00" placeholder="Discount...">'+
                                     '</div>'+
                                 '</div>'+
                             '</div>'+
                             '<div class="col-md-2 form_div">'+
                                 '<div class="form-group">'+
-                                    '<label for="wholeseller_min_qty">Min Qty</label>'+
-                                    '<input type="text" class="form-control" name="wholeseller_min_qty[]" value="1" min="1" placeholder="Min Qty..." required>'+
+                                    '<label for="retailer_min_qty">Min Qty</label>'+
+                                    '<input type="text" class="form-control" name="retailer_min_qty[]" value="1" min="1" placeholder="Min Qty..." required>'+
                                 '</div>'+
                             '</div>'+
-                            @if(featureActivation('mlm') == '1')
                             '<div class="col-md-2 form_div">'+
                                 '<div class="form-group">'+
-                                    '<label for="wholeseller_point">Point</label>'+
-                                    '<input type="text" class="form-control" name="wholeseller_point[]" value="0" min="0" placeholder="Point...">'+
+                                    '<label for="retailer_max_qty">Max Qty</label>'+
+                                    '<input type="text" class="form-control" name="retailer_max_qty[]" placeholder="Max Qty...">'+
                                 '</div>'+
                             '</div>'+
-                            @endif
-                            @endif
                             '<div class="col-md-12 form_div d-flex justify-content-center">'+
                                 '<div class="form-group">'+
                                     '<button class="btn btn-danger remove_button" type="button">Remove Variant</button>'+
@@ -605,8 +443,8 @@
             if(x < maxField)
             {
                 $(wrapper).append(fieldHTML); //Add field html
-                get_attribute(x)
                 $('.select2').select2();
+                get_attribute_value(x)
                 x++; //Increment field counter
             }
         });
@@ -679,7 +517,6 @@
                                                         '<input type="text" class="form-control aiz-tag-input" name="sku[]" placeholder="SKU...">'+
                                                    '</div>'+
                                                 '</div>'+
-                                                @if(featureActivation('retailer') == '1')
                                                 '<div class="col-md-2 form_div">'+
                                                     '<div class="form-group">'+
                                                         '<label for="retailer_selling_price">Retailer Selling Price</label>'+
@@ -713,89 +550,6 @@
                                                         '<input type="text" class="form-control aiz-tag-input" name="retailer_max_qty[]" placeholder="Max Qty...">'+
                                                     '</div>'+
                                                 '</div>'+
-                                                @if(featureActivation('mlm') == '1')
-                                                '<div class="col-md-2 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="retailer_discount">Retailer Point</label>'+
-                                                        '<input type="text" class="form-control aiz-tag-input" name="retailer_point[]" value="0" min="0" placeholder="Point...">'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                @endif
-                                                @endif
-                                                @if(featureActivation('distributor') == '1')
-                                                '<div class="col-md-3 form_div">'+
-                                                   '<div class="form-group">'+
-                                                        '<label for="distributor_selling_price">Distributor Selling Price</label>'+
-                                                        '<input type="text" class="form-control aiz-tag-input" name="distributor_selling_price[]" placeholder="Selling Price...">'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="col-md-3 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="distributor_discount_type">Distributor Discount Type</label>'+
-                                                        '<select name="distributor_discount_type[]" class="form-control">'+
-                                                            '<option value="amount">Flat</option>'+
-                                                            '<option value="percent">Percent</option>'+
-                                                        '</select>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="col-md-2 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="distributor_discount">Distributor Discount</label>'+
-                                                        '<input type="text" class="form-control aiz-tag-input" name="distributor_discount[]" value="0.00" min="0.00" placeholder="Discount...">'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="col-md-2 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="distributor_min_qty">Distributor Min Qty</label>'+
-                                                        '<input type="text" class="form-control aiz-tag-input" name="distributor_min_qty[]" value="1" min="1" placeholder="Min Qty..." required>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                @if(featureActivation('mlm') == '1')
-                                                '<div class="col-md-2 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="distributor_point">Distributor Point</label>'+
-                                                        '<input type="text" class="form-control aiz-tag-input" name="distributor_point[]" value="0" min="0" placeholder="Point...">'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                @endif
-                                                @endif
-                                                @if(featureActivation('wholeseller') == '1')
-                                                '<div class="col-md-3 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="wholeseller_selling_price">Wholeseller Selling Price</label>'+
-                                                        '<input type="text" class="form-control aiz-tag-input" name="wholeseller_selling_price[]" placeholder="Selling Price...">'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="col-md-3 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="wholeseller_discount_type">Wholeseller Discount Type</label>'+
-                                                        '<select name="wholeseller_discount_type[]" class="form-control">'+
-                                                            '<option value="amount">Flat</option>'+
-                                                            '<option value="percent">Percent</option>'+
-                                                        '</select>'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="col-md-2 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="wholeseller_discount">Wholeseller Discount</label>'+
-                                                        '<input type="text" class="form-control aiz-tag-input" name="wholeseller_discount[]" value="0.00" min="0.00" placeholder="Discount...">'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                '<div class="col-md-2 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="wholeseller_min_qty">Wholeseller Min Qty</label>'+
-                                                        '<input type="text" class="form-control aiz-tag-input" name="wholeseller_min_qty[]" value="1" min="1" placeholder="Min Qty..." required>'+
-                                                   '</div>'+
-                                                '</div>'+
-                                                @if(featureActivation('mlm') == '1')
-                                                '<div class="col-md-2 form_div">'+
-                                                    '<div class="form-group">'+
-                                                        '<label for="wholeseller_point">Wholeseller Point</label>'+
-                                                        '<input type="text" class="form-control aiz-tag-input" name="wholeseller_point[]" value="0" min="0" placeholder="Point...">'+
-                                                    '</div>'+
-                                                '</div>'+
-                                                @endif
-                                                @endif
                                             '</div>')
             }
         });
@@ -822,6 +576,7 @@
                 $.each(data, function(key, val) {
                     $('#subcategory_id').append("<option value=" +val.id+ ">"+val.name+"</option>");
                 });
+                get_attribute()
             }
         });
     }
@@ -851,33 +606,33 @@
 
     function color_change(x)
     {
-        if(!$('.color_button_'+x).is(':checked'))
+        if(!$('.color_button').is(':checked'))
         {
-            $('.colors_'+x).prop('disabled', true);
+            $('.colors_input').prop('disabled', true);
         }
         else
         {
-            $('.colors_'+x).prop('disabled', false);
+            $('.colors_input').prop('disabled', false);
         }
     }
 
-    function get_attribute(x)
+    function get_attribute()
     {
         var category_ids=$('#category_id').val();
         $.ajax({
             type: 'GET',
             url: "{{route('admin.get.attributes.by.category','')}}/"+category_ids,
             success: function(data) {
-                $('#attribute_'+x).empty();
+                $('#attribute').empty();
                 $.each(data, function(key, val) {
-                    $('#attribute_'+x).append("<option value=" +val.id+ ">"+val.name+"</option>");
+                    $('#attribute').append("<option value=" +val.id+ ">"+val.name+"</option>");
                 });
             }
         });
     }
     function get_attribute_value(x)
     {
-        var attr_val=$('#attribute_'+x).val();
+        var attr_val=$('#attribute').val();
 
         $.ajax({
             type: 'GET',
