@@ -135,6 +135,12 @@
                                                                             * {{ $cart->quantity }}
                                                                         @endif
                                                                         </span>
+                                                                        @if(!empty($cart->lens_id))
+                                                                        <br>
+                                                                        <span > Lens : {{$cart->lens->name}} </span>
+                                                                        <span class="new-price">₹{{ $cart->lens->price }}</span>
+                                                                        * {{ $cart->quantity }}
+                                                                        @endif
                                                                     </div>
                                                                 </div>
                                                             @endforeach

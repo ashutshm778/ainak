@@ -21,4 +21,9 @@ class Cart extends Model
     {
         return $this->belongsTo(Product::class,'product_id');
     }
+
+    public function lens()
+    {
+        return $this->belongsTo(Lens::class,'lens_id');
+    }
 }
