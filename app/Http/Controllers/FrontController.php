@@ -149,30 +149,53 @@ class FrontController extends Controller
     public function sendOtp(Request $request, $phone)
     {
         $data = Customer::where('phone', $phone)->first();
-        if (empty($data)) {
-            if ($request->from == 'dealer') {
+        if(empty($data)) {
+            if($request->from == 'dealer'){
                 $data = BusinessPersonRequest::where('phone', $phone)->first();
-                if (empty($data)) {
+                if(empty($data)){
                     $phone = '91' . $phone;
-                    Msg91::otp()->to($phone)->template('6114d04775025d197f1e0ad7')->send();
-                    return 1;
-                } else {
+                    if(env('APP_ENV') == 'local'){
+                        $otp=1234;
+                        Session::put('otp',$otp);
+                        return 1;
+                    }else{
+                        $otp=rand(1111,9999);
+                        Session::put('otp',$otp);
+                          Msg91::sms()->to('91'.$request->phone)->flow('64a6b9d1d6fc057c15503ab2')->variable('business_name', env('APP_NAME'))->variable('otp', $otp)->send();
+                        //Msg91::otp()->to($phone)->template('6114d04775025d197f1e0ad7')->send();
+                        return 1;
+                    }
+                }else{
                     return 2;
                 }
-            } else {
+            }else{
                 $phone = '91' . $phone;
-                Msg91::otp()->to($phone)->template('6114d04775025d197f1e0ad7')->send();
-                return 1;
+                if(env('APP_ENV') == 'local'){
+                    $otp=1234;
+                    Session::put('otp',$otp);
+                    return 1;
+                }else{
+                    $otp=rand(1111,9999);
+                    Session::put('otp',$otp);
+                      Msg91::sms()->to('91'.$request->phone)->flow('64a6b9d1d6fc057c15503ab2')->variable('business_name', env('APP_NAME'))->variable('otp', $otp)->send();
+                    //Msg91::otp()->to($phone)->template('6114d04775025d197f1e0ad7')->send();
+                    return 1;
+                }
             }
-        } else {
+        }else{
             return 3;
         }
     }
 
     public function verifyOtp($phone, $otp)
     {
-        $phone = '91' . $phone;
-        $ver = Msg91::otp((int)$otp)->to($phone)->verify();
+        // $phone = '91' . $phone;
+        // $ver = Msg91::otp((int)$otp)->to($phone)->verify();
+        if(Session::get('otp') != $otp){
+            return response()->json(['msg'=>'Wrong OTP!'], 401);
+        }else{
+            return 1;
+        }
     }
 
     public function search(Request $request, $slug)

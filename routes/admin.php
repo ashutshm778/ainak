@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LensController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AizUploadController;
@@ -89,6 +90,8 @@ Route::prefix("admin")->group(function(){
         Route::get('products-status-index', [ProductController::class,'productStatusIndex'])->name('products.status.index');
         Route::get('products-status-update/{id}/{status}', [ProductController::class,'productStatusUpdate'])->name('products.status.update');
         Route::get('low-stock-products', [ProductController::class,'lowStockProduct'])->name('low.stock.products');
+
+        Route::resource('lens', LensController::class)->except('destroy');
 
         if (Schema::hasTable('feature_activations')) {
         //Product Purchase Invoice
