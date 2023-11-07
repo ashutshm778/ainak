@@ -129,6 +129,12 @@
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="{{route('admin.lens.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.lens.index' || Route::currentRouteName() == 'admin.lens.create' || Route::currentRouteName() == 'admin.lens.edit') active @endif">
+                                <i class="nav-icon fas fa-long-arrow-alt-right"></i>
+                                <p>Lens</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('admin.categories.index')}}" class="nav-link @if(Route::currentRouteName() == 'admin.categories.index' || Route::currentRouteName() == 'admin.categories.create' || Route::currentRouteName() == 'admin.categories.edit') active @endif">
                                 <i class="nav-icon fas fa-long-arrow-alt-right"></i>
                                 <p>Category</p>
