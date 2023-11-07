@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -89,6 +90,7 @@ Route::prefix("admin")->group(function(){
         Route::get('products-status-update/{id}/{status}', [ProductController::class,'productStatusUpdate'])->name('products.status.update');
         Route::get('low-stock-products', [ProductController::class,'lowStockProduct'])->name('low.stock.products');
 
+        if (Schema::hasTable('feature_activations')) {
         //Product Purchase Invoice
         if(featureActivation('purchase_vendor') == '1'){
             Route::resource('product-stocks', ProductStockController::class)->except('destroy');
@@ -108,6 +110,7 @@ Route::prefix("admin")->group(function(){
             Route::get('customers-index',[CustomerController::class,'index'])->name('customers.index');
         }
 
+    }
         //App Setting
         Route::get('slider-index', [AppSettingController::class,'sliderIndex'])->name('slider.index');
         Route::get('slider-create', [AppSettingController::class,'sliderCreate'])->name('slider.create');
@@ -157,10 +160,12 @@ Route::prefix("admin")->group(function(){
         //Dealer
         Route::get('dealer-index',[DealerController::class,'index'])->name('dealer.index');
 
+        if (Schema::hasTable('feature_activations')) {
         //Vendors
         if(featureActivation('purchase_vendor') == '1'){
             Route::resource('vendors', VendorController::class)->except('destroy');
             Route::get('vendors-destroy/{id}', [VendorController::class,'destroy'])->name('vendors.destroy');
+        }
         }
 
         //Role Management

@@ -3,6 +3,7 @@
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
@@ -68,15 +69,17 @@ Route::group(['middleware' => 'auth:customer'], function () {
 
 });
 
+Route::get('send-otp/{phone}', [FrontController::class, 'sendOtp'])->name('send.otp');
+Route::get('verify-otp/{phone}/{otp}', [FrontController::class, 'verifyOtp'])->name('verify.otp'); 
 
+if (Schema::hasTable('feature_activations')) {
 //Retailer Register
 if(featureActivation('retailer') == '1'){
     Route::view('user-register', 'frontend.auth.register')->name('user.register');
     Route::post('customer-register', [FrontController::class, 'attemptRegister'])->name('customer.register');
 }
 
-Route::get('send-otp/{phone}', [FrontController::class, 'sendOtp'])->name('send.otp');
-Route::get('verify-otp/{phone}/{otp}', [FrontController::class, 'verifyOtp'])->name('verify.otp');
+
 
 //Business Person Register
 if(featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1'){
@@ -91,7 +94,7 @@ if(featureActivation('retailer') == '1' || featureActivation('distributor') == '
     Route::view('user-login', 'frontend.auth.login')->name('user.login');
     Route::post('customer-login', [FrontController::class, 'attemptLogin'])->name('customer.login');
 }
-
+}
 //Forgot Password
 Route::view('forgot-password', 'frontend.auth.forgot-password')->name('customer.forgot_password');
 
