@@ -12,7 +12,7 @@
                         </ol>
                     </div>
                         <div class="col-sm-6">
-                            <a href="{{ route('admin.brands.create').'?key='.$search.'&page='.$list->currentPage() }}" class="btn btn-success float-right"> Add Brand <i class="fas fa-plus"></i></a>
+                            <a href="{{ route('admin.lens.create').'?key='.$search.'&page='.$list->currentPage() }}" class="btn btn-success float-right"> Add Lens <i class="fas fa-plus"></i></a>
                         </div>
                 </div>
             </div>
@@ -43,6 +43,7 @@
                                         <tr>
                                             <th class="text-center" style="width: 14%;">#</th>
                                             <th class="text-center">Name</th>
+                                            <th class="text-center">Power Type</th>
                                             <th class="text-center">Icon</th>
                                             <th class="text-center">Is Active</th>
                                             <th class="text-center">Action</th>
@@ -53,21 +54,22 @@
                                             <tr>
                                                 <td class="text-center">{{($key+1) + ($list->currentPage() - 1)*$list->perPage()}}</td>
                                                 <td class="text-center">{{$data->name}}</td>
+                                                <td class="text-center">{{$data->power_type}}</td>
                                                 <td class="text-center"><img src="{{asset('public/'.api_asset($data->icon))}}" style="height:100px;"></td>
                                                 <td class="text-center">
                                                     @if($data->is_active)
-                                                        <a href="{{route('admin.lens.show',$data->id).'?is_active=0&key='.$search.'&page='.$list->currentPage()}}" onclick="return confirm('Are you sure you want to deactive this brand?');"><span class="badge bg-success">Actived</span></a>
+                                                        <a href="{{route('admin.lens.show',$data->id).'?is_active=0&key='.$search.'&page='.$list->currentPage()}}" onclick="return confirm('Are you sure you want to deactive this Lens?');"><span class="badge bg-success">Actived</span></a>
                                                     @else
-                                                        <a href="{{route('admin.lens.show',$data->id).'?is_active=1&key='.$search.'&page='.$list->currentPage()}}" onclick="return confirm('Are you sure you want to active this brand?');"><span class="badge bg-danger">Deactived</span></a>
+                                                        <a href="{{route('admin.lens.show',$data->id).'?is_active=1&key='.$search.'&page='.$list->currentPage()}}" onclick="return confirm('Are you sure you want to active this Lens?');"><span class="badge bg-danger">Deactived</span></a>
                                                     @endif
                                                 </td>
                                                 <td class="text-center">
                                                     <a href="{{route('admin.lens.edit',$data->id).'?key='.$search.'&page='.$list->currentPage()}}" class="btn btn-outline-primary btn-sm mr-1 mb-1">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-                                                    <a href="{{route('admin.lens.destroy',$data->id).'?key='.$search.'&page='.$list->currentPage()}}" onclick="return confirm('Are you sure you want to delete this brand?');"  class="btn btn-outline-danger btn-sm mb-1" style="width:32px;">
+                                                    {{-- <a href="{{route('admin.lens.destroy',$data->id).'?key='.$search.'&page='.$list->currentPage()}}" onclick="return confirm('Are you sure you want to delete this brand?');"  class="btn btn-outline-danger btn-sm mb-1" style="width:32px;">
                                                         <i class="fas fa-trash"></i>
-                                                    </a>
+                                                    </a> --}}
                                                 </td>
                                             </tr>
                                         @empty
