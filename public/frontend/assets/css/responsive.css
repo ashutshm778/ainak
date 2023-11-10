@@ -1621,8 +1621,8 @@
   .single-pro-content .ec-single-qty .ec-single-cart .btn {
     min-width: auto;
     height: 45px;
-    line-height: 18px;
-    font-size: 12px;
+    line-height: 16px;
+    font-size: 10px;
     padding: 0 7px;
   }
 
@@ -1647,7 +1647,7 @@
     -webkit-box-pack: start;
     margin-left: 0px;
     -ms-flex-pack: end;
-    justify-content: start;
+    /* justify-content: start; */
 }
 
 .ec-category-menu .ec-category-toggle {
@@ -2570,7 +2570,7 @@
     width: auto;
   }
   .single-pro-content .ec-pro-variation .ec-pro-variation-inner .ec-pro-variation-content li {
-    width: 30px;
+    /* width: 30px; */
     height: 30px;
     font-size: 12px;
   }

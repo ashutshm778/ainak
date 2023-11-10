@@ -234,8 +234,9 @@
                         </div>
                     </div>
                     <form role="form">
-                        <div class="row setup-content" id="step-1">
-                            {{-- <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button> --}}
+                        <div class="row setup-content" id="step-1" disabled="disabled">
+                            {{-- <div class="row setup-content" id="step-1" disabled="disabled">
+                                 <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button> --}}
                         </div>
                         <div class="row setup-content" id="step-2">
                             <div class="col-md-6 col-sm-12 col-xs-12 m-auto">
@@ -348,9 +349,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row setup-content" id="step-3">
+                        <div class="row setup-content mt-5" id="step-3">
                                     
-                            </div>
+                        </div>
                         </div>
                     </form>
                 </div>

@@ -356,9 +356,8 @@
 }
 
 .TopSearchesBox ul li img{
-    width: 40px;
-    margin: 5px 5px 5px 0;
-    border-radius: 30px;
+  width: 40px;
+  margin: 5px 5px 5px 0;
 }
 
 .section-title .ec-title span
@@ -1215,7 +1214,7 @@ div#ec-main-menu-desk {
   margin-left: 0px;
 }
 .ec-main-menu ul li a {
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.2px;
     padding: 0px 12px;
     line-height: 50px;
@@ -1668,8 +1667,8 @@ body.ec-open:before {
 .ec-side-cart .ec-menu-title .ec-close {
   position: relative;
   border: 0;
-  font-size: 30px;
-  line-height: 1;
+  font-size: 22px;
+  line-height: 1.025;
   color: #142f41;
 }
 .ec-side-cart .ec-menu-inner .ec-menu-content ul li {
@@ -2355,9 +2354,9 @@ div#ec_news_signup {
 
 .accordion-body {
     padding: 20px;
-    border-left: 1px solid #ddd;
+    /* border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; */
 }
 
 .accordion-body p
@@ -2550,9 +2549,9 @@ div#ec_news_signup {
 }
 
 .ec-header-bottons .ec-header-btn {
-    padding: 0 10px;
-    min-height: 35px;
-    margin-top: 5px;
+  padding: 0 12px;
+  min-height: 35px;
+  margin-top: 5px;
 }
 
 .welcome-section

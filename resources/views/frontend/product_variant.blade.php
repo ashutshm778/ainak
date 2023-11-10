@@ -152,7 +152,7 @@
                                 </div>
                             </div>
                         @endif
-                        <div class="row" id="chosen_price_div">
+                        <div class="row mb-3" id="chosen_price_div">
                             <div class="col-md-2">
                                 <span>Total Price:</span>
                             </div>
@@ -203,10 +203,19 @@
                                 <i class="ecicon eci-shopping-cart"></i> &nbsp;Buy Frame Only
                             </button>
                         </div>
+                        @if (Auth::guard('customer')->check())
                         <div class="ec-single-cart ">
                             <button type="button" class="btn btn-primary" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
                               <i class="ecicon eci-shopping-cart"></i> Select Lens & buy now </button>
                           </div>
+                        @else
+                        <div class="ec-single-cart ">
+                            <button type="button" class="btn btn-primary" onclick="addtocart({{ $data->id }},'product_detail_form')">
+                                <i class="ecicon eci-shopping-cart"></i> Select Lens & buy now
+                            </button>
+                        </div>
+                        @endif
+
                         {{-- <div class="ec-single-wishlist">
                             <a class="ec-btn-group wishlist" title="Wishlist">
                                 <i class="ecicon eci-heart-o"></i>
