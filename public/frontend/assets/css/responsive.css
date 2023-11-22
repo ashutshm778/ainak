@@ -1421,8 +1421,8 @@
   }
 
   button.btn-close.qty_close {
-    right: 5px;
-    top: 5px;
+    right: 2px !important;
+    top: 2px !important;
     width: 10px;
     height: 10px;
   }
@@ -1621,7 +1621,7 @@
   .single-pro-content .ec-single-qty .ec-single-cart .btn {
     min-width: auto;
     height: 45px;
-    line-height: 16px;
+    line-height: 14px;
     font-size: 10px;
     padding: 0 7px;
   }

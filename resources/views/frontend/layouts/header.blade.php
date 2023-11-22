@@ -118,13 +118,13 @@
                                     </ul>
                                 </div>
                             @endif
-                            <a href="{{ route('wishlist') }}" class="ec-header-btn ec-header-wishlist">
+                            {{-- <a href="{{ route('wishlist') }}" class="ec-header-btn ec-header-wishlist">
                                 <div class="header-icon">
                                     <img src="{{ asset('public/frontend/assets/images/icons/wishlist.svg') }}"
                                         class="svg_img header_svg" alt="" />
                                 </div>
                                 <span class="ec-header-count ec-cart-wishlist">0</span>
-                            </a>
+                            </a> --}}
                             <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
                                 <div class="header-icon">
                                     <img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}"
@@ -138,6 +138,13 @@
                                     @endif
                                 </span>
                             </a>
+
+                            <a href="https://wa.me/+911234567890" class="ec-header-btn ec-header-wishlist">
+                                <div class="header-icon">
+                                    <img src="{{ asset('public/frontend/assets/images/icons/whatsapp.svg') }}"
+                                        class="svg_img header_svg" alt="" />
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -149,8 +156,14 @@
     <div class="ec-header-bottom d-lg-none">
         <div class="container position-relative">
             <div class="row ">
-                <div class="col-10">
-                    <div class="header-logo">
+                <div class="col-2">
+                    <a href="#"  data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
+                    data-bs-target="#appointment_modal" class="d-lg-none">
+                        <img src="{{ asset('public/frontend/assets/images/appointment.png')}}" alt="">
+                    </a>
+                </div>
+                <div class="col-8">
+                    <div class="header-logo text-center">
                         <a href="{{ route('index') }}">
                             <img src="{{ asset('public/' . api_asset(optional($logo)->image)) }}" alt="Site Logo" />
                             <img class="dark-logo" src="{{ asset('public/' . api_asset(optional($logo)->image)) }}"
@@ -190,7 +203,7 @@
     <div id="ec-main-menu-desk" class="sticky-nav">
         <div class="container position-relative">
             <div class="row">
-                <div class="col-sm-12 ec-main-menu-block align-self-center d-none d-lg-block">
+                <div class="col-sm-10 ec-main-menu-block align-self-center d-none d-lg-block">
                     <div class="ec-main-menu">
                         <ul class="nav-divided">
                             <li>
@@ -254,22 +267,12 @@
 
                 </div>
 
-                {{-- <div class="col-sm-3 ec-category-block">
+                 <div class="col-sm-2 ec-category-block">
                     <div class="ec-category-menu">
-                        <div class="ec-category-toggle"><span class="ec-category-title">Download Brochure</span><i class="ecicon eci-angle-down" aria-hidden="true"></i>
-                        </div>
-                        <div class="ec-category-content">
-                            <div id="ec-category-menu" class="ec-category-menu" style="display: none;">
-                                <ul class="ec-category-wrapper">
-                                    <li><a title="" class="ec-cat-menu-link" href="{{asset('public/frontend/assets/pdf/koina craft.pdf')}}" target="_blank" download>Koina Craft</a></li>
-                                    <li><a title="" class="ec-cat-menu-link" href="{{asset('public/frontend/assets/pdf/koina premium.pdf')}}" target="_blank" download>Koina Premium</a></li>
-                                    <li><a title="" class="ec-cat-menu-link" href="{{asset('public/frontend/assets/pdf/koina regular.pdf')}}" target="_blank" download>Koina Regular</a></li>
-                                    <li><a title="" class="ec-cat-menu-link" href="{{asset('public/frontend/assets/pdf/koina sofa.pdf')}}" target="_blank" download>Koina Sofa</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                        <div class="ec-category-toggle"  data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
+                        data-bs-target="#appointment_modal" style="cursor: pointer"><span class="ec-category-title">Appointment</span></div>
                     </div>
-                </div> --}}
+                </div> 
             </div>
         </div>
     </div>

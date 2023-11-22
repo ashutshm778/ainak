@@ -197,11 +197,11 @@
 </div>
 
 {{-- Whatsapp Start --}}
-<div class="whatsapp">
+{{-- <div class="whatsapp">
     <a href="https://wa.me/+911234567890" target="_blank">
         <img src="{{ asset('public/frontend/assets/images/whtsp.png') }}" alt="whatsapp">
     </a>
-</div>
+</div> --}}
 {{-- Whatsapp End --}}
 
 {{-- <div class="ec-right-bottom">
@@ -212,8 +212,8 @@
         </div>
     </div>
 </div> --}}
-<a href="#" class="buy-now-btn" data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-    data-bs-target="#appointment_modal"> <i class="fa fa-envelope-open"></i> Appointment</a>
+{{-- <a href="#" class="buy-now-btn" data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
+    data-bs-target="#appointment_modal"> <i class="fa fa-envelope-open"></i> Appointment</a> --}}
 <!-- Modal -->
 <div class="modal fade" id="appointment_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">

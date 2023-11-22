@@ -40,7 +40,7 @@
                                     <div class="ec-vendor-block-profile">
                                         <div class="ec-vendor-block-img space-bottom-30">
                                             <div class="ec-vendor-block-detail">
-                                                <img class="v-img" src="@if(Auth::guard('customer')->user()->photo) {{asset('public/public/frontend/user_profile/'.Auth::guard('customer')->user()->photo)}} @else {{asset('public/public/frontend/assets/images/149071.png')}} @endif" alt="vendor image">
+                                                <img class="v-img" src="@if(Auth::guard('customer')->user()->photo) {{asset('public/public/frontend/user_profile/'.Auth::guard('customer')->user()->photo)}} @else {{asset('public/public/frontend/assets/images/profile.jpg')}} @endif" alt="vendor image">
                                                 <h5 class="name">{{Auth::guard('customer')->user()->first_name}} {{Auth::guard('customer')->user()->last_name}}</h5>
                                                 {{-- <p>( Business Man )</p> --}}
                                             </div>

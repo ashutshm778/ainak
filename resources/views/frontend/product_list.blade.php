@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-md-6 ec-sort-select">
                             <span class="sort-by">Sort by</span>
-                            <form class="fillter">
+                            <form class="fillter mb-0">
                                 <div class="ec-select-inner">
                                     <select name="sort_by" id="ec-select" onchange="filler_product()">
                                         <option value="asc" selected>Name, A to Z</option>
