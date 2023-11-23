@@ -8,7 +8,7 @@
                 <div class="ec-product-inner">
                     <div class="ec-pro-image-outer">
                         <div class="ec-pro-image">
-                            <a href="#" class="image">
+                            <a href="{{ route('search',$data->slug) }}?type=product" class="image">
                                 @php
                                     $gallery_images=explode(',',$data->gallery_image);
                                 @endphp
@@ -38,7 +38,7 @@
                                     <span class="percentage">@if($new_price['discount_type'] == 'amount') ₹{{$new_price['discount']}} @else {{$new_price['discount']}}% @endif OFF</span>
                                 </span>
                             @endif
-                            <div class="ec-pro-actions">
+                            {{-- <div class="ec-pro-actions">
                                 @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                                  <button title="Add To Cart" class="add-to-cart">
                                     <img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img pro_svg" alt="" />
@@ -53,7 +53,7 @@
                                     <img src="{{ asset('public/frontend/assets/images/icons/wishlist.svg') }}" class="svg_img pro_svg" alt="" />
                                 </a>
                                 @endif
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="ec-pro-content">

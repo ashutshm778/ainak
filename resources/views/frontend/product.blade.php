@@ -24,7 +24,7 @@
                     </span>
                 @endif
 
-                    <div class="ec-pro-actions">
+                    {{-- <div class="ec-pro-actions">
                         @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                             <form id="new_arrival_form_{{$productData->id}}">
                                 <input type="hidden" name="product_id" value="{{$productData->id}}">
@@ -35,7 +35,7 @@
                         @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                           <a class="ec-btn-group" title="Wishlist" onclick="addToWishlist({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" /></a>
                         @endif
-                    </div>
+                    </div> --}}
 
 
             </div>

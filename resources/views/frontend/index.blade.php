@@ -336,7 +336,7 @@
                                                         <span class="percentage">@if($featured_category_product_price['discount_type'] == 'amount') ₹{{$featured_category_product_price['discount']}} @else {{$featured_category_product_price['discount']}}% @endif OFF</span>
                                                     </span>
                                                 @endif
-                                                <div class="ec-pro-actions">
+                                                {{-- <div class="ec-pro-actions">
                                                     <form id="featured_category_form_{{$featured_category_product->id}}">
                                                         <input type="hidden" name="product_id" value="{{$featured_category_product->id }}">
                                                         <button type="button" title="Add To Cart" class="bg-transparent" onclick="addtocart({{$featured_category_product->id}},'featured_category_form')">
@@ -347,7 +347,7 @@
                                                     <form action="#">
                                                         <a class="ec-btn-group wishlist" title="Wishlist"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" /></a>
                                                     </form>
-                                                </div>
+                                                </div> --}}
                                                 {{-- <div class="ec-pro-actions">
                                                     <button title="Add To Cart" class=" add-to-cart"><img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img pro_svg" alt="" /></button>
                                                     <a class="ec-btn-group quickview" onclick="open_product_model({{$new_arriavl->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a>
