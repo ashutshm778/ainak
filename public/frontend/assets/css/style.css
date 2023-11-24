@@ -20460,7 +20460,7 @@ select::-ms-expand {
   font-size: 14px;
   margin-bottom: 26px;
   padding: 0 15px;
-  width: 100%;
+  /* width: 100%; */
   outline: none;
 }
 .ec-register-wrapper .ec-register-container .ec-register-form input::-webkit-input-placeholder {

@@ -998,7 +998,7 @@
 }
 .ec-category-menu .ec-category-toggle .ec-category-title {
   font-size: 16px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: #ffffff;
   letter-spacing: 0.5px;
 }

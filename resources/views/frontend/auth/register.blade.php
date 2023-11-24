@@ -2,10 +2,19 @@
 @section('content')
 
 <style>
+    @media only screen and (max-width: 575px){
+    .ec-register-wrapper .ec-register-container .ec-register-form .btn {
+       height: 42px !important;
+    }
+    }
     .error
     {
         color:red !important;
-        margin-top: -22px;
+        margin-top: -12px;
+    }
+    .ec-register-wrapper .ec-register-container .ec-register-form .btn {
+        margin-top: 0;
+        height: 50px;
     }
     .form-control.is-valid, .was-validated .form-control:valid {
     border-color: #198754 !important;
@@ -65,17 +74,19 @@
                                         <span class="text-danger">{{ $errors->first('last_name') }}</span>
                                     @endif
                                 </span>
-
-                                <span class="ec-register-wrap ec-register-half">
-                                    <label>Phone Number<span style="color:red">*<span></label> <br>
-                                    <input type="number" class="form-control" id="phone" name="phone" value="{{old('phone')}}" placeholder="Enter Your Phone Number..." onchange="getOtp()" required>
+                                <div class="ec-register-wrap ec-register-half">
+                                <label>Phone Number<span style="color:red">*<span></label>
+                                <span class="input-group">
+                                    <input type="number" class="form-control mb-2" id="phone" name="phone" value="{{old('phone')}}" placeholder="Enter Your Phone No..." onchange="getOtp()" required>
+                                    <button class="btn btn-primary" type="button" id="button-addon2" style="text-transform: capitalize;">Send OTP</button>
                                     <span class="error invalid-feedback" id="phone_error" style="display:none">Phone Number Already Exists</span>
                                     @if ($errors->has('phone'))
                                         <span class="text-danger">{{ $errors->first('phone') }}</span>
                                     @endif
                                 </span>
-
-                                <span class="ec-register-wrap ec-register-half">
+                                </div>
+                                  
+                                <span class="ec-register-wrap ec-register-half" style="display: none;">
                                     <label>OTP<span style="color:red">*<span></label> <br>
                                     <input type="number" class="form-control" id="otp" name="otp" value="{{old('otp')}}" placeholder="Enter Your OTP..." required />
                                     <span class="error invalid-feedback" id="otp_error" style="display:none">Wrong OTP</span>

@@ -216,29 +216,14 @@
                                         ->get();
                                 @endphp
                                 @if (count($sub_cats))
-                                    <li class="dropdown position-static">
-                                        <a
-                                            href="{{ route('search', $header_category->slug) }}?type=category">{{ $header_category->name }}</a>
-                                        <ul class="mega-menu d-block">
-                                            <li class="d-flex">
-                                                @foreach (App\Models\Admin\SubCategory::where('is_active', 1)->whereJsonContains('category_id', '' . $header_category->id)->get() as $header_subcategory)
-                                                    <ul class="d-block">
-                                                        <li class="menu_title"><a
-                                                                href="{{ route('search', $header_subcategory->slug) }}?type=subcategory">{{ $header_subcategory->name }}</a>
-                                                        </li>
-                                                        @foreach (App\Models\Admin\SubSubCategory::where('is_active', 1)->whereJsonContains('subcategory_id', '' . $header_subcategory->id)->get() as $header_subsubcategory)
-                                                            <li><a
-                                                                    href="{{ route('search', $header_subsubcategory->slug) }}?type=subsubcategory">{{ $header_subsubcategory->name }}</a>
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
-                                                @endforeach
-                                                <ul class="d-block">
-                                                    <img src="{{ asset('public/' . api_asset($header_category->icon)) }}"
-                                                        alt="product">
-                                                </ul>
-                                            </li>
-
+                                    <li class="dropdown">
+                                        <a href="{{ route('search', $header_category->slug) }}?type=category">{{ $header_category->name }}</a>
+                                        <ul class="sub-menu">
+                                            @foreach (App\Models\Admin\SubCategory::where('is_active', 1)->whereJsonContains('category_id', '' . $header_category->id)->get() as $header_subcategory)
+                                                <li><a
+                                                        href="{{ route('search', $header_subcategory->slug) }}?type=subcategory">{{ $header_subcategory->name }}</a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                 @else
@@ -254,6 +239,7 @@
                                     </li>
                                 @endif
                             @endforeach
+                            <li><a href="#">Offer</a></li>
                             <li><a href="{{route('about')}}">About Us</a></li>
                             <li><a href="{{route('contact')}}">Contact Us</a></li>
                             <!--<li class="dropdown"><a href="javascript:void(0)">Info</a>-->
