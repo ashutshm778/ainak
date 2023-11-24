@@ -1313,6 +1313,7 @@ div#ec-main-menu-desk {
   padding: 0;
   margin: 0;
   display: block;
+  border-bottom: 1px solid #ddd;
 }
 .ec-main-menu ul li.dropdown ul li a {
   display: block;
