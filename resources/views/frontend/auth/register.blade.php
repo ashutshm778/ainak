@@ -78,7 +78,7 @@
                                         <span class="text-danger">{{ $errors->first('last_name') }}</span>
                                     @endif
                                 </span>
-                               
+
 
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Password<span style="color:red">*<span></label> <br>
@@ -108,7 +108,7 @@
                                             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                             onKeyPress="if(this.value.length==10) return false;" minlength="10"
                                             placeholder="Enter Your Phone No..." required>
-                                        <button class="btn btn-primary" type="button" id="button-addon2"
+                                        <button class="btn btn-primary" type="button" id="button_addon2"
                                             style="text-transform: capitalize;" onclick="getOtp()">Send OTP</button>
                                         <span class="error invalid-feedback" id="phone_error" style="display:none">Phone
                                             Number Already Exists</span>
@@ -121,13 +121,18 @@
                                 <span class="ec-register-wrap ec-register-half" id="otp_div" style="display: none;">
                                     <label>OTP<span style="color:red">*<span></label> <br>
                                     <input type="number" class="form-control" id="otp" name="otp"
-                                        value="{{ old('otp') }}" onchange="verifyOtp()" placeholder="Enter Your OTP..." required />
+                                        value="{{ old('otp') }}" onchange="verifyOtp()" placeholder="Enter Your OTP..."
+                                        required />
+                                        <p id="otp_countdown" style="text-align:center">Resend OTP in <span class="js-timeout">2:00</span></p>
+                                        <p id="re_send_otp_button"  style="display:none;text-align:center;"> <a href="javascript:void(0)"
+                                            onclick="getOtp()">Resend OTP</a>  </p>
                                     <span class="error invalid-feedback" id="otp_error" style="display:none">Wrong
                                         OTP</span>
                                     <span class="text-success" id="otp_success" style="display:none">Match OTP</span>
                                     @if ($errors->has('otp'))
                                         <span class="text-danger">{{ $errors->first('otp') }}</span>
                                     @endif
+
                                 </span>
 
 
@@ -148,25 +153,71 @@
     </section>
 @endsection
 
+
+<script>
+    var interval;
+
+    function countdown() {
+        clearInterval(interval);
+        interval = setInterval(function() {
+            var timer = $('.js-timeout').html();
+            timer = timer.split(':');
+            var minutes = timer[0];
+            var seconds = timer[1];
+            seconds -= 1;
+            if (minutes < 0) return;
+            else if (seconds < 0 && minutes != 0) {
+                minutes -= 1;
+                seconds = 59;
+            } else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+
+            $('.js-timeout').html(minutes + ':' + seconds);
+
+            if (minutes == 0 && seconds == 0) {
+                clearInterval(interval);
+                $('#re_send_otp_button').show();
+                $('#otp_countdown').hide();
+            }
+        }, 1000);
+    }
+
+    $('#js-startTimer').click(function() {
+        $('.js-timeout').text("2:00");
+        countdown();
+    });
+
+    $('#js-resetTimer').click(function() {
+        $('.js-timeout').text("2:00");
+        clearInterval(interval);
+    });
+</script>
+
 <script>
     function getOtp() {
 
         var phone = $('#phone').val();
         var otp = $('#otp').val('');
-     if(phone.length == 10){
-        $.get("{{ route('send.otp', '') }}" + "/" + phone, function(data) {
-            if (data != 1) {
-                $('#phone').addClass('is-invalid');
-                $('#phone').removeClass('is-valid');
-                $('#phone_error').css('display', 'block');
-            } else {
-                $('#phone').removeClass('is-invalid');
-                $('#phone').addClass('is-valid');
-                $('#phone_error').css('display', 'none');
-                $('#otp_div').show();
-            }
-        });
-     }
+
+        if (phone.length == 10) {
+            $.get("{{ route('send.otp', '') }}" + "/" + phone, function(data) {
+                if (data != 1) {
+                    $('#phone').addClass('is-invalid');
+                    $('#phone').removeClass('is-valid');
+                    $('#phone_error').css('display', 'block');
+                } else {
+                    $('#phone').removeClass('is-invalid');
+                    $('#phone').addClass('is-valid');
+                    $('#phone_error').css('display', 'none');
+                    $('#otp_div').show();
+                    $('#phone').attr('disabled', 'disabled');
+                    $('#button_addon2').attr('disabled', 'disabled');
+                    $('#otp_countdown').show();
+                    $('#re_send_otp_button').hide();
+                    $('.js-timeout').text("0:30");
+                    countdown();
+                }
+            });
+        }
     }
 
     function verifyOtp() {
