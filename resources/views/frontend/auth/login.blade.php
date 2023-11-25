@@ -51,7 +51,9 @@
                                 @csrf
                                 <span class="ec-register-wrap col-md-12">
                                     <label>Phone Number<span style="color:red">*<span></label> <br>
-                                    <input type="number" class="form-control" id="phone" name="phone" value="{{old('phone')}}" placeholder="Enter Your Phone Number..." required>
+                                    <input type="number" class="form-control" id="phone" name="phone" value="{{old('phone')}}" 
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                    onKeyPress="if(this.value.length==10) return false;" minlength="10" placeholder="Enter Your Phone Number..." required>
                                     @if ($errors->has('phone'))
                                         <span class="text-danger">{{ $errors->first('phone') }}</span>
                                     @endif

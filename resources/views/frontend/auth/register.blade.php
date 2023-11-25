@@ -213,7 +213,7 @@
                     $('#button_addon2').attr('disabled', 'disabled');
                     $('#otp_countdown').show();
                     $('#re_send_otp_button').hide();
-                    $('.js-timeout').text("0:30");
+                    $('.js-timeout').text("0:60");
                     countdown();
                 }
             });
