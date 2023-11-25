@@ -35,6 +35,8 @@ Route::view('contact-us', 'frontend.contact-us')->name('contact');
 Route::view('privacypolicy', 'frontend.privacy_policy')->name('privacy');
 Route::view('terms', 'frontend.term')->name('term');
 
+Route::view('faq', 'frontend.faq')->name('faq');
+
 
 Route::group(['middleware' => 'auth:customer'], function () {
 

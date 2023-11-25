@@ -49,6 +49,7 @@
                                     <li class="ec-footer-link"><a href="#">Login</a></li>
                                     <li class="ec-footer-link"><a href="#">Order History</a></li>
                                     <li class="ec-footer-link"><a href="#">My Wishlist</a></li>
+                                    <li class="ec-footer-link"><a href="{{route('faq')}}">FAQ</a></li>
                                 </ul>
                             </div>
                         </div>
