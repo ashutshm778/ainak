@@ -1214,9 +1214,9 @@ div#ec-main-menu-desk {
   margin-left: 0px;
 }
 .ec-main-menu ul li a {
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.2px;
-    padding: 0px 12px;
+    padding: 0px 9px;
     line-height: 50px;
     text-decoration: none;
     text-transform: uppercase;
@@ -1224,8 +1224,6 @@ div#ec-main-menu-desk {
     display: block;
     position: relative;
 }
-
-
 .ec-main-menu ul li .mega-menu {
   position: absolute;
   -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
