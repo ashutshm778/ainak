@@ -91,7 +91,7 @@
                                                         </td>
                                                         <td>₹ {{$order_detail->mrp_price}}<br>
                                                             @if(!empty($order_detail->lens_mrp))
-                                                              {{$order_detail->lens_mrp}}
+                                                            ₹   {{$order_detail->lens_mrp}}
                                                             @endif
                                                         </td>
                                                         <td>₹ {{$order_detail->discounted_price}}</td>
@@ -103,7 +103,7 @@
                                                         <td>{{$order_detail->quantity}}</td>
                                                         <td class="d-flex justify-content-end">₹ {{$order_detail->price * $order_detail->quantity}}<br>
                                                             @if(!empty($order_detail->lens_price))
-                                                            {{$order_detail->lens_price}}
+                                                            ₹  {{$order_detail->lens_price}}
                                                             @endif</td>
                                                         <td class="text-center">
                                                             @if($order->order_status != 'delivered' && $order->order_status != 'cancel' && $order->order_status != 'returned')
@@ -157,7 +157,7 @@
                                                     <tr>
                                                         <th>Total Amount:</th>
                                                         <td class="d-flex justify-content-end">₹
-                                                            {{$total_final_amount}}
+                                                            {{$total_final_amount+$total_lens}}
                                                         </td>
                                                     </tr>
                                                 </tbody>
