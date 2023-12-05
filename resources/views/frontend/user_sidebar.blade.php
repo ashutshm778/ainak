@@ -14,9 +14,9 @@
                         <li><a href="{{route('user_profile')}}">User Profile</a></li>
                         <li><a href="{{route('manage.address')}}">Manage Address</a></li>
                         <li><a href="{{route('user_history')}}">Order History</a></li>
-                        <li><a href="{{route('wishlist')}}">Wishlist</a></li>
+                        {{-- <li><a href="{{route('wishlist')}}">Wishlist</a></li> --}}
                         <li><a href="{{route('cart')}}">Cart</a></li>
-                        <li><a href="{{route('track_order')}}">Track Order</a></li>
+                        {{-- <li><a href="{{route('track_order')}}">Track Order</a></li> --}}
                     </ul>
                 </div>
             </div>
