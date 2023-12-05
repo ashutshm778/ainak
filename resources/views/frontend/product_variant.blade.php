@@ -152,6 +152,7 @@
                                 </div>
                             </div>
                         @endif
+                        @if (!empty($total_price))
                         <div class="row mb-3" id="chosen_price_div">
                             <div class="col-md-6">
                                 <span>Total Price:</span>
@@ -159,13 +160,14 @@
                             <div class="col-md-6">
                                 <div class="ec-single-price">
                                     <span class="new-price">
-                                        @if (!empty($total_price))
-                                            {{ '₹' . $total_price }}@endif
+                                       
+                                            {{ '₹' . $total_price }}
                                     </span>
 
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>
 
 
