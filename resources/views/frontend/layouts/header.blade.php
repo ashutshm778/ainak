@@ -156,12 +156,13 @@
     <div class="ec-header-bottom d-lg-none">
         <div class="container position-relative">
             <div class="row ">
-                <div class="col-2">
-                    <a href="#"  data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-                    data-bs-target="#appointment_modal" class="d-lg-none">
-                        <img src="{{ asset('public/frontend/assets/images/appointment.png')}}" alt="">
-                    </a>
-                </div>
+                <div class="col-2 header-top-res d-lg-none">
+                    <div class="ec-header-bottons">
+                        <a href="#ec-mobile-menu" class="ec-header-btn ec-side-toggle d-lg-none">
+                         <i class="ecicon eci-bars" style="color: #333;"></i>
+                        </a>
+                    </div>
+               </div>
                 <div class="col-8">
                     <div class="header-logo text-center">
                         <a href="{{ route('index') }}">
@@ -171,14 +172,12 @@
                         </a>
                     </div>
                 </div>
-                    <div class="col-2 header-top-res d-lg-none">
-                        <div class="ec-header-bottons">
-                            <a href="#ec-mobile-menu" class="ec-header-btn ec-side-toggle d-lg-none">
-                            <i class="ecicon eci-bars" style="color: #333;"></i>
-                       </a>
-                   </div>
-               </div>
-                
+                <div class="col-2">
+                    <a href="#"  data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
+                    data-bs-target="#appointment_modal" class="d-lg-none">
+                        <img src="{{ asset('public/frontend/assets/images/appointment.png')}}" alt="">
+                    </a>
+                </div>
                 <div class="col align-self-center ec-header-search">
                     <div class="header-search">
                         <form class="ec-search-group-form" action="{{ route('product-search') }}" method="GET"
@@ -240,7 +239,7 @@
                                 @endif
                             @endforeach
                             <li><a href="#">Offer</a></li>
-                            <li><a href="{{route('about')}}">About Us</a></li>
+                            {{-- <li><a href="{{route('about')}}">About Us</a></li> --}}
                             <li><a href="{{route('contact')}}">Contact Us</a></li>
                             <!--<li class="dropdown"><a href="javascript:void(0)">Info</a>-->
                             <!--    <ul class="sub-menu">-->  
@@ -298,7 +297,7 @@
                         </li>
                     @endforeach
 
-                    <li><a href="{{ route('about') }}">About Us</a></li>
+                    {{-- <li><a href="{{ route('about') }}">About Us</a></li> --}}
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
             </div>

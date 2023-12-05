@@ -153,10 +153,10 @@
                             </div>
                         @endif
                         <div class="row mb-3" id="chosen_price_div">
-                            <div class="col-md-2">
+                            <div class="col-md-6">
                                 <span>Total Price:</span>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-6">
                                 <div class="ec-single-price">
                                     <span class="new-price">
                                         @if (!empty($total_price))
@@ -182,7 +182,7 @@
                     @endphp
 
                     <div class="ec-single-qty">
-                        <button type="button" class="btn btn-danger btn-number"
+                        {{-- <button type="button" class="btn btn-danger btn-number"
                             onclick="update_qty('minus',{{ $data->id }},{{ $product_price['min_qty'] > 0 ? $product_price['min_qty'] : 'null' }},'form')">
                             <span class="ecicon eci-minus"></span>
                         </button>
@@ -195,7 +195,7 @@
                         <button type="button" class="btn btn-danger btn-number btn-number"
                             onclick="update_qty('plus',{{ $data->id }},{{ $product_price['max_qty'] > 0 ? $product_price['max_qty'] : 'null' }},'form')">
                             <span class="ecicon eci-plus"></span>
-                        </button>
+                        </button> --}}
                         <input type="hidden" name="product_id" value="{{ $data->id }}">
                         <input type="hidden" name="product_group_id" value="{{ $data->product_group_id }}">
                         <div class="ec-single-cart ">

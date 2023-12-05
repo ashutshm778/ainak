@@ -611,6 +611,12 @@
     </section>
     <!-- End Other Category -->
 
+    @if ($top_banner)
+        <section class="section banner">
+            <a href="#"><img src="{{ asset('public/' . api_asset($top_banner->image)) }}" class="w-100"></a>
+        </section>
+    @endif
+
     <section class="ec-page-content section-space-p bg-gray">
         <div class="container">
             <div class="row">

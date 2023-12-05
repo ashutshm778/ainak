@@ -12,7 +12,6 @@
         <div class="footer-top section-space-footer-p">
             <div class="container">
                 <div class="row">
-
                     <div class="col-sm-12 col-lg-3 ec-footer-news">
                         <div class="ec-footer-widget">
                             <h4 class="ec-footer-heading">Our Company </h4>
