@@ -41,7 +41,7 @@
                                                 <tr>
                                                     <th>Product</th>
                                                     <th>Price</th>
-                                                    <th style="text-align: center;">Quantity</th>
+                                                    {{-- <th style="text-align: center;">Quantity</th> --}}
                                                     <th>Total</th>
                                                     <th></th>
                                                 </tr>
@@ -61,12 +61,22 @@
                                                 @endphp
                                                     <tr>
                                                         <td data-label="Product" class="ec-cart-pro-name">
-                                                            <a href="product-left-sidebar.html"><img class="ec-cart-pro-img mr-4" src="{{asset('public/'.api_asset($cart->product->thumbnail_image))}}" alt="" />{{$cart->product->name}}</a>
+                                                            <a href="product-left-sidebar.html"><img class="ec-cart-pro-img mr-4" src="{{asset('public/'.api_asset($cart->product->thumbnail_image))}}" alt="" />
+                                                                {{$cart->product->name}}
+                                                                @if(!empty($cart->lens_id))
+                                                                <br>
+                                                                Lens : {{$cart->lens->name}} 
+                                                                @endif
+                                                            </a>
+                                                           
                                                         </td>
                                                         <td data-label="Price" class="ec-cart-pro-price">
-                                                            <span class="amount">₹{{$cart->product->retailer_selling_price}}</span>
+                                                            <span class="amount">₹{{$cart->product->retailer_selling_price}}</span><br>
+                                                            @if(!empty($cart->lens_id))
+                                                            <span class="new-price">₹{{ $cart->lens->price }}</span>
+                                                            @endif
                                                         </td>
-                                                        <td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
+                                                        {{-- <td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
                                                             <div class="row">
                                                                 <button type="button" class="btn btn-danger btn-number" onclick="update_qty('minus',{{$cart->product_id}},{{ $product_prices['min_qty'] > 0 ? $product_prices['min_qty'] :'null' }},'ajax')" style="width: auto;">
                                                                     <span class="ecicon eci-minus"></span>
@@ -76,8 +86,17 @@
                                                                     <span class="ecicon eci-plus"></span>
                                                                 </button>
                                                              </div>
+                                                        </td> --}}
+                                                        <td data-label="Total" class="ec-cart-pro-subtotal">
+                                                            @php 
+                                                              $total_price=0;
+                                                              $total_price= $total_price+$cart->product->retailer_selling_price * $cart->quantity;
+                                                              if(!empty($cart->lens_id)){
+                                                                $total_price= $total_price+$cart->lens->price;
+                                                              }
+                                                            @endphp
+                                                            ₹{{$total_price}}
                                                         </td>
-                                                        <td data-label="Total" class="ec-cart-pro-subtotal">₹{{$cart->product->retailer_selling_price * $cart->quantity}}</td>
                                                         <td data-label="Remove" class="ec-cart-pro-remove">
                                                             <a href="{{route('delete.to.cart',$cart->id)}}"><i class="ecicon eci-trash-o"></i></a>
                                                         </td>

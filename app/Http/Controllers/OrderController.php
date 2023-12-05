@@ -30,6 +30,7 @@ class OrderController extends Controller
         $mrp_prices = 0;
         $selling_prices = 0;
         $discounted_prices = 0;
+        $total_lens=0;
 
         $order = new Order;
 
@@ -78,7 +79,12 @@ class OrderController extends Controller
                     $order_details->discounted_price = $discount_amount;
                     $order_details->tax = $product->tax_amount;
                     $order_details->shipping_cost = 0.00;
-
+                    if(!empty($cart->lens_id)){
+                        $order_details->lens_name = $cart->lens->name;
+                        $order_details->lens_mrp = $cart->lens->price;
+                        $order_details->lens_price = $cart->lens->price;
+                        $total_lens= $total_lens + $cart->lens->price;
+                    }
                     $order_details->save();
 
                     $order_status = new CustomerOrderStatus;
@@ -92,7 +98,7 @@ class OrderController extends Controller
             }
 
             Order::where('id',$order->id)->update([
-                'grand_total'=>$discounted_prices,
+                'grand_total'=>$discounted_prices+$total_lens,
                 'total_product_discount'=>$selling_prices - $discounted_prices
             ]);
         }

@@ -21,6 +21,9 @@ class CreateOrderDetailsTable extends Migration
             $table->integer('quantity');
             $table->double('mrp_price',8,2);
             $table->double('price',8,2);
+            $table->double('lens_name')->nullable();
+            $table->double('lens_mrp')->nullable();
+            $table->double('lens_price')->nullable();
             $table->double('discounted_price',8,2)->default(0.00);
             $table->double('tax',8,2)->deafult(0.00);
             $table->double('shipping_cost',8,2)->default(0.00);

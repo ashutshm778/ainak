@@ -38,7 +38,12 @@
         </div>
     </div>
 </div>
+@php 
 
+    $sub_total=0;
+    $total_lens=0;
+
+@endphp
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row justify-content-center">
@@ -126,13 +131,31 @@
                                                     <td>{{$key+1}}</td>
                                                     <td>
                                                         <a href="{{ route('search',$order_detail->product->slug) }}?type=product" target="_blank" class="text-reset">
-                                                            {{$order_detail->product->name}}
+                                                            {{$order_detail->product->name}}<br>
+                                                            @if(!empty($order_detail->lens_name))
+                                                            Lens : {{$order_detail->lens_name}}
+                                                            @endif
                                                         </a>
                                                     </td>
                                                     <td>{{$order_detail->quantity}}</td>
-                                                    <td>{{$order_detail->mrp_price}}</td>
-                                                    <td>₹ {{$order_detail->price}}</td>
+                                                    <td>{{$order_detail->mrp_price}}<br>
+                                                        @if(!empty($order_detail->lens_mrp))
+                                                        {{$order_detail->lens_mrp}}
+                                                        @endif
+                                                    </td>
+                                                    <td>₹ {{$order_detail->price}}<br>
+                                                        @if(!empty($order_detail->lens_price))
+                                                        ₹ {{$order_detail->lens_price}}
+                                                        @endif
+                                                    </td>
                                                 </tr>
+                                                @php
+                                                
+                                                  $sub_total=$sub_total+$order_detail->price;
+                                                    if(!empty($order_detail->lens_price)){
+                                                        $total_lens=$total_lens+$order_detail->lens_price;
+                                                    }
+                                                @endphp
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -145,7 +168,13 @@
                                             <tr>
                                                 <th>Subtotal</th>
                                                 <td class="text-right">
-                                                    <span class="fw-600">₹ {{$order->grand_total + $order->total_product_discount}}</span>
+                                                    <span class="fw-600">₹ {{$sub_total}}</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Total Lens</th>
+                                                <td class="text-right">
+                                                    <span class="fw-600">₹ {{$total_lens}}</span>
                                                 </td>
                                             </tr>
                                             <tr>
