@@ -2900,8 +2900,8 @@ textarea.form-control.is-valid {
 }
 .form-control.is-invalid:focus {
   border-color: #050505;
-  -webkit-box-shadow: 0 0 0 4px rgba(5, 5, 5, 0.25);
-          box-shadow: 0 0 0 4px rgba(5, 5, 5, 0.25);
+  /* -webkit-box-shadow: 0 0 0 4px rgba(5, 5, 5, 0.25);
+          box-shadow: 0 0 0 4px rgba(5, 5, 5, 0.25); */
 }
 .ec-bill-select.is-invalid {
     border: 1px solid red !important;
