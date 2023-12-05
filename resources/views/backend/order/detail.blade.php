@@ -72,6 +72,7 @@
                                                 @php
                                                     $discount_amount = 0;
                                                     $total_final_amount = 0;
+                                                    $total_lens=0;
                                                 @endphp
                                                 @foreach ($order->order_details as $key=>$order_detail)
                                                     <tr>
@@ -83,12 +84,27 @@
                                                             @endif
                                                         </td>
                                                         <td>{{$key+1}}</td>
-                                                        <td>{{$order_detail->product->name}}</td>
-                                                        <td>₹ {{$order_detail->mrp_price}}</td>
+                                                        <td>{{$order_detail->product->name}}<br>
+                                                            @if(!empty($order_detail->lens_name))
+                                                              {{$order_detail->lens_name}}
+                                                            @endif
+                                                        </td>
+                                                        <td>₹ {{$order_detail->mrp_price}}<br>
+                                                            @if(!empty($order_detail->lens_mrp))
+                                                            ₹   {{$order_detail->lens_mrp}}
+                                                            @endif
+                                                        </td>
                                                         <td>₹ {{$order_detail->discounted_price}}</td>
-                                                        <td>{{$order_detail->price}}</td>
+                                                        <td>{{$order_detail->price}}<br>
+                                                            @if(!empty($order_detail->lens_price))
+                                                            {{$order_detail->lens_price}}
+                                                            @endif
+                                                        </td>
                                                         <td>{{$order_detail->quantity}}</td>
-                                                        <td class="d-flex justify-content-end">₹ {{$order_detail->price * $order_detail->quantity}}</td>
+                                                        <td class="d-flex justify-content-end">₹ {{$order_detail->price * $order_detail->quantity}}<br>
+                                                            @if(!empty($order_detail->lens_price))
+                                                            ₹  {{$order_detail->lens_price}}
+                                                            @endif</td>
                                                         <td class="text-center">
                                                             @if($order->order_status != 'delivered' && $order->order_status != 'cancel' && $order->order_status != 'returned')
                                                                 @if($order_detail->order_status != 'delivered' && $order_detail->order_status != 'cancel' && $order_detail->order_status != 'returned')
@@ -111,6 +127,7 @@
                                                             if($order_detail->order_status != 'cancel' && $order_detail->order_status != 'returned'){
                                                                 $discount_amount = ($discount_amount + $order_detail->discounted_price) * $order_detail->quantity;
                                                                 $total_final_amount = $total_final_amount + ($order_detail->price * $order_detail->quantity);
+                                                                $total_lens = $total_lens + $order_detail->lens_price;
                                                             }
                                                         @endphp
                                                     </tr>
@@ -132,9 +149,15 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <th>Total Lens:</th>
+                                                        <td class="d-flex justify-content-end">₹
+                                                            {{$total_lens}}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <th>Total Amount:</th>
                                                         <td class="d-flex justify-content-end">₹
-                                                            {{$total_final_amount}}
+                                                            {{$total_final_amount+$total_lens}}
                                                         </td>
                                                     </tr>
                                                 </tbody>
