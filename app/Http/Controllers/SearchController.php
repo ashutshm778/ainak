@@ -16,7 +16,7 @@ class SearchController extends Controller
         $list=Product::where(function ($query) use ($search){
             $query->where('name','like','%'.$search.'%')
                   ->orWhere('variant_name','like','%'.$search.'%');
-        });;
+        });
        
             if($request->category_filler)
             {
