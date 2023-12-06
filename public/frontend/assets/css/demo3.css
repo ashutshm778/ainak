@@ -18672,27 +18672,27 @@ button.btn-close.qty_close {
 .ec-product-inner .ec-pro-image .ec-pro-actions {
   position: absolute;
   z-index: 9;
-  top: 85%;
-  right: 0;
+  top: -25%;
+  right: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   visibility: hidden;
   -webkit-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
   -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  left: 0;
+  transform: translateY(50px);
+  /* left: 0; */
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   opacity: 0;
   margin: 0 auto;
 }
@@ -18706,8 +18706,8 @@ button.btn-close.qty_close {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   text-decoration: none;
@@ -18728,8 +18728,8 @@ button.btn-close.qty_close {
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions {
   visibility: visible;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  /* -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); */
   opacity: 1;
 }
 .ec-product-inner .ec-pro-image .image img {
@@ -20221,10 +20221,8 @@ section.ec-instagram-section {
   }
 
   .ec-product-inner .ec-pro-image .ec-pro-actions {
-    visibility: visible !important;
-    bottom: 55px;
-    top: auto;
-    opacity: 1 !important;
+    top: -45% !important;
+    right: 5px !important;
   }
 
   .ec_cat_content .ec-section-btn a {
@@ -20888,8 +20886,8 @@ section.ec-instagram-section {
 }
 
 .ec-product-inner .ec-pro-image .ec-pro-actions > * {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
 }
 
 .svg_img.pro_svg {

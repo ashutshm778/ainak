@@ -33,7 +33,7 @@
                         @endif
                         <a href="#" class="ec-btn-group quickview" onclick="open_product_model({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a> --}}
                         @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
-                          <a class="ec-btn-group" title="Wishlist" onclick="addToWishlist({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" /></a>
+                          <a  style="margin-top: 6px;" class="ec-btn-group" title="Wishlist" onclick="addToWishlist({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" /></a>
                         @endif
                     </div>
 
