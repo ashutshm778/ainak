@@ -17,13 +17,7 @@ class SearchController extends Controller
             $query->where('name','like','%'.$search.'%')
                   ->orWhere('variant_name','like','%'.$search.'%');
         });;
-        if($request->ajax())
-        {
-            $list=$list->take(7)->get();
-            return vieW('frontend.layouts.search',compact('list'));
-        }
-        else
-        {
+       
             if($request->category_filler)
             {
                 $list=$list->whereJsonContains('category_id',''.$request->category_filler);
@@ -36,9 +30,9 @@ class SearchController extends Controller
             {
                 $list=$list->whereJsonContains('subsubcategory_id',''.$request->subsubcategory_filler);
             }
-            $list=$list->paginate(12);
+            $list=$list->paginate(16);
             return vieW('frontend.product_list',compact('list'));;
-        }
+       
     }
 
     public function productFillter(Request $request)

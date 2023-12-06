@@ -50,7 +50,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="shop-pro-content" id="product_list_data">
+                    <div class="shop-pro-content scrolling-pagination" id="product_list_data">
                         @include('frontend.product_list_data')
                         <div class="kinetic" style="left: 40%;bottom: 80%; display: none"></div>
                     </div>
@@ -365,36 +365,5 @@
     </div>
 
 @endsection
-<script src="{{ asset('public/dashboard_css/plugins/jquery/jquery.min.js') }}"></script>
-<script>
 
-    $(document).on('click', '.product_index a', function(event)
-    {
-        event.preventDefault();
-        var page = $(this).attr('href').split('page=')[1];
-        filler_product(page);
-    });
 
-    function filler_product(page)
-    {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            }
-        });
-        $.ajax({
-            type: 'POST',
-            url: "{{route('product.fillter')}}?&page=" + page,
-            data: $('.fillter').serialize(),
-            beforeSend: function(msg){
-                $('.kinetic').show()
-            },
-            success: function(data) {
-                $('.kinetic').hide()
-                $('#product_list_data').html(data)
-                $('html, body').animate({ scrollTop: 0 }, 'fast');
-            }
-        });
-    }
-
-</script>
