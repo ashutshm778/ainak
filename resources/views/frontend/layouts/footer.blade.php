@@ -137,9 +137,15 @@
 <div class="ec-nav-toolbar">
     <div class="container">
         <div class="ec-nav-panel">
-            <div class="ec-nav-panel-icons">
+            {{-- <div class="ec-nav-panel-icons">
                 <a href="#ec-mobile-menu" class="navbar-toggler-btn ec-header-btn ec-side-toggle">
                     <img src="{{ asset('public/frontend/assets/images/icons/menu.svg') }}" class="svg_img header_svg"
+                        alt="" />
+                </a>
+            </div> --}}
+            <div class="ec-nav-panel-icons">
+                <a href="https://wa.me/+911234567890" class="ec-header-btn" target="_blank">
+                    <img src="{{ asset('public/frontend/assets/images/icons/whatsapp.svg') }}" class="svg_img header_svg"
                         alt="" />
                 </a>
             </div>

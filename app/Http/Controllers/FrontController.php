@@ -242,7 +242,7 @@ class FrontController extends Controller
                 return view('frontend.all-categories', compact('categories'));
             }
 
-            $list = $list->orderBy('name', 'asc')->paginate(12);
+            $list = $list->orderBy('name', 'asc')->paginate(20);
             return vieW('frontend.product_list', compact('list', 'slug'));
         } catch (Exception $exception) {
             abort(404);

@@ -118,13 +118,13 @@
                                     </ul>
                                 </div>
                             @endif
-                            {{-- <a href="{{ route('wishlist') }}" class="ec-header-btn ec-header-wishlist">
+                            <a href="{{ route('wishlist') }}" class="ec-header-btn ec-header-wishlist">
                                 <div class="header-icon">
                                     <img src="{{ asset('public/frontend/assets/images/icons/wishlist.svg') }}"
                                         class="svg_img header_svg" alt="" />
                                 </div>
                                 <span class="ec-header-count ec-cart-wishlist">0</span>
-                            </a> --}}
+                            </a> 
                             <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
                                 <div class="header-icon">
                                     <img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}"

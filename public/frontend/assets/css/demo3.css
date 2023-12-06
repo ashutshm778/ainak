@@ -18726,23 +18726,23 @@ button.btn-close.qty_close {
   position: relative;
   overflow: hidden;
 }
-.ec-product-inner:hover .ec-pro-image .ec-pro-actions {
+.ec-product-inner .ec-pro-image .ec-pro-actions {
   visibility: visible;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   opacity: 1;
 }
-.ec-product-inner:hover .ec-pro-image .image img {
+.ec-product-inner .ec-pro-image .image img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-.ec-product-inner:hover .ec-pro-image .image img:not(:last-child) {
+.ec-product-inner .ec-pro-image .image img:not(:last-child) {
   opacity: 0;
 }
-.ec-product-inner:hover .ec-pro-image .image img.hover-image {
+.ec-product-inner .ec-pro-image .image img.hover-image {
   opacity: 1;
 }
-.ec-product-inner:hover .ec-pro-content .ec-pro-title a {
+.ec-product-inner .ec-pro-content .ec-pro-title a {
   color: #142f41;
 }
 .ec-product-inner .ec-pro-content {

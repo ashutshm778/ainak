@@ -24,18 +24,18 @@
                     </span>
                 @endif
 
-                    {{-- <div class="ec-pro-actions">
-                        @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
+                    <div class="ec-pro-actions">
+                        {{-- @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                             <form id="new_arrival_form_{{$productData->id}}">
                                 <input type="hidden" name="product_id" value="{{$productData->id}}">
                                 <button type="button" title="Add To Cart" class="bg-transparent" onclick="addtocart({{$productData->id}},'new_arrival_form')"><img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img pro_svg" alt="" /></button>
                             </form>
                         @endif
-                        <a href="#" class="ec-btn-group quickview" onclick="open_product_model({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a>
+                        <a href="#" class="ec-btn-group quickview" onclick="open_product_model({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a> --}}
                         @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                           <a class="ec-btn-group" title="Wishlist" onclick="addToWishlist({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" /></a>
                         @endif
-                    </div> --}}
+                    </div>
 
 
             </div>
