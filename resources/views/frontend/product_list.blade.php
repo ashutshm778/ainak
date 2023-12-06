@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 ec-sort-select">
+                        <div class="col-md-5 ec-sort-select">
                             <span class="sort-by">Sort by</span>
                             <form class="fillter mb-0">
                                 <div class="ec-select-inner">
@@ -48,6 +48,11 @@
                                     @endif
                                 </div>
                             </form>
+                        </div>
+                        <div class="col-md-1 ec-sort-select">
+                            <span class="ec-contact-wrap ec-contact-btn">
+                                <button class="btn btn-primary" type="submit" style="height: 34px; line-height: 1;">Reset</button>
+                            </span>
                         </div>
                     </div>
                     <div class="shop-pro-content scrolling-pagination" id="product_list_data">
@@ -217,7 +222,9 @@
             <span class="menu_title">Filters</span>
             <button class="ec-close">×</button>
         </div>
-
+        <span class="ec-contact-wrap ec-contact-btn">
+            <button class="btn btn-primary" type="submit" style="height: 34px; line-height: 1;">Reset</button>
+        </span>
         <div id="shop_sidebar">
             <form class="fillter">
                 <div class="ec-sidebar-wrap" style="border:none">

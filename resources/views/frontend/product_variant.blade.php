@@ -218,11 +218,11 @@
                         </div>
                         @endif
 
-                        {{-- <div class="ec-single-wishlist">
+                        <div class="ec-single-wishlist">
                             <a class="ec-btn-group wishlist" title="Wishlist">
                                 <i class="ecicon eci-heart-o"></i>
                             </a>
-                        </div> --}}
+                        </div> 
                     </div>
 
                 </form>
