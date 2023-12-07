@@ -18717,7 +18717,7 @@ button.btn-close.qty_close {
   margin: 0 2.5px;
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions > *:hover:not(.active) {
-    background-color: var(--main-color);
+    background-color: #ff514c;
 }
 .ec-product-inner .ec-pro-image-outer {
   -webkit-transition: all 0.3s ease 0s;
