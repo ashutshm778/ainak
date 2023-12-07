@@ -18440,25 +18440,26 @@ button.btn-close.qty_close {
   z-index: 9;
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions .ec-btn-group {
-    position: absolute;
-    bottom: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-    color: rgba(68, 68, 68, 0.7);
-    background-color: #ffffff;
-    cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(0 0 0 / 70%);
+  cursor: pointer;
+  border-radius: 30px;
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions .ec-btn-group i {
   font-size: 14px;
@@ -18466,8 +18467,7 @@ button.btn-close.qty_close {
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions .ec-btn-group:hover:not(.active),
 .ec-product-inner .ec-pro-image .ec-pro-actions .ec-btn-group .active:not(.active) {
-  color: rgba(68, 68, 68, 0.7);
-  background-color: #ffffff;
+  background-color: #fc2413;
   -webkit-box-shadow: 0px 0px 5px 0px #ccc;
           box-shadow: 0px 0px 5px 0px #ccc;
 }
@@ -18486,9 +18486,8 @@ button.btn-close.qty_close {
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions .wishlist {
   position: absolute;
-  right: 15px;
-  bottom: 36px;
-  border: 1px solid #eeeeee;
+  right: 5px;
+  bottom: 75px;
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions .wishlist:hover {
   background-color: #ffffff;
@@ -18552,29 +18551,29 @@ button.btn-close.qty_close {
   z-index: 8;
   position: relative;
 }
-.ec-product-inner:hover a.quickview {
+.ec-product-inner a.quickview {
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
 }
-.ec-product-inner:hover .ec-pro-image .ec-pro-actions {
+.ec-product-inner .ec-pro-image .ec-pro-actions {
   visibility: visible;
   -webkit-transform: translateY(-25px);
           transform: translateY(-25px);
   opacity: 1;
 }
-.ec-product-inner:hover .ec-pro-image a.quickview {
+.ec-product-inner .ec-pro-image a.quickview {
   visibility: visible;
   opacity: 1;
   top: 44%;
 }
-.ec-product-inner:hover .ec-pro-image .image img {
+.ec-product-inner .ec-pro-image .image img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
-.ec-product-inner:hover .ec-pro-image .image img:not(:last-child) {
+.ec-product-inner .ec-pro-image .image img:not(:last-child) {
   opacity: 0;
 }
-.ec-product-inner:hover .ec-pro-image .image img.hover-image {
+.ec-product-inner .ec-pro-image .image img.hover-image {
   opacity: 1;
 }
 .ec-product-inner .ec-pro-content {
@@ -18683,7 +18682,7 @@ button.btn-close.qty_close {
 
 .svg_img.pro_svg {
   height: 22px;
-  fill: #686868;
+  fill: #fff;
   width: auto;
 }
 
@@ -18962,8 +18961,8 @@ i.ecicon.eci-star.fill {
   }
   .ec-product-inner .ec-pro-image .ec-pro-actions .wishlist {
     position: absolute;
-    right: 15px;
-    bottom: 12px;
+    right: 10px;
+    bottom: 50px;
 }
   .ec-product-inner .ec-pro-image .ec-pro-actions .compare {
     position: absolute;
