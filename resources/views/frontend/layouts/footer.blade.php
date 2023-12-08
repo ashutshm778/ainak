@@ -17,11 +17,11 @@
                             <h4 class="ec-footer-heading">Our Company </h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="#">About Us</a></li>
-                                    <li class="ec-footer-link"><a href="#">Career</a></li>
-                                    <li class="ec-footer-link"><a href="#">Blog</a></li>
-                                    <li class="ec-footer-link"><a href="#">Customer Stories</a></li>
-                                    <li class="ec-footer-link"><a href="#">Our Stores</a></li>
+                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> About Us</a></li>
+                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Career</a></li>
+                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Blog</a></li>
+                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Customer Stories</a></li>
+                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Our Stores</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -45,10 +45,10 @@
                             <h4 class="ec-footer-heading">My Account</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="#">Login</a></li>
-                                    <li class="ec-footer-link"><a href="#">Order History</a></li>
-                                    <li class="ec-footer-link"><a href="#">My Wishlist</a></li>
-                                    <li class="ec-footer-link"><a href="{{route('faq')}}">FAQ</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Login</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Order History</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> My Wishlist</a></li>
+                                    <li class="ec-footer-link"><a href="{{route('faq')}}"> <i class="ecicon eci-chevron-right"></i> FAQ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -58,10 +58,10 @@
                             <h4 class="ec-footer-heading">Our Policies</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="#">Discount Returns</a></li>
-                                    <li class="ec-footer-link"><a href="#">Policy & policy </a></li>
-                                    <li class="ec-footer-link"><a href="#">Customer Service</a></li>
-                                    <li class="ec-footer-link"><a href="#">Term & condition</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Discount Returns</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Policy & policy </a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Customer Service</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Term & condition</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -98,7 +98,50 @@
             </div>
         </div>
         <div class="clear"></div>
-
+        <div class="footer-last">
+            <div class="container">
+                <div class="section-title text-left">
+                    <h1>Lorem ipsum is a placeholder text commonly used to demonstrate. </h1>
+                </div>
+                <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+                <h5>Lorem ipsum is a placeholder text commonly</h5>
+                <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+                <ul class="desk">
+                    <li><strong>Lorem ipsum is a placeholder text commonly :</strong> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.
+                <div class="section-title text-left">
+                    <h2>Popular Search Keyword in Lucknow</h2>
+                </div>
+                <ul>
+                    <li><a href="#">Sunglasses in Varanasi</a></li>
+                    <li><a href="#">Sunglasses in Varanasi</a></li>
+                    <li><a href="#">Sunglasses in Varanasi</a></li>
+                </ul>
+                <div class="section-title text-left">
+                    <h2>Popular Search Keyword in Varanasi</h2>
+                </div>
+                <ul>
+                    <li><a href="#">Sunglasses in Varanasi</a></li>
+                    <li><a href="#">Sunglasses in Varanasi</a></li>
+                    <li><a href="#">Sunglasses in Varanasi</a></li>
+                  
+                </ul>
+                <div class="section-title text-left">
+                    <h2>Popular Search Keyword in Delhi</h2>
+                </div>
+                <ul>
+                    <li><a href="#">Sunglasses in Delhi</a></li>
+                    <li><a href="#">Sunglasses in Delhi</a></li>
+                </ul>
+                <div class="section-title text-left">
+                    <h2>Popular Search Keyword in Noida</h2>
+                </div>
+                <ul>
+                    <li><a href="#">Sunglasses in Varanasi</a></li>
+                    <li><a href="#">Sunglasses in Varanasi</a></li>
+                    <li><a href="#">Sunglasses in Varanasi</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="footer-bottom">
             <div class="container">
                 <div class="row align-items-center">
@@ -107,7 +150,7 @@
                             <div class="ec-copy mb-2">Copyright &copy;
                                 <script>
                                     document.write(new Date().getFullYear())
-                                </script> All Rights Reserved. Developed By <a href="#"
+                                </script> All Rights Reserved. Developed By <a href="https://www.techuptechnologies.com/"
                                     class="site-name"> Techup Technologies. </a>
                             </div>
                         </div>

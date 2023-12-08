@@ -48,7 +48,7 @@
                 <div class="ec-single-price">
                     @if ($product_price['selling_price'] != $product_price['product_price'])
                         <span class="new-price"><del class="discount">{{ $product_price['selling_price'] }}</del>
-                            {{ $product_price['product_price'] }}</span>
+                            {{ $product_price['product_price'] }}/<small class="discount">50%</small></span>
                     @else
                         <span class="new-price"> {{ $product_price['product_price'] }}</span>
                     @endif
@@ -160,8 +160,7 @@
                             <div class="col-md-6">
                                 <div class="ec-single-price">
                                     <span class="new-price">
-                                       
-                                            {{ '₹' . $total_price }}
+                                       {{ '₹' . $total_price }}
                                     </span>
 
                                 </div>
@@ -169,9 +168,6 @@
                         </div>
                         @endif
                     </div>
-
-
-
                     @php
                         if (Auth::guard('customer')->check()) {
                             $pro_cart = App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)

@@ -18441,7 +18441,8 @@ button.btn-close.qty_close {
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions .ec-btn-group {
   position: absolute;
-  bottom: 0;
+  top: -110px;
+  right: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18485,9 +18486,9 @@ button.btn-close.qty_close {
           box-shadow: 0px 0px 5px 0px #ccc;
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions .wishlist {
-  position: absolute;
+  /* position: absolute;
   right: 5px;
-  bottom: 75px;
+  bottom: 65px; */
 }
 .ec-product-inner .ec-pro-image .ec-pro-actions .wishlist:hover {
   background-color: #ffffff;

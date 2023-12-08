@@ -2,58 +2,51 @@
     $phone = App\Models\Admin\WebsiteSetting::where('type', 'phone')->first();
 @endphp
 <header class="ec-header">
-    <!--<div class="header-top">-->
-    <!--    <div class="container">-->
-    <!--        <div class="row align-items-center">-->
-    <!--            <div class="col-md-6 header-top-left">-->
-    <!--                <div class="header-top-social nav-style-separated">-->
-    <!--                    <ul class="mb-0 ">-->
-    <!--                        <li class="list-inline-item">-->
-    <!--                            <div class="header-top-call ">-->
-    <!--                                <a href="#">Indian Dresses Online Shopping - Sarees, Salwar Kameez, Lehenga Cholis, Kurtis</a>-->
-    <!--                            </div>-->
-    <!--                        </li>-->
-    <!--                    </ul>-->
-    <!--                </div>-->
-    <!--            </div>-->
+    <div class="header-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 header-top-left">
+                    <div class="header-top-social nav-style-separated">
+                        <ul class="mb-0 ">
+                            <li class="list-inline-item">
+                                <div class="header-top-call ">
+                                    <a href="#">Lorem ipsum is a placeholder text commonly used to demonstrate. </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-    <!--            <div class="col-md-6 header-top-right">-->
-    <!--                <div class="header-top-right-inner d-flex justify-content-end">-->
-    <!--                    <div class="header-top-social">-->
-    <!--                        <ul class="mb-0">-->
-    <!--                            <li class="list-inline-item">-->
-    <!--                                <div class="header-top-call">-->
-    <!--                                    <i class="ecicon eci-volume-control-phone"></i>-->
-    <!--                                    <a href="tel:+ {{ optional($phone)->image }}"> +91--->
-    <!--                                        {{ optional($phone)->image }}</a>-->
-    <!--                                </div>-->
-    <!--                            </li>-->
-    <!--                            <li class="list-inline-item d-none d-lg-block">-->
-    <!--                                <div class="header-top-call">-->
-    <!--                                    <i class="ecicon eci-truck"></i>-->
-    <!--                                    <a href="#"> Track Order</a>-->
-    <!--                                </div>-->
-    <!--                            </li>-->
-    <!--                            <li class="list-inline-item">-->
-    <!--                                <div class="header-top-call">-->
-    <!--                                    <i class="ecicon eci-headphones"></i>-->
-    <!--                                    <a href="tel:+91-{{ optional($phone)->image }}"> Help Center</a>-->
-    <!--                                </div>-->
-    <!--                            </li>-->
-    <!--                        </ul>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--            <div class="col header-top-res d-lg-none">-->
-    <!--                <div class="ec-header-bottons">-->
-    <!--                    <a href="#ec-mobile-menu" class="ec-header-btn ec-side-toggle d-lg-none">-->
-    <!--                        <i class="ecicon eci-bars"></i>-->
-    <!--                    </a>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--</div>-->
+                <div class="col-md-6 header-top-right">
+                    <div class="header-top-right-inner d-flex justify-content-end">
+                        <div class="header-top-social">
+                            <ul class="mb-0">
+                                <li class="list-inline-item">
+                                    <div class="header-top-call">
+                                        <i class="ecicon eci-volume-control-phone"></i>
+                                        <a href="tel:+ {{ optional($phone)->image }}"> +91-
+                                            {{ optional($phone)->image }}</a>
+                                    </div>
+                                </li>
+                                <li class="list-inline-item d-none d-lg-block">
+                                    <div class="header-top-call">
+                                        <i class="ecicon eci-truck"></i>
+                                        <a href="#"> Track Order</a>
+                                    </div>
+                                </li>
+                                <li class="list-inline-item">
+                                    <div class="header-top-call">
+                                        <i class="ecicon eci-headphones"></i>
+                                        <a href="tel:+91-{{ optional($phone)->image }}"> Offer</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
     <div class="ec-header-bottom d-none d-lg-block">
         <div class="container position-relative">
             <div class="row">
@@ -238,7 +231,7 @@
                                     </li>
                                 @endif
                             @endforeach
-                            <li><a href="#">Offer</a></li>
+                            {{-- <li><a href="#">Offer</a></li> --}}
                             {{-- <li><a href="{{route('about')}}">About Us</a></li> --}}
                             <li><a href="{{route('contact')}}">Contact Us</a></li>
                             <!--<li class="dropdown"><a href="javascript:void(0)">Info</a>-->

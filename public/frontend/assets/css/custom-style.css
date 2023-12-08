@@ -73,8 +73,8 @@
 }
 
 .header-top {
-    padding: 9px 0;
-    background-color: var(--main-color);
+  padding: 2px 0;
+  background-color: #088dd3;
 
 }
 
@@ -1922,8 +1922,9 @@ i.ecicon.eci-star {
 ---------------------------------------------------*/
 
 .section-space-footer-p {
-    padding: 70px 0;
+    padding: 40px 0 22px;
     background: #11161f;
+    border-bottom: 1px solid #dddddd36;
 }
 
 .wa-icon
@@ -2306,10 +2307,10 @@ div#ec_news_signup {
 }
 .footer-bottom .ec-copy .site-name {
   padding-left: 5px;
-  color:#f0e2e2;
+  color:#ff514c;
 }
 .footer-bottom .ec-copy .site-name:hover {
-  color: #fff;
+  color: #088dd3;
 }
 .footer-bottom .ec-copy .site-name:hover span {
   color: var(--optional-color);
@@ -2541,6 +2542,7 @@ div#ec_news_signup {
 
 .header-top {
     padding: 5px 0;
+    display: none;
 }
 
 .ec-header-bottons .ec-header-btn {
@@ -3015,4 +3017,68 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   border-radius: 50%;
   /* box-shadow: 2px 2px 3px #999; */
   z-index: 100;
+}
+
+.ec-footer-links ul li a i{
+  font-size: 10px !important;
+}
+.footer-last {
+  background: #11161f;
+  padding: 1em 0;
+}
+.footer-last h1 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding-top: 15px;
+  font-size: 22px;
+}
+.footer-last p {
+  color: #a3a3a3;
+  font-size: 13px;
+  text-align: justify;
+}
+.footer-last h5 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding-top: 15px;
+  font-size: 18px;
+}
+.footer-last ul li {
+  line-height: 20px;
+  display: inline-block;
+  border-right: 1px solid #61605e;
+}
+.footer-last ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.desk li {
+  list-style-type: decimal;
+  color: #a3a3a3;
+  font-size: 13px;
+  text-align: justify;
+  border-right: none !important;
+}
+.desk li strong {
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.footer-last ul li a {
+  font-size: 13px;
+  text-align: center;
+  color: #a3a3a3;
+  padding: 0 10px 0 6px;
+}
+.footer-last h2 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding-top: 15px;
+  font-size: 18px;
 }
