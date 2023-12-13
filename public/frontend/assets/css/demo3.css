@@ -19043,7 +19043,7 @@ ul.slick-dots {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   content: "";
-  color: #ffffff;
+  color: #fff;
   position: relative;
   font-size: 25px;
   font-family: "EcIcons";
@@ -19055,11 +19055,14 @@ ul.slick-dots {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #ff514c;
+  border-radius: 100%;
+  box-shadow: 0 0 10px rgb(12 12 12 / 30%);
 }
 .slick-arrow:after {
   content: "";
@@ -19533,13 +19536,13 @@ section.ec-test-section {
   bottom: 0;
 }
 .ec-trend-slider .slick-arrow.slick-next {
-  left: 55px;
+  top: 45%;
   right: 0;
   background: transparent;
 }
 .ec-trend-slider .slick-arrow.slick-prev {
+  top: 45%;
   left: 0;
-  right:55px;
   background: transparent;
 }
 
@@ -20001,6 +20004,7 @@ section.ec-instagram-section {
     font-size: 25px;
     line-height: 30px;
     height: 30px;
+    width: 30px;
   }
 
   .ec-header-bottom {
@@ -20201,10 +20205,6 @@ section.ec-instagram-section {
     margin-left: 0;
   }
 
-  .ec-product-inner .ec-pro-image .ec-pro-actions {
-    top: -38% !important;
-    right: 5px !important;
-  }
 
   .ec_cat_content .ec-section-btn a {
     padding: 5px 10px;
@@ -20612,10 +20612,10 @@ section.ec-instagram-section {
   }
 
   .ec-trend-slider .slick-arrow.slick-next {
-    left: 50px;
+    right: -10px;
   }
   .ec-trend-slider .slick-arrow.slick-prev {
-    right: 50px;
+    left: -10px ;
   }
 
   .ec-offer-content {
