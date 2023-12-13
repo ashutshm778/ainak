@@ -13,7 +13,6 @@
                         <img src="{{ asset('public/' . api_asset($gallery_image)) }}">
                     </div>
                 @endforeach
-
             </div>
             <div class="single-nav-thumb">
                 @foreach ($gallery_images as $new_key => $gallery_image)
@@ -22,7 +21,6 @@
                             alt="">
                     </div>
                 @endforeach
-
             </div>
         </div>
     </div>
@@ -48,7 +46,7 @@
                 <div class="ec-single-price">
                     @if ($product_price['selling_price'] != $product_price['product_price'])
                         <span class="new-price"><del class="discount">{{ $product_price['selling_price'] }}</del>
-                            {{ $product_price['product_price'] }}/<small class="discount">50%</small></span>
+                            {{ $product_price['product_price'] }} <small class="discount"> 50% OFF</small></span>
                     @else
                         <span class="new-price"> {{ $product_price['product_price'] }}</span>
                     @endif
