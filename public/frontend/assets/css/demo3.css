@@ -1074,7 +1074,7 @@ fieldset {
   border: 0;
 }
 fieldset:disabled .btn {
-  pointer-events: none;
+
   opacity: 0.65;
 }
 
@@ -1907,7 +1907,7 @@ progress {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23FFF'/%3e%3c/svg%3e");
 }
 .form-check-input:disabled {
-  pointer-events: none;
+
   -webkit-filter: none;
           filter: none;
   opacity: 0.5;
@@ -1965,7 +1965,7 @@ progress {
 .btn-check {
   position: absolute;
   clip: rect(0, 0, 0, 0);
-  pointer-events: none;
+
 }
 .btn-check:focus + .btn {
   outline: 0;
@@ -2535,7 +2535,7 @@ progress {
   border-radius: 16px;
 }
 .form-range:disabled {
-  pointer-events: none;
+
 }
 .form-range:disabled::-webkit-slider-thumb {
   background-color: #ADB5BD;
@@ -2925,7 +2925,7 @@ textarea.form-control.is-invalid {
   outline: 0;
 }
 .btn:disabled {
-  pointer-events: none;
+
   opacity: 0.65;
 }
 .btn .badge {
@@ -2934,7 +2934,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn.disabled {
-  pointer-events: none;
+
   opacity: 0.65;
 }
 
@@ -4059,7 +4059,7 @@ textarea.form-control.is-invalid {
 }
 .dropdown-item:disabled {
   color: #6C757D;
-  pointer-events: none;
+
   background-color: transparent;
 }
 
@@ -4071,7 +4071,7 @@ textarea.form-control.is-invalid {
 
 .dropdown-item.disabled {
   color: #6C757D;
-  pointer-events: none;
+
   background-color: transparent;
 }
 
@@ -4243,7 +4243,7 @@ textarea.form-control.is-invalid {
 
 .nav-link.disabled {
   color: #6C757D;
-  pointer-events: none;
+
   cursor: default;
 }
 
@@ -4835,7 +4835,7 @@ textarea.form-control.is-invalid {
 
 .page-item.disabled .page-link {
   color: #6C757D;
-  pointer-events: none;
+
   background-color: #ffffff;
   border-color: #eeeeee;
 }
@@ -5074,7 +5074,7 @@ textarea.form-control.is-invalid {
 }
 .list-group-item:disabled {
   color: #6C757D;
-  pointer-events: none;
+
   background-color: #ffffff;
 }
 .list-group-item + .list-group-item {
@@ -5087,7 +5087,7 @@ textarea.form-control.is-invalid {
 
 .list-group-item.disabled {
   color: #6C757D;
-  pointer-events: none;
+
   background-color: #ffffff;
 }
 
@@ -5319,7 +5319,7 @@ textarea.form-control.is-invalid {
   opacity: 1;
 }
 .btn-close:disabled {
-  pointer-events: none;
+
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
@@ -5328,7 +5328,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn-close.disabled {
-  pointer-events: none;
+
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
@@ -5417,7 +5417,7 @@ textarea.form-control.is-invalid {
   position: relative;
   width: auto;
   margin: 8px;
-  pointer-events: none;
+
 }
 
 .modal.fade .modal-dialog {
@@ -8239,7 +8239,7 @@ textarea.form-control.is-invalid {
 }
 
 .pe-none {
-  pointer-events: none;
+
 }
 
 .pe-auto {
@@ -16403,7 +16403,7 @@ body {
   background-color: #db3a5d;
 }
 #ec-fixedbutton .ec-change-color .ec-color-desc ul li.active {
-  pointer-events: none;
+
 }
 #ec-fixedbutton .ec-change-color .ec-color-desc ul li.active a:before {
   content: "\f00c";
@@ -16461,7 +16461,7 @@ body {
           flex: 0 0 40px;
 }
 #ec-fixedbutton .ec-change-rtl .ec-rtl-btn {
-  pointer-events: none;
+
   background-color: #222;
   padding: 0 9px 0;
 }
@@ -16543,7 +16543,7 @@ body {
   font-size: 12px;
 }
 #ec-fixedbutton .ec-change-mode .ec-mode-btn {
-  pointer-events: none;
+
   background-color: #222;
   padding: 0 7px 0;
   font-size: 10px;
@@ -16639,7 +16639,7 @@ select {
   right: 0;
   padding: 0 10px;
   cursor: pointer;
-  pointer-events: none;
+
   font-size: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -16776,7 +16776,7 @@ select {
   z-index: 999999999999;
   background: #ffffff url("../images/common/loader.gif") no-repeat scroll 50% 50%;
   background-size: 65px;
-  pointer-events: none;
+
   overflow: hidden;
 }
 
@@ -17342,7 +17342,7 @@ select {
   background-color: #db3a5d;
 }
 .ec-tools-sidebar .ec-color-desc ul li.active {
-  pointer-events: none;
+
 }
 .ec-tools-sidebar .ec-color-desc ul li.active a:before {
   content: "\f00c";
@@ -17392,7 +17392,7 @@ select {
 }
 .ec-tools-sidebar .ec-change-mode .ec-mode-btn {
   width: 40px;
-  pointer-events: none;
+
   background-color: #222;
   padding: 3px 7px 0;
   font-size: 10px;
@@ -17476,7 +17476,7 @@ select {
   font-size: 12px;
 }
 .ec-tools-sidebar .ec-change-rtl .ec-rtl-btn {
-  pointer-events: none;
+
   background-color: #222;
   padding: 3px 9px 0;
 }
@@ -17559,7 +17559,7 @@ select {
 }
 .ec-tools-sidebar .ec-fullscreen-mode .ec-fullscreen-btn {
   width: 40px;
-  pointer-events: none;
+
   background-color: #222;
   padding: 3px 7px 0;
   font-size: 10px;
@@ -18612,7 +18612,7 @@ button.btn-close.qty_close {
   position: relative;
   display: block;
   overflow: hidden;
-  pointer-events: none;
+
 }
 .ec-product-inner .ec-pro-image .image img {
     z-index: 1;

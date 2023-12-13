@@ -1091,7 +1091,7 @@ fieldset {
   border: 0;
 }
 fieldset:disabled .btn {
-  pointer-events: none;
+ 
   opacity: 0.65;
 }
 
@@ -1957,7 +1957,7 @@ progress {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23FFF'/%3e%3c/svg%3e");
 }
 .form-check-input:disabled {
-  pointer-events: none;
+ 
   -webkit-filter: none;
           filter: none;
   opacity: 0.5;
@@ -2015,7 +2015,7 @@ progress {
 .btn-check {
   position: absolute;
   clip: rect(0, 0, 0, 0);
-  pointer-events: none;
+ 
 }
 .btn-check:focus + .btn {
   outline: 0;
@@ -2585,7 +2585,7 @@ progress {
   border-radius: 16px;
 }
 .form-range:disabled {
-  pointer-events: none;
+ 
 }
 .form-range:disabled::-webkit-slider-thumb {
   background-color: #ADB5BD;
@@ -2989,7 +2989,7 @@ textarea.form-control.is-invalid {
   outline: 0;
 }
 .btn:disabled {
-  pointer-events: none;
+ 
   opacity: 0.65;
 }
 .btn .badge {
@@ -2998,7 +2998,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn.disabled {
-  pointer-events: none;
+ 
   opacity: 0.65;
 }
 
@@ -4123,7 +4123,7 @@ textarea.form-control.is-invalid {
 }
 .dropdown-item:disabled {
   color: #6C757D;
-  pointer-events: none;
+ 
   background-color: transparent;
 }
 
@@ -4135,7 +4135,7 @@ textarea.form-control.is-invalid {
 
 .dropdown-item.disabled {
   color: #6C757D;
-  pointer-events: none;
+ 
   background-color: transparent;
 }
 
@@ -4307,7 +4307,7 @@ textarea.form-control.is-invalid {
 
 .nav-link.disabled {
   color: #6C757D;
-  pointer-events: none;
+ 
   cursor: default;
 }
 
@@ -4899,7 +4899,7 @@ textarea.form-control.is-invalid {
 
 .page-item.disabled .page-link {
   color: #6C757D;
-  pointer-events: none;
+ 
   line-height: 20px;
   height: 32px;
   background-color: #ffffff;
@@ -5140,7 +5140,7 @@ textarea.form-control.is-invalid {
 }
 .list-group-item:disabled {
   color: #6C757D;
-  pointer-events: none;
+ 
   background-color: #ffffff;
 }
 .list-group-item + .list-group-item {
@@ -5153,7 +5153,7 @@ textarea.form-control.is-invalid {
 
 .list-group-item.disabled {
   color: #6C757D;
-  pointer-events: none;
+ 
   background-color: #ffffff;
 }
 
@@ -5385,7 +5385,7 @@ textarea.form-control.is-invalid {
   opacity: 1;
 }
 .btn-close:disabled {
-  pointer-events: none;
+ 
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
@@ -5394,7 +5394,7 @@ textarea.form-control.is-invalid {
 }
 
 .btn-close.disabled {
-  pointer-events: none;
+ 
   -webkit-user-select: none;
   -moz-user-select: none;
    -ms-user-select: none;
@@ -5483,7 +5483,7 @@ textarea.form-control.is-invalid {
   position: relative;
   width: auto;
   margin: 8px;
-  pointer-events: none;
+ 
 }
 
 .modal.fade .modal-dialog {
@@ -8302,7 +8302,7 @@ textarea.form-control.is-invalid {
 }
 
 .pe-none {
-  pointer-events: none;
+ 
 }
 
 .pe-auto {
@@ -16243,7 +16243,7 @@ li {
   z-index: 999999999999;
   background: #ffffff url("../images/common/loader.gif") no-repeat scroll 50% 49%;
   background-size: 65px;
-  pointer-events: none;
+ 
   overflow: hidden;
 }
 
@@ -17151,7 +17151,7 @@ li {
   background-color: #db3a5d;
 }
 .ec-tools-sidebar .ec-color-desc ul li.active {
-  pointer-events: none;
+ 
 }
 .ec-tools-sidebar .ec-color-desc ul li.active a:before {
   content: "\f00c";
@@ -17203,7 +17203,7 @@ li {
 }
 .ec-tools-sidebar .ec-change-mode .ec-mode-btn {
   width: 45px;
-  pointer-events: none;
+ 
   background: -webkit-gradient(linear, left top, left bottom, from(#737373), to(#000));
   background: linear-gradient(#737373, #000);
   padding: 0 10px 0;
@@ -17292,7 +17292,7 @@ li {
   overflow: hidden;
 }
 .ec-tools-sidebar .ec-change-rtl .ec-rtl-btn {
-  pointer-events: none;
+ 
   background: -webkit-gradient(linear, left top, left bottom, from(#737373), to(#000));
   background: linear-gradient(#737373, #000);
   padding: 0 10px 0;
@@ -17380,7 +17380,7 @@ li {
 }
 .ec-tools-sidebar .ec-fullscreen-mode .ec-fullscreen-btn {
   width: 45px;
-  pointer-events: none;
+ 
   background: -webkit-gradient(linear, left top, left bottom, from(#737373), to(#000));
   background: linear-gradient(#737373, #000);
   padding: 0 10px 0;
@@ -18284,7 +18284,7 @@ button.btn-close.qty_close {
   position: relative;
   display: block;
   overflow: hidden;
-  pointer-events: none;
+ 
 }
 .ec-product-inner .ec-pro-image .image img {
     z-index: 1;
@@ -18776,7 +18776,7 @@ i.ecicon.eci-star.fill {
   border-radius: 30px;
 }
 .ec-pro-color li input {
-    pointer-events: none;
+   
     width: 20px;
     height: 20px;
     display: block;
@@ -18810,7 +18810,7 @@ i.ecicon.eci-star.fill {
 }
 .ec-pro-size li a {
   padding: 3px;
-  pointer-events: none;
+ 
   height: 18px;
   min-width: 20px;
   cursor: pointer;
@@ -19697,7 +19697,7 @@ select::-ms-expand {
   right: 0;
   padding: 0 10px;
   cursor: pointer;
-  pointer-events: none;
+ 
   font-size: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20511,7 +20511,7 @@ select::-ms-expand {
   right: 0;
   padding: 0 10px;
   cursor: pointer;
-  pointer-events: none;
+ 
   font-size: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20807,7 +20807,7 @@ select::-ms-expand {
   right: 0;
   padding: 0 10px;
   cursor: pointer;
-  pointer-events: none;
+ 
   font-size: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22854,7 +22854,7 @@ i.ecicon.eci-star-o {
   right: 0;
   padding: 0 10px;
   cursor: pointer;
-  pointer-events: none;
+ 
   font-size: 18px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23687,7 +23687,7 @@ i.ecicon.eci-star-o {
   right: 0;
   padding: 0 10px;
   cursor: pointer;
-  pointer-events: none;
+ 
   font-size: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23801,7 +23801,7 @@ i.ecicon.eci-star-o {
   cursor: pointer;
 }
 .ec-sidebar-wrap .ec-sidebar-block .ec-sb-block-content .ec-checkout-pro .ec-pro-size li a {
-  pointer-events: none;
+ 
   width: 18px;
   height: 18px;
   cursor: pointer;
@@ -31922,7 +31922,7 @@ input[type=email]:focus::-webkit-input-placeholder {
   position: absolute;
   font-family: "EcIcons";
   cursor: pointer;
-  pointer-events: none;
+ 
   font-size: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -32055,7 +32055,7 @@ body.ec-open:before {
     right: 0;
     padding: 0 10px;
     cursor: pointer;
-    pointer-events: none;
+   
     font-size: 24px;
     display: -webkit-box;
     display: -ms-flexbox;
