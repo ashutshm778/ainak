@@ -209,7 +209,6 @@
                     $('#phone').addClass('is-valid');
                     $('#phone_error').css('display', 'none');
                     $('#otp_div').show();
-                    $('#phone').attr('disabled', 'disabled');
                     $('#button_addon2').attr('disabled', 'disabled');
                     $('#otp_countdown').show();
                     $('#re_send_otp_button').hide();
