@@ -100,7 +100,9 @@ class FrontController extends Controller
         $customer =  Customer::where('phone', $request->phone)->first();
         $customer->password =Hash::make($request->password);
         $customer->save();
-        return back()->with('success', 'Your Password Changes Successfully!');
+        if (Auth::guard('customer')->attempt(['phone' => $request->phone, 'password' => $request->password])) {
+            return redirect()->route('index')->with('success', 'You Have Successfully Register!');
+        }
      
     }
 
