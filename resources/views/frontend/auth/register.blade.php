@@ -122,7 +122,7 @@
                                     <label>OTP<span style="color:red">*<span></label> <br>
                                     <input type="number" class="form-control" id="otp" name="otp"
                                         value="{{ old('otp') }}" onchange="verifyOtp()" placeholder="Enter Your OTP..."
-                                        required />
+                                        required / style="margin-bottom:5px;">
                                         <p id="otp_countdown" style="text-align:center">Resend OTP in <span class="js-timeout">2:00</span></p>
                                         <p id="re_send_otp_button"  style="display:none;text-align:center;"> <a href="javascript:void(0)"
                                             onclick="getOtp()">Resend OTP</a>  </p>

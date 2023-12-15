@@ -2,18 +2,28 @@
 @section('content')
 
 <style>
-    .error
-    {
-        color:red !important;
-        margin-top: -22px;
-    }
-    .form-control.is-valid, .was-validated .form-control:valid {
-    border-color: #198754 !important;
-    padding-right: calc(1.5em + 0.75rem);
-    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e);
-    background-repeat: no-repeat;
-    background-position: right calc(0.375em + 0.1875rem) center;
-    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+@media only screen and (max-width: 767px){
+.ec-register-wrapper .ec-register-container .ec-register-form .btn {
+    font-size: 14px;
+    width: auto;
+    margin-top: 0px;
+    height: 42px;
+    min-width: unset;
+}
+}
+
+element.style {
+    text-transform: capitalize;
+}
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.ec-register-wrapper .ec-register-container .ec-register-form .btn {
+    margin-top: 0;
+    height:50px;
 }
 </style>
 
@@ -40,29 +50,76 @@
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-5">
                     <div class="image-contain">
                         <img src="{{asset('public/frontend/assets/images/reset-password.jpg')}}" class="img-fluid" alt="">
                     </div>
                 </div>
-                <div class="ec-register-wrapper col-md-5">
+                <div class="ec-register-wrapper col-md-7">
                     <div class="ec-register-container">
                         <div class="ec-register-form">
-                            <form id="valid_form" action="#" method="post">
+                            <form id="valid_form" action="{{ route('customer.register') }}" method="post">
                                 @csrf
-                                <span class="ec-register-wrap col-md-12">
-                                    <label>Phone Number<span style="color:red">*<span></label> <br>
-                                    <input type="number" class="form-control" id="phone" name="phone" value="{{old('phone')}}" placeholder="Enter Your Phone Number..." onchange="getOtp()" required>
-                                    <span class="error invalid-feedback" id="phone_error" style="display:none">Phone Number Already Exists</span>
-                                    @if ($errors->has('phone'))
-                                        <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                <div class="ec-register-wrap ec-register-half">
+                                    <label>Phone Number<span style="color:red">*<span></label>
+                                    <span class="input-group">
+                                        <input type="number" class="form-control mb-2" id="phone" name="phone"
+                                            value="{{ old('phone') }}"
+                                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                            onKeyPress="if(this.value.length==10) return false;" minlength="10"
+                                            placeholder="Enter Your Phone No..." required>
+                                        <button class="btn btn-primary" type="button" id="button_addon2"
+                                            style="text-transform: capitalize;" onclick="getOtp()">Send OTP</button>
+                                        <span class="error invalid-feedback" id="phone_error" style="display:none">Phone
+                                            Number Already Exists</span>
+                                        @if ($errors->has('phone'))
+                                            <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                        @endif
+                                    </span>
+                                </div>
+
+                                <span class="ec-register-wrap ec-register-half" id="otp_div" style="display: none;">
+                                    <label>OTP<span style="color:red">*<span></label> <br>
+                                    <input type="number" class="form-control" id="otp" name="otp"
+                                        value="{{ old('otp') }}" onchange="verifyOtp()" placeholder="Enter Your OTP..."
+                                        required / style="margin-bottom:5px;">
+                                        <p id="otp_countdown" style="text-align:center">Resend OTP in <span class="js-timeout">2:00</span></p>
+                                        <p id="re_send_otp_button"  style="display:none;text-align:center;"> <a href="javascript:void(0)"
+                                            onclick="getOtp()">Resend OTP</a>  </p>
+                                    <span class="error invalid-feedback" id="otp_error" style="display:none">Wrong
+                                        OTP</span>
+                                    <span class="text-success" id="otp_success" style="display:none">Match OTP</span>
+                                    @if ($errors->has('otp'))
+                                        <span class="text-danger">{{ $errors->first('otp') }}</span>
+                                    @endif
+
+                                </span>
+
+                                <span class="ec-register-wrap ec-register-half">
+                                    <label>Password<span style="color:red">*<span></label> <br>
+                                    <input type="password" id="pasword" class="form-control" name="password"
+                                        placeholder="Enter Your Password..." required />
+                                    @if ($errors->has('password'))
+                                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                                    @endif
+                                </span>
+
+                                <span class="ec-register-wrap ec-register-half">
+                                    <label>Confirm Password<span style="color:red">*<span></label> <br>
+                                    <input type="password" id="confirm_password" class="form-control"
+                                        name="confirm_password" placeholder="Enter Your Confirm Password..." required />
+                                    <span class="text-danger error" id="confirm_password_error" style="display:none">Your
+                                        Password Does Not Match</span>
+                                    @if ($errors->has('password'))
+                                        <span class="text-danger">{{ $errors->first('password') }}</span>
                                     @endif
                                 </span>
 
                                 <span class="ec-register-wrap ec-register-btn">
-                                    <button class="btn btn-primary" type="button" onclick="verifyOtp()">Reset Password</button>
+                                    <button class="btn btn-primary" type="button" onclick="verifyOtp()">Submit</button>
                                     <div class="text-center">
-                                        <p class="mt-2">Already have an account? <a href="{{ route('user.login') }}"> Login</a></p>
+                                        <p class="mt-2">Already have an account? <a href="{{ route('user.login') }}"
+                                                style="color: #ff5a47;"> Login</a></p>
                                     </div>
                                 </span>
 

@@ -47,7 +47,7 @@
                 <div class="ec-register-wrapper col-md-6">
                     <div class="ec-register-container">
                         <div class="ec-register-form">
-                            <form name="login_form" action="{{route('customer.login')}}" method="post">
+                            <form id="valid_form" action="{{route('customer.login')}}" method="post">
                                 @csrf
                                 <span class="ec-register-wrap col-md-12">
                                     <label>Phone Number<span style="color:red">*<span></label> <br>
@@ -71,7 +71,7 @@
                                     <button class="btn btn-primary" type="submit">Login</button>
                                     <div class="text-center">
                                         <p class="mt-2 mb-1">Don't have an account ?  <a href="{{ route('user.register') }}" style="color: #ff5a47;"> Register</a></p>
-                                        <p>Lost your password ? <a href="{{ route('user.register') }}" style="color: #ff5a47;"> Click Here</a></p>
+                                        <p>Lost your password ? <a href="{{ route('customer.forgot_password') }}" style="color: #ff5a47;"> Click Here</a></p>
                                     </div>
                                 </span>
 
