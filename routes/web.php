@@ -78,6 +78,7 @@ Route::group(['middleware' => 'auth:customer'], function () {
 });
 
 Route::get('send-otp/{phone}', [FrontController::class, 'sendOtp'])->name('send.otp');
+Route::get('send-forgot-otp/{phone}', [FrontController::class, 'sendForgotOtp'])->name('send.forgot_otp');
 Route::get('verify-otp/{phone}/{otp}', [FrontController::class, 'verifyOtp'])->name('verify.otp'); 
 
 if (Schema::hasTable('feature_activations')) {
@@ -85,6 +86,7 @@ if (Schema::hasTable('feature_activations')) {
 if(featureActivation('retailer') == '1'){
     Route::view('user-register', 'frontend.auth.register')->name('user.register');
     Route::post('customer-register', [FrontController::class, 'attemptRegister'])->name('customer.register');
+    Route::post('customer-forgot-password', [FrontController::class, 'forgotPassword'])->name('customer.forgotpassword');
 }
 
 

@@ -89,6 +89,21 @@ class FrontController extends Controller
         }
     }
 
+    public function forgotPassword(Request $request)
+    {
+        $this->validate($request, [
+            'phone' => 'required|min:10|max:10|exists:customers',
+            'password' => 'min:6|required_with:confirm_password|same:confirm_password',
+            'confirm_password' => 'min:6'
+        ]);
+
+        $customer =  Customer::where('phone', $request->phone)->first();
+        $customer->password =Hash::make($request->password);
+        $customer->save();
+        return back()->with('success', 'Your Password Changes Successfully!');
+     
+    }
+
     public function businessPersonRequestSave(Request $request)
     {
         $this->validate($request, [
@@ -192,6 +207,28 @@ class FrontController extends Controller
                     //Msg91::otp()->to($phone)->template('6114d04775025d197f1e0ad7')->send();
                     return 1;
                 }
+            }
+        }else{
+            return 3;
+        }
+    }
+
+    public function sendForgotOtp(Request $request, $phone)
+    {
+        $data = Customer::where('phone', $phone)->first();
+        if(!empty($data)) {
+           
+                $phone = '91' . $phone;
+                if(env('APP_ENV') == 'local'){
+                    $otp=1234;
+                    Session::put('otp',$otp);
+                    return 1;
+                }else{
+                    $otp=rand(1111,9999);
+                    Session::put('otp',$otp);
+                      Msg91::sms()->to('91'.$request->phone)->flow('64a6b9d1d6fc057c15503ab2')->variable('business_name', env('APP_NAME'))->variable('otp', $otp)->send();
+                    //Msg91::otp()->to($phone)->template('6114d04775025d197f1e0ad7')->send();
+                    return 1;
             }
         }else{
             return 3;
