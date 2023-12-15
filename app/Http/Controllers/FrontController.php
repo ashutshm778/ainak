@@ -19,6 +19,7 @@ use App\Models\Admin\WebsiteSetting;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\BusinessPersonRequest;
+use Illuminate\Support\Facades\Validator;
 
 class FrontController extends Controller
 {
@@ -131,10 +132,19 @@ class FrontController extends Controller
 
     public function attemptLogin(Request $request)
     {
+        $validator =  Validator::make($request->all(), [
+            'phone' => 'required|exists:customers'
+        ]);
+      
+
         $customer = Customer::where('phone', $request->phone)->orWhere('type', 'retailer')->orWhere('type', 'distributor')->orWhere('type', 'wholeseller')->first();
         if ($customer) {
             if (Auth::guard('customer')->attempt(['phone' => $request->phone, 'password' => $request->password], $request->remember)) {
                 return redirect()->route('user_profile')->with('success', 'You Have Successfully Login !');
+            }else{
+                $validator->getMessageBag()->add('password', 'Wrong Password');
+                return back()->withErrors($validator)->withInput();
+         
             }
         }
 
@@ -279,6 +289,17 @@ class FrontController extends Controller
         $power_type=$request->power_type;
         $lenses=Lens::where('power_type', $power_type)->get();
         return view('frontend.lens',compact('lenses'))->render();
-;    }
+    }
+
+    public function check_phone(Request $request)
+    {
+        $phoneNumberToCheck = $request->input('phone');
+
+        // Simulate checking against the database
+        $isValidPhoneNumber = Customer::where('phone', $phoneNumberToCheck)->exists();
+
+        return response()->json(['isValid' => $isValidPhoneNumber]);
+
+    }
 
 }

@@ -739,3 +739,58 @@
         });
     });
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script>
+   
+    jQuery.validator.addMethod("selectphone", function(value, element) {
+    var isValid = false;
+
+    // Check if the value matches a valid phone number pattern
+   
+        // Make an AJAX call to the server to check the phone number
+        $.ajax({
+            url: "{{route('check_phone')}}", // Replace with the actual endpoint on your server
+            type: 'POST',
+            data: {  _token: '{{ csrf_token() }}', phone: value },
+            async: false, // Make the call synchronous for simplicity (not recommended in production)
+            success: function(response) {
+                isValid = response.isValid;
+            }
+        });
+  
+
+    // Return the result of the validation
+    return isValid;
+}, "Phone number not found please register");
+
+
+    $(function() {
+
+$("form[name='login_form']").validate({
+
+    rules: {
+        phone: {
+            required: true,
+            selectphone:true
+        }
+    },
+
+    messages: {
+        phone: {
+            required: "Please Enter Mobile Number!",
+        }
+    },
+
+    submitHandler: function(form) {
+        form.submit();
+    }
+});
+
+});
+
+
+
+
+</script>
+

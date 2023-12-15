@@ -37,6 +37,9 @@ Route::view('terms', 'frontend.term')->name('term');
 
 Route::view('faq', 'frontend.faq')->name('faq');
 
+Route::post('check_phone',[FrontController::class,'check_phone'])->name('check_phone');
+
+
 
 Route::group(['middleware' => 'auth:customer'], function () {
 
@@ -98,7 +101,7 @@ if(featureActivation('distributor') == '1' || featureActivation('wholeseller') =
 if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1'){
     Route::view('user-login', 'frontend.auth.login')->name('user.login');
     Route::post('customer-login', [FrontController::class, 'attemptLogin'])->name('customer.login');
-}
+ }
 }
 //Forgot Password
 Route::view('forgot-password', 'frontend.auth.forgot-password')->name('customer.forgot_password');

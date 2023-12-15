@@ -47,7 +47,7 @@
                 <div class="ec-register-wrapper col-md-6">
                     <div class="ec-register-container">
                         <div class="ec-register-form">
-                            <form id="valid_form" action="{{route('customer.login')}}" method="post">
+                            <form name="login_form" action="{{route('customer.login')}}" method="post">
                                 @csrf
                                 <span class="ec-register-wrap col-md-12">
                                     <label>Phone Number<span style="color:red">*<span></label> <br>
