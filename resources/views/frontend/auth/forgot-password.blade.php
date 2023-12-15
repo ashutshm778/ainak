@@ -11,10 +11,6 @@
     min-width: unset;
 }
 }
-
-element.style {
-    text-transform: capitalize;
-}
 .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
     margin-left: -1px;
     border-top-left-radius: 0;
@@ -24,6 +20,9 @@ element.style {
 .ec-register-wrapper .ec-register-container .ec-register-form .btn {
     margin-top: 0;
     height:50px;
+}
+.invalid-feedback {
+    color:red;
 }
 </style>
 
@@ -70,7 +69,7 @@ element.style {
                                             placeholder="Enter Your Phone No..." required>
                                         <button class="btn btn-primary" type="button" id="button_addon2"
                                             style="text-transform: capitalize;" onclick="getOtp()">Send OTP</button>
-                                        <span class="error invalid-feedback" id="phone_error" style="display:none">Phone
+                                        <span class="error invalid-feedback" id="phone_error" style="display:none;color:red;">Phone
                                             Number Not Exists</span>
                                         @if ($errors->has('phone'))
                                             <span class="text-danger">{{ $errors->first('phone') }}</span>
@@ -86,7 +85,7 @@ element.style {
                                         <p id="otp_countdown" style="text-align:center">Resend OTP in <span class="js-timeout">2:00</span></p>
                                         <p id="re_send_otp_button"  style="display:none;text-align:center;"> <a href="javascript:void(0)"
                                             onclick="getOtp()">Resend OTP</a>  </p>
-                                    <span class="error invalid-feedback" id="otp_error" style="display:none">Wrong
+                                    <span class="error invalid-feedback" id="otp_error" style="display:none;color:red;">Wrong
                                         OTP</span>
                                     <span class="text-success" id="otp_success" style="display:none">Match OTP</span>
                                     @if ($errors->has('otp'))
@@ -108,7 +107,7 @@ element.style {
                                     <label>Confirm Password<span style="color:red">*<span></label> <br>
                                     <input type="password" id="confirm_password" class="form-control"
                                         name="confirm_password" placeholder="Enter Your Confirm Password..." required />
-                                    <span class="text-danger error" id="confirm_password_error" style="display:none">Your
+                                    <span class="text-danger error" id="confirm_password_error" style="display:none;color:red;">Your
                                         Password Does Not Match</span>
                                     @if ($errors->has('password'))
                                         <span class="text-danger">{{ $errors->first('password') }}</span>

@@ -63,7 +63,7 @@
                                     <label>Password<span style="color:red">*<span></label> <br>
                                     <input type="password" id="pasword" class="form-control" name="password" placeholder="Enter Your Password..." required />
                                     @if ($errors->has('password'))
-                                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                                        <span class="text-danger" >{{ $errors->first('password') }}</span>
                                     @endif
                                 </span>
 
