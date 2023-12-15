@@ -5,7 +5,7 @@
     .error
     {
         color:red !important;
-        margin-top: -22px;
+        margin-top: 0;
     }
     .form-control.is-valid, .was-validated .form-control:valid {
     border-color: #198754 !important;
