@@ -192,9 +192,9 @@
                             onclick="update_qty('plus',{{ $data->id }},{{ $product_price['max_qty'] > 0 ? $product_price['max_qty'] : 'null' }},'form')">
                             <span class="ecicon eci-plus"></span>
                         </button> --}}
-                        <div class="ec-single-wishlist">
-                            <a class="btn btn-primary" title="Wishlist">
-                                <i class="ecicon eci-heart-o" style="font-size: 20px;"></i>
+                        <div class="wslst">
+                            <a class="color-dark" title="Wishlist">
+                                <i class="ecicon eci-heart-o" style="font-size:25px;"></i>
                             </a>
                         </div> 
                         <input type="hidden" name="product_id" value="{{ $data->id }}">
