@@ -50,7 +50,7 @@
                             </form>
                         </div>
                         <div class="col-md-2 ec-sort-select d-none d-md-block">
-                            <div class="ec-offer-btn"><a href="#" class="btn btn-lg btn-primary" style="height:34px;line-height:2.5;float:right;">Clear All</a></div>
+                            <div class="ec-offer-btn"><a href="" class="btn btn-lg btn-primary" style="height:34px;line-height:2.5;float:right;">Clear All</a></div>
                         </div>
                     </div>
                     <div class="shop-pro-content scrolling-pagination" id="product_list_data">
@@ -221,7 +221,7 @@
             <button class="ec-close">×</button>
         </div>
         <span class="ec-contact-wrap ec-contact-btn">
-            <button class="btn btn-primary" type="submit" style="height: 34px; line-height: 1;">Clear All</button>
+            <a class="btn btn-primary" href="" style="height: 34px; line-height: 2.5;">Clear All</a>
         </span>
         <div id="shop_sidebar">
             <form class="fillter">
