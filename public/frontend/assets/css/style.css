@@ -32092,7 +32092,7 @@ body.ec-open:before {
   text-align: center;
 }
 .wslst{
-  height: 45px;
+    height: 45px;
     line-height: 52px;
     text-align: center;
     font-size: 13px;
@@ -32107,4 +32107,9 @@ body.ec-open:before {
     -ms-flex-align: center;
     letter-spacing: 0.02rem;
     border: 1px solid #005485;
+    background-color: #005485;
+}
+
+.wslst a i:hover {
+  color: red;
 }

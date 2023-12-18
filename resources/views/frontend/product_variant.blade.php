@@ -193,7 +193,7 @@
                             <span class="ecicon eci-plus"></span>
                         </button> --}}
                         <div class="wslst">
-                            <a class="color-dark" title="Wishlist">
+                            <a class="text-white" title="Wishlist">
                                 <i class="ecicon eci-heart-o" style="font-size:25px;"></i>
                             </a>
                         </div> 
