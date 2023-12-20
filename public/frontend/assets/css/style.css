@@ -19595,8 +19595,12 @@ section.ec-instagram-section {
           justify-content: space-between;
   font-size: 14px;
   background: transparent;
-  padding: 0px;
-  border: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  padding: 5px 0 10px;
+  box-shadow: 0px 6px 34px rgba(215, 216, 222, 0.41);
 }
 
 .ec-gl-btn .btn {
