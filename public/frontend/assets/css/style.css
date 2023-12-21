@@ -19996,6 +19996,9 @@ select::-ms-expand {
   padding: 15px;
   border: 1px solid #eeeeee;
   background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 .ec-sidebar-wrap h3, .ec-sidebar-wrap .h3 {
     font-size: 22px;

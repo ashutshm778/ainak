@@ -123,9 +123,11 @@
                     <div class="section-title">
                         <h2 class="ec-title">Shop By Categories</h2>
                     </div>
-                    <div class="section-btn">
-                        <span class="ec-section-btn"><a href="{{ route('categories') }}">All Categories</a></span>
-                    </div>
+                    @if (count($categories)>6)
+                        <div class="section-btn">
+                            <span class="ec-section-btn"><a href="{{ route('categories') }}">All Categories</a></span>
+                        </div>
+                    @endif
                 </div>
             </div>
             <div class="row">
