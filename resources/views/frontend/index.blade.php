@@ -39,7 +39,7 @@
     <section class="ec-banner section pt_5">
         <div class="row">
             <div class=" col-sm-6 col-xs-6 plr">
-                <div class="ec-banner-block ec-banner-block-1">
+                <div class="ec-banner-block-1">
                     <div class="banner-block">
                         <a href="#"><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
                                 alt=""></a>
@@ -47,9 +47,27 @@
                 </div>
             </div>
             <div class="col-sm-6 col-xs-6 plr">
-                <div class="ec-banner-block ec-banner-block-1">
+                <div class="ec-banner-block-1">
                     <div class="banner-block">
                         <a href="#"><img src="{{ asset('public/frontend/assets/images/thumbnail-women.webp') }}"
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class=" col-sm-6 col-xs-6 plr">
+                <div class="ec-banner-block-1 p-0">
+                    <div class="banner-block">
+                        <a href="#"><img src="{{ asset('public/frontend/assets/images/kids.jpg') }}"
+                                alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-6 plr">
+                <div class="ec-banner-block-1 p-0">
+                    <div class="banner-block">
+                        <a href="#"><img src="{{ asset('public/frontend/assets/images/repaire.jpg') }}"
                                 alt=""></a>
                     </div>
                 </div>
