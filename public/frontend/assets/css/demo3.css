@@ -19522,7 +19522,7 @@ section.ec-test-section {
 }
 
 .ec-product-inner {
-    padding: 5px;
+    /* padding: 5px; */
 }
 
 /*.ec-trend-slider {*/
@@ -20682,7 +20682,8 @@ section.ec-instagram-section {
   }
 
   .ec-product-inner .ec-pro-content {
-    padding: 10px 0 0;
+    padding: 2px 0 4px 0px;
+    margin-top: 0;
   }
   .ec-product-inner .ec-pro-content .ec-pro-title a {
     font-size: 13px;

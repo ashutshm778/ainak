@@ -236,7 +236,7 @@
   }
 
   a.wishlist .svg_img.pro_svg {
-    height: 18px;
+    height: 15px;
   }
 
   .ec-fs-pro-inner .ec-fs-pro-title a {
@@ -1135,6 +1135,10 @@
   }
 }
 @media only screen and (max-width: 767px) {
+  .ec-product-inner .ec-pro-image .ec-pro-actions .ec-btn-group {
+    width: 28px !important;
+    height: 28px !important;
+}
     .ec-contact-rightside {
     width: 100%;
 }
@@ -2063,7 +2067,7 @@
 }
 @media only screen and (max-width: 575px) {
   .ec-product-inner .ec-pro-image .ec-pro-actions .ec-btn-group {
-    top: -88px;
+    top: -92px;
   }
     .col-xs-6{
         width: 50%;

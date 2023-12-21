@@ -230,9 +230,9 @@
                                                                 src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}"
                                                                 class="svg_img pro_svg" alt="" /></a>
                                                         <form action="#">
-                                                            <a class="ec-btn-group wishlist" title="Wishlist"><img
-                                                                    src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}"
-                                                                    class="svg_img pro_svg" alt="" /></a>
+                                                        <a class="ec-btn-group wishlist" title="Wishlist">
+                                                            <img src="{{ asset('public/frontend/assets/images/icons/wishlist.svg') }}" class="svg_img pro_svg" alt="" />
+                                                        </a>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -437,7 +437,7 @@
                                                         @if ($featured_category_product_price['discount_type'] == 'amount')
                                                             ₹{{ $featured_category_product_price['discount'] }}
                                                         @else
-                                                            {{ $featured_category_product_price['discount'] }}%
+                                                            {{ $featured_category_product_price['discount'] }} %
                                                         @endif OFF
                                                     </span>
                                                 </span>
