@@ -1,4 +1,4 @@
-<div class="shop-pro-inner">
+<div class="shop-pro-inner scrolling-pagination">
     <div class="row">
         @foreach ($list as $data)
         @php
@@ -84,3 +84,19 @@
     </div>
 </div>
 
+<script type="text/javascript">
+$(document).ready(function(){
+    $('ul.pagination').hide();
+    $(function() {
+        $('.scrolling-pagination').jscroll({
+            autoTrigger: true,
+            padding: 0,
+            nextSelector: '.pagination li.active + li a',
+            contentSelector: 'div.scrolling-pagination',
+            callback: function() {
+                $('ul.pagination').remove();
+            }
+        });
+    });
+});
+</script>
