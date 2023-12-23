@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin\Product;
 use App\Models\CustomerAddress;
 use App\Models\CustomerOrderStatus;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -101,6 +102,12 @@ class OrderController extends Controller
                 'grand_total'=>$discounted_prices+$total_lens,
                 'total_product_discount'=>$selling_prices - $discounted_prices
             ]);
+            
+            // Mail::send('mail.order_email', [], function($message) use($email){
+            //     $message->to($email);
+            //     $message->subject('Order Comfirmation');
+            // });
+            
         }
     }
 
