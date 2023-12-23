@@ -166,7 +166,7 @@
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <th>Subtotal</th>
+                                                <th>Product Subtotal</th>
                                                 <td class="text-right">
                                                     <span class="fw-600">₹ {{$sub_total}}</span>
                                                 </td>

@@ -6,6 +6,7 @@ use Session;
 use Exception;
 use Carbon\Carbon;
 use App\Models\Lens;
+use App\Models\Order;
 use App\Models\Customer;
 use App\Models\Admin\Brnad;
 use App\Models\Admin\Offer;
@@ -339,6 +340,11 @@ class FrontController extends Controller
 
         return response()->json(['isValid' => $isValidPhoneNumber]);
 
+    }
+
+    public function user_history_detail($id){
+        $order = Order::where('id',$id)->first();
+        return view('frontend.user-history-details', compact('order'));
     }
 
 }

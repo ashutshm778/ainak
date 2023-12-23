@@ -593,7 +593,8 @@
         });
     }
 
-    function addToWishlist(product_id) {
+    function addToWishlist(product_id)
+    {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -603,23 +604,20 @@
             type: 'POST',
             url: "{{ route('add.to.wishlist') }}",
             data: {
-                product_id: product_id
+                product_id:product_id
             },
             success: function(data) {
                 $("#addtocart_toast").addClass("show");
                 $("#addtocart_toast").text("Product Added to Wishlist Successfully!");
             },
-            error: function(error) {
-                @if (featureActivation('retailer') == '1' ||
-                        featureActivation('distributor') == '1' ||
-                        featureActivation('wholesaler') == '1')
-                    window.location.href = "{{ route('user.login') }}";
-                @endif
+            error: function (error) {
+                window.location.href = "{{route('user.login')}}";
             }
         });
     }
 
-    function deleteToWishlist(product_id) {
+    function deleteToWishlist(product_id)
+    {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -629,7 +627,7 @@
             type: 'POST',
             url: "{{ route('delete.to.wishlist') }}",
             data: {
-                product_id: product_id
+                product_id:product_id
             },
             success: function(data) {
                 location.reload();
