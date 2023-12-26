@@ -469,7 +469,7 @@
                                                     </form>
                                                     <a class="ec-btn-group quickview" onclick="open_product_model({{$featured_category_product->id }})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg"></a> --}}
                                                     <form action="#">
-                                                        <a class="ec-btn-group wishlist" title="Wishlist"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" /></a>
+                                                        <a class="ec-btn-group wishlist" title="Wishlist"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" onclick="addToWishlist({{$featured_category_product->id}})" /></a>
                                                     </form>
                                                 </div> 
                                             {{-- <div class="ec-pro-actions">

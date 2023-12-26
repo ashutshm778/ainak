@@ -15,6 +15,10 @@ class WishlistController extends Controller
             'user_id'=>Auth::guard('customer')->user()->id,
             'product_id'=>$request->product_id
         ]);
+
+        $wishlist_count=Wishlist::where('user_id',Auth::guard('customer')->user()->id)->get()->count();
+
+        return ['wishlist_count'=>$wishlist_count];
     }
 
     public function delete(Request $request)

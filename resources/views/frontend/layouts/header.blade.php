@@ -116,7 +116,13 @@
                                     <img src="{{ asset('public/frontend/assets/images/icons/wishlist.svg') }}"
                                         class="svg_img header_svg" alt="" />
                                 </div>
-                                <span class="ec-header-count ec-cart-wishlist">0</span>
+                                <span class="ec-header-count ec-cart-wishlist"> 
+                                    @if (Auth::guard('customer')->check())
+                                    {{ App\Models\Wishlist::where('user_id', Auth::guard('customer')->user()->id)->get()->count() }}
+                                    @else
+                                        0
+                                    @endif
+                                </span>
                             </a> 
                             <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
                                 <div class="header-icon">

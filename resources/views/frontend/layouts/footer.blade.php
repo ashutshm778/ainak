@@ -607,8 +607,11 @@
                 product_id:product_id
             },
             success: function(data) {
-                $("#addtocart_toast").addClass("show");
-                $("#addtocart_toast").text("Product Added to Wishlist Successfully!");
+                if(data.wishlist_count){
+                    $("#addtocart_toast").addClass("show");
+                    $('.ec-cart-wishlist').html(data.wishlist_count);
+                    $("#addtocart_toast").text("Product Added to Wishlist Successfully!");
+                }
             },
             error: function (error) {
                 window.location.href = "{{route('user.login')}}";
