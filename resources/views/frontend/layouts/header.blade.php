@@ -24,7 +24,7 @@
                                 <li class="list-inline-item">
                                     <div class="header-top-call">
                                         <i class="ecicon eci-volume-control-phone"></i>
-                                        <a href="tel:+ {{ optional($phone)->image }}"> +91-
+                                        <a href="tel:+ {{ optional($phone)->image }}"> 
                                             {{ optional($phone)->image }}</a>
                                     </div>
                                 </li>
