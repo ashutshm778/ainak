@@ -16798,6 +16798,7 @@ select {
     bottom: 30px;
     font-size: 14px;
     white-space: nowrap;
+    padding: 10px;
 }
 .addtocart_toast .desc {
     color: #ffffff;

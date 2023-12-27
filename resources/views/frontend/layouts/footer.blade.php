@@ -607,18 +607,26 @@
                 product_id:product_id
             },
             success: function(data) {
-                if(data.wishlist_count){
-                    $("#addtocart_toast").addClass("show");
-                    $('.ec-cart-wishlist').html(data.wishlist_count);
-                    $("#addtocart_toast").text("Product Added to Wishlist Successfully!");
-                }
+
+                  $('#wish_'+product_id).toggleClass('wishlist-heart-active');
+                    if($('#wish_'+product_id).hasClass("wishlist-heart-active")){
+                        if(data.wishlist_count){
+                        $("#addtocart_toast").addClass("show");
+                        $('.ec-cart-wishlist').html(data.wishlist_count);
+                        $("#addtocart_toast").text("Product Added to Wishlist Successfully!");
+                      }
+                    }else{
+                        deleteToWishlist(product_id);
+                    }
+
+               
             },
             error: function (error) {
                 window.location.href = "{{route('user.login')}}";
             }
         });
     }
-
+   
     function deleteToWishlist(product_id)
     {
         $.ajaxSetup({

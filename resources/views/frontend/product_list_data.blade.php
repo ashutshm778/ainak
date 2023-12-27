@@ -1,45 +1,55 @@
 <div class="shop-pro-inner scrolling-pagination">
     <div class="row">
         @foreach ($list as $data)
-        @php
-            $new_price=homePrice($data->id);
-        @endphp
+            @php
+                $new_price = homePrice($data->id);
+            @endphp
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 mb-6 pro-gl-content">
                 <div class="ec-product-inner">
                     <div class="ec-pro-image-outer">
                         <div class="ec-pro-image">
-                            <a href="{{ route('search',$data->slug) }}?type=product" class="image">
+                            <a href="{{ route('search', $data->slug) }}?type=product" class="image">
                                 @php
-                                    $gallery_images=explode(',',$data->gallery_image);
+                                    $gallery_images = explode(',', $data->gallery_image);
                                 @endphp
-                                @foreach ($gallery_images as $new_key=>$gallery_image)
-                                    @if(count($gallery_images) >= 2)
-                                        @if($new_key == 0)
-                                            <img class="main-image" src="{{asset('public/'.api_asset($gallery_image))}}" alt="Product" />
+                                @foreach ($gallery_images as $new_key => $gallery_image)
+                                    @if (count($gallery_images) >= 2)
+                                        @if ($new_key == 0)
+                                            <img class="main-image" src="{{ asset('public/' . api_asset($gallery_image)) }}"
+                                                alt="Product" />
                                         @else
-                                            <img class="hover-image" src="{{asset('public/'.api_asset($gallery_image))}}" alt="Product" />
+                                            <img class="hover-image"
+                                                src="{{ asset('public/' . api_asset($gallery_image)) }}" alt="Product" />
                                         @endif
                                     @else
-                                        <img class="main-image" src="{{asset('public/'.api_asset($gallery_image))}}" alt="Product" />
+                                        <img class="main-image" src="{{ asset('public/' . api_asset($gallery_image)) }}"
+                                            alt="Product" />
                                     @endif
                                 @endforeach
                             </a>
                             @php
-                                $product_id=$data->id;
-                                $in_offer=App\Models\Admin\Offer::where('is_active',1)->whereHas('offer_product', function($q) use ($product_id){
-                                    $q->where('product_id',$product_id);
-                                })->first();
+                                $product_id = $data->id;
+                                $in_offer = App\Models\Admin\Offer::where('is_active', 1)
+                                    ->whereHas('offer_product', function ($q) use ($product_id) {
+                                        $q->where('product_id', $product_id);
+                                    })
+                                    ->first();
                             @endphp
                             @if ($in_offer)
                                 <span class="percentage">Big Deal</span>
                             @endif
-                            @if($new_price['discount'])
+                            @if ($new_price['discount'])
                                 <span class="flags">
-                                    <span class="percentage">@if($new_price['discount_type'] == 'amount') ₹{{$new_price['discount']}} @else {{$new_price['discount']}}% @endif OFF</span>
+                                    <span class="percentage">
+                                        @if ($new_price['discount_type'] == 'amount')
+                                            ₹{{ $new_price['discount'] }}
+                                        @else
+                                            {{ $new_price['discount'] }}%
+                                        @endif OFF
+                                    </span>
                                 </span>
                             @endif
-                             <div class="ec-pro-actions">
-                              {{--  @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
+                                {{--  @if (featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                                  <button title="Add To Cart" class="add-to-cart">
                                     <img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img pro_svg" alt="" />
                                     Add To Cart
@@ -47,34 +57,49 @@
                                 @endif
                                 <a class="ec-btn-group quickview" title="quickview"">
                                     <img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" />
-                                </a>--}}
-                                @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
-                                <a class="ec-btn-group wishlist" title="Wishlist">
-                                    <img src="{{ asset('public/frontend/assets/images/icons/wishlist.svg') }}" class="svg_img pro_svg" alt="" />
-                                </a>
+                                </a> --}}
+                                @if (Auth::guard('customer')->check())
+                                    @php
+                                        $whistlist_data = App\Models\Wishlist::where('product_id', $data->id)
+                                            ->where('user_id', Auth::guard('customer')->user()->id)
+                                            ->first();
+                                    @endphp
+                                    <div class="wishlist-container wislist-positon">
+                                        <div class="wishlist-heart @if (!empty($whistlist_data->id)) wishlist-heart-active @endif"
+                                            id="wish_{{ $data->id }}" onclick="addToWishlist({{ $data->id }})">
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="wishlist-container wislist-positon">
+                                        <div class="wishlist-heart" id="wish_{{ $data->id }}"
+                                            onclick="addToWishlist({{ $data->id }})"></div>
+                                    </div>
                                 @endif
-                            </div> 
                         </div>
                     </div>
                     <div class="ec-pro-content">
-                        <h5 class="ec-pro-title"><a href="{{ route('search',$data->slug) }}?type=product">@if($data->variant_name){{$data->variant_name}}@else{{$data->name}}@endif</a></h5>
+                        <h5 class="ec-pro-title"><a href="{{ route('search', $data->slug) }}?type=product">
+                                @if ($data->variant_name)
+                                    {{ $data->variant_name }}@else{{ $data->name }}
+                                @endif
+                            </a></h5>
                         <span class="ec-price">
-                            @if($new_price['selling_price'] != $new_price['product_price'])
-                                <span class="old-price">{{$new_price['selling_price']}}</span>
-                                <span class="new-price">{{$new_price['product_price']}}</span>
+                            @if ($new_price['selling_price'] != $new_price['product_price'])
+                                <span class="old-price">{{ $new_price['selling_price'] }}</span>
+                                <span class="new-price">{{ $new_price['product_price'] }}</span>
                             @else
-                                <span class="new-price">{{$new_price['product_price']}}</span>
+                                <span class="new-price">{{ $new_price['product_price'] }}</span>
                             @endif
                         </span>
-                        @if($data->colors)
-                            {{--<div class="ec-pro-option">
+                        @if ($data->colors)
+                            {{-- <div class="ec-pro-option">
                                 <div class="ec-pro-color">
                                     <span class="ec-pro-opt-label">Color</span>
                                     <ul class="ec-opt-swatch ec-change-img">
                                         <li><input type="color" data-tooltip="{{App\Models\Admin\Color::where('code',$data->colors)->first()->name}}" name="color" value="{{$data->color}}"></li>
                                     </ul>
                                 </div>
-                            </div>--}}
+                            </div> --}}
                         @endif
                     </div>
                 </div>
@@ -85,18 +110,18 @@
 </div>
 
 <script type="text/javascript">
-$(document).ready(function(){
-    $('ul.pagination').hide();
-    $(function() {
-        $('.scrolling-pagination').jscroll({
-            autoTrigger: true,
-            padding: 0,
-            nextSelector: '.pagination li.active + li a',
-            contentSelector: 'div.scrolling-pagination',
-            callback: function() {
-                $('ul.pagination').remove();
-            }
+    $(document).ready(function() {
+        $('ul.pagination').hide();
+        $(function() {
+            $('.scrolling-pagination').jscroll({
+                autoTrigger: true,
+                padding: 0,
+                nextSelector: '.pagination li.active + li a',
+                contentSelector: 'div.scrolling-pagination',
+                callback: function() {
+                    $('ul.pagination').remove();
+                }
+            });
         });
     });
-});
 </script>

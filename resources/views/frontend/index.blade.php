@@ -460,23 +460,40 @@
                                                     </span>
                                                 </span>
                                             @endif
-                                             <div class="ec-pro-actions">
-                                                   {{--- <form id="featured_category_form_{{$featured_category_product->id}}">
+                                            {{-- <div class="ec-pro-actions">
+                                                   <form id="featured_category_form_{{$featured_category_product->id}}">
                                                         <input type="hidden" name="product_id" value="{{$featured_category_product->id }}">
                                                         <button type="button" title="Add To Cart" class="bg-transparent" onclick="addtocart({{$featured_category_product->id}},'featured_category_form')">
                                                             <img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img pro_svg" alt="">
                                                         </button>
                                                     </form>
-                                                    <a class="ec-btn-group quickview" onclick="open_product_model({{$featured_category_product->id }})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg"></a> --}}
+                                                    <a class="ec-btn-group quickview" onclick="open_product_model({{$featured_category_product->id }})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg"></a>
                                                     <form action="#">
                                                         <a class="ec-btn-group wishlist" title="Wishlist"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" onclick="addToWishlist({{$featured_category_product->id}})" /></a>
                                                     </form>
-                                                </div> 
+                                                </div> --}}
                                             {{-- <div class="ec-pro-actions">
                                                     <button title="Add To Cart" class=" add-to-cart"><img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img pro_svg" alt="" /></button>
                                                     <a class="ec-btn-group quickview" onclick="open_product_model({{$new_arriavl->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a>
                                                     <a class="ec-btn-group wishlist" title="Wishlist"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" /></a>
                                                 </div> --}}
+                                                @if (Auth::guard('customer')->check())
+                                    @php
+                                        $whistlist_data = App\Models\Wishlist::where('product_id', $featured_category_product->id)
+                                            ->where('user_id', Auth::guard('customer')->user()->id)
+                                            ->first();
+                                    @endphp
+                                    <div class="wishlist-container wislist-positon">
+                                        <div class="wishlist-heart @if (!empty($whistlist_data->id)) wishlist-heart-active @endif"
+                                            id="wish_{{ $featured_category_product->id }}" onclick="addToWishlist({{ $featured_category_product->id }})">
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="wishlist-container wislist-positon">
+                                        <div class="wishlist-heart" id="wish_{{ $featured_category_product->id }}"
+                                            onclick="addToWishlist({{ $featured_category_product->id }})"></div>
+                                    </div>
+                                @endif
                                         </div>
                                     </div>
 

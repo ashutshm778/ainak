@@ -30,7 +30,7 @@
                                     @php
                                         $wishlist_price=getProductDiscountedPrice($wishlist->product->id,'retailer');
                                     @endphp
-                                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 mb-6 pro-gl-content">
+                                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6 mb-6 pro-gl-content">
                                         <div class="ec-product-inner">
                                             <div class="ec-pro-image-outer">
                                                 <div class="ec-pro-image">
@@ -56,8 +56,8 @@
                                                             <span class="percentage">@if($wishlist_price['discount_type'] == 'amount') ₹{{$wishlist_price['discount']}} @else {{$wishlist_price['discount']}}% @endif OFF</span>
                                                         </span>
                                                     @endif
-                                                    <a href="#" class="ec-btn-group quickview" onclick="open_product_model({{$wishlist->product->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a>
-                                                    <div class="ec-pro-actions">
+                                                    {{-- <a href="#" class="ec-btn-group quickview" onclick="open_product_model({{$wishlist->product->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a>
+                                                     <div class="ec-pro-actions">
 
                                                         <form id="new_arrival_form_{{$wishlist->product->id}}">
                                                             <input type="hidden" name="product_id" value="{{$wishlist->product->id}}">
@@ -65,7 +65,7 @@
                                                                 <img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img pro_svg" alt="" /> Add To Cart
                                                             </button>
                                                         </form>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                             <div class="ec-pro-content">

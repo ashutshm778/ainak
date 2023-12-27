@@ -192,11 +192,21 @@
                             onclick="update_qty('plus',{{ $data->id }},{{ $product_price['max_qty'] > 0 ? $product_price['max_qty'] : 'null' }},'form')">
                             <span class="ecicon eci-plus"></span>
                         </button> --}}
-                        <div class="wslst">
+                        <!-- <div class="wslst">
                             <a class="text-white" title="Wishlist"  onclick="addToWishlist({{$data->id}})">
                                 <i class="ecicon eci-heart-o" style="font-size:25px;"></i>
                             </a>
-                        </div> 
+                        </div>  -->
+                        @if (Auth::guard('customer')->check())
+                         @php $whistlist_data = App\Models\Wishlist::where('product_id',$data->id)->where('user_id',Auth::guard('customer')->user()->id)->first(); @endphp
+                        <div class="wishlist-container">
+                            <div class="wishlist-heart @if(!empty($whistlist_data->id)) wishlist-heart-active @endif" id="wish_{{$data->id}}" onclick="addToWishlist({{$data->id}})"></div>
+                        </div>
+                        @else
+                        <div class="wishlist-container">
+                            <div class="wishlist-heart" id="wish_{{$data->id}}" onclick="addToWishlist({{$data->id}})"></div>
+                        </div>
+                        @endif
                         <input type="hidden" name="product_id" value="{{ $data->id }}">
                         <input type="hidden" name="product_group_id" value="{{ $data->product_group_id }}">
                         <div class="ec-single-cart ">

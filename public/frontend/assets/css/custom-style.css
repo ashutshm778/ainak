@@ -3082,3 +3082,30 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   padding-top: 15px;
   font-size: 18px;
 }
+.wislist-positon{
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  z-index: 24;
+  margin: 0 auto;
+}
+.wishlist-heart {
+  background-image: url(https://cdn.eyemyeye.com/desktop/images/icon/shared/icon-whishlist.svg);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 22px;
+  background-size: contain;
+  margin-top: 10px
+}
+
+.wishlist-heart-active {
+  background-image: url(https://cdn.eyemyeye.com/desktop/images/icon/shared/icon-whishlist-active.svg) !important;
+}
+
+.wishlist-container:hover {
+  filter: brightness(-100%)
+}
+
+.wishlist-container {
+  cursor: pointer
+}

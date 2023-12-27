@@ -24,19 +24,36 @@
                     </span>
                 @endif
 
-                    <div class="ec-pro-actions">
-                        {{-- @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
+                {{--  <div class="ec-pro-actions">
+                        @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                             <form id="new_arrival_form_{{$productData->id}}">
                                 <input type="hidden" name="product_id" value="{{$productData->id}}">
                                 <button type="button" title="Add To Cart" class="bg-transparent" onclick="addtocart({{$productData->id}},'new_arrival_form')"><img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img pro_svg" alt="" /></button>
                             </form>
                         @endif
-                        <a href="#" class="ec-btn-group quickview" onclick="open_product_model({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a> --}}
+                        <a href="#" class="ec-btn-group quickview" onclick="open_product_model({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a> 
                         @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                           <a  style="margin-top: 6px;" class="ec-btn-group" title="Wishlist" onclick="addToWishlist({{$productData->id}})"><img src="{{ asset('public/frontend/assets/images/icons/pro_wishlist.svg') }}" class="svg_img pro_svg" alt="" /></a>
                         @endif
-                    </div>
+                    </div> --}}
 
+                    @if (Auth::guard('customer')->check())
+                        @php
+                            $whistlist_data = App\Models\Wishlist::where('product_id', $new_arriavl->id)
+                                ->where('user_id', Auth::guard('customer')->user()->id)
+                                ->first();
+                        @endphp
+                        <div class="wishlist-container wislist-positon">
+                            <div class="wishlist-heart @if (!empty($whistlist_data->id)) wishlist-heart-active @endif"
+                                id="wish_{{ $new_arriavl->id }}" onclick="addToWishlist({{ $new_arriavl->id }})">
+                            </div>
+                        </div>
+                    @else
+                        <div class="wishlist-container wislist-positon">
+                            <div class="wishlist-heart" id="wish_{{ $new_arriavl->id }}"
+                                onclick="addToWishlist({{ $new_arriavl->id }})"></div>
+                        </div>
+                    @endif
 
             </div>
         </div>
