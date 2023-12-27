@@ -3102,9 +3102,9 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   background-image: url(https://cdn.eyemyeye.com/desktop/images/icon/shared/icon-whishlist-active.svg) !important;
 }
 
-.wishlist-container:hover {
-  filter: brightness(-100%)
-}
+/* .wishlist-container:hover {
+  filter: brightness(100%)
+} */
 
 .wishlist-container {
   cursor: pointer

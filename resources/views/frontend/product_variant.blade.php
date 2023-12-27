@@ -22,6 +22,22 @@
                     </div>
                 @endforeach
             </div>
+            @if (Auth::guard('customer')->check())
+                @php
+                    $whistlist_data = App\Models\Wishlist::where('product_id', $data->id)
+                        ->where('user_id', Auth::guard('customer')->user()->id)
+                        ->first();
+                @endphp
+                <div class="wishlist-container wislist-positon">
+                    <div class="wishlist-heart @if (!empty($whistlist_data->id)) wishlist-heart-active @endif"
+                        id="wish_{{ $data->id }}" onclick="addToWishlist({{ $data->id }})"></div>
+                </div>
+            @else
+                <div class="wishlist-container wislist-positon">
+                    <div class="wishlist-heart" id="wish_{{ $data->id }}"
+                        onclick="addToWishlist({{ $data->id }})"></div>
+                </div>
+            @endif
         </div>
     </div>
     <div class="single-pro-desc single-pro-desc-no-sidebar">
@@ -46,7 +62,8 @@
                 <div class="ec-single-price">
                     @if ($product_price['selling_price'] != $product_price['product_price'])
                         <span class="new-price"><del class="discount">{{ $product_price['selling_price'] }}</del>
-                            {{ $product_price['product_price'] }} <small class="discount" style="font-size: 16px;"> <i> 50% OFF</i></small></span>
+                            {{ $product_price['product_price'] }} <small class="discount" style="font-size: 16px;"> <i>
+                                    50% OFF</i></small></span>
                     @else
                         <span class="new-price"> {{ $product_price['product_price'] }}</span>
                     @endif
@@ -100,13 +117,15 @@
                                     @endforeach
                                     <ul>
                                         @foreach (array_unique($at_array) as $key => $dv)
-                                            <li  @foreach ($product_attribut_array as $array_a) @if (in_array($dv, $array_a))  @if (in_array($attr, $array_a)) class="active" @endif  @endif @endforeach>
+                                            <li
+                                                @foreach ($product_attribut_array as $array_a) @if (in_array($dv, $array_a))  @if (in_array($attr, $array_a)) class="active" @endif  @endif @endforeach>
                                                 <input type="radio"name="attribute_id_{{ $attr }}"
                                                     id="attribute_id_{{ $attr }}_{{ $dv }}"
                                                     value="{{ $dv }}"
                                                     onclick="getVaiantPriceData('{{ $data->product_group_id }}','{{ $attr }}','{{ $dv }}')"
                                                     @foreach ($product_attribut_array as $array_a) @if (in_array($dv, $array_a))  @if (in_array($attr, $array_a)){{ 'checked' }} @endif  @endif @endforeach>
-                                                <label class="aiz-megabox" for="attribute_id_{{ $attr }}_{{ $dv }}">
+                                                <label class="aiz-megabox"
+                                                    for="attribute_id_{{ $attr }}_{{ $dv }}">
                                                     {{ $dv }}
                                                     <span class="aiz-megabox-elem">
                                                 </label>
@@ -131,16 +150,17 @@
                                 <div class="ec-pro-variation-content">
                                     <ul>
                                         @foreach ($colors as $key => $color)
-                                            <li data-toggle="" data-title="{{ App\Models\Admin\Color::where('code', $color->colors)->first()->name }}" >
+                                            <li data-toggle=""
+                                                data-title="{{ App\Models\Admin\Color::where('code', $color->colors)->first()->name }}">
                                                 <label class="aiz-megabox" for="color_{{ $color->colors }}"
                                                     style="background: {{ $color->colors }};"
                                                     title="{{ App\Models\Admin\Color::where('code', $color->colors)->first()->name }}">
 
-                                                    <input type="radio" name="color" id="color_{{ $color->colors }}"
-                                                    value="{{ $color->colors }}"
-                                                    onclick="getVaiantPriceColorData('{{ $data->product_group_id }}','{{ $color->colors }}')"
-                                                    @if (!empty($data->colors)) @if ($data->colors == $color->colors) {{ 'checked' }} @endif
-                                                    @endif >
+                                                    <input type="radio" name="color"
+                                                        id="color_{{ $color->colors }}" value="{{ $color->colors }}"
+                                                        onclick="getVaiantPriceColorData('{{ $data->product_group_id }}','{{ $color->colors }}')"
+                                                        @if (!empty($data->colors)) @if ($data->colors == $color->colors) {{ 'checked' }} @endif
+                                                        @endif >
                                                     <span class="aiz-megabox-elem">
                                                 </label>
                                             </li>
@@ -151,19 +171,19 @@
                             </div>
                         @endif
                         @if (!empty($total_price))
-                        <div class="row mb-3" id="chosen_price_div">
-                            <div class="col-md-6">
-                                <span>Total Price:</span>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="ec-single-price">
-                                    <span class="new-price">
-                                       {{ '₹' . $total_price }}
-                                    </span>
+                            <div class="row mb-3" id="chosen_price_div">
+                                <div class="col-md-6">
+                                    <span>Total Price:</span>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="ec-single-price">
+                                        <span class="new-price">
+                                            {{ '₹' . $total_price }}
+                                        </span>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endif
                     </div>
                     @php
@@ -184,7 +204,7 @@
                         </button>
                         <input type="number" id="quantity" name="product_qty"
                             class="form-control text-center qty_value_{{ $data->id }}"
-                            value="@if(!empty($pro_qty)){{ $pro_qty }}@else{{ !empty($product_quanity)?$product_quanity :'1'}}@endif"
+                            value="@if (!empty($pro_qty)){{ $pro_qty }}@else{{ !empty($product_quanity)?$product_quanity :'1'}}@endif"
                             min="{{ $data->retailer_min_qty }}"
                             max="{{ $product_price['max_qty'] > 0 ? $product_price['max_qty'] : 'null' }}"
                             style="width:110px; padding: 0 10px; height: 45px;" onchange="change_quantitiy_price()">
@@ -193,38 +213,31 @@
                             <span class="ecicon eci-plus"></span>
                         </button> --}}
                         <!-- <div class="wslst">
-                            <a class="text-white" title="Wishlist"  onclick="addToWishlist({{$data->id}})">
+                            <a class="text-white" title="Wishlist"  onclick="addToWishlist({{ $data->id }})">
                                 <i class="ecicon eci-heart-o" style="font-size:25px;"></i>
                             </a>
                         </div>  -->
-                        @if (Auth::guard('customer')->check())
-                         @php $whistlist_data = App\Models\Wishlist::where('product_id',$data->id)->where('user_id',Auth::guard('customer')->user()->id)->first(); @endphp
-                        <div class="wishlist-container">
-                            <div class="wishlist-heart @if(!empty($whistlist_data->id)) wishlist-heart-active @endif" id="wish_{{$data->id}}" onclick="addToWishlist({{$data->id}})"></div>
-                        </div>
-                        @else
-                        <div class="wishlist-container">
-                            <div class="wishlist-heart" id="wish_{{$data->id}}" onclick="addToWishlist({{$data->id}})"></div>
-                        </div>
-                        @endif
                         <input type="hidden" name="product_id" value="{{ $data->id }}">
                         <input type="hidden" name="product_group_id" value="{{ $data->product_group_id }}">
                         <div class="ec-single-cart ">
-                            <button type="button" class="btn btn-primary" onclick="addtocart({{ $data->id }},'product_detail_form')">
+                            <button type="button" class="btn btn-primary"
+                                onclick="addtocart({{ $data->id }},'product_detail_form')">
                                 <i class="ecicon eci-shopping-cart"></i> &nbsp;Buy Frame Only
                             </button>
                         </div>
                         @if (Auth::guard('customer')->check())
-                        <div class="ec-single-cart ">
-                            <button type="button" class="btn btn-primary" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
-                              <i class="ecicon eci-shopping-cart"></i> Select Lens & buy now </button>
-                          </div>
+                            <div class="ec-single-cart ">
+                                <button type="button" class="btn btn-primary" data-link-action="quickview"
+                                    title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
+                                    <i class="ecicon eci-shopping-cart"></i> Select Lens & buy now </button>
+                            </div>
                         @else
-                        <div class="ec-single-cart ">
-                            <button type="button" class="btn btn-primary" onclick="addtocart({{ $data->id }},'product_detail_form')">
-                                <i class="ecicon eci-shopping-cart"></i> Select Lens & buy now
-                            </button>
-                        </div>
+                            <div class="ec-single-cart ">
+                                <button type="button" class="btn btn-primary"
+                                    onclick="addtocart({{ $data->id }},'product_detail_form')">
+                                    <i class="ecicon eci-shopping-cart"></i> Select Lens & buy now
+                                </button>
+                            </div>
                         @endif
                     </div>
 
