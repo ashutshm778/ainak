@@ -76,7 +76,7 @@
     </section>
 
 
-    <section class="section ec-trend-product section-space-p bg-gray">
+    <!-- <section class="section ec-trend-product section-space-p bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 section-title-block">
@@ -132,7 +132,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--  category Section Start -->
     <section class="section ec-category-section section-space-p br-btm">
         <div class="container">

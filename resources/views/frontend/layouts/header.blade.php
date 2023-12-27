@@ -239,7 +239,6 @@
                             @endforeach
                             {{-- <li><a href="#">Offer</a></li> --}}
                             {{-- <li><a href="{{route('about')}}">About Us</a></li> --}}
-                            <li><a href="{{route('contact')}}">Contact Us</a></li>
                             <!--<li class="dropdown"><a href="javascript:void(0)">Info</a>-->
                             <!--    <ul class="sub-menu">-->  
                             <!--    </ul>-->

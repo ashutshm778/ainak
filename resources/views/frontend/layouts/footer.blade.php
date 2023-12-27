@@ -17,7 +17,8 @@
                             <h4 class="ec-footer-heading">Our Company </h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> About Us</a></li>
+                                    <li class="ec-footer-link"><a href="{{route('about')}}"><i class="ecicon eci-chevron-right"></i> About Us</a></li>
+                                    <li class="ec-footer-link"><a href="{{route('contact')}}"><i class="ecicon eci-chevron-right"></i> Contact Us</a></li>
                                     <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Career</a></li>
                                     <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Blog</a></li>
                                     <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Customer Stories</a></li>
@@ -244,25 +245,6 @@
         </div>
     </div>
 </div>
-
-{{-- Whatsapp Start --}}
-{{-- <div class="whatsapp">
-    <a href="https://wa.me/+911234567890" target="_blank">
-        <img src="{{ asset('public/frontend/assets/images/whtsp.png') }}" alt="whatsapp">
-    </a>
-</div> --}}
-{{-- Whatsapp End --}}
-
-{{-- <div class="ec-right-bottom">
-    <div class="ec-box">
-        <div class="ec-button rotateBackward">
-            <a href="https://wa.me/+911234567890" target="_blank"> <img
-                    src="{{ asset('public/frontend/assets/images/whatsapp.png') }}" alt="whatsapp icon"></a>
-        </div>
-    </div>
-</div> --}}
-{{-- <a href="#" class="buy-now-btn" data-link-action="quickview" title="Quick view" data-bs-toggle="modal"
-    data-bs-target="#appointment_modal"> <i class="fa fa-envelope-open"></i> Appointment</a> --}}
 <!-- Modal -->
 <div class="modal fade" id="appointment_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md modal-dialog-centered" role="document">
