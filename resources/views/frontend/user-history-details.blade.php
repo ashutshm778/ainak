@@ -66,7 +66,7 @@
                                                                 <th>Discount</th>
                                                                 <th>Discounted Amount</th>
                                                                 <th>Qty</th>
-                                                                <th class="d-flex justify-content-end">Total Amount</th>
+                                                                <th>Total Amount</th>
                                                                 <th class="text-center">Status</th>
                                                             </tr>
                                                         </thead>
@@ -117,8 +117,8 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-9"></div>
-                                                <div class="col-3 d-flex justify-content-end">
+                                                <div class="col-8"></div>
+                                                <div class="col-4">
                                                     <div class="table-responsive">
                                                         <table class="table">
                                                             <tbody>
