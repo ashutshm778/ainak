@@ -470,6 +470,7 @@
     function change_qty(product_id, qty) {
         $.get("{{ route('change.cart.qty', ['', '']) }}/" + product_id + "/" + qty, function(data, status) {
             $("#addtocart_toast").addClass("show");
+            setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
             $('#ec-side-cart').html(data.cart_detail)
             $('#cart-summary-div').html(data.cart_summary)
             $('#cart_data').html(data.cart_data);
@@ -514,6 +515,7 @@
             success: function(data) {
                 $('#ec-side-cart').html(data.html)
                 $("#addtocart_toast").addClass("show");
+                setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
                 $('.header_cart_count').text(data.cart_count);
                 if (type == 'new_arrival_form') {
                      location.reload();
@@ -567,6 +569,7 @@
             success: function(data) {
                 $('#ec-side-cart').html(data.html)
                 $("#addtocart_toast").addClass("show");
+                setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
                 $('.header_cart_count').text(data.cart_count);
                 window.location.href = "{{ route('checkout') }}";
             },
@@ -707,6 +710,7 @@
             success: function(data) {
                 $('#ec-side-cart').html(data.html)
                 $("#addtocart_toast").addClass("show");
+                setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
                 $('.header_cart_count').text(data.cart_count);
                 window.location.href = "{{ route('checkout') }}";
             },
