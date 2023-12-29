@@ -76,7 +76,6 @@
                                         @endif
                                     </span>
                                 </div>
-
                                 <span class="ec-register-wrap ec-register-half" id="otp_div" style="display: none;">
                                     <label>OTP<span style="color:red">*<span></label> <br>
                                     <input type="number" class="form-control" id="otp" name="otp"
@@ -91,7 +90,6 @@
                                     @if ($errors->has('otp'))
                                         <span class="text-danger">{{ $errors->first('otp') }}</span>
                                     @endif
-
                                 </span>
 
                                 <span class="ec-register-wrap ec-register-half">

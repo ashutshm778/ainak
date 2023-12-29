@@ -2279,7 +2279,8 @@ div#ec_news_signup {
     overflow: hidden;
     z-index: 12 !important;
     font-size: 15px;
-    line-height: 40px;
+    line-height: 18px;
+    padding: 10px;
     -webkit-box-shadow: 0 0 10px rgb(12 12 12 / 30%);
     box-shadow: 0 0 10px rgb(12 12 12 / 30%);
 }
