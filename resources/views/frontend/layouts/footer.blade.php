@@ -217,10 +217,15 @@
                 </a>
             </div>
             <div class="ec-nav-panel-icons">
-                <a href="{{ route('wishlist') }}" class="ec-header-btn">
+                <a href="{{ route('wishlist') }}" class="ec-header-btn ">
                     <img src="{{ asset('public/frontend/assets/images/icons/wishlist.svg') }}"
                         class="svg_img header_svg" alt="icon" />
-                    <span class="ec-cart-noti">0</span>
+                    <span class="ec-cart-noti ec-cart-wishlist">
+                                   @if (Auth::guard('customer')->check())
+                                    {{ App\Models\Wishlist::where('user_id', Auth::guard('customer')->user()->id)->get()->count() }}
+                                    @else
+                                        0
+                                    @endif</span>
                 </a>
             </div>
             <div class="ec-nav-panel-icons">
@@ -596,6 +601,7 @@
                         $("#addtocart_toast").addClass("show");
                         $('.ec-cart-wishlist').html(data.wishlist_count);
                         $("#addtocart_toast").text("Product Added to Wishlist Successfully!");
+                        setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
                       }
                     }else{
                         deleteToWishlist(product_id);

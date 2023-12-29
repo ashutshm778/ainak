@@ -818,11 +818,11 @@ function ecCheckCookie()
     $(document).ready(function () {
         $("button.add-to-cart").click(function () {
             $("#addtocart_toast").addClass("show");
-            setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
+            setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 5000);
         });
         $(".ec-btn-group.wishlist").click(function () {
             $("#wishlist_toast").addClass("show");
-            setTimeout(function () { $("#wishlist_toast").removeClass("show") }, 3000);
+            setTimeout(function () { $("#wishlist_toast").removeClass("show") }, 5000);
         });
     });
 

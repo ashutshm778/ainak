@@ -152,6 +152,9 @@ class FrontController extends Controller
     {
         $validator =  Validator::make($request->all(), [
             'phone' => 'required|exists:customers'
+        ],
+        [
+            'phone.exists'=> 'Entered number is not registered.', 
         ]);
       
 

@@ -34,7 +34,7 @@
                                         <div class="ec-product-inner">
                                             <div class="ec-pro-image-outer">
                                                 <div class="ec-pro-image">
-                                                    <a href="#" class="image">
+                                                    <a href="{{ route('search',$wishlist->product->slug) }}?type=product" class="image">
                                                         @php
                                                             $gallery_images=explode(',',$wishlist->product->gallery_image);
                                                         @endphp
