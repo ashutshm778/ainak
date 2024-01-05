@@ -240,13 +240,10 @@
                                 </button>
                             </div>
                         @endif
-                        <div class="">
-                          <!-- ShareThis BEGIN -->
-                            <div class="sharethis-inline-share-buttons"></div>
-                          <!-- ShareThis END -->
-                        </div>
                     </div>
-
+                    <!-- ShareThis BEGIN -->
+                      <div class="sharethis-inline-share-buttons"></div>
+                    <!-- ShareThis END -->
                 </form>
             </div>
 
