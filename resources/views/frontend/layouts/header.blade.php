@@ -215,7 +215,7 @@
                                 @endphp
                                 @if (count($sub_cats))
                                     <li class="dropdown">
-                                        <a href="{{ route('search', $header_category->slug) }}?type=category">{{ $header_category->name }}</a>
+                                        <a href="javascript:void(0)">{{ $header_category->name }}</a>
                                         <ul class="sub-menu">
                                             @foreach (App\Models\Admin\SubCategory::where('is_active', 1)->whereJsonContains('category_id', '' . $header_category->id)->get() as $header_subcategory)
                                                 <li><a
@@ -226,7 +226,7 @@
                                     </li>
                                 @else
                                     <li class="dropdown"><a
-                                            href="{{ route('search', $header_category->slug) }}?type=category">{{ $header_category->name }}</a>
+                                            href="javascript:void(0)">{{ $header_category->name }}</a>
                                         <ul class="sub-menu">
                                             @foreach (App\Models\Admin\SubCategory::where('is_active', 1)->whereJsonContains('category_id', '' . $header_category->id)->get() as $header_subcategory)
                                                 <li><a
