@@ -377,11 +377,11 @@
                 $('#state').val(data.state.state)
                 $('#country').val(data.country.country)
             } else {
+                $('#pincode').val('');
                 $('#city').val('')
                 $('#state').val('')
                 $('#country').val('')
                 $('#id').val('')
-                $('#name').val('')
                 alert('You have Enter Wrong Pincode!')
             }
         }).fail(function() {
