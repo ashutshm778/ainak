@@ -16193,7 +16193,7 @@ body {
 
 /*-----  Section Title  -----*/
 .section-title-block {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18500,7 +18500,7 @@ border-color: #fff;
 }
 
 .ec-product-tab .section-title-block {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .ec-product-tab .section-title-block .section-title {
   margin-top: 11px;
@@ -19356,7 +19356,7 @@ section.ec-test-section {
 }
 
 .ec-test-section .section-title-block {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .ec-test-section .slick-arrow {
   height: 100%;
@@ -19516,7 +19516,7 @@ section.ec-test-section {
     Trending Product Section
 ---------------------------------------------------*/
 .ec-trend-product .section-title-block {
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 .ec-trend-product .section-title-block .section-title {
   margin-top: 0;
@@ -19559,7 +19559,7 @@ section.ec-instagram-section {
   text-transform: capitalize;
 }
 .ec-instagram-section .section-title-block {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .ec-instagram-section .section-title-block .section-btn .ec-section-btn a {
   min-width: 182px;
@@ -20609,7 +20609,7 @@ section.ec-instagram-section {
     text-align: center;
   }
   .ec-trend-product .section-title-block {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   .ec-trend-slider .slick-arrow.slick-next {
@@ -20676,7 +20676,7 @@ section.ec-instagram-section {
             width: 100%;
   }
   .section-title-block {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .ec-pro-tab-nav .nav-item {
     font-size: 14px;
@@ -20819,7 +20819,7 @@ section.ec-instagram-section {
 }
 @media only screen and (max-width: 599px) {
   .ec-test-section .section-title-block {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
   .ec-test-section .ec-test-inner {
     -webkit-box-orient: vertical;
@@ -21329,7 +21329,7 @@ a.wishlist .svg_img.pro_svg {
 }
 
   .ec-product-tab .section-title-block {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
   .ec-product-tab .slick-slide {
     text-align: center;

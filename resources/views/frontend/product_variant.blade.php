@@ -1,3 +1,4 @@
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6597d1be3cf4bf001a6174c4&product=sop' async='async'></script>
 @php
     $product_price = homePrice($data->id);
 @endphp
@@ -239,11 +240,11 @@
                                 </button>
                             </div>
                         @endif
-                        <div class="ec-single-cart">
-                          <!-- ShareThis BEGIN -->
-                            <div class="sharethis-inline-share-buttons"></div>
-                          <!-- ShareThis END -->
-                        </div>
+                    </div>
+                    <div class="">
+                      <!-- ShareThis BEGIN -->
+                        <div class="sharethis-inline-share-buttons"></div>
+                      <!-- ShareThis END -->
                     </div>
 
                 </form>

@@ -27,7 +27,6 @@
             <link rel="stylesheet" href="{{asset('public/frontend/assets/css/style.css')}}" />
             <link rel="stylesheet" href="{{asset('public/frontend/assets/css/responsive.css')}}" />
         @endif
-        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6597d1be3cf4bf001a6174c4&product=sop' async='async'></script>
     </head>
     <style>
         .kinetic
