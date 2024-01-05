@@ -21535,7 +21535,7 @@ h4.ec-faq-title::after, .ec-faq-title.h4::after {
   width: 100%;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #eeeeee;
+  /* border-bottom: 1px solid #eeeeee; */
 }
 .single-pro-content .ec-single-qty .qty-plus-minus {
   border: 1px solid #eeeeee;
