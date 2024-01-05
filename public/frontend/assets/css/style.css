@@ -21533,7 +21533,7 @@ h4.ec-faq-title::after, .ec-faq-title.h4::after {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100%;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding-bottom: 20px;
   /* border-bottom: 1px solid #eeeeee; */
 }
