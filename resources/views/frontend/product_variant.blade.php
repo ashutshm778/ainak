@@ -56,7 +56,7 @@
             </div> --}}
             <span class="in-stock">In Stock</span>
 
-            <div class="ec-single-desc">{!! $data->description !!}</div>
+            <div class="ec-single-desc">{!! $data->short_description !!}</div>
 
             <div class="ec-single-price-stoke">
                 <div class="ec-single-price">
@@ -239,6 +239,9 @@
                                 </button>
                             </div>
                         @endif
+                        <div class="ec-single-cart">
+                          <!-- ShareThis BEGIN --><div class="sharethis-inline-share-buttons"></div><!-- ShareThis END -->
+                        </div>
                     </div>
 
                 </form>
