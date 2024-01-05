@@ -129,14 +129,19 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
+                                                <div class="col-md-6 form_div">
+                                                    <div class="form-group">
+                                                        <label for="short_description">Short Description</label>
+                                                        <textarea class="form-control summernote" name="short_description">{{$product->short_description}}</textarea>
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-6 form_div">
                                                     <div class="form-group">
                                                         <label for="description">Description</label>
                                                         <textarea class="form-control summernote" name="description">{{$product->description}}</textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 form_div">
+                                                <div class="col-md-12 form_div">
                                                     <div class="form-group">
                                                         <label for="specification">Specification</label>
                                                         <textarea class="form-control summernote" name="specification">{{$product->specification}}</textarea>

@@ -52,6 +52,7 @@ class CreateProductsTable extends Migration
             $table->double('tax_amount',15,2)->default(0.00);
             $table->string('shipping_type')->default('free');
             $table->double('shipping_amount',15,2)->default(0.00);
+            $table->longText('short_description')->nullable();
             $table->longText('specification')->nullable();
             $table->longText('tags')->nullable();
             $table->longText('video_link')->nullable();

@@ -86,7 +86,7 @@ class FrontController extends Controller
         ]);
 
         if (Auth::guard('customer')->attempt(['phone' => $request->phone, 'password' => $request->password])) {
-            return redirect()->route('index')->with('success', 'You Have Successfully Register!');
+            return redirect()->route('user_profile')->with('success', 'You Have Successfully Register!');
         }
     }
 
@@ -102,7 +102,7 @@ class FrontController extends Controller
         $customer->password =Hash::make($request->password);
         $customer->save();
         if (Auth::guard('customer')->attempt(['phone' => $request->phone, 'password' => $request->password])) {
-            return redirect()->route('index')->with('success', 'You Have Successfully Register!');
+            return redirect()->route('user_profile')->with('success', 'You Have Successfully Register!');
         }
      
     }

@@ -164,6 +164,7 @@ class ProductController extends Controller
             $product->subsubcategory_id=$request->subsubcategory_id;
             $product->brand_id=$request->brand_id;
             $product->name=$request->name;
+            $product->short_description=$request->short_description;
             $product->description=$request->description;
             $product->thumbnail_image=$request->thumbnail_image[$key];
             $product->gallery_image=$request->gallery_image[$key];
@@ -329,6 +330,7 @@ class ProductController extends Controller
             $product->subsubcategory_id=$request->subsubcategory_id;
             $product->brand_id=$request->brand_id;
             $product->name=$request->name;
+            $product->short_description=$request->short_description;
             $product->description=$request->description;
             $product->thumbnail_image=$request->thumbnail_image[$key];
             $product->gallery_image=$request->gallery_image[$key];

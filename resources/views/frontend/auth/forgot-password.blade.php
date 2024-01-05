@@ -94,7 +94,7 @@
 
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Password<span style="color:red">*<span></label> <br>
-                                    <input type="password" id="pasword" class="form-control" name="password"
+                                    <input type="password" id="pasword" class="form-control" minlength="6" name="password"
                                         placeholder="Enter your new password..." required />
                                     @if ($errors->has('password'))
                                         <span class="text-danger">{{ $errors->first('password') }}</span>
@@ -104,7 +104,7 @@
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Confirm Password<span style="color:red">*<span></label> <br>
                                     <input type="password" id="confirm_password" class="form-control"
-                                        name="confirm_password" placeholder="Confirm your password..." required />
+                                        name="confirm_password" minlength="6" placeholder="Confirm your password..." required />
                                     <span class="text-danger error" id="confirm_password_error" style="display:none;color:red;">Your
                                         Password Does Not Match</span>
                                     @if ($errors->has('password'))
