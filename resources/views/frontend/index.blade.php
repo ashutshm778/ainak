@@ -59,7 +59,7 @@
             <div class=" col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1 p-0">
                     <div class="banner-block">
-                        <a href="kids-c4ca?type=subcategory"><img src="{{ asset('public/frontend/assets/images/kids.jpg') }}"
+                        <a href="kids-a87f?type=subcategory"><img src="{{ asset('public/frontend/assets/images/kids.jpg') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
                     <div class="section-title mtt-0">
                         <h2 class="ec-title">Trending Products</h2>
                     </div>
-                    <div class="section-btn">
+                    <div class="section-btn mb-3">
                         <ul class="ec-pro-tab-nav nav">
                             <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"
                                     href="#tab-pro-new-arrivals">New Arrivals</a></li>
@@ -299,7 +299,7 @@
 
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col mb-3">
                     <div class="tab-content">
                         <!-- 1st Product tab start -->
                         <div class="tab-pane fade show active" id="tab-pro-new-arrivals">
@@ -341,6 +341,9 @@
                         </div>
                         <!-- ec 3rd Product tab end -->
                     </div>
+                </div>
+                <div class="text-center">
+                    <a class="btn btn-secondary rds" href="#">View More <i class="ecicon eci-chevron-right"></i></a>
                 </div>
             </div>
         </div>

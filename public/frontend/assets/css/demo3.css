@@ -10120,6 +10120,10 @@ li {
   }
 }
 @media (max-width: 767px) {
+  .btn{
+    height: 35px !important;
+    line-height: 35px !important;
+  }
     .fc-16 {
     font-size: 13px !important;
     }
@@ -15436,6 +15440,9 @@ li {
   .container {
     max-width: 1400px;
   }
+  .section-space-p {
+    padding: 40px 0;
+  }
 }
 @media (max-width: 575.98px) {
   .table-responsive-sm {
@@ -18503,7 +18510,7 @@ border-color: #fff;
   margin-bottom: 10px;
 }
 .ec-product-tab .section-title-block .section-title {
-  margin-top: 11px;
+  margin-top: 15px;
 }
 .ec-product-tab .slick-list {
   margin: 0 -15px;
@@ -21542,4 +21549,8 @@ a.wishlist .svg_img.pro_svg {
 
 .m_hide{
   display: block;
+}
+
+.rds{
+  border-radius: 30px;
 }

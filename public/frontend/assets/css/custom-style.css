@@ -3110,3 +3110,6 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 .wishlist-container {
   cursor: pointer
 }
+.rds{
+  border-radius: 30px;
+}
