@@ -26,26 +26,37 @@
             background-position: right calc(0.375em + 0.1875rem) center;
             background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
         }
+        .input-group-text {
+    padding: 16px 15px;
+    background-color: #E9ECEF;
+    border: 1px solid #ededed;
+    border-radius: 0px;
+}
+
+@media only screen and (max-width: 575px) {
+    .input-group-text { padding: 12px 15px!important; }
+}
     </style>
 
-    <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    {{-- <div class="row ec_breadcrumb_inner">
-                        <div class="col-md-6 col-sm-12">
-                            <h2 class="ec-breadcrumb-title">Register</h2>
+    <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb"></div>
+    <div class="breadcrumb">
+    <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row ec_breadcrumb_inner">
+                            <div class="col-md-6 col-sm-12">
+                                <h2 class="ec-breadcrumb-title">Register</h2>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <ul class="ec-breadcrumb-list">
+                                    <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
+                                    <li class="ec-breadcrumb-item active">Register</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-md-6 col-sm-12">
-                            <ul class="ec-breadcrumb-list">
-                                <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-                                <li class="ec-breadcrumb-item active">Register</li>
-                            </ul>
-                        </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
 
     <section class="ec-page-content section-space-p">
@@ -78,12 +89,17 @@
                                         <span class="text-danger">{{ $errors->first('last_name') }}</span>
                                     @endif
                                 </span>
-
-
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Password<span style="color:red">*<span></label> <br>
-                                    <input type="password" id="pasword" class="form-control" name="password"
+                                    <div class="input-group" id="show_hide_password">
+                                    <input type="password" id="pasword" minlength="6" class="form-control" name="password"
                                         placeholder="Enter Your Password..." required />
+                                        <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                </div>
                                     @if ($errors->has('password'))
                                         <span class="text-danger">{{ $errors->first('password') }}</span>
                                     @endif
@@ -91,15 +107,51 @@
 
                                 <span class="ec-register-wrap ec-register-half">
                                     <label>Confirm Password<span style="color:red">*<span></label> <br>
-                                    <input type="password" id="confirm_password" class="form-control"
+                                    <div class="input-group" id="confirm_show_hide_password">
+                                    <input type="password" id="confirm_password" minlength="6" class="form-control"
                                         name="confirm_password" placeholder="Enter Your Confirm Password..." required />
+                                        <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                    </div>
                                     <span class="text-danger error" id="confirm_password_error" style="display:none">Your
                                         Password Does Not Match</span>
                                     @if ($errors->has('password'))
                                         <span class="text-danger">{{ $errors->first('password') }}</span>
                                     @endif
                                 </span>
-
+                                <script>
+                                    $(document).ready(function() {
+                                        $("#show_hide_password a").on('click', function(event) {
+                                            event.preventDefault();
+                                            if ($('#show_hide_password input').attr("type") == "text") {
+                                                $('#show_hide_password input').attr('type', 'password');
+                                                $('#show_hide_password i').addClass("fa-eye-slash");
+                                                $('#show_hide_password i').removeClass("fa-eye");
+                                            } else if ($('#show_hide_password input').attr("type") == "password") {
+                                                $('#show_hide_password input').attr('type', 'text');
+                                                $('#show_hide_password i').removeClass("fa-eye-slash");
+                                                $('#show_hide_password i').addClass("fa-eye");
+                                            }
+                                        });
+                                    });
+                                    $(document).ready(function() {
+                                        $("#confirm_show_hide_password a").on('click', function(event) {
+                                            event.preventDefault();
+                                            if ($('#confirm_show_hide_password input').attr("type") == "text") {
+                                                $('#confirm_show_hide_password input').attr('type', 'password');
+                                                $('#confirm_show_hide_password i').addClass("fa-eye-slash");
+                                                $('#confirm_show_hide_password i').removeClass("fa-eye");
+                                            } else if ($('#confirm_show_hide_password input').attr("type") == "password") {
+                                                $('#confirm_show_hide_password input').attr('type', 'text');
+                                                $('#confirm_show_hide_password i').removeClass("fa-eye-slash");
+                                                $('#confirm_show_hide_password i').addClass("fa-eye");
+                                            }
+                                        });
+                                    });
+                                </script>
                                 <div class="ec-register-wrap ec-register-half">
                                     <label>Phone Number<span style="color:red">*<span></label>
                                     <span class="input-group">

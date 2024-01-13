@@ -1,22 +1,23 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
-        <div class="container">
+    <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb"></div>
+    <div class="breadcrumb">
+    <div class="container">
             <div class="row">
                 <div class="col-12">
-                    {{-- <div class="row ec_breadcrumb_inner">
+                    <div class="row ec_breadcrumb_inner">
                         <div class="col-md-6 col-sm-12">
                             <h2 class="ec-breadcrumb-title">Contact Us</h2>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <!-- ec-breadcrumb-list start -->
                             <ul class="ec-breadcrumb-list">
-                                <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                                 <li class="ec-breadcrumb-item active">Contact Us</li>
                             </ul>
                             <!-- ec-breadcrumb-list end -->
                         </div>
-                    </div> --}}
+                    </div> 
                 </div>
             </div>
         </div>
