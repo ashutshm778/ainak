@@ -12,7 +12,12 @@
                         <div class="col-md-6 col-sm-12">
                             <ul class="ec-breadcrumb-list">
                                 <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-                                <li class="ec-breadcrumb-item active">Shop</li>
+                                @if(request('type')=='subcategory')
+                                 <li class="ec-breadcrumb-item">{{App\Models\Admin\SubCategory::where('slug',$slug)->first()->name}}</li>
+                                @else
+                                <li class="ec-breadcrumb-item">Shop</li>
+                                @endif
+                                <li class="ec-breadcrumb-item active">Search</li>
                             </ul>
                         </div>
                     </div>

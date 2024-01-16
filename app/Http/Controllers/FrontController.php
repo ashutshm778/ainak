@@ -28,9 +28,9 @@ class FrontController extends Controller
     {
         $categories = Category::select('id', 'slug', 'name', 'icon')->where('is_active', 1)->orderBy('top_priority', 'asc')->take(6)->get();
         $featured_categories = Category::select('id', 'name')->where('is_active', 1)->where('is_feature', 1)->orderBy('priority', 'asc')->get();
-        $new_arriavls = Product::where('is_active', 1)->where('is_new_arrival', 1)->take(8)->get();
-        $features = Product::where('is_active', 1)->where('is_feature', 1)->take(8)->get();
-        $best_sellers = Product::where('is_active', 1)->where('is_bestseller', 1)->take(8)->get();
+        $new_arriavls = Product::where('is_active', 1)->where('is_new_arrival', 1)->take(12)->get();
+        $features = Product::where('is_active', 1)->where('is_feature', 1)->take(12)->get();
+        $best_sellers = Product::where('is_active', 1)->where('is_bestseller', 1)->take(12)->get();
 
         $sliders = WebsiteSetting::where('type', 'slider')->get();
         $top_banner = WebsiteSetting::where('type', 'banner')->where('position', 'top')->first();
