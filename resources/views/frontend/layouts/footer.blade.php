@@ -17,11 +17,16 @@
                             <h4 class="ec-footer-heading">Our Company </h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="{{route('about')}}"><i class="ecicon eci-chevron-right"></i> About Us</a></li>
-                                    <li class="ec-footer-link"><a href="{{route('contact')}}"><i class="ecicon eci-chevron-right"></i> Contact Us</a></li>
-                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Career</a></li>
-                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Blog</a></li>
-                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Our Stores</a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('about') }}"><i
+                                                class="ecicon eci-chevron-right"></i> About Us</a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('contact') }}"><i
+                                                class="ecicon eci-chevron-right"></i> Contact Us</a></li>
+                                    <li class="ec-footer-link"><a href="#"><i
+                                                class="ecicon eci-chevron-right"></i> Career</a></li>
+                                    <li class="ec-footer-link"><a href="#"><i
+                                                class="ecicon eci-chevron-right"></i> Blog</a></li>
+                                    <li class="ec-footer-link"><a href="#"><i
+                                                class="ecicon eci-chevron-right"></i> Our Stores</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -45,10 +50,14 @@
                             <h4 class="ec-footer-heading">My Account</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Login</a></li>
-                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Order History</a></li>
-                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> My Wishlist</a></li>
-                                    <li class="ec-footer-link"><a href="{{route('faq')}}"> <i class="ecicon eci-chevron-right"></i> FAQ</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i
+                                                class="ecicon eci-chevron-right"></i> Login</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i
+                                                class="ecicon eci-chevron-right"></i> Order History</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i
+                                                class="ecicon eci-chevron-right"></i> My Wishlist</a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('faq') }}"> <i
+                                                class="ecicon eci-chevron-right"></i> FAQ</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -58,9 +67,12 @@
                             <h4 class="ec-footer-heading">Our Policies</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="{{route('privacy_policy')}}"> <i class="ecicon eci-chevron-right"></i> Privacy Policy </a></li>
-                                    <li class="ec-footer-link"><a href="{{route('term_and_condition')}}"> <i class="ecicon eci-chevron-right"></i> Term & condition</a></li>
-                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Cancellation Policy</a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('privacy_policy') }}"> <i
+                                                class="ecicon eci-chevron-right"></i> Privacy Policy </a></li>
+                                    <li class="ec-footer-link"><a href="{{ route('term_and_condition') }}"> <i
+                                                class="ecicon eci-chevron-right"></i> Term & condition</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i
+                                                class="ecicon eci-chevron-right"></i> Cancellation Policy</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -102,43 +114,49 @@
                 <div class="section-title text-left">
                     <h1>Lorem ipsum is a placeholder text commonly used to demonstrate. </h1>
                 </div>
-                <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+                <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a
+                    typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before
+                    final copy is available.</p>
                 <h5>Lorem ipsum is a placeholder text commonly</h5>
-                <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+                <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a
+                    typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before
+                    final copy is available.</p>
                 <ul class="desk">
-                    <li><strong>Lorem ipsum is a placeholder text commonly :</strong> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.
-                <div class="section-title text-left">
-                    <h2>Popular Search Keyword in Lucknow</h2>
-                </div>
-                <ul>
-                    <li><a href="#">Sunglasses in Varanasi</a></li>
-                    <li><a href="#">Sunglasses in Varanasi</a></li>
-                    <li><a href="#">Sunglasses in Varanasi</a></li>
-                </ul>
-                <div class="section-title text-left">
-                    <h2>Popular Search Keyword in Varanasi</h2>
-                </div>
-                <ul>
-                    <li><a href="#">Sunglasses in Varanasi</a></li>
-                    <li><a href="#">Sunglasses in Varanasi</a></li>
-                    <li><a href="#">Sunglasses in Varanasi</a></li>
-                  
-                </ul>
-                <div class="section-title text-left">
-                    <h2>Popular Search Keyword in Delhi</h2>
-                </div>
-                <ul>
-                    <li><a href="#">Sunglasses in Delhi</a></li>
-                    <li><a href="#">Sunglasses in Delhi</a></li>
-                </ul>
-                <div class="section-title text-left">
-                    <h2>Popular Search Keyword in Noida</h2>
-                </div>
-                <ul>
-                    <li><a href="#">Sunglasses in Varanasi</a></li>
-                    <li><a href="#">Sunglasses in Varanasi</a></li>
-                    <li><a href="#">Sunglasses in Varanasi</a></li>
-                </ul>
+                    <li><strong>Lorem ipsum is a placeholder text commonly :</strong> Lorem ipsum is a placeholder text
+                        commonly used to demonstrate the visual form of a document or a typeface without relying on
+                        meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.
+                        <div class="section-title text-left">
+                            <h2>Popular Search Keyword in Lucknow</h2>
+                        </div>
+                        <ul>
+                            <li><a href="#">Sunglasses in Varanasi</a></li>
+                            <li><a href="#">Sunglasses in Varanasi</a></li>
+                            <li><a href="#">Sunglasses in Varanasi</a></li>
+                        </ul>
+                        <div class="section-title text-left">
+                            <h2>Popular Search Keyword in Varanasi</h2>
+                        </div>
+                        <ul>
+                            <li><a href="#">Sunglasses in Varanasi</a></li>
+                            <li><a href="#">Sunglasses in Varanasi</a></li>
+                            <li><a href="#">Sunglasses in Varanasi</a></li>
+
+                        </ul>
+                        <div class="section-title text-left">
+                            <h2>Popular Search Keyword in Delhi</h2>
+                        </div>
+                        <ul>
+                            <li><a href="#">Sunglasses in Delhi</a></li>
+                            <li><a href="#">Sunglasses in Delhi</a></li>
+                        </ul>
+                        <div class="section-title text-left">
+                            <h2>Popular Search Keyword in Noida</h2>
+                        </div>
+                        <ul>
+                            <li><a href="#">Sunglasses in Varanasi</a></li>
+                            <li><a href="#">Sunglasses in Varanasi</a></li>
+                            <li><a href="#">Sunglasses in Varanasi</a></li>
+                        </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -149,8 +167,9 @@
                             <div class="ec-copy mb-2">Copyright &copy;
                                 <script>
                                     document.write(new Date().getFullYear())
-                                </script> All Rights Reserved. Developed By <a href="https://www.techuptechnologies.com/"
-                                    class="site-name"> Techup Technologies. </a>
+                                </script> All Rights Reserved. Developed By <a
+                                    href="https://www.techuptechnologies.com/" class="site-name"> Techup Technologies.
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -187,8 +206,8 @@
             </div> --}}
             <div class="ec-nav-panel-icons">
                 <a href="https://wa.me/+911234567890" class="ec-header-btn" target="_blank">
-                    <img src="{{ asset('public/frontend/assets/images/icons/whatsapp.svg') }}" class="svg_img header_svg"
-                        alt="" />
+                    <img src="{{ asset('public/frontend/assets/images/icons/whatsapp.svg') }}"
+                        class="svg_img header_svg" alt="" />
                 </a>
             </div>
             <div class="ec-nav-panel-icons">
@@ -219,11 +238,12 @@
                     <img src="{{ asset('public/frontend/assets/images/icons/wishlist.svg') }}"
                         class="svg_img header_svg" alt="icon" />
                     <span class="ec-cart-noti ec-cart-wishlist">
-                                   @if (Auth::guard('customer')->check())
-                                    {{ App\Models\Wishlist::where('user_id', Auth::guard('customer')->user()->id)->get()->count() }}
-                                    @else
-                                        0
-                                    @endif</span>
+                        @if (Auth::guard('customer')->check())
+                            {{ App\Models\Wishlist::where('user_id', Auth::guard('customer')->user()->id)->get()->count() }}
+                        @else
+                            0
+                        @endif
+                    </span>
                 </a>
             </div>
             <div class="ec-nav-panel-icons">
@@ -255,14 +275,14 @@
             <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close">X</button>
             <div class="modal-body">
                 <form action="#" method="post">
-                        <div class="row">
+                    <div class="row">
                         <h3 class="bk_amt text-center">Book Appointment</h3>
                         <div class="form-group mb-3">
                             <input type="text" name="name" placeholder="Enter your name" required="">
                         </div>
                         <div class="form-group mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="Enter your email address"
-                                required="">
+                            <input type="email" class="form-control" name="email"
+                                placeholder="Enter your email address" required="">
                         </div>
                         <div class="form-group mb-3">
                             <input type="text" name="phonenumber" placeholder="Enter your phone number"
@@ -273,11 +293,11 @@
                         </div>
                         <div class="ec-offer-btn"><a href="#" class="btn btn-lg btn-primary w-100">Pay ₹.99/-
                                 Only <i class="ecicon eci-chevron-right"></i></a></div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 <!-- Modal end -->
 
@@ -468,7 +488,9 @@
     function change_qty(product_id, qty) {
         $.get("{{ route('change.cart.qty', ['', '']) }}/" + product_id + "/" + qty, function(data, status) {
             $("#addtocart_toast").addClass("show");
-            setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
+            setTimeout(function() {
+                $("#addtocart_toast").removeClass("show")
+            }, 3000);
             $('#ec-side-cart').html(data.cart_detail)
             $('#cart-summary-div').html(data.cart_summary)
             $('#cart_data').html(data.cart_data);
@@ -513,11 +535,13 @@
             success: function(data) {
                 $('#ec-side-cart').html(data.html)
                 $("#addtocart_toast").addClass("show");
-                setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
+                setTimeout(function() {
+                    $("#addtocart_toast").removeClass("show")
+                }, 3000);
                 $('.header_cart_count').text(data.cart_count);
                 if (type == 'new_arrival_form') {
-                     location.reload();
-                 }
+                    location.reload();
+                }
             },
             error: function(error) {
                 @if (featureActivation('retailer') == '1' ||
@@ -567,7 +591,9 @@
             success: function(data) {
                 $('#ec-side-cart').html(data.html)
                 $("#addtocart_toast").addClass("show");
-                setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
+                setTimeout(function() {
+                    $("#addtocart_toast").removeClass("show")
+                }, 3000);
                 $('.header_cart_count').text(data.cart_count);
                 window.location.href = "{{ route('checkout') }}";
             },
@@ -581,8 +607,7 @@
         });
     }
 
-    function addToWishlist(product_id)
-    {
+    function addToWishlist(product_id) {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -592,32 +617,33 @@
             type: 'POST',
             url: "{{ route('add.to.wishlist') }}",
             data: {
-                product_id:product_id
+                product_id: product_id
             },
             success: function(data) {
 
-                  $('#wish_'+product_id).toggleClass('wishlist-heart-active');
-                    if($('#wish_'+product_id).hasClass("wishlist-heart-active")){
-                        if(data.wishlist_count){
+                $('#wish_' + product_id).toggleClass('wishlist-heart-active');
+                if ($('#wish_' + product_id).hasClass("wishlist-heart-active")) {
+                    if (data.wishlist_count) {
                         $("#addtocart_toast").addClass("show");
                         $('.ec-cart-wishlist').html(data.wishlist_count);
                         $("#addtocart_toast").text("Product Added to Wishlist Successfully!");
-                        setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
-                      }
-                    }else{
-                        deleteToWishlist(product_id);
+                        setTimeout(function() {
+                            $("#addtocart_toast").removeClass("show")
+                        }, 3000);
                     }
+                } else {
+                    deleteToWishlist(product_id);
+                }
 
-               
+
             },
-            error: function (error) {
-                window.location.href = "{{route('user.login')}}";
+            error: function(error) {
+                window.location.href = "{{ route('user.login') }}";
             }
         });
     }
-   
-    function deleteToWishlist(product_id)
-    {
+
+    function deleteToWishlist(product_id) {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -627,7 +653,7 @@
             type: 'POST',
             url: "{{ route('delete.to.wishlist') }}",
             data: {
-                product_id:product_id
+                product_id: product_id
             },
             success: function(data) {
                 location.reload();
@@ -689,7 +715,7 @@
 
 
     function buyLens(lense_id) {
-       
+
         form_id = '#product_detail_form';
         $.ajaxSetup({
             headers: {
@@ -708,7 +734,9 @@
             success: function(data) {
                 $('#ec-side-cart').html(data.html)
                 $("#addtocart_toast").addClass("show");
-                setTimeout(function () { $("#addtocart_toast").removeClass("show") }, 3000);
+                setTimeout(function() {
+                    $("#addtocart_toast").removeClass("show")
+                }, 3000);
                 $('.header_cart_count').text(data.cart_count);
                 window.location.href = "{{ route('checkout') }}";
             },
@@ -727,55 +755,52 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script>
-   
     jQuery.validator.addMethod("selectphone", function(value, element) {
-    var isValid = false;
+        var isValid = false;
 
-    // Check if the value matches a valid phone number pattern
-   
+        // Check if the value matches a valid phone number pattern
+
         // Make an AJAX call to the server to check the phone number
         $.ajax({
-            url: "{{route('check_phone')}}", // Replace with the actual endpoint on your server
+            url: "{{ route('check_phone') }}", // Replace with the actual endpoint on your server
             type: 'POST',
-            data: {  _token: '{{ csrf_token() }}', phone: value },
+            data: {
+                _token: '{{ csrf_token() }}',
+                phone: value
+            },
             async: false, // Make the call synchronous for simplicity (not recommended in production)
             success: function(response) {
                 isValid = response.isValid;
             }
         });
-  
 
-    // Return the result of the validation
-    return isValid;
-}, "Phone number not found please register");
+
+        // Return the result of the validation
+        return isValid;
+    }, "Phone number not found please register");
 
 
     $(function() {
 
-$("form[name='login_form']").validate({
+        $("form[name='login_form']").validate({
 
-    rules: {
-        phone: {
-            required: true,
-            selectphone:true
-        }
-    },
+            rules: {
+                phone: {
+                    required: true,
+                    selectphone: true
+                }
+            },
 
-    messages: {
-        phone: {
-            required: "Please Enter Mobile Number!",
-        }
-    },
+            messages: {
+                phone: {
+                    required: "Please Enter Mobile Number!",
+                }
+            },
 
-    submitHandler: function(form) {
-        form.submit();
-    }
-});
+            submitHandler: function(form) {
+                form.submit();
+            }
+        });
 
-});
-
-
-
-
+    });
 </script>
-
