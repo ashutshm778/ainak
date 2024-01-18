@@ -319,7 +319,6 @@
 
 <!-- Cart Floating Button end --> --}}
 <script src="{{ asset('public/frontend/assets/js/vendor/jquery-3.5.1.min.js') }}"></script>
-<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=6597d1be3cf4bf001a6174c4&product=sop' async='async'></script>
 <script src="{{ asset('public/frontend/assets/js/vendor/popper.min.js') }}"></script>
 <script src="{{ asset('public/frontend/assets/js/vendor/bootstrap.min.js') }}"></script>
 <script src="{{ asset('public/frontend/assets/js/vendor/jquery-migrate-3.3.0.min.js') }}"></script>
