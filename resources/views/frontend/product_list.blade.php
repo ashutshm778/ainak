@@ -233,7 +233,7 @@
             <form class="fillter">
                 <div class="ec-sidebar-wrap" style="border:none">
                     @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
-                        <div class="ec-sidebar-block">
+                        {{-- <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
                                 <h3 class="ec-sidebar-title">Price</h3>
                             </div>
@@ -273,7 +273,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     @endif
                     <div class="ec-sidebar-block">
                         <div class="ec-sb-title">
@@ -353,7 +353,7 @@
                             </div>
                         </div>
                     @endif
-                    <div class="ec-sidebar-block">
+                    {{-- <div class="ec-sidebar-block">
                         <div class="ec-sb-title">
                             <h3 class="ec-sidebar-title">Brand </h3>
                         </div>
@@ -368,7 +368,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </form>
         </div>
