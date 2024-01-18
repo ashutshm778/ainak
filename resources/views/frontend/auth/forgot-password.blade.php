@@ -121,7 +121,7 @@
                                     <label>Confirm New Password<span style="color:red">*<span></label> <br>
                                     <div class="input-group" id="confirm_show_hide_password">
                                     <input type="password" id="confirm_password" class="form-control"
-                                        name="confirm_password" minlength="6" placeholder="Confirm your password..." required />
+                                        name="confirm_password" minlength="6" placeholder="Confirm your new password..." required />
                                             <div class="input-group-append">
                                                 <div class="input-group-text">
                                                     <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
