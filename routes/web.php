@@ -35,7 +35,10 @@ Route::view('contact-us', 'frontend.contact-us')->name('contact');
 Route::view('faq', 'frontend.faq')->name('faq');
 Route::post('check_phone',[FrontController::class,'check_phone'])->name('check_phone');
 
-
+Route::view('blog', 'frontend.blog')->name('blog');
+Route::view('blog-details', 'frontend.blog-details')->name('blog_details');
+Route::view('term-and-condition', 'frontend.term-and-condition')->name('term_and_condition');
+Route::view('privacy-policy', 'frontend.privacy-policy')->name('privacy_policy');
 
 Route::group(['middleware' => 'auth:customer'], function () {
     Route::view('user-profile', 'frontend.user-profile')->name('user_profile');
@@ -130,13 +133,6 @@ Route::get('product/get_selected_variant', [ProductController::class,'get_select
 //  Route::get("/sub-categories", function(){
 //     return view("frontend.sub-categories");
 //  })->name('sub-categories');
-
-Route::view('blog', 'frontend.blog')->name('blog');
-Route::view('blog-details', 'frontend.blog-details')->name('blog_details');
-Route::view('term-and-condition', 'frontend.term-and-condition')->name('term_and_condition');
-Route::view('privacy-policy', 'frontend.privacy-policy')->name('privacy_policy');
-
-
 
 
 
