@@ -24,7 +24,7 @@
         <section class="section ec-category-section ptb-20 bg-gray">
             <div class="container-fluid">
                 <div class="row">
-                    @foreach ($$brands as $brand)
+                    @foreach ($brands as $brand)
                         <div class="col-md-3 col-xs-6">
                             <a href="{{ route('search', $brand->slug) }}?type=brand">
                                 <img class="main-image" src="{{ asset('public/' . api_asset($brand->icon)) }}"
@@ -41,7 +41,7 @@
             <div class=" col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1">
                     <div class="banner-block">
-                        <a href="glass-eccb?type=subcategory"><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
+                        <a href="glass-ec3cbds?type=subcategory"><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
             <div class="col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1">
                     <div class="banner-block">
-                        <a href="women-a87f?type=subcategory"><img src="{{ asset('public/frontend/assets/images/thumbnail-women.webp') }}"
+                        <a href="women-ecc567hbc?type=subcategory"><img src="{{ asset('public/frontend/assets/images/thumbnail-women.webp') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
             <div class=" col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1 p-0">
                     <div class="banner-block">
-                        <a href="kids-a87f?type=subcategory"><img src="{{ asset('public/frontend/assets/images/kids.jpg') }}"
+                        <a href="kids-a87345fqqw?type=subcategory"><img src="{{ asset('public/frontend/assets/images/kids.jpg') }}"
                                 alt=""></a>
                     </div>
                 </div>
