@@ -192,7 +192,7 @@
                                     </div>
                                 @endif
 
-                                <div class="ec-sidebar-block">
+                                {{-- <div class="ec-sidebar-block">
                                     <div class="ec-sb-title">
                                         <h3 class="ec-sidebar-title">Brand </h3>
                                     </div>
@@ -207,7 +207,7 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </form>
                     </div>
@@ -227,7 +227,7 @@
             <button class="ec-close">×</button>
         </div>
         <span class="ec-contact-wrap ec-contact-btn">
-            <button class="btn btn-primary" type="submit" style="height: 34px; line-height: 1;">Clear All</button>
+            <button class="btn btn-primary" type="reset" style="height: 34px; line-height: 1;" onclick="filler_product()">Clear All</button>
         </span>
         <div id="shop_sidebar">
             <form class="fillter">
