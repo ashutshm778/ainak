@@ -227,7 +227,7 @@
             <button class="ec-close">×</button>
         </div>
         <span class="ec-contact-wrap ec-contact-btn">
-            <a class="btn btn-primary" href="javascript:window.location.href=window.location.href" style="height: 34px; line-height: 2;">Clear All</a>
+            <a class="btn btn-primary" href="javascript:window.location.href=window.location.href" style="height: 34px; line-height: 2.5;">Clear All</a>
         </span>
         <div id="shop_sidebar">
             <form class="fillter">
