@@ -370,7 +370,7 @@
             <div class="row g-5 mt--20">
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="mb-2">
                                 <img src="{{ asset('public/frontend/assets/images/face-guide.webp') }}"
@@ -380,13 +380,13 @@
                                 <h5 class="fc-16">Eliminates Glare</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
 
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="mb-2">
                                 <img src="{{ asset('public/frontend/assets/images/face-shape.webp') }}"
@@ -396,13 +396,13 @@
                                 <h5 class="fc-16">Eliminates Glare</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
 
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center mbb-0" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center mbb-0">
                         <div class="inner">
                             <div class="mb-2">
                                 <img src="{{ asset('public/frontend/assets/images/prescription-guide.webp') }}"
@@ -412,7 +412,7 @@
                                 <h5 class="fc-16">Blocks UV Light</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
             </div>
@@ -539,7 +539,7 @@
             <div class="row g-5 mt--20">
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <a class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="icons">
                                 <img src="{{ asset('public/frontend/assets/images/icon/1.png') }}" alt="Icons Images">
@@ -554,7 +554,7 @@
 
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="icons">
                                 <img src="{{ asset('public/frontend/assets/images/icon/Eliminates-Glare.png') }}"
@@ -564,13 +564,13 @@
                                 <h5 class="fc-16">Eliminates Glare</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
 
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="icons">
                                 <img src="{{ asset('public/frontend/assets/images/icon/know_lens_img.png') }}"
@@ -580,13 +580,13 @@
                                 <h5 class="fc-16">Blocks UV Light</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
 
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="icons">
                                 <img src="{{ asset('public/frontend/assets/images/icon/know_lens_img4.png') }}"
@@ -596,13 +596,13 @@
                                 <h5 class="fc-16">Resists Scratches</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
 
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="icons">
                                 <img src="{{ asset('public/frontend/assets/images/icon/know_lens_img5.png') }}"
@@ -612,13 +612,13 @@
                                 <h5 class="fc-16">Resists Fingerprints & Smudges</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
 
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="icons">
                                 <img src="{{ asset('public/frontend/assets/images/icon/know_lens_img6.png') }}"
@@ -628,13 +628,13 @@
                                 <h5 class="fc-16">Repels Water & Liquids</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
 
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="icons">
                                 <img src="{{ asset('public/frontend/assets/images/icon/know_lens_img7.png') }}"
@@ -644,13 +644,13 @@
                                 <h5 class="fc-16">Repels Dust Particles</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
 
                 <!-- Start Category Box Layout  -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                    <div class="rbt-cat-box rbt-cat-box-1 text-center">
                         <div class="inner">
                             <div class="icons">
                                 <img src="{{ asset('public/frontend/assets/images/icon/know_lens_img8.png') }}"
@@ -660,7 +660,7 @@
                                 <h5 class="fc-16">Reduces Color & Image Distortion</h5>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <!-- End Category Box Layout  -->
             </div>

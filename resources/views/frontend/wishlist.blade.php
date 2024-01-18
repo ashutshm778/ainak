@@ -1,7 +1,9 @@
  @extends('frontend.layouts.app')
  @section('content')
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
-        <div class="container">
+    </div>
+    <div class="breadcrumb">
+    <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="row ec_breadcrumb_inner">

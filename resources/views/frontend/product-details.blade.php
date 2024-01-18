@@ -51,6 +51,10 @@
                                         <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ec-spt-nav-info"
                                             role="tablist">More Information</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ec-spt-nav-review"
+                                            role="tablist">Reviews</a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="tab-content  ec-single-pro-tab-content">
@@ -62,6 +66,70 @@
                                 <div id="ec-spt-nav-info" class="tab-pane fade">
                                     <div class="ec-single-pro-tab-moreinfo">
                                         {!! $data->specification !!}
+                                    </div>
+                                </div>
+                                <div id="ec-spt-nav-review" class="tab-pane fade">
+                                    <div class="row">
+                                        <div class="ec-t-review-wrapper">
+                                            <div class="ec-t-review-item">
+                                                <div class="ec-t-review-avtar">
+                                                    <img src="{{ asset('public/frontend/assets/images/review-image/1.jpg') }}"
+                                                        alt="" />
+                                                </div>
+                                                <div class="ec-t-review-content">
+                                                    <div class="ec-t-review-top">
+                                                        <div class="ec-t-review-name">Jeny Doe</div>
+                                                        <div class="ec-t-review-rating">
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star-o"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ec-t-review-bottom">
+                                                        <p>... </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ec-ratting-content">
+                                            <h3>Add a Review</h3>
+                                            <div class="ec-ratting-form">
+                                                <form action="#">
+                                                    <div class="ec-ratting-star">
+                                                        <span>Your rating:</span>
+                                                        <div class="ec-t-review-rating">
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star fill"></i>
+                                                            <i class="ecicon eci-star-o"></i>
+                                                            <i class="ecicon eci-star-o"></i>
+                                                            <i class="ecicon eci-star-o"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="ec-ratting-input">
+                                                                <input name="your-name" placeholder="Name" type="text" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <div class="ec-ratting-input">
+                                                                <input name="your-email" placeholder="Email*" type="email"
+                                                                    required />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="ec-ratting-input form-submit">
+                                                        <textarea name="your-commemt" placeholder="Enter Your Comment"></textarea>
+                                                        <button class="btn btn-primary" type="submit"
+                                                            value="Submit">Submit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
