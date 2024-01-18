@@ -84,7 +84,7 @@
                             <!-- Header User Start -->
                             @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                                 <div class="ec-header-user dropdown">
-                                    <button class="dropdown-toggle" data-bs-toggle="dropdown">@if(Auth::guard('customer')->check()){{mb_substr(Auth::guard('customer')->user->first_name, 0, 1)}}@else<img
+                                    <button class="dropdown-toggle" data-bs-toggle="dropdown">@if(Auth::guard('customer')->check()){{mb_substr(Auth::guard('customer')->user()->first_name, 0, 1)}}@else<img
                                             src="{{ asset('public/frontend/assets/images/icons/user.svg') }}"
                                             class="svg_img header_svg" alt="" />@endif</button>
                                     <ul class="dropdown-menu dropdown-menu-right">
