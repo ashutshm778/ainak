@@ -242,13 +242,13 @@
                         @endif
                     </div>
                     <!-- ShareThis BEGIN -->
-                    <div class="sharethis-inline-share-buttons"></div>
+                   
                     <!-- ShareThis END -->
                 </form>
             </div>
 
 
-
+            
             {{-- <div class="ec-single-social">
                 <ul class="mb-0">
                     <li class="list-inline-item facebook"><a href="#"><i class="ecicon eci-facebook"></i></a>

@@ -28,7 +28,6 @@
             <link rel="stylesheet" href="{{asset('public/frontend/assets/css/responsive.css')}}" />
         @endif
         <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
-        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=65a8cc5f047cc8001954d3ad&product=sop' async='async'></script>
     </head>
     <style>
         .kinetic
