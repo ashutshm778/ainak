@@ -238,6 +238,7 @@
                     $('#phone_error').css('display', 'none');
                     $('#otp_div').show();
                     $('#button_addon2').attr('disabled', 'disabled');
+                    $('#phone').attr('disabled', 'disabled');
                     $('#otp_countdown').show();
                     $('#re_send_otp_button').hide();
                     $('.js-timeout').text("0:60");
