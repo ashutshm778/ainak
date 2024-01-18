@@ -56,7 +56,7 @@
                             </form>
                         </div>
                         <div class="col-md-2 ec-sort-select d-none d-md-block">
-                            <div class="ec-offer-btn"> <a class="btn btn-primary" href="javascript:window.location.href=window.location.href" style="height: 34px; line-height: 1;">Clear All</a> </div>
+                            <div class="ec-offer-btn"> <a class="btn btn-primary" href="javascript:window.location.href=window.location.href" style="height: 34px; line-height: 2;">Clear All</a> </div>
                         </div>
                     </div>
                     <div class="shop-pro-content" id="product_list_data">
@@ -227,7 +227,7 @@
             <button class="ec-close">×</button>
         </div>
         <span class="ec-contact-wrap ec-contact-btn">
-            <a class="btn btn-primary" href="javascript:window.location.href=window.location.href" style="height: 34px; line-height: 1;">Clear All</a>
+            <a class="btn btn-primary" href="javascript:window.location.href=window.location.href" style="height: 34px; line-height: 2;">Clear All</a>
         </span>
         <div id="shop_sidebar">
             <form class="fillter">
