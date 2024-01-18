@@ -32,17 +32,12 @@ Route::get('/admin',function(){
 
 Route::view('about-us', 'frontend.about-us')->name('about');
 Route::view('contact-us', 'frontend.contact-us')->name('contact');
-Route::view('privacypolicy', 'frontend.privacy_policy')->name('privacy');
-Route::view('terms', 'frontend.term')->name('term');
-
 Route::view('faq', 'frontend.faq')->name('faq');
-
 Route::post('check_phone',[FrontController::class,'check_phone'])->name('check_phone');
 
 
 
 Route::group(['middleware' => 'auth:customer'], function () {
-
     Route::view('user-profile', 'frontend.user-profile')->name('user_profile');
     Route::post('add-to-cart',[CartController::class,'store'])->name('add.to.cart');
     Route::get('delete-to-cart/{cart_id}',[CartController::class,'destroy'])->name('delete.to.cart');
@@ -60,22 +55,17 @@ Route::group(['middleware' => 'auth:customer'], function () {
     Route::post('store-customer-address',[CustomerAddressController::class,'store'])->name('store.customer.address');
     Route::get('delete-customer-address/{id}',[CustomerAddressController::class,'destroy'])->name('delete.customer.address');
     Route::post('customer-store-order',[OrderController::class,'store'])->name('customer.store.order');
-
     Route::get('get_lens',[FrontController::class,'get_lens'])->name('product.get_lens');
-
     Route::get('order-summary',function(){
         $order = Order::where('user_id',Auth::guard('customer')->user()->id)->latest()->with('order_details.product')->first();
         return view('frontend.order_thankyou_page',compact('order'));
     })->name('order.summary');
-
     Route::get('customer-order-list',function(){
         $orders = Order::where('user_id',Auth::guard('customer')->user()->id)->with('order_details.product')->get();
         return view('frontend.order_list',compact('orders'));
     })->name('customer.order.list');
-
     Route::post('add-to-wishlist',[WishlistController::class,'store'])->name('add.to.wishlist');
     Route::post('delete-to-wishlist',[WishlistController::class,'delete'])->name('delete.to.wishlist');
-
 });
 
 Route::get('send-otp/{phone}', [FrontController::class, 'sendOtp'])->name('send.otp');

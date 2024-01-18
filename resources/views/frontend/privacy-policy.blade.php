@@ -1,48 +1,5 @@
-
- <!DOCTYPE html>
- <html lang="en">
-<head>
-     <meta charset="UTF-8">
-     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-
-     <title>Furniture Ecommerce Website</title>
-     <meta name="keywords" content="" />
-     <meta name="description" content="">
-     <meta name="author" content="">
-
-    <!-- site Favicon -->
-    <link rel="icon" href="{{asset('public/frontend/assets/images/favicon/favicon-3.png')}}" sizes="32x32" />
-    <link rel="apple-touch-icon" href="{{asset('public/frontend/assets/images/favicon/favicon-3.png')}}" />
-    <meta name="msapplication-TileImage" content="{{asset('public/frontend/assets/images/favicon/favicon-3.png')}}" />
-
-    <!-- css Icon Font -->
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/vendor/ecicons.min.css')}}" />
-
-    <!-- css All Plugins Files -->
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/plugins/animate.css')}}" />
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/plugins/swiper-bundle.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/plugins/jquery-ui.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/plugins/countdownTimer.css')}}" />
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/plugins/slick.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/plugins/nouislider.css')}}" />
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/plugins/bootstrap.css')}}" />
-
-    <!-- Main Style -->
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/style.css')}}" />
-    <link rel="stylesheet" href="{{asset('public/frontend/assets/css/responsive.css')}}" />
-
-    <!-- Background css -->
-    <link rel="stylesheet" id="bg-switcher-css" href="{{asset('public/frontend/assets/css/backgrounds/bg-4.css')}}">
-
-</head>
-<body class="terms_condition_page">
-    <div id="ec-overlay"><span class="loader_img"></span></div>
-
-    <!-- Header start  -->
-    @include('frontend.layouts.header')
-    <!-- Header End  -->
-
+@extends('frontend.layouts.app')
+@section('content')
     <!-- Ec breadcrumb start -->
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
         <div class="container">
@@ -50,12 +7,12 @@
                 <div class="col-12">
                     {{-- <div class="row ec_breadcrumb_inner">
                         <div class="col-md-6 col-sm-12">
-                            <h2 class="ec-breadcrumb-title">Policy</h2>
+                            <h2 class="ec-breadcrumb-title">Privacy Policy</h2>
                         </div>
                         <div class="col-md-6 col-sm-12">
                             <!-- ec-breadcrumb-list start -->
                             <ul class="ec-breadcrumb-list">
-                                <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                                 <li class="ec-breadcrumb-item active">Policy</li>
                             </ul>
                             <!-- ec-breadcrumb-list end -->
@@ -71,53 +28,81 @@
     <section class="ec-page-content section-space-p">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <h2 class="ec-bg-title">Privacy & Policy</h2>
-                        <h2 class="ec-title">Privacy & Policy</h2>
-                        <p class="sub-title mb-3">Welcome to the ekka multivendor marketplace</p>
-                    </div>
-                </div>
                 <div class="col-md-12">
                     <div class="ec-common-wrapper">
                         <div class="col-sm-12 ec-cms-block">
                             <div class="ec-cms-block-inner">
-                                <h3 class="ec-cms-block-title">Welcome to Ekka Multi Market.</h3>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <b>Lorem
-                                        Ipsum is simply dutmmy text</b> ever since the 1500s, when an unknown printer
-                                    took a galley of type and scrambled it to make a type specimen book. It has survived
-                                    not only five centuries, but also the leap into electronic typesetting, remaining
-                                    essentially unchanged. <b>Lorem Ipsum is simply dutmmy text</b></p>
+                                <h3 class="ec-cms-block-title">Privacy Policy</h3>
+                                <p>Thank you for visiting Green Orbit Furniture website. This privacy policy tells you how
+                                    we use personal information collected at this site. Please read this privacy policy
+                                    before using the site or submitting any personal information. By using the site, you are
+                                    accepting the practices described in this privacy policy. These practices may be
+                                    changed, but any changes will be posted and changes will only apply to activities and
+                                    information on a forgoing, not retroactive, basis. You are encouraged to review the
+                                    privacy policy whenever you visit the site to make sure that you understand how any
+                                    personal information you provide will be used.</p><br>
                             </div>
                         </div>
                         <div class="col-sm-12 ec-cms-block">
                             <div class="ec-cms-block-inner">
-                                <h3 class="ec-cms-block-title">Ekka Websites</h3>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <b>Lorem
-                                        Ipsum is simply dutmmy text</b> ever since the 1500s, when an unknown printer
-                                    took a galley of type and scrambled it to make a type specimen book. It has survived
-                                    not only five centuries, but also the leap into electronic typesetting, remaining
-                                    essentially unchanged. <b>Lorem Ipsum is simply dutmmy text</b></p>
+                                <h3 class="ec-cms-block-title">Information Green Orbit Furniture Collects & Uses:</h3>
+                                <p>To serve our customers better and to provide a personalized and hassle free shopping
+                                    experience prior and post Purchase(s) – on registration, Green Orbit Furniture collects
+                                    user details. We gather buyer's personal details that include name, email address,
+                                    contact number, contact/shipping address, and payment details with payment card details,
+                                    however, the transaction and banking details are not held by Green Orbit Furniture.</p>
+                                <p>We collect personal identifiable information, including names, postal addresses, email
+                                    addresses, phone number, etc., when voluntarily submitted by our visitors. The
+                                    information you provide is used to fulfil your specific request. This information is
+                                    only used to fulfil your specific request, unless you give us permission to use it in
+                                    another manner, for example to add you to one of our mailing lists.</p><br>
                             </div>
                         </div>
                         <div class="col-sm-12 ec-cms-block">
                             <div class="ec-cms-block-inner">
-                                <h3 class="ec-cms-block-title">How browsing and vendor works?</h3>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <b>Lorem
-                                        Ipsum is simply dutmmy text</b> ever since the 1500s, when an unknown printer
-                                    took a galley of type and scrambled it to make a type specimen book. It has survived
-                                    not only five centuries, but also the leap into electronic typesetting, remaining
-                                    essentially unchanged. <b>Lorem Ipsum is simply dutmmy text</b></p>
+                                <h3 class="ec-cms-block-title">Cookie/Tracking Technology:</h3>
+                                <p>The Site may use cookie and tracking technology depending on the features offered. Cookie
+                                    and tracking technology are useful for gathering information such as browser type and
+                                    operating system, tracking the number of visitors to the Site and understanding how
+                                    visitors use the Site. Cookies can also help customize the Site for visitors. Personal
+                                    information cannot be collected via cookies and other tracking technology, however, if
+                                    you previously provided personal identifiable information, cookies may be tied to such
+                                    information. You can set your browser to notify you when you are sent a cookie, and you
+                                    can decide whether or not to accept it. Aggregate cookie and tracking information may be
+                                    shared with third parties.</p><br>
                             </div>
                         </div>
                         <div class="col-sm-12 ec-cms-block">
                             <div class="ec-cms-block-inner">
-                                <h3 class="ec-cms-block-title">Becoming an vendor</h3>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <b>Lorem
-                                        Ipsum is simply dutmmy text</b> ever since the 1500s, when an unknown printer
-                                    took a galley of type and scrambled it to make a type specimen book. It has survived
-                                    not only five centuries, but also the leap into electronic typesetting, remaining
-                                    essentially unchanged. <b>Lorem Ipsum is simply dutmmy text</b></p>
+                                <h3 class="ec-cms-block-title">Distribution of Information:</h3>
+                                <p>Green Orbit Furniture uses collected data towards the sole purpose of research, marketing
+                                    campaigns and promotional offers. This data is used to update you of our new products,
+                                    promotions, sales and newsletters. At no point will this site share, rent or sell any of
+                                    your provided personal details. Neither will we disclose your information to any third
+                                    party websites without confirming your permission and with the exception of our business
+                                    associates/partners. We may share relevant information in the event of investigation and
+                                    preventing/taking action concerning any illegal and unlawful activity, suspected fraud
+                                    or imminent threat to the safety and security of any person, any direct or indirect
+                                    violations of Green Orbit Furniture’s terms of use.</p><br>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 ec-cms-block">
+                            <div class="ec-cms-block-inner">
+                                <h3 class="ec-cms-block-title">Commitment to Data Security:</h3>
+                                <p>Your personal identifiable information is kept secure. Only authorized employees, agents
+                                    and contractors (who have agreed to keep information secure and confidential) have
+                                    access to this information. All emails and newsletters from this site will allow you to
+                                    opt out of further mailings.</p><br>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 ec-cms-block">
+                            <div class="ec-cms-block-inner">
+                                <h3 class="ec-cms-block-title">Privacy Contact Information:</h3>
+                                <p>If you have any questions, concerns, or comments about our privacy policy you may contact
+                                    us at info@greenorbitfurniture.com. We reserve the right to make changes to this policy.
+                                    Any changes to this policy will be further updated.</p><br>
                             </div>
                         </div>
                     </div>
@@ -126,39 +111,4 @@
         </div>
     </section>
     <!-- End Privacy & Policy page -->
-
-    <!-- Footer Start -->
-    @include('frontend.layouts.footer')
-    <!-- Footer Area End -->
-
-    <!-- Vendor JS -->
-    <script src="{{asset('public/frontend/assets/js/vendor/jquery-3.5.1.min.js')}}"></script>
-	<script src="{{asset('public/frontend/assets/js/vendor/jquery.notify.min.js')}}"></script>
-	<script src="{{asset('public/frontend/assets/js/vendor/jquery.bundle.notify.min.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/vendor/popper.min.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/vendor/bootstrap.min.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/vendor/jquery-migrate-3.3.0.min.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>
-
-    <!--Plugins JS-->
-    <script src="{{asset('public/frontend/assets/js/plugins/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/plugins/countdownTimer.min.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/plugins/scrollup.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/plugins/jquery.zoom.min.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/plugins/slick.min.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/plugins/infiniteslidev2.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/vendor/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/plugins/jquery.sticky-sidebar.js')}}"></script>
-    <!-- Google translate Js -->
-    <script src="{{asset('public/frontend/assets/js/vendor/google-translate.js')}}"></script>
-    <script>
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-        }
-    </script>
-    <!-- Main Js -->
-    <script src="{{asset('public/frontend/assets/js/vendor/index.js')}}"></script>
-    <script src="{{asset('public/frontend/assets/js/main.js')}}"></script>
-
-</body>
-</html>
+@endsection

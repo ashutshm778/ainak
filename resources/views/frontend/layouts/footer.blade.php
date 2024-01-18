@@ -21,7 +21,6 @@
                                     <li class="ec-footer-link"><a href="{{route('contact')}}"><i class="ecicon eci-chevron-right"></i> Contact Us</a></li>
                                     <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Career</a></li>
                                     <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Blog</a></li>
-                                    <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Customer Stories</a></li>
                                     <li class="ec-footer-link"><a href="#"><i class="ecicon eci-chevron-right"></i> Our Stores</a></li>
                                 </ul>
                             </div>
@@ -59,10 +58,9 @@
                             <h4 class="ec-footer-heading">Our Policies</h4>
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Discount Returns</a></li>
-                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Policy & policy </a></li>
-                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Customer Service</a></li>
-                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Term & condition</a></li>
+                                    <li class="ec-footer-link"><a href="{{route('privacy_policy')}}"> <i class="ecicon eci-chevron-right"></i> Privacy Policy </a></li>
+                                    <li class="ec-footer-link"><a href="{{route('term_and_condition')}}"> <i class="ecicon eci-chevron-right"></i> Term & condition</a></li>
+                                    <li class="ec-footer-link"><a href="#"> <i class="ecicon eci-chevron-right"></i> Cancellation Policy</a></li>
                                 </ul>
                             </div>
                         </div>

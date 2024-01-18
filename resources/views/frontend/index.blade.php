@@ -342,9 +342,9 @@
                         <!-- ec 3rd Product tab end -->
                     </div>
                 </div>
-                <div class="text-center">
+                {{--<div class="text-center">
                     <a class="btn btn-secondary rds" href="#">View More <i class="ecicon eci-chevron-right"></i></a>
-                </div>
+                </div>--}}
             </div>
         </div>
     </section>

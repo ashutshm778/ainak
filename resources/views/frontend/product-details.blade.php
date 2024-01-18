@@ -113,7 +113,6 @@
                                                                 <input name="your-name" placeholder="Name" type="text" />
                                                             </div>
                                                         </div>
-
                                                         <div class="col-md-6">
                                                             <div class="ec-ratting-input">
                                                                 <input name="your-email" placeholder="Email*" type="email"
@@ -121,7 +120,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <div class="ec-ratting-input form-submit">
                                                         <textarea name="your-commemt" placeholder="Enter Your Comment"></textarea>
                                                         <button class="btn btn-primary" type="submit"
