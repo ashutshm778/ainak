@@ -21498,6 +21498,7 @@ a.wishlist .svg_img.pro_svg {
         padding: 8px 8px;
         -webkit-transition: 0.3s all ease;
         transition: 0.3s all ease;
+        text-align: center;
     }
 
     .other-categories .category-list li a img
