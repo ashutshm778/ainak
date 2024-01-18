@@ -636,7 +636,7 @@
                                 <p>Provide User’s contact information including User’s address, telephone number, and e-mail
                                     address (if available);</p>
                                 <p>Provide User’s physical or electronic signature;</p>
-                                <p>Send the written communication to: info@greenorbitfurniture.com</p>
+                                <p>Send the written communication to: info@aynak.com</p>
                                 <p>User may be subject to liability if User knowingly makes any misrepresentations on a
                                     take-down notice.</p>
                                 <br>

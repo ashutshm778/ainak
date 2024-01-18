@@ -101,7 +101,7 @@
                             <div class="ec-cms-block-inner">
                                 <h3 class="ec-cms-block-title">Privacy Contact Information:</h3>
                                 <p>If you have any questions, concerns, or comments about our privacy policy you may contact
-                                    us at info@greenorbitfurniture.com. We reserve the right to make changes to this policy.
+                                    us at info@aynak.com. We reserve the right to make changes to this policy.
                                     Any changes to this policy will be further updated.</p><br>
                             </div>
                         </div>
