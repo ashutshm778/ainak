@@ -118,7 +118,7 @@
                                 </span>
 
                                 <span class="ec-register-wrap ec-register-half">
-                                    <label>Confirm Password<span style="color:red">*<span></label> <br>
+                                    <label>Confirm New Password<span style="color:red">*<span></label> <br>
                                     <div class="input-group" id="confirm_show_hide_password">
                                     <input type="password" id="confirm_password" class="form-control"
                                         name="confirm_password" minlength="6" placeholder="Confirm your password..." required />
