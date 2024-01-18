@@ -18072,7 +18072,6 @@ li {
 .ec-breadcrumb-list {
     text-align: right;
     width: fit-content;
-    float: right;
     line-height: 0;
     margin: 0;
     border-radius: 10px;
