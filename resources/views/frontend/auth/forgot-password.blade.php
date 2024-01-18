@@ -66,7 +66,7 @@
                 <div class="ec-register-wrapper col-md-7">
                     <div class="ec-register-container">
                         <div class="ec-register-form">
-                            <form id="valid_form" action="{{ route('customer.forgotpassword') }}" method="POST">
+                            <form id="valid_form" action="{{ route('customer.forgotpassword') }}" method="POST" autocomplete="off" >
                                 @csrf
                                 <div class="ec-register-wrap ec-register-half">
                                     <label>Phone Number<span style="color:red">*<span></label>
@@ -102,7 +102,7 @@
                                 </span>
 
                                 <span class="ec-register-wrap ec-register-half">
-                                    <label>Password<span style="color:red">*<span></label> <br>
+                                    <label>New Password<span style="color:red">*<span></label> <br>
                                     <div class="input-group" id="show_hide_password">
                                     <input type="password" id="pasword" class="form-control" minlength="6" name="password"
                                         placeholder="Enter your new password..." required />
