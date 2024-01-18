@@ -33,7 +33,7 @@
                         <div class="col-sm-12 ec-cms-block">
                             <div class="ec-cms-block-inner">
                                 <h3 class="ec-cms-block-title">Privacy Policy</h3>
-                                <p>Thank you for visiting Green Orbit Furniture website. This privacy policy tells you how
+                                <p>Thank you for visiting Aynak website. This privacy policy tells you how
                                     we use personal information collected at this site. Please read this privacy policy
                                     before using the site or submitting any personal information. By using the site, you are
                                     accepting the practices described in this privacy policy. These practices may be
@@ -45,12 +45,12 @@
                         </div>
                         <div class="col-sm-12 ec-cms-block">
                             <div class="ec-cms-block-inner">
-                                <h3 class="ec-cms-block-title">Information Green Orbit Furniture Collects & Uses:</h3>
+                                <h3 class="ec-cms-block-title">Information Aynak Collects & Uses:</h3>
                                 <p>To serve our customers better and to provide a personalized and hassle free shopping
-                                    experience prior and post Purchase(s) – on registration, Green Orbit Furniture collects
+                                    experience prior and post Purchase(s) – on registration, Aynak collects
                                     user details. We gather buyer's personal details that include name, email address,
                                     contact number, contact/shipping address, and payment details with payment card details,
-                                    however, the transaction and banking details are not held by Green Orbit Furniture.</p>
+                                    however, the transaction and banking details are not held by Aynak.</p>
                                 <p>We collect personal identifiable information, including names, postal addresses, email
                                     addresses, phone number, etc., when voluntarily submitted by our visitors. The
                                     information you provide is used to fulfil your specific request. This information is
@@ -75,7 +75,7 @@
                         <div class="col-sm-12 ec-cms-block">
                             <div class="ec-cms-block-inner">
                                 <h3 class="ec-cms-block-title">Distribution of Information:</h3>
-                                <p>Green Orbit Furniture uses collected data towards the sole purpose of research, marketing
+                                <p>Aynak uses collected data towards the sole purpose of research, marketing
                                     campaigns and promotional offers. This data is used to update you of our new products,
                                     promotions, sales and newsletters. At no point will this site share, rent or sell any of
                                     your provided personal details. Neither will we disclose your information to any third
@@ -83,7 +83,7 @@
                                     associates/partners. We may share relevant information in the event of investigation and
                                     preventing/taking action concerning any illegal and unlawful activity, suspected fraud
                                     or imminent threat to the safety and security of any person, any direct or indirect
-                                    violations of Green Orbit Furniture’s terms of use.</p><br>
+                                    violations of Aynak’s terms of use.</p><br>
                             </div>
                         </div>
 
