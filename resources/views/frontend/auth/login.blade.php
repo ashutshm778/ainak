@@ -53,6 +53,9 @@
                         <div class="ec-register-form">
                             <form id="valid_form" action="{{route('customer.login')}}" method="post">
                                 @csrf
+                                @if(!empty(request('from')))
+                                    <input type="hidden" name="from" value="{{request('from')}}" />
+                                @endif
                                 <span class="ec-register-wrap col-md-12">
                                     <label>Phone Number<span style="color:red">*<span></label> <br>
                                     <input type="number" class="form-control" id="phone" name="phone" value="{{old('phone')}}" 
