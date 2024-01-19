@@ -2790,6 +2790,7 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
     display: inline-block;
     color: #666;
     width:100%;
+    margin-bottom: 30px;
 }
 .radio-custom:checked~label div.label-inner {
     border-color: #008945;
