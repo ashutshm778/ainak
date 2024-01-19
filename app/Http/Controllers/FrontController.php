@@ -161,11 +161,13 @@ class FrontController extends Controller
         $customer = Customer::where('phone', $request->phone)->orWhere('type', 'retailer')->orWhere('type', 'distributor')->orWhere('type', 'wholeseller')->first();
         if ($customer) {
             if (Auth::guard('customer')->attempt(['phone' => $request->phone, 'password' => $request->password], $request->remember)) {
+                if(!empty($request->from)){
+                    return redirect($request->from);
+                }
                 return redirect()->route('user_profile')->with('success', 'You Have Successfully Login !');
             }else{
                 $validator->getMessageBag()->add('password', 'Wrong Password');
                 return back()->withErrors($validator)->withInput();
-         
             }
         }
 

@@ -547,7 +547,8 @@
                 @if (featureActivation('retailer') == '1' ||
                         featureActivation('distributor') == '1' ||
                         featureActivation('wholesaler') == '1')
-                    window.location.href = "{{ route('user.login') }}";
+                    var from_url = "{{url()->full()}}";
+                    window.location.href = "{{ route('user.login') }}?from="+from_url;
                 @endif
             }
         });
