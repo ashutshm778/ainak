@@ -70,43 +70,38 @@
                                 </div>
                                 <div id="ec-spt-nav-review" class="tab-pane fade">
                                     <div class="row">
-                                        <div class="ec-t-review-wrapper">
-                                            <div class="ec-t-review-item">
-                                                <div class="ec-t-review-avtar">
-                                                    <img src="{{ asset('public/frontend/assets/images/review-image/1.jpg') }}"
-                                                        alt="" />
-                                                </div>
-                                                <div class="ec-t-review-content">
-                                                    <div class="ec-t-review-top">
-                                                        <div class="ec-t-review-name">Jeny Doe</div>
-                                                        <div class="ec-t-review-rating">
-                                                            <i class="ecicon eci-star fill"></i>
-                                                            <i class="ecicon eci-star fill"></i>
-                                                            <i class="ecicon eci-star fill"></i>
-                                                            <i class="ecicon eci-star fill"></i>
-                                                            <i class="ecicon eci-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="ec-t-review-bottom">
-                                                        <p>... </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="ec-ratting-content">
-                                            <h3>Add a Review</h3>
+                                        <div class="listing-contact-title">
+                           <div class="row">
+                              <div class="col-lg-6 col-md-6">
+                                 <div class="listing-widget-mail mb-3">
+                                    <div class="content">
+                                       <h3>Please Rate Us</h3>
+                                       <span>Your Review Is Valuable For Us.</span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 text-right">
+                                 <div class="feedback">
+                                    <div class="rate">
+                                    <input type="radio" id="star5" name="rate" value="5" />
+                                    <label for="star5" title="text">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" value="4" />
+                                    <label for="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" value="3" />
+                                    <label for="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" value="2" />
+                                    <label for="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" value="1" />
+                                    <label for="star1" title="text">1 star</label>
+                                </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                                             <div class="ec-ratting-form">
                                                 <form action="#">
-                                                    <div class="ec-ratting-star">
-                                                        <span>Your rating:</span>
-                                                        <div class="ec-t-review-rating">
-                                                            <i class="ecicon eci-star fill"></i>
-                                                            <i class="ecicon eci-star fill"></i>
-                                                            <i class="ecicon eci-star-o"></i>
-                                                            <i class="ecicon eci-star-o"></i>
-                                                            <i class="ecicon eci-star-o"></i>
-                                                        </div>
-                                                    </div>
+
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="ec-ratting-input">
