@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
+use App\Models\Review;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -44,5 +45,13 @@ class CustomerController extends Controller
 
         return view('backend.customers.index',compact('customers','search_key','search_date_range'),['page_title'=>'Customer List']);
     }
+
+
+    public function all_review(Request $request){
+
+        $reviews = Review::paginate(10);
+        return view('backend.review',compact('reviews'),['page_title'=>'Reviews']);
+       
+}
 
 }

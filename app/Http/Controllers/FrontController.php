@@ -360,7 +360,7 @@ class FrontController extends Controller
             $review->email=$request->email;
             $review->product_id=$request->product_id;
             $review->comment=$request->comment;
-            $review->rating = $request->rating;
+            $review->rating = $request->rate;
             $review->save();
 
             return back();

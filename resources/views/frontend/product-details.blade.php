@@ -71,52 +71,51 @@
                                 <div id="ec-spt-nav-review" class="tab-pane fade">
                                     <div class="row">
                                         <div class="ec-ratting-content">
-                                        <div class="listing-contact-title">
-                           <div class="row">
-                              <div class="col-lg-6 col-md-6">
-                                 <div class="listing-widget-mail mb-3">
-                                    <div class="content">
-                                       <h3>Please Rate Us</h3>
-                                       <span>Your Review Is Valuable For Us.</span>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="col-lg-6 col-md-6 text-right">
-                                 <div class="feedback">
-                                    <div class="rate">
-                                    <input type="radio" id="star5" name="rate" value="5" />
-                                    <label for="star5" title="text">5 stars</label>
-                                    <input type="radio" id="star4" name="rate" value="4" />
-                                    <label for="star4" title="text">4 stars</label>
-                                    <input type="radio" id="star3" name="rate" value="3" />
-                                    <label for="star3" title="text">3 stars</label>
-                                    <input type="radio" id="star2" name="rate" value="2" />
-                                    <label for="star2" title="text">2 stars</label>
-                                    <input type="radio" id="star1" name="rate" value="1" />
-                                    <label for="star1" title="text">1 star</label>
-                                </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
                                             <div class="ec-ratting-form">
-                                                <form action="#">
-
+                                                <form action="{{route('review.store')}}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="product_id" value="{{$data->id}}" />
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6">
+                                                           <div class="listing-widget-mail mb-3">
+                                                              <div class="content">
+                                                                 <h3>Please Rate Us</h3>
+                                                                 <span>Your Review Is Valuable For Us.</span>
+                                                              </div>
+                                                           </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 text-right">
+                                                           <div class="feedback">
+                                                              <div class="rate">
+                                                              <input type="radio" id="star5" name="rate" value="5" required/>
+                                                              <label for="star5" title="text">5 stars</label>
+                                                              <input type="radio" id="star4" name="rate" value="4" required/>
+                                                              <label for="star4" title="text">4 stars</label>
+                                                              <input type="radio" id="star3" name="rate" value="3" required/>
+                                                              <label for="star3" title="text">3 stars</label>
+                                                              <input type="radio" id="star2" name="rate" value="2" required/>
+                                                              <label for="star2" title="text">2 stars</label>
+                                                              <input type="radio" id="star1" name="rate" value="1" required/>
+                                                              <label for="star1" title="text">1 star</label>
+                                                          </div>
+                                                           </div>
+                                                        </div>
+                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="ec-ratting-input">
-                                                                <input name="your-name" placeholder="Name" type="text" />
+                                                                <input  placeholder="Name" name="name" type="text" required/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="ec-ratting-input">
-                                                                <input name="your-email" placeholder="Email*" type="email"
+                                                                <input  placeholder="Email*" name="email" type="email"
                                                                     required />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="ec-ratting-input form-submit">
-                                                        <textarea name="your-commemt" placeholder="Enter Your Comment"></textarea>
+                                                        <textarea  placeholder="Enter Your Comment" name="comment"></textarea>
                                                         <button class="btn btn-primary" type="submit"
                                                             value="Submit">Submit</button>
                                                     </div>

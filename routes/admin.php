@@ -114,7 +114,11 @@ Route::prefix("admin")->group(function(){
         }
 
     }
+
+    Route::get('all_review',[CustomerController::class,'all_review'])->name('customers.all_review');
+    
         //App Setting
+        Route::get('customers-index',[CustomerController::class,'index'])->name('customers.index');
         Route::get('slider-index', [AppSettingController::class,'sliderIndex'])->name('slider.index');
         Route::get('slider-create', [AppSettingController::class,'sliderCreate'])->name('slider.create');
         Route::post('slider-store', [AppSettingController::class,'sliderStore'])->name('slider.store');
