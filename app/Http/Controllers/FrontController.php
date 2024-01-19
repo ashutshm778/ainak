@@ -7,6 +7,7 @@ use Exception;
 use Carbon\Carbon;
 use App\Models\Lens;
 use App\Models\Order;
+use App\Models\Review;
 use App\Models\Customer;
 use App\Models\Admin\Brnad;
 use App\Models\Admin\Offer;
@@ -351,5 +352,19 @@ class FrontController extends Controller
         $order = Order::where('id',$id)->first();
         return view('frontend.user-history-details', compact('order'));
     }
+
+    public function review_store(Request $request){
+
+            $review = new Review;
+            $review->name=$request->name;
+            $review->email=$request->email;
+            $review->product_id=$request->product_id;
+            $review->comment=$request->comment;
+            $review->rating = $request->rating;
+            $review->save();
+
+            return back();
+    }
+
 
 }
