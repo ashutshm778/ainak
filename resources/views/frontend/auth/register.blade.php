@@ -45,9 +45,6 @@
                     <div class="col-12">
                         <div class="row ec_breadcrumb_inner">
                             <div class="col-md-6 col-sm-12">
-                                <h2 class="ec-breadcrumb-title">Register</h2>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
                                 <ul class="ec-breadcrumb-list">
                                     <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                                     <li class="ec-breadcrumb-item active">Register</li>
@@ -168,6 +165,7 @@
                                             <span class="text-danger">{{ $errors->first('phone') }}</span>
                                         @endif
                                     </span>
+                                    <p style="text-align:center"><a href="#" onclick="reset_number()">Edit</a></p>
                                 </div>
 
                                 <span class="ec-register-wrap ec-register-half" id="otp_div" style="display: none;">
@@ -245,6 +243,15 @@
 </script>
 
 <script>
+
+    function reset_number(){
+        $('#phone').val('');
+        $('#phone').attr('readonly', false);
+        $('#button_addon2').attr('disabled', false);
+        $('#otp_div').hide();
+        clearInterval(interval);
+    }
+
     function getOtp() {
 
         var phone = $('#phone').val();
