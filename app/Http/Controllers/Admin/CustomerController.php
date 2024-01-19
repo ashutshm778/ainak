@@ -52,6 +52,14 @@ class CustomerController extends Controller
         $reviews = Review::paginate(10);
         return view('backend.review',compact('reviews'),['page_title'=>'Reviews']);
        
-}
+    }
+
+    public function reviewStatusUpdate(Request $request,$id,$status)
+    {
+        $review =  Review::find($id);
+        $review->status = $status;
+        $review->save();
+            return 1;
+    }
 
 }

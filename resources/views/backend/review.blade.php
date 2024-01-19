@@ -72,7 +72,36 @@
 
     <script>
 
-       
+function is_active(id)
+    {
+        var value=$('#is_active_'+id).prop("checked");
+        var id=$('#is_active_'+id).val();
+
+        if(value)
+        {
+            var value = 1;
+        }
+        else
+        {
+            var value = 0;
+        }
+
+        $.ajax({
+            type: 'GET',
+            url: "{{route('admin.review.status.update',['',''])}}/"+id+'/'+value+'?type=is_active',
+            success: function(data) {
+                if(value)
+                {
+                    toastr.success('Review Activeted Successfully!')
+                }
+                else
+                {
+                    toastr.error('Review Deactiveted Successfully!')
+                }
+            }
+        });
+    } 
+
     </script>
 
 @endsection
