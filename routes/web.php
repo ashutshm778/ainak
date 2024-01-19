@@ -40,6 +40,8 @@ Route::view('blog-details', 'frontend.blog-details')->name('blog_details');
 Route::view('term-and-condition', 'frontend.term-and-condition')->name('term_and_condition');
 Route::view('privacy-policy', 'frontend.privacy-policy')->name('privacy_policy');
 
+Route::post('review/store',[FrontController::class,'review_store'])->name('review.store');
+
 Route::group(['middleware' => 'auth:customer'], function () {
     Route::view('user-profile', 'frontend.user-profile')->name('user_profile');
     Route::post('add-to-cart',[CartController::class,'store'])->name('add.to.cart');
