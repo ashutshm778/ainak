@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth:customer'], function () {
     Route::post('add-to-cart',[CartController::class,'store'])->name('add.to.cart');
     Route::get('delete-to-cart/{cart_id}',[CartController::class,'destroy'])->name('delete.to.cart');
     Route::get('change-cart-qty/{product_id}/{qty}',[CartController::class,'changeCartQty'])->name('change.cart.qty');
-    Route::view('checkout', 'frontend.checkout')->name('checkout');
+    Route::get('checkout', [CartController::class,'checkout'])->name('checkout');
     Route::view('cart', 'frontend.cart')->name('cart');
     Route::view('track-order', 'frontend.track-order')->name('track_order');
     Route::view('wishlist', 'frontend.wishlist')->name('wishlist');

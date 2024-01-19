@@ -88,4 +88,14 @@ class CartController extends Controller
         $cart_summary = view('frontend.cart_summary')->render();
         return ['cart_detail'=>$cart_detail,'cart_summary'=>$cart_summary];
     }
+
+
+    public function checkout(){
+        $cart_count=Cart::where('user_id',Auth::guard('customer')->user()->id)->get()->count();
+        if($cart_count > 0){
+          return view('frontend.checkout');
+        }else{
+            return redirect()->route('index')->with('error', 'Cart Is Empty!');
+        }
+    }
 }

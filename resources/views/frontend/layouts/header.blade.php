@@ -124,7 +124,7 @@
                                     @endif
                                 </span>
                             </a> 
-                            <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
+                            <a @if(request()->route()->getName()=='checkout') @else href="#ec-side-cart" @endif class="ec-header-btn ec-side-toggle">
                                 <div class="header-icon">
                                     <img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}"
                                         class="svg_img header_svg" alt="" />
