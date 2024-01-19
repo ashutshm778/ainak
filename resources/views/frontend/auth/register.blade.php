@@ -165,7 +165,7 @@
                                             <span class="text-danger">{{ $errors->first('phone') }}</span>
                                         @endif
                                     </span>
-                                    <p style="text-align:center"><a href="#" onclick="reset_number()"><span class="badge badge-success">Edit</span></a></p>
+                                    <p style="text-align:center;display:none;" id="edit_number"><a href="#" onclick="reset_number()"><span class="badge badge-success">Edit</span></a></p>
                                 </div>
 
                                 <span class="ec-register-wrap ec-register-half" id="otp_div" style="display: none;">
@@ -249,6 +249,7 @@
         $('#phone').attr('readonly', false);
         $('#button_addon2').attr('disabled', false);
         $('#otp_div').hide();
+        $('#edit_number').hide();
         clearInterval(interval);
     }
 
@@ -268,6 +269,7 @@
                     $('#phone').addClass('is-valid');
                     $('#phone_error').css('display', 'none');
                     $('#otp_div').show();
+                    $('#edit_number').show();
                     $('#button_addon2').attr('disabled', 'disabled');
                     $('#phone').attr('readonly', 'true');
                     $('#otp_countdown').show();
