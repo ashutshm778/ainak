@@ -140,3 +140,9 @@
     </div>
 </div>
 @endforeach
+
+
+<div class="form-group text-center w-100">
+    <button class="btn btn-primary prevBtn btn-lg pull-left"
+        type="button">Prev</button>
+</div>
