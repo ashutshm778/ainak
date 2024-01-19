@@ -3133,3 +3133,6 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 .breadcrumb{
   background: #ff5a4717;
 }
+.badge-success{
+  background: #28a745;
+}

@@ -84,7 +84,7 @@
                                             <span class="text-danger">{{ $errors->first('phone') }}</span>
                                         @endif
                                     </span>
-                                    <p style="text-align:center"><a href="#" onclick="reset_number()">Edit</a></p>
+                                    <p style="text-align:center"><a href="#" onclick="reset_number()"><span class="badge badge-success">Edit</span></a></p>
                                 </div>
                                 <span class="ec-register-wrap ec-register-half" id="otp_div" style="display: none;">
                                     <label>OTP<span style="color:red">*<span></label> <br>
@@ -93,7 +93,7 @@
                                         required  style="margin-bottom:5px;">
                                         <p id="otp_countdown" style="text-align:center">Resend OTP in <span class="js-timeout">2:00</span></p>
                                         <p id="re_send_otp_button"  style="display:none;text-align:center;"> <a href="javascript:void(0)"
-                                            onclick="getOtp()">Resend OTP</a>  </p>
+                                            onclick="getOtp()"><span class="badge badge-success">Resend OTP</span></a>  </p>
                                     <span class="error invalid-feedback" id="otp_error" style="display:none;color:red;">Wrong
                                         OTP</span>
                                     <span class="text-success" id="otp_success" style="display:none">Match OTP</span>
