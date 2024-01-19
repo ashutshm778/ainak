@@ -84,9 +84,9 @@
                             <!-- Header User Start -->
                             @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                                 <div class="ec-header-user dropdown">
-                                    <button class="dropdown-toggle" data-bs-toggle="dropdown">@if(Auth::guard('customer')->check()){{strtoupper(mb_substr(Auth::guard('customer')->user()->first_name, 0, 1))}}@else<img
+                                    <button class="dropdown-toggle" data-bs-toggle="dropdown">@if(Auth::guard('customer')->check()) <span class="nme">{{strtoupper(mb_substr(Auth::guard('customer')->user()->first_name, 0, 1))}}</span>@else<img
                                             src="{{ asset('public/frontend/assets/images/icons/user.svg') }}"
-                                            class="svg_img header_svg" alt="" />@endif</button>
+                                            class="svg_img header_svg user-icn" alt="" />@endif</button>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         @if (Auth::guard('customer')->check())
                                             <li><a class="dropdown-item" href="{{ route('user_profile') }}">Profile</a>
@@ -111,7 +111,7 @@
                                     </ul>
                                 </div>
                             @endif
-                            <a href="{{ route('wishlist') }}" class="ec-header-btn ec-header-wishlist">
+                            <a href="{{ route('wishlist') }}" class="ec-header-btn ec-header-wishlist mll-4">
                                 <div class="header-icon">
                                     <img src="{{ asset('public/frontend/assets/images/icons/wishlist.svg') }}"
                                         class="svg_img header_svg" alt="" />

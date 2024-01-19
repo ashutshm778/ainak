@@ -9,10 +9,10 @@
             <div class="row">
                 <div class="col-12">
                      <div class="row ec_breadcrumb_inner">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-4">
                             <h2 class="ec-breadcrumb-title">About Us</h2>
                         </div>
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-6 col-8">
                             <!-- ec-breadcrumb-list start -->
                             <ul class="ec-breadcrumb-list">
                                 <li class="ec-breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
