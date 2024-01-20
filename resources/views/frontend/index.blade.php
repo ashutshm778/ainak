@@ -287,9 +287,7 @@
                             <div class="row" id="new_arrival">
                                 
                             </div>
-                            <div class="text-center">
-                                <a class="btn btn-secondary rds" href="#" id="view_more_trending">View More <i class="ecicon eci-chevron-right"></i></a>
-                            </div>
+                            
                         </div>
                         <!-- ec 1st Product tab end -->
                         <!-- ec 2nd Product tab start -->
@@ -297,9 +295,7 @@
                             <div class="row" id="featured">
                                
                             </div>
-                            <div class="text-center">
-                                <a class="btn btn-secondary rds" href="#" id="view_more_feature">View More <i class="ecicon eci-chevron-right"></i></a>
-                            </div>
+                            
                         </div>
                         <!-- ec 2nd Product tab end -->
                         <!-- ec 3rd Product tab start -->
@@ -307,9 +303,7 @@
                             <div class="row" id="best_seller">
                                
                             </div>
-                            <div class="text-center">
-                                <a class="btn btn-secondary rds" href="#" id="view_more_best_seller">View More <i class="ecicon eci-chevron-right"></i></a>
-                            </div>
+                           
                         </div>
                         <!-- ec 3rd Product tab end -->
                     </div>
