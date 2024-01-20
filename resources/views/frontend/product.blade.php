@@ -39,19 +39,19 @@
 
                     @if (Auth::guard('customer')->check())
                         @php
-                            $whistlist_data = App\Models\Wishlist::where('product_id', $new_arriavl->id)
+                            $whistlist_data = App\Models\Wishlist::where('product_id', $productData->id)
                                 ->where('user_id', Auth::guard('customer')->user()->id)
                                 ->first();
                         @endphp
                         <div class="wishlist-container wislist-positon">
                             <div class="wishlist-heart @if (!empty($whistlist_data->id)) wishlist-heart-active @endif"
-                                id="wish_{{ $new_arriavl->id }}" onclick="addToWishlist({{ $new_arriavl->id }})">
+                                id="wish_{{ $productData->id }}" onclick="addToWishlist({{ $productData->id }})">
                             </div>
                         </div>
                     @else
                         <div class="wishlist-container wislist-positon">
-                            <div class="wishlist-heart" id="wish_{{ $new_arriavl->id }}"
-                                onclick="addToWishlist({{ $new_arriavl->id }})"></div>
+                            <div class="wishlist-heart" id="wish_{{ $productData->id }}"
+                                onclick="addToWishlist({{ $productData->id }})"></div>
                         </div>
                     @endif
 
