@@ -253,7 +253,7 @@
                     </li>
                     <li class="list-inline-item instagram"><a href="#"><i class="ecicon eci-instagram"></i></a>
                     </li>
-                    <li class="list-inline-item whatsapp"><a href="https://web.whatsapp.com/send?text={{route('search',$data->slug)}}"><i class="ecicon eci-whatsapp"></i></a>
+                    <li class="list-inline-item whatsapp"><a href="https://web.whatsapp.com/send?text={{route('search',$data->slug)}}?type=product"><i class="ecicon eci-whatsapp"></i></a>
                     </li>
                 </ul>
             </div> 
