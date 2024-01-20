@@ -284,14 +284,8 @@
                     <div class="tab-content">
                         <!-- 1st Product tab start -->
                         <div class="tab-pane fade show active" id="tab-pro-new-arrivals">
-                            <div class="row">
-                                @foreach ($new_arriavls as $new_arriavl)
-                                    @php
-                                        $productData = $new_arriavl;
-                                        $productprice = homePrice($new_arriavl->id);
-                                    @endphp
-                                    @include('frontend.product')
-                                @endforeach
+                            <div class="row" id="new_arrival">
+                                
                             </div>
                             <div class="text-center">
                                 <a class="btn btn-secondary rds" href="#" id="view_more_trending">View More <i class="ecicon eci-chevron-right"></i></a>
@@ -300,14 +294,8 @@
                         <!-- ec 1st Product tab end -->
                         <!-- ec 2nd Product tab start -->
                         <div class="tab-pane fade" id="tab-pro-special-offer">
-                            <div class="row">
-                                @foreach ($features as $feature)
-                                    @php
-                                        $productData = $feature;
-                                        $productprice = homePrice($feature->id);
-                                    @endphp
-                                    @include('frontend.product')
-                                @endforeach
+                            <div class="row" id="featured">
+                               
                             </div>
                             <div class="text-center">
                                 <a class="btn btn-secondary rds" href="#" id="view_more_feature">View More <i class="ecicon eci-chevron-right"></i></a>
@@ -316,14 +304,8 @@
                         <!-- ec 2nd Product tab end -->
                         <!-- ec 3rd Product tab start -->
                         <div class="tab-pane fade" id="tab-pro-best-sellers">
-                            <div class="row">
-                                @foreach ($best_sellers as $best_seller)
-                                    @php
-                                        $productData = $best_seller;
-                                        $productprice = homePrice($productData->id);
-                                    @endphp
-                                    @include('frontend.product')
-                                @endforeach
+                            <div class="row" id="best_seller">
+                               
                             </div>
                             <div class="text-center">
                                 <a class="btn btn-secondary rds" href="#" id="view_more_best_seller">View More <i class="ecicon eci-chevron-right"></i></a>
@@ -841,11 +823,27 @@
     </section>-->
     <!--services Section End -->
 
-@endsection
-@section('script')
-
-<script>
-   
-</script>
-
+    <script>
+        function trending(){
+         $.get('{{ route('get_new_arrival_product') }}', {_token:'{{ csrf_token() }}'}, function(data){
+                $('#new_arrival').html(data);
+            });
+        }
+     
+        function feature(){
+         $.get('{{ route('get_featured_product') }}', {_token:'{{ csrf_token() }}'}, function(data){
+                $('#featured').html(data);
+            });
+        }
+     
+        function seller(){
+         $.get('{{ route('get_best_seller_product') }}', {_token:'{{ csrf_token() }}'}, function(data){
+                $('#best_seller').html(data);
+            });
+        }
+     
+        trending();
+        feature();
+        seller();
+     </script>
 @endsection
