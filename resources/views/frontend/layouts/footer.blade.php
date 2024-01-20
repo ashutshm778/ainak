@@ -657,7 +657,7 @@
                 product_id: product_id
             },
             success: function(data) {
-                location.reload();
+                $('.ec-cart-wishlist').html(data.wishlist_count);
             }
         });
     }

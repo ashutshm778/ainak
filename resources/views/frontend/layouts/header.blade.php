@@ -358,7 +358,8 @@
             type: 'GET',
             url: "{{ route('delete.to.cart', '') }}/" + cart_id,
             success: function(data) {
-                $('#ec-side-cart').html(data)
+                $('#ec-side-cart').html(data.html)
+                $('.header_cart_count').text(data.cart_count);
             }
         });
     }

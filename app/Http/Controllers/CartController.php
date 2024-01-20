@@ -67,7 +67,8 @@ class CartController extends Controller
         Cart::where('id',$cart_id)->delete();
         if(request()->ajax())
         {
-            return view('frontend.cart_detail');
+            $cart_count=Cart::where('user_id',Auth::guard('customer')->user()->id)->get()->count();
+            return ['html'=>view('frontend.cart_detail')->render(),'cart_count'=>$cart_count];
         }
         else
         {
