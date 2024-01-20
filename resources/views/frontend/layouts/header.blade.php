@@ -197,8 +197,8 @@
         </div>
     </div>
     <!-- Mobile Header End -->
-
-    <div id="ec-main-menu-desk" class="sticky-nav">
+    <!-- <div id="ec-main-menu-desk" class="sticky-nav"> -->
+    <div id="ec-main-menu-desk">
         <div class="container position-relative">
             <div class="row">
                 <div class="col-sm-10 ec-main-menu-block align-self-center d-none d-lg-block">

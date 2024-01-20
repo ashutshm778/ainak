@@ -155,8 +155,6 @@
                         </div>
                     </div>
 
-
-
                     @php
                         if (Auth::guard('customer')->check()) {
                             $pro_cart = App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)
@@ -192,7 +190,7 @@
                         </div>
                         <div class="ec-single-cart ">
                             <button class="bg-black btn btn-primary">
-                                <a href="tel:+91-7307098502"> <i class="ecicon eci-phone"></i></a></button>
+                                <a href="tel:+91-9876543210"> <i class="ecicon eci-phone"></i></a></button>
                         </div>
                         <div class="ec-single-cart ">
                             <button class="btn btn-primary">

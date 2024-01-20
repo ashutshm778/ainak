@@ -241,16 +241,12 @@
                             </div>
                         @endif
                     </div>
-                    <!-- ShareThis BEGIN -->
-                    <div class="sharethis-inline-share-buttons"></div>
-                    <!-- ShareThis END -->
                 </form>
             </div>
 
-
-            
-            {{-- <div class="ec-single-social">
-                <ul class="mb-0">
+            <div class="ec-single-social">
+                Share This: 
+                <ul class="mb-0 ml-3">
                     <li class="list-inline-item facebook"><a href="#"><i class="ecicon eci-facebook"></i></a>
                     </li>
                     <li class="list-inline-item twitter"><a href="#"><i class="ecicon eci-twitter"></i></a>
@@ -262,7 +258,7 @@
                     <li class="list-inline-item whatsapp"><a href="#"><i class="ecicon eci-whatsapp"></i></a>
                     </li>
                 </ul>
-            </div> --}}
+            </div> 
         </div>
     </div>
 </div>

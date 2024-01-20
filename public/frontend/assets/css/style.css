@@ -21664,7 +21664,7 @@ h4.ec-faq-title::after, .ec-faq-title.h4::after {
   display: flex;
   background: #efefef;
   border-radius: 100%;
-  color: #333;
+  color: #fff;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -21676,26 +21676,26 @@ h4.ec-faq-title::after, .ec-faq-title.h4::after {
 .single-pro-content .ec-single-social ul li a:hover {
   color: #fff;
 }
-.single-pro-content .ec-single-social ul li.facebook a:hover {
+.single-pro-content .ec-single-social ul li.facebook a {
   background: #3c5a98;
 }
-.single-pro-content .ec-single-social ul li.twitter a:hover {
+.single-pro-content .ec-single-social ul li.twitter a {
   background: #1da1f2;
 }
-.single-pro-content .ec-single-social ul li.instagram a:hover {
+.single-pro-content .ec-single-social ul li.instagram a {
   background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
-.single-pro-content .ec-single-social ul li.behance a:hover {
+.single-pro-content .ec-single-social ul li.behance a {
   background: #0057ff;
 }
-.single-pro-content .ec-single-social ul li.whatsapp a:hover {
+.single-pro-content .ec-single-social ul li.whatsapp a {
   background: #2db842;
 }
-.single-pro-content .ec-single-social ul li.plus a:hover {
+.single-pro-content .ec-single-social ul li.plus a {
   background: #000000;
 }
-.single-pro-content .ec-single-social ul li.youtube-play a:hover {
+.single-pro-content .ec-single-social ul li.youtube-play a {
   background: #ff0000;
 }
 .single-pro-content .ec-single-social ul li.list-inline-item:not(:last-child) {
