@@ -187,26 +187,7 @@
                                     <h2 class="ec-title">{{ $flash_deal->title }}</h2>
                                 </div>
                                 <div class="countdowntimer"><span id="demo{{ $flash_key }}"></span></div>
-                                <script>
-                                    var countDownDate{{ $flash_key }} = new Date("{{ $flash_deal->end_date_time }}").getTime();
-                                    var x = setInterval(function() {
-                                        var now{{ $flash_key }} = new Date().getTime();
-                                        var distance{{ $flash_key }} = countDownDate{{ $flash_key }} - now{{ $flash_key }};
-                                        var days{{ $flash_key }} = Math.floor(distance{{ $flash_key }} / (1000 * 60 * 60 * 24));
-                                        var hours{{ $flash_key }} = Math.floor((distance{{ $flash_key }} % (1000 * 60 * 60 * 24)) / (
-                                            1000 * 60 * 60));
-                                        var minutes{{ $flash_key }} = Math.floor((distance{{ $flash_key }} % (1000 * 60 * 60)) / (1000 *
-                                            60));
-                                        var seconds{{ $flash_key }} = Math.floor((distance{{ $flash_key }} % (1000 * 60)) / 1000);
-                                        document.getElementById("demo{{ $flash_key }}").innerHTML = days{{ $flash_key }} + "D. " +
-                                            hours{{ $flash_key }} + "H. " + minutes{{ $flash_key }} + "M. " +
-                                            seconds{{ $flash_key }} + "S. ";
-                                        if (distance{{ $flash_key }} < 0) {
-                                            clearInterval(x);
-                                            document.getElementById("demo{{ $flash_key }}").innerHTML = "EXPIRED";
-                                        }
-                                    }, 1000);
-                                </script>
+                              
                             </div>
                         </div>
                         <div class="row">
@@ -312,6 +293,9 @@
                                     @include('frontend.product')
                                 @endforeach
                             </div>
+                            <div class="text-center">
+                                <a class="btn btn-secondary rds" href="#" id="view_more_trending">View More <i class="ecicon eci-chevron-right"></i></a>
+                            </div>
                         </div>
                         <!-- ec 1st Product tab end -->
                         <!-- ec 2nd Product tab start -->
@@ -324,6 +308,9 @@
                                     @endphp
                                     @include('frontend.product')
                                 @endforeach
+                            </div>
+                            <div class="text-center">
+                                <a class="btn btn-secondary rds" href="#" id="view_more_feature">View More <i class="ecicon eci-chevron-right"></i></a>
                             </div>
                         </div>
                         <!-- ec 2nd Product tab end -->
@@ -338,13 +325,14 @@
                                     @include('frontend.product')
                                 @endforeach
                             </div>
+                            <div class="text-center">
+                                <a class="btn btn-secondary rds" href="#" id="view_more_best_seller">View More <i class="ecicon eci-chevron-right"></i></a>
+                            </div>
                         </div>
                         <!-- ec 3rd Product tab end -->
                     </div>
                 </div>
-                <div class="text-center">
-                    <a class="btn btn-secondary rds" href="#">View More <i class="ecicon eci-chevron-right"></i></a>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -852,5 +840,12 @@
         </div>
     </section>-->
     <!--services Section End -->
+
+@endsection
+@section('script')
+
+<script>
+   
+</script>
 
 @endsection
