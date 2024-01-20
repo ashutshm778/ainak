@@ -141,7 +141,7 @@
                     <div class="section-title">
                         <h2 class="ec-title">Shop By Categories</h2>
                     </div>
-                    @if (count($categories)>6)
+                    @if (count($categories)>5)
                         <div class="section-btn">
                             <span class="ec-section-btn"><a href="{{ route('categories') }}">All Categories</a></span>
                         </div>

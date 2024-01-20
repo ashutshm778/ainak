@@ -1,3 +1,15 @@
+<style>
+    @media only screen and (max-width: 575px) {
+    .ec-header{
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    .ec-shop-rightside .ec-pro-list-top{
+        top: 117px;
+    }
+}
+</style>
 <div class="shop-pro-inner scrolling-pagination">
     <div class="row">
         @foreach ($list as $data)
