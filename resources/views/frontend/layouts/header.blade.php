@@ -138,7 +138,7 @@
                                 </span>
                             </a>
 
-                            <a href="https://wa.me/+911234567890" class="ec-header-btn ec-header-wishlist">
+                            <a href="https://wa.me/+919219949495" class="ec-header-btn ec-header-wishlist">
                                 <div class="header-icon">
                                     <img src="{{ asset('public/frontend/assets/images/icons/whatsapp.svg') }}"
                                         class="svg_img header_svg" alt="" />
