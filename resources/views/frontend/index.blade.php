@@ -818,26 +818,33 @@
     <!--services Section End -->
 
     <script>
-        function trending(){
-         $.get('{{ route('get_new_arrival_product') }}', {_token:'{{ csrf_token() }}'}, function(data){
+        function trending(page){
+         $.get('{{ route('get_new_arrival_product') }}', {_token:'{{ csrf_token() }}',page:page}, function(data){
                 $('#new_arrival').html(data);
             });
         }
      
-        function feature(){
-         $.get('{{ route('get_featured_product') }}', {_token:'{{ csrf_token() }}'}, function(data){
+        function feature(page){
+         $.get('{{ route('get_featured_product') }}', {_token:'{{ csrf_token() }}',page:page}, function(data){
                 $('#featured').html(data);
             });
         }
      
-        function seller(){
-         $.get('{{ route('get_best_seller_product') }}', {_token:'{{ csrf_token() }}'}, function(data){
+        function seller(page){
+         $.get('{{ route('get_best_seller_product') }}', {_token:'{{ csrf_token() }}',page:page}, function(data){
                 $('#best_seller').html(data);
             });
         }
      
-        trending();
-        feature();
-        seller();
+        trending(1);
+        feature(1);
+        seller(1);
+
+    //     $(document).on('click', '.product_index a', function(event)
+    // {
+    //     event.preventDefault();
+    //     var page = $(this).attr('href').split('page=')[1];
+    //     filler_product(page);
+    // });
      </script>
 @endsection
