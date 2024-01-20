@@ -18013,7 +18013,7 @@ li {
   Breadcrumb Style CSS
 ---------------------------------------------------*/
 .ec-breadcrumb {
-  margin: 0 0 50px;
+  margin: 0;
   font-size: 20px;
   padding-top: 60px;
   background-size: cover;

@@ -353,7 +353,7 @@
     <!--  Banner Section Start -->
     @if ($top_banner)
         <section class="section banner">
-            <a href="#"><img src="{{ asset('public/' . api_asset($top_banner->image)) }}" class="w-100"></a>
+            <img src="{{ asset('public/' . api_asset($top_banner->image)) }}" class="w-100">
         </section>
     @endif
     <!-- Banner Section End -->
@@ -669,7 +669,7 @@
     <!-- Banner Item Start -->
     @if ($mid_banner)
         <section class="section banner">
-            <a href="#"><img src="{{ asset('public/' . api_asset($mid_banner->image)) }}" class="w-100"></a>
+            <img src="{{ asset('public/' . api_asset($mid_banner->image)) }}" class="w-100">
         </section>
     @endif
     <!-- Banner Item end -->
@@ -712,7 +712,7 @@
 
     @if ($top_banner)
         <section class="section banner">
-            <a href="#"><img src="{{ asset('public/' . api_asset($top_banner->image)) }}" class="w-100"></a>
+            <img src="{{ asset('public/' . api_asset($top_banner->image)) }}" class="w-100">
         </section>
     @endif
 
