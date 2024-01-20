@@ -3171,3 +3171,9 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
 }
+.ec-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+}

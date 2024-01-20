@@ -10,7 +10,7 @@
                         <ul class="mb-0 ">
                             <li class="list-inline-item">
                                 <div class="header-top-call ">
-                                    <a href="#">Lorem ipsum is a placeholder text commonly used to demonstrate. </a>
+                                    <a href="#">Welcome to Aynak. </a>
                                 </div>
                             </li>
                         </ul>
