@@ -150,7 +150,7 @@
             </div>
             <div class="row">
                 @foreach ($categories as $category)
-                    <div class="col-md-2 col-xs-4">
+                    <div class="col-md-2 col-xs-4 mb-3">
                         <div class="ec_cat_inner">
                             <div class="ec-cat-image">
                                 <a href="{{ route('search', $category->slug) }}?type=category"> <img
