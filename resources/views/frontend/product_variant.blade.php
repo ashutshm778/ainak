@@ -253,8 +253,6 @@
                     </li>
                     <li class="list-inline-item instagram"><a href="#"><i class="ecicon eci-instagram"></i></a>
                     </li>
-                    <li class="list-inline-item youtube-play"><a href="#"><i
-                                class="ecicon eci-youtube-play"></i></a></li>
                     <li class="list-inline-item whatsapp"><a href="#"><i class="ecicon eci-whatsapp"></i></a>
                     </li>
                 </ul>

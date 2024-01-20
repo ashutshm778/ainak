@@ -3026,16 +3026,6 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 }
 }
 
-.whatsapp {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  bottom: 65px;
-  left: 5px;
-  border-radius: 50%;
-  /* box-shadow: 2px 2px 3px #999; */
-  z-index: 100;
-}
 
 .ec-footer-links ul li a i{
   font-size: 10px !important;
