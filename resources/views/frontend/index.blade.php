@@ -812,7 +812,7 @@
     </section>
 
     <!--  services Section Start -->
-    <section class="section ec-offer-section">
+    <!--<section class="section ec-offer-section">
         <img src="{{ asset('public/frontend/assets/images/appointment.jpg') }}" alt="" class="offer_bg">
         <div class="ec-offer-inner m_hide">
             <div class="row justify-content-end">
@@ -850,7 +850,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!--services Section End -->
 
 @endsection
