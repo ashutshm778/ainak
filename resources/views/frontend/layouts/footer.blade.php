@@ -639,7 +639,8 @@
 
             },
             error: function(error) {
-                window.location.href = "{{ route('user.login') }}";
+                    var from_url = "{{url()->full()}}";
+                    window.location.href = "{{ route('user.login') }}?from="+from_url;
             }
         });
     }

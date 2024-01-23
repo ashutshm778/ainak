@@ -72,6 +72,32 @@
                                     <div class="row">
                                         <div class="ec-ratting-content">
                                             <div class="ec-ratting-form">
+                                                @php $reviews=App\Models\Review::where('product_id',$data->id)->where('status',1)->get(); @endphp
+                                                @foreach($reviews as $review)
+                                                <div class="ec-t-review-wrapper">
+                                                    <div class="ec-t-review-item">
+                                                        <div class="ec-t-review-avtar">
+                                                            <img src="{{asset('public/frontend/assets/images/profile.jpeg')}}"
+                                                                alt="" />
+                                                        </div>
+                                                        <div class="ec-t-review-content">
+                                                            <div class="ec-t-review-top">
+                                                                <div class="ec-t-review-name">{{$review->name}}</div>
+                                                                <div class="ec-t-review-rating">
+                                                                    @for($i=0;$i<$review->rating;$i++)
+                                                                    <i class="ecicon eci-star fill"></i>
+                                                                    @endfor
+                                                                   
+                                                                </div>
+                                                            </div>
+                                                            <div class="ec-t-review-bottom">
+                                                                <p>{{$review->comment}} </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+        
+                                                @endforeach
                                                 <form action="{{route('review.store')}}" method="POST">
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$data->id}}" />
@@ -104,12 +130,12 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="ec-ratting-input">
-                                                                <input  placeholder="Name" name="name" type="text" required/>
+                                                                <input  placeholder="Name" name="name" type="text" value="{{optional(Auth::guard('customer')->user())->first_name}}" required/>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="ec-ratting-input">
-                                                                <input  placeholder="Email*" name="email" type="email"
+                                                                <input  placeholder="Email*" name="email" type="email" value="{{optional(Auth::guard('customer')->user())->email}}"
                                                                     required />
                                                             </div>
                                                         </div>
