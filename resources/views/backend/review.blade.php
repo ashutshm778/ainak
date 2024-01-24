@@ -32,6 +32,7 @@
                                             <th class="text-center">Email</th>
                                             <th class="text-center">Comment</th>
                                             <th class="text-center">Rating</th>
+                                            <th class="text-center">Product Name</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
@@ -43,7 +44,7 @@
                                                 <td class="text-center">{{$review->email}}</td>
                                                 <td class="text-center">{{$review->comment}}</td>
                                                 <td class="text-center">{{$review->rating}}</td>
-                                               
+                                                <th class="text-center">{{$review->product->name}}</th>
                                                 <td class="text-center">
                                                     <div class="custom-control custom-switch">
                                                         <input type="checkbox" class="custom-control-input" id="is_active_{{$key}}" value="{{$review->id}}" onchange="is_active({{$key}})" @if($review->status) checked @endif>
