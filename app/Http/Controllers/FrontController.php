@@ -371,6 +371,7 @@ class FrontController extends Controller
     public function review_store(Request $request){
 
             $review = new Review;
+            $review->user_id =Auth::guard('customer')->user()->id ;
             $review->name=$request->name;
             $review->email=$request->email;
             $review->product_id=$request->product_id;

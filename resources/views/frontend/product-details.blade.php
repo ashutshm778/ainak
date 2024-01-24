@@ -98,6 +98,7 @@
                                                 </div>
         
                                                 @endforeach
+                                                @if (Auth::guard('customer')->check())
                                                 <form action="{{route('review.store')}}" method="POST">
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$data->id}}" />
@@ -146,6 +147,10 @@
                                                             value="Submit">Submit</button>
                                                     </div>
                                                 </form>
+                                                @else
+                                                <a type="button" class="btn btn-primary" href="{{ route('user.login') }}?from={{url()->full()}}" >
+                                                 Login For Review</a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
