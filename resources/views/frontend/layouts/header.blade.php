@@ -69,7 +69,7 @@
                                 autocomplete="off">
                                 <input class="form-control flip" name="search" value="{{ request()->search }}"
                                     placeholder="I’m searching for..." type="text" id="flip"
-                                    onkeyup="searchs()">
+                                    onkeyup="searchs(this)">
                                 <button class="search_submit" type="submit">
                                     <img src="{{ asset('public/frontend/assets/images/icons/search.svg') }}"
                                         class="svg_img search_svg" alt="" />
@@ -183,7 +183,7 @@
                             autocomplete="off">
                             <input class="form-control flip" name="search" value="{{ request()->search }}"
                                 placeholder="I’m searching for..." type="text" id="flip"
-                                onkeyup="searchs()">
+                                onkeyup="searchs(this)">
                             <button class="search_submit" type="submit">
                                 <img src="{{ asset('public/frontend/assets/images/icons/search.svg') }}"
                                     class="svg_img search_svg" alt="" />
@@ -327,8 +327,8 @@
 </div>
 
 <script>
-    function searchs() {
-        var search_val = $('.flip').val();
+    function searchs(e) {
+        var search_val = e.value;
         $.ajax({
             type: 'GET',
             url: "{{ route('product-search') }}?search=" + search_val,
