@@ -216,7 +216,7 @@
                     <img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img header_svg"
                         alt="" />
 
-                    <span class="ec-cart-noti ec-header-count cart-count-lable">
+                    <span class="ec-cart-noti ec-header-count header_cart_count cart-count-lable">
 
                         @if (Auth::guard('customer')->check())
                             {{ App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get()->count() }}
