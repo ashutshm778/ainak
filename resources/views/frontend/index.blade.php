@@ -824,7 +824,7 @@
     <script>
         function trending(page){
          $.get('{{ route('get_new_arrival_product') }}', {_token:'{{ csrf_token() }}',page:page}, function(data){
-                $('#new_arrival').html(data);
+                $('#new_arrival').append(data);
             });
         }
      
