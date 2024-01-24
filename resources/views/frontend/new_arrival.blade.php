@@ -5,6 +5,5 @@
     @endphp
     @include('frontend.product')
 @endforeach
-<input type="hidden" name="current_page_new_arriavl" value="{{$new_arriavls->currentPage() }}" />
-
+<a style="display:none;" id="current_page_new_arriavl" class="btn btn-secondary rds {{ ($new_arriavls->currentPage() == $new_arriavls->lastPage()) ? ' disabled' : '' }}" href="{{ $new_arriavls->url($new_arriavls->currentPage()+1) }}" id="view_more_trending"  >View More <i class="ecicon eci-chevron-right"></i></a>
 
