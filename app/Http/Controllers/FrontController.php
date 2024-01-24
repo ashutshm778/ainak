@@ -29,7 +29,7 @@ class FrontController extends Controller
     {
         $categories = Category::select('id', 'slug', 'name', 'icon')->where('is_active', 1)->orderBy('top_priority', 'asc')->take(6)->get();
         $featured_categories = Category::select('id', 'name')->where('is_active', 1)->where('is_feature', 1)->orderBy('priority', 'asc')->get();
-        $new_arriavls = Product::where('is_active', 1)->where('is_new_arrival', 1)->take(12)->get();
+       
         $features = Product::where('is_active', 1)->where('is_feature', 1)->take(12)->get();
         $best_sellers = Product::where('is_active', 1)->where('is_bestseller', 1)->take(12)->get();
 
@@ -38,7 +38,7 @@ class FrontController extends Controller
         $mid_banner = WebsiteSetting::where('type', 'banner')->where('position', 'mid')->first();
         $bottom_banner = WebsiteSetting::where('type', 'banner')->where('position', 'bottom')->first();
 
-        return view('frontend.index', compact('categories', 'new_arriavls', 'features', 'best_sellers', 'sliders', 'top_banner', 'mid_banner', 'bottom_banner', 'featured_categories'));
+        return view('frontend.index', compact('categories', 'features', 'best_sellers', 'sliders', 'top_banner', 'mid_banner', 'bottom_banner', 'featured_categories'));
     }
 
     public function get_featured_product(Request $request){

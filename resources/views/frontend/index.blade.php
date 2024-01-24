@@ -287,7 +287,11 @@
                             <div class="row" id="new_arrival">
                                 
                             </div>
-                            
+                           
+                             <div class="text-center">
+                                <a class="btn btn-secondary rds" href="#" id="view_more_trending" onclick="new_arriavl_product()"  >View More <i class="ecicon eci-chevron-right"></i></a>
+                            </div>
+                          
                         </div>
                         <!-- ec 1st Product tab end -->
                         <!-- ec 2nd Product tab start -->
@@ -840,11 +844,10 @@
         feature(1);
         seller(1);
 
-        $(document).on('click', '#view_more_trending', function(event)
-    {
-        event.preventDefault();
-        var page = $(this).attr('href').split('page=')[1];
-        trending(page);
-    });
+       function new_arriavl_product(){
+            event.preventDefault();
+            var page = $('#current_page_new_arriavl').val();
+            trending(page+1);
+        }
      </script>
 @endsection
