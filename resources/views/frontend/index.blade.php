@@ -846,7 +846,7 @@
 
        function new_arriavl_product(){
             event.preventDefault();
-            var page = $("a[name='example']:lastt").attr('href').split('page=')[1];
+            var page = $("a[name='example']:last").attr('href').split('page=')[1];
             trending(page);
         }
      </script>
