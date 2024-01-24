@@ -287,7 +287,9 @@
                             <div class="row" id="new_arrival">
                                 
                             </div>
-                            
+                            <div class="text-center">
+                                <a class="btn btn-secondary rds {{ ($new_arriavls->currentPage() == $new_arriavls->lastPage()) ? ' disabled' : '' }}" href="{{ $new_arriavls->url($new_arriavls->currentPage()+1) }}" id="view_more_trending"  >View More <i class="ecicon eci-chevron-right"></i></a>
+                            </div>
                         </div>
                         <!-- ec 1st Product tab end -->
                         <!-- ec 2nd Product tab start -->
