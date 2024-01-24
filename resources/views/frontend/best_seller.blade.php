@@ -5,6 +5,4 @@
 @endphp
 @include('frontend.product')
 @endforeach
-<div class="text-center">
-    <a class="btn btn-secondary rds" href="#" id="view_more_best_seller">View More <i class="ecicon eci-chevron-right"></i></a>
-</div>
+<a style="display:none;" id="current_page_best_sellers" name="example2" class="btn btn-secondary rds {{ ($best_sellers->currentPage() == $best_sellers->lastPage()) ? ' disabled' : '' }}" href="{{ $best_sellers->url($best_sellers->currentPage()+1) }}"   >View More <i class="ecicon eci-chevron-right"></i></a>
