@@ -835,13 +835,13 @@
      
         function feature(page){
          $.get('{{ route('get_featured_product') }}', {_token:'{{ csrf_token() }}',page:page}, function(data){
-                $('#featured').html(data);
+                $('#featured').append(data);
             });
         }
      
         function seller(page){
          $.get('{{ route('get_best_seller_product') }}', {_token:'{{ csrf_token() }}',page:page}, function(data){
-                $('#best_seller').html(data);
+                $('#best_seller').append(data);
             });
         }
      
