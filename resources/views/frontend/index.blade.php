@@ -840,11 +840,11 @@
         feature(1);
         seller(1);
 
-    //     $(document).on('click', '.product_index a', function(event)
-    // {
-    //     event.preventDefault();
-    //     var page = $(this).attr('href').split('page=')[1];
-    //     filler_product(page);
-    // });
+        $(document).on('click', '#view_more_trending', function(event)
+    {
+        event.preventDefault();
+        var page = $(this).attr('href').split('page=')[1];
+        trending(page);
+    });
      </script>
 @endsection

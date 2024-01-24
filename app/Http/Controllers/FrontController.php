@@ -42,17 +42,17 @@ class FrontController extends Controller
     }
 
     public function get_featured_product(Request $request){
-        $features = Product::where('is_active', 1)->where('is_feature', 1)->paginate(12);
+        $features = Product::where('is_active', 1)->where('is_feature', 1)->paginate(6);
         return view('frontend.featured',compact('features'))->render();
     }
 
     public function get_new_arrival_product(Request $request){
-        $new_arriavls = Product::where('is_active', 1)->where('is_new_arrival', 1)->paginate(12);
+        $new_arriavls = Product::where('is_active', 1)->where('is_new_arrival', 1)->paginate(6);
         return view('frontend.new_arrival',compact('new_arriavls'))->render();
     }
 
     public function get_best_seller_product(Request $request){
-        $best_sellers = Product::where('is_active', 1)->where('is_bestseller', 1)->paginate(12);
+        $best_sellers = Product::where('is_active', 1)->where('is_bestseller', 1)->paginate(6);
         return view('frontend.best_seller',compact('best_sellers'))->render();
     }
 
