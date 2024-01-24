@@ -77,7 +77,7 @@
                                                 <div class="ec-t-review-wrapper">
                                                     <div class="ec-t-review-item">
                                                         <div class="ec-t-review-avtar">
-                                                            <img src="{{asset('public/frontend/assets/images/profile.jpeg')}}"
+                                                            <img src="@if($review->customer->photo){{asset('public/public/frontend/user_profile/'.$review->customer->photo)}}@else {{asset('public/frontend/assets/images/profile.jpeg')}} @endif"
                                                                 alt="" />
                                                         </div>
                                                         <div class="ec-t-review-content">

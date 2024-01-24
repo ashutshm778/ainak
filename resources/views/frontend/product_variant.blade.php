@@ -199,25 +199,6 @@
                     @endphp
 
                     <div class="ec-single-qty">
-                        {{-- <button type="button" class="btn btn-danger btn-number"
-                            onclick="update_qty('minus',{{ $data->id }},{{ $product_price['min_qty'] > 0 ? $product_price['min_qty'] : 'null' }},'form')">
-                            <span class="ecicon eci-minus"></span>
-                        </button>
-                        <input type="number" id="quantity" name="product_qty"
-                            class="form-control text-center qty_value_{{ $data->id }}"
-                            value="@if (!empty($pro_qty)){{ $pro_qty }}@else{{ !empty($product_quanity)?$product_quanity :'1'}}@endif"
-                            min="{{ $data->retailer_min_qty }}"
-                            max="{{ $product_price['max_qty'] > 0 ? $product_price['max_qty'] : 'null' }}"
-                            style="width:110px; padding: 0 10px; height: 45px;" onchange="change_quantitiy_price()">
-                        <button type="button" class="btn btn-danger btn-number btn-number"
-                            onclick="update_qty('plus',{{ $data->id }},{{ $product_price['max_qty'] > 0 ? $product_price['max_qty'] : 'null' }},'form')">
-                            <span class="ecicon eci-plus"></span>
-                        </button> --}}
-                        <!-- <div class="wslst">
-                            <a class="text-white" title="Wishlist"  onclick="addToWishlist({{ $data->id }})">
-                                <i class="ecicon eci-heart-o" style="font-size:25px;"></i>
-                            </a>
-                        </div>  -->
                         <input type="hidden" name="product_id" value="{{ $data->id }}">
                         <input type="hidden" name="product_group_id" value="{{ $data->product_group_id }}">
                         <div class="ec-single-cart ">
