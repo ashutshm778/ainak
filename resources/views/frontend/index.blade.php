@@ -846,7 +846,7 @@
 
        function new_arriavl_product(){
             event.preventDefault();
-            var page = $('#current_page_new_arriavl').val();
+            var page = $('#current_page_new_arriavl').val()?$('#current_page_new_arriavl').val():1;
             trending(page+1);
         }
      </script>
