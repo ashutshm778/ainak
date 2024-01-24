@@ -14,8 +14,8 @@ class SearchController extends Controller
     {
         $search=$request->search;
         $list=Product::where('is_active','1')->where(function ($query) use ($search){
-            $query->where('name','like','%'.$search.'%') ->orWhere('tags','like','%'.$search.'%')
-                  ->orWhere('variant_name','like','%'.$search.'%');
+            $query->where('name','like','%'.$search) ->orWhere('tags','like','%'.$search.'%')
+                  ->orWhere('variant_name','like','%'.$search);
         });
         if($request->ajax()){
             $list=$list->take(7)->get();
