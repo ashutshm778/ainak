@@ -299,6 +299,9 @@
                             <div class="row" id="featured">
                                
                             </div>
+                            <div class="text-center">
+                                <a class="btn btn-secondary rds" href="#" id="view_more_featured" onclick="featured_product()"  >View More <i class="ecicon eci-chevron-right"></i></a>
+                            </div>
                             
                         </div>
                         <!-- ec 2nd Product tab end -->
@@ -307,7 +310,9 @@
                             <div class="row" id="best_seller">
                                
                             </div>
-                           
+                            <div class="text-center">
+                                <a class="btn btn-secondary rds" href="#" id="view_more_best_seller" onclick="best_seller_product()"  >View More <i class="ecicon eci-chevron-right"></i></a>
+                            </div>
                         </div>
                         <!-- ec 3rd Product tab end -->
                     </div>
@@ -848,6 +853,18 @@
             event.preventDefault();
             var page = $("a[name='example']:last").attr('href').split('page=')[1];
             trending(page);
+        }
+
+        function featured_product(){
+            event.preventDefault();
+            var page = $("a[name='example1']:last").attr('href').split('page=')[1];
+            feature(page);
+        }
+
+        function best_seller_product(){
+            event.preventDefault();
+            var page = $("a[name='example2']:last").attr('href').split('page=')[1];
+            seller(page);
         }
      </script>
 @endsection
