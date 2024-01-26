@@ -282,8 +282,18 @@
             <div class="row">
                 <div class="col mb-3">
                     <div class="tab-content">
+                        <!-- ec 3rd Product tab start -->
+                        <div class="tab-pane fade show active" id="tab-pro-best-sellers">
+                            <div class="row" id="best_seller">
+                               
+                            </div>
+                            <div class="text-center">
+                                <a class="btn btn-secondary rds" href="#" id="view_more_best_seller" onclick="best_seller_product()"  >View More <i class="ecicon eci-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ec 3rd Product tab end -->
                         <!-- 1st Product tab start -->
-                        <div class="tab-pane fade show active" id="tab-pro-new-arrivals">
+                        <div class="tab-pane fade" id="tab-pro-new-arrivals">
                             <div class="row" id="new_arrival">
                                 
                             </div>
@@ -305,16 +315,6 @@
                             
                         </div>
                         <!-- ec 2nd Product tab end -->
-                        <!-- ec 3rd Product tab start -->
-                        <div class="tab-pane fade" id="tab-pro-best-sellers">
-                            <div class="row" id="best_seller">
-                               
-                            </div>
-                            <div class="text-center">
-                                <a class="btn btn-secondary rds" href="#" id="view_more_best_seller" onclick="best_seller_product()"  >View More <i class="ecicon eci-chevron-right"></i></a>
-                            </div>
-                        </div>
-                        <!-- ec 3rd Product tab end -->
                     </div>
                 </div>
                 
