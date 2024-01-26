@@ -269,11 +269,11 @@
                     <div class="section-btn mb-3">
                         <ul class="ec-pro-tab-nav nav">
                             <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"
+                                    href="#tab-pro-best-sellers">Best Sellers</a></li>
+                            <li class="nav-item"><a class="nav-link " data-bs-toggle="tab"
                                     href="#tab-pro-new-arrivals">New Arrivals</a></li>
                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
                                     href="#tab-pro-special-offer">Weekly Featured</a></li>
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                    href="#tab-pro-best-sellers">Best Sellers</a></li>
                         </ul>
                     </div>
                 </div>

@@ -1232,8 +1232,8 @@ div#ec-main-menu-desk {
 }
 .ec-main-menu ul li a {
     font-size: 13px;
-    letter-spacing: 0.2px;
-    padding: 0px 9px;
+    letter-spacing: 0.1px;
+    padding: 0px 6px;
     line-height: 50px;
     text-decoration: none;
     text-transform: uppercase;
@@ -2945,9 +2945,9 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   top: 50%;
   width: 1px;
   border-left: 1px solid #ffffff7d;
-  height: 12px;
-  margin-top: -7px;
-  left: 0px;
+  height: 9px;
+  margin-top: -4px;
+  left: -1px;
 }
 .bk_amt{
   color: #f43b1c;
@@ -3132,7 +3132,7 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 }
 .rate:not(:checked) > input {
   position:absolute;
-  top:-9999px;
+  top:-99px;
 }
 .rate:not(:checked) > label {
   float:right;

@@ -103,7 +103,7 @@
                                                     @csrf
                                                     <input type="hidden" name="product_id" value="{{$data->id}}" />
                                                     <div class="row">
-                                                        <div class="col-lg-6 col-md-6">
+                                                        <div class="col-lg-6 col-6">
                                                            <div class="listing-widget-mail mb-3">
                                                               <div class="content">
                                                                  <h3>Please Rate Us</h3>
@@ -111,7 +111,7 @@
                                                               </div>
                                                            </div>
                                                         </div>
-                                                        <div class="col-lg-6 col-md-6 text-right">
+                                                        <div class="col-lg-6 col-6 text-right">
                                                            <div class="feedback">
                                                               <div class="rate">
                                                               <input type="radio" id="star5" name="rate" value="5" required/>
@@ -136,8 +136,7 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="ec-ratting-input">
-                                                                <input  placeholder="Email*" name="email" type="email" value="{{optional(Auth::guard('customer')->user())->email}}"
-                                                                    required />
+                                                                <input  placeholder="Email*" name="email" type="email" value="{{optional(Auth::guard('customer')->user())->email}}">
                                                             </div>
                                                         </div>
                                                     </div>
