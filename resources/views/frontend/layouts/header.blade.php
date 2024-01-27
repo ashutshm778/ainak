@@ -327,6 +327,22 @@
                 }
             });
         });
+        
+    });
+
+    $(document).ready(function() {
+      $(".header-search").on("click", function(event) {
+        event.stopPropagation(); // Prevent click from reaching document level
+      });
+
+      $(document).on("click", function() {
+        $(".searchRes").hide();
+      });
+
+      // Prevent the searchRes div from hiding when clicking inside it
+      $(".TopSearchesBox").on("click", function(event) {
+        event.stopPropagation();
+      });
     });
 
     function remove_to_cart(cart_id) {
