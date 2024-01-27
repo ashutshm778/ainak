@@ -1,6 +1,4 @@
-@php
-    $phone = App\Models\Admin\WebsiteSetting::where('type', 'phone')->first();
-@endphp
+@php $phone = App\Models\Admin\WebsiteSetting::where('type', 'phone')->first(); @endphp
 <header class="ec-header">
     <div class="header-top">
         <div class="container">
@@ -239,10 +237,6 @@
                             @endforeach
                             {{-- <li><a href="#">Offer</a></li> --}}
                             {{-- <li><a href="{{route('about')}}">About Us</a></li> --}}
-                            <!--<li class="dropdown"><a href="javascript:void(0)">Info</a>-->
-                            <!--    <ul class="sub-menu">-->  
-                            <!--    </ul>-->
-                            <!--</li>-->
                         </ul>
                     </div>
 
@@ -257,6 +251,7 @@
             </div>
         </div>
     </div>
+    <div class="ec-side-cart-overlay"></div>
     <div id="ec-mobile-menu" class="ec-side-cart ec-mobile-menu">
         <div class="ec-menu-title">
             <span class="menu_title">My Menu</span>
@@ -266,36 +261,17 @@
             <div class="ec-menu-content">
                 <ul>
                     <li><a href="{{ route('index') }}">Home</a></li>
-
-                    {{-- <li>
-                        <a href="javascript:void(0)">Categories</a>
-                        <ul class="sub-menu">
-                            @foreach (App\Models\Admin\Category::where('is_active', 1)->orderby('nav_priority', 'asc')->take(9)->get() as $mob_header_category)
-                                <li>
-                                    <a href="javascript:void(0)">{{$mob_header_category->name}}</a>
-                                    <ul class="sub-menu">
-                                        @foreach (App\Models\Admin\SubCategory::where('is_active', 1)->whereJsonContains('category_id', '' . $mob_header_category->id)->get() as $mob_header_subcategory)
-                                            <li><a href="{{ route('search',$mob_header_subcategory->slug) }}?type=subcategory">{{$mob_header_subcategory->name}}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li> --}}
-
                     @foreach (App\Models\Admin\Category::where('is_active', 1)->orderby('nav_priority', 'asc')->take(9)->get() as $mob_header_category)
                         <li><a href="javascript:void(0)">{{ $mob_header_category->name }}</a>
                             <ul class="sub-menu">
                                 @foreach (App\Models\Admin\SubCategory::where('is_active', 1)->whereJsonContains('category_id', '' . $mob_header_category->id)->get() as $mob_header_subcategory)
-                                    <li><a
-                                            href="{{ route('search', $mob_header_subcategory->slug) }}?type=subcategory">{{ $mob_header_subcategory->name }}</a>
-                                    </li>
+                                    <li><a href="{{ route('search', $mob_header_subcategory->slug) }}?type=subcategory">{{ $mob_header_subcategory->name }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
                     @endforeach
 
-                    {{-- <li><a href="{{ route('about') }}">About Us</a></li> --}}
+                    <li><a href="{{ route('about') }}">About Us</a></li> 
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
             </div>
@@ -363,4 +339,9 @@
             }
         });
     }
+    
 </script>
+<script>
+    
+</script>
+
