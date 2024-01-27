@@ -254,19 +254,29 @@ class ProductController extends Controller
 
     public function edit(Product $product,Request $request)
     {
+      
         $key=$request->key;
         $search_category=$request->search_category_id;
         $search_subcategory=$request->search_subcategory_id;
         $search_subsubcategory=$request->search_subsubcategory_id;
         $search_brand=$request->search_brand_id;
         $page=$request->page;
+         $prevoius_url=url()->previous();
 
-        return view('backend.products.products.edit',compact('product','key','page','search_category','search_subcategory','search_subsubcategory','search_brand'),['page_title'=>'Edit Product']);
+        return view('backend.products.products.edit',compact('prevoius_url','product','key','page','search_category','search_subcategory','search_subsubcategory','search_brand'),['page_title'=>'Edit Product']);
     }
 
     public function update(Request $request,$id)
     {
-        // return $request;
+        //return $request->previous_url;
+        return redirect()->to($request->previous_url);
+        $search_category=$request->search_category_id;
+        $search_subcategory=$request->search_subcategory_id;
+        $search_subsubcategory=$request->search_subsubcategory_id;
+        $search_brand=$request->search_brand_id;
+        $page=$request->page;
+        $search=$request->key;
+
         $product_group_id=Product::select('product_group_id')->where('id',$id)->first();
 
         $product_group_id=$product_group_id->product_group_id;
@@ -409,7 +419,7 @@ class ProductController extends Controller
             $product->save();
         }
 
-        return redirect()->route('admin.products.index')->with('success','Product Updated Successfully!');
+        return redirect()->route('admin.products.index',['key='.$search.'&search_category_id='.$search_category.'&search_subcategory_id='.$search_subcategory.'&search_subsubcategory_id='.$search_subsubcategory.'&search_brand_id='.$search_brand.'&page='.$page])->with('success','Product Updated Successfully!');
     }
 
     public function destroy($id)

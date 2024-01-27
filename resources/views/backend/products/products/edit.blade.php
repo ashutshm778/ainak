@@ -34,7 +34,9 @@
                                 <div class="modal-body">
                                     <form action="{{route('admin.products.update',$product->id)}}" method="POST" class="form-example" id="choice_form">
                                         @method('PUT')
+
                                         @csrf
+                                        <input type="hidden" name="previous_url" value="{{$prevoius_url}}">
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-md-6 form_div">

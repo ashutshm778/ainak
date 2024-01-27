@@ -185,10 +185,10 @@
                                                     <b>DE:</b>{{getPriceRange($data->product_group_id)['wholeseller_min_point']}} @if(getPriceRange($data->product_group_id)['wholeseller_min_point'] != getPriceRange($data->product_group_id)['wholeseller_max_point']) - {{getPriceRange($data->product_group_id)['wholeseller_max_point']}} @endif
                                                 </td> --}}
                                                 <td class="text-center">
-                                                    <a href="{{route('admin.products.edit',$data->id)}}" class="btn btn-outline-primary btn-sm mr-1 mb-1">
+                                                    <a href="{{ route('admin.products.edit',$data->id).'?key='.$search.'&search_category_id='.$search_category.'&search_subcategory_id='.$search_subcategory.'&search_subsubcategory_id='.$search_subsubcategory.'&search_brand_id='.$search_brand.'&page='.$list->currentPage() }}" class="btn btn-outline-primary btn-sm mr-1 mb-1">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-                                                    <a href="{{route('admin.products.destroy',$data->id)}}" onclick="return confirm('Are you sure you want to delete this Product?');" class="btn btn-outline-danger btn-sm mr-1 mb-1">
+                                                    <a href="{{ route('admin.products.destroy',$data->id).'?key='.$search.'&search_category_id='.$search_category.'&search_subcategory_id='.$search_subcategory.'&search_subsubcategory_id='.$search_subsubcategory.'&search_brand_id='.$search_brand.'&page='.$list->currentPage() }}" onclick="return confirm('Are you sure you want to delete this Product?');" class="btn btn-outline-danger btn-sm mr-1 mb-1">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>
