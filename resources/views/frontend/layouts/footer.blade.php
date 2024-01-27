@@ -350,9 +350,9 @@
 <script src="{{ asset('public/frontend/assets/js/plugins/jquery.sticky-sidebar.js') }}"></script>
 
 
-@if (Route::currentRouteName() == 'search')
+{{--@if (Route::currentRouteName() == 'search')
     <script src="{{ asset('public/frontend/assets/js/main.js') }}"></script>
-@endif
+@endif --}}
 
 <script src="{{ asset('public/frontend/assets/js/demo-3.js') }}"></script>
 

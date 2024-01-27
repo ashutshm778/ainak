@@ -2764,7 +2764,7 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 }
 .custom-Modal [type=radio]:checked, .custom-Modal [type=radio]:not(:checked) {
     position: absolute;
-    left: -9999px;
+    left: -999px;
 }
 .custom-Modal label.enable {
     display: inline-block!important;

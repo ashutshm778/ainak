@@ -1,107 +1,107 @@
 
-    <div class="col-md-3 brdr mb-3">
-        <div class="slide-container">
-            <div class="slide-header">
-                <div class="wrap-additional-note">
-                    <img width="65" height="65"
-                        src="{{ asset('public/frontend/assets/images/pres-doctor.svg')}}"
-                        alt="EyeMyEye Instructions">
-                    <div class="additional-note-pres-upload">
-                        Note: You can add your prescription after
-                        placing the order.</div>
-                </div>
-                <img src="" alt="">
-                <div class="title">
-                    Lens Features <span>
-                    </span>
-                </div>
+<div class="col-md-3 brdr mb-3">
+    <div class="slide-container">
+        <div class="slide-header">
+            <div class="wrap-additional-note">
+                <img width="65" height="65"
+                    src="{{ asset('public/frontend/assets/images/pres-doctor.svg')}}"
+                    alt="EyeMyEye Instructions">
+                <div class="additional-note-pres-upload">
+                    Note: You can add your prescription after
+                    placing the order.</div>
             </div>
-            <div class="slide-content sidebar-featureList">
-                <li class="featureList">
-                    <img width="20" class="feature-icon"
-                        src="{{ asset('public/frontend/assets/images/lense-Warranty.svg')}}"
-                        alt="Lens Warranty">
-                    Warranty Period
-                </li>
-                <li class="featureList">
-                    <img width="20" class="feature-icon"
-                        src="{{ asset('public/frontend/assets/images/lense-index.svg')}}"
-                        alt="Lenses">
-                    Index/Thickness
-                </li>
-                <li class="featureList powerElemLi">
-                    <img width="20" class="feature-icon"
-                        src="{{ asset('public/frontend/assets/images/lense-power.svg')}}"
-                        alt="Lenses">
-                    Power Range
-                </li>
-                <div class="staticFeature">
-                    <li class="active featureList Blue Light Blocker">
-                        <img width="20" class="feature-icon"
-                            src="{{ asset('public/frontend/assets/images/blue-light-blocker.svg')}}"
-                            alt="blue-light-blocker">
-                        <div class="icon-test-wrap"><span class="featrName">Blue Light
-                                Blocker</span>
-                        </div>
-                    </li>
-                    <li class="active featureList Anti Scratch Coating">
-                        <img width="20" class="feature-icon"
-                            src="{{ asset('public/frontend/assets/images/anti-scratch-coating.svg')}}"
-                            alt="anti-scratch-coating">
-                        <div class="icon-test-wrap"><span class="featrName">Anti
-                                Scratch Coating</span>
-                        </div>
-                    </li>
-                    <li class="active featureList Both Side Anti Glare Coating">
-                        <img width="20" class="feature-icon"
-                            src="{{ asset('public/frontend/assets/images/both-side-anti-glare-coating.svg')}}"
-                            alt="both-side-anti-glare-coating">
-                        <div class="icon-test-wrap"><span class="featrName">Both Side
-                                Anti Glare Coating</span>
-                        </div>
-                    </li>
-                    <li class="active featureList Both Side Anti Reflective Coating">
-                        <img width="20" class="feature-icon"
-                            src="{{ asset('public/frontend/assets/images/both-side-anti-reflective-coating.svg')}}"
-                            alt="both-side-anti-reflective-coating">
-                        <div class="icon-test-wrap"><span class="featrName">Both Side
-                                Anti Reflective Coating</span>
-                        </div>
-                    </li>
-                    <li class="active featureList UV Protection">
-                        <img width="20" class="feature-icon"
-                            src="{{ asset('public/frontend/assets/images/uv-protection.svg')}}"
-                            alt="uv-protection">
-                        <div class="icon-test-wrap"><span class="featrName">UV
-                                Protection</span>
-                        </div>
-                    </li>
-                    <li class="active featureList Water and Dust Repellent">
-                        <img width="20" class="feature-icon"
-                            src="{{ asset('public/frontend/assets/images/water-and-dust-repellent.svg')}}"
-                            alt="water-and-dust-repellent">
-                        <div class="icon-test-wrap"><span class="featrName">Water and
-                                Dust Repellent</span>
-                        </div>
-                    </li>
-                    <li class="active featureList Breakage &amp; Crack Resistant">
-                        <img width="20" class="feature-icon"
-                            src="{{ asset('public/frontend/assets/images/breakage--crack-resistant.svg')}}"
-                            alt="breakage--crack-resistant">
-                        <div class="icon-test-wrap"><span class="featrName">Breakage
-                                &amp; Crack Resistant</span>
-                        </div>
-                    </li>
-                </div>
+            <img src="" alt="">
+            <div class="title">
+                Lens Features <span>
+                </span>
             </div>
-           
-            
-
-
-            <h3 class="lens_origin_country" style="display: none;">Manufactured in
-                India</h3>
         </div>
+        <div class="slide-content sidebar-featureList">
+            <li class="featureList">
+                <img width="20" class="feature-icon"
+                    src="{{ asset('public/frontend/assets/images/lense-Warranty.svg')}}"
+                    alt="Lens Warranty">
+                Warranty Period
+            </li>
+            <li class="featureList">
+                <img width="20" class="feature-icon"
+                    src="{{ asset('public/frontend/assets/images/lense-index.svg')}}"
+                    alt="Lenses">
+                Index/Thickness
+            </li>
+            <li class="featureList powerElemLi">
+                <img width="20" class="feature-icon"
+                    src="{{ asset('public/frontend/assets/images/lense-power.svg')}}"
+                    alt="Lenses">
+                Power Range
+            </li>
+            <div class="staticFeature">
+                <li class="active featureList Blue Light Blocker">
+                    <img width="20" class="feature-icon"
+                        src="{{ asset('public/frontend/assets/images/blue-light-blocker.svg')}}"
+                        alt="blue-light-blocker">
+                    <div class="icon-test-wrap"><span class="featrName">Blue Light
+                            Blocker</span>
+                    </div>
+                </li>
+                <li class="active featureList Anti Scratch Coating">
+                    <img width="20" class="feature-icon"
+                        src="{{ asset('public/frontend/assets/images/anti-scratch-coating.svg')}}"
+                        alt="anti-scratch-coating">
+                    <div class="icon-test-wrap"><span class="featrName">Anti
+                            Scratch Coating</span>
+                    </div>
+                </li>
+                <li class="active featureList Both Side Anti Glare Coating">
+                    <img width="20" class="feature-icon"
+                        src="{{ asset('public/frontend/assets/images/both-side-anti-glare-coating.svg')}}"
+                        alt="both-side-anti-glare-coating">
+                    <div class="icon-test-wrap"><span class="featrName">Both Side
+                            Anti Glare Coating</span>
+                    </div>
+                </li>
+                <li class="active featureList Both Side Anti Reflective Coating">
+                    <img width="20" class="feature-icon"
+                        src="{{ asset('public/frontend/assets/images/both-side-anti-reflective-coating.svg')}}"
+                        alt="both-side-anti-reflective-coating">
+                    <div class="icon-test-wrap"><span class="featrName">Both Side
+                            Anti Reflective Coating</span>
+                    </div>
+                </li>
+                <li class="active featureList UV Protection">
+                    <img width="20" class="feature-icon"
+                        src="{{ asset('public/frontend/assets/images/uv-protection.svg')}}"
+                        alt="uv-protection">
+                    <div class="icon-test-wrap"><span class="featrName">UV
+                            Protection</span>
+                    </div>
+                </li>
+                <li class="active featureList Water and Dust Repellent">
+                    <img width="20" class="feature-icon"
+                        src="{{ asset('public/frontend/assets/images/water-and-dust-repellent.svg')}}"
+                        alt="water-and-dust-repellent">
+                    <div class="icon-test-wrap"><span class="featrName">Water and
+                            Dust Repellent</span>
+                    </div>
+                </li>
+                <li class="active featureList Breakage &amp; Crack Resistant">
+                    <img width="20" class="feature-icon"
+                        src="{{ asset('public/frontend/assets/images/breakage--crack-resistant.svg')}}"
+                        alt="breakage--crack-resistant">
+                    <div class="icon-test-wrap"><span class="featrName">Breakage
+                            &amp; Crack Resistant</span>
+                    </div>
+                </li>
+            </div>
+        </div>
+        
+        
+
+
+        <h3 class="lens_origin_country" style="display: none;">Manufactured in
+            India</h3>
     </div>
+</div>
 
 @foreach($lenses as $lens)
 <div class="col-md-3 brdr mb-3">
@@ -140,9 +140,3 @@
     </div>
 </div>
 @endforeach
-
-
-<div class="form-group text-center w-100">
-    <button class="btn btn-primary prevBtn btn-lg pull-left"
-        type="button">Prev</button>
-</div>

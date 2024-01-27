@@ -159,6 +159,11 @@
     margin: 3px auto;
     position: relative;
 }
+.scroll-plan{
+    display: flex;
+    flex-flow: nowrap;
+    overflow: auto;
+}
 </style>
 
 <script>
@@ -254,7 +259,7 @@
                                             <div>
                                                 <input type="radio" id="radioPowered" class="radio-custom"
                                                     name="radio-group" value="powered-eyeglasses"
-                                                    data-type="POWERED EYEGLASSES" onchange="select_lens('Single Vision/Powered Eyeglasses')" >
+                                                    data-type="POWERED EYEGLASSES" onchange="select_lens('Single Vision/Powered Eyeglasses')">
                                                 <label for="radioPowered" data-main-category="singlevision"
                                                     class="enable">
                                                     <div class="label-inner">
@@ -357,7 +362,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row setup-content mt-5" id="step-3">
+                        <div class="row setup-content scroll-plan mt-5" id="step-3">
                                     
                         </div>
                         </div>
