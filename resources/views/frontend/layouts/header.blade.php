@@ -270,7 +270,7 @@
                             </ul>
                         </li>
                     @endforeach
-
+                    <li><a href="{{ route('user.login') }}">Profile</a></li> 
                     <li><a href="{{ route('about') }}">About Us</a></li> 
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
