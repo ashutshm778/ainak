@@ -210,7 +210,7 @@
                         @if (Auth::guard('customer')->check())
                             <div class="ec-single-cart ">
                                 <button type="button" class="btn btn-primary" data-link-action="quickview"
-                                    title="Quick view" data-bs-toggle="modal" data-bs-target="#ec_quickview_modal">
+                                    title="Quick view" onclick="open_product_m()">
                                     <i class="ecicon eci-shopping-cart"></i> Select Lens & buy now </button>
                             </div>
                         @else

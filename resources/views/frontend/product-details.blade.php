@@ -303,9 +303,7 @@
         }
 
 
-        $(document).ready(function() {
-            getVariantPrice();
-        });
+       
 
 
         function select_lens(power_type){
@@ -316,13 +314,21 @@
                     power_type:power_type,
                 },
                 success: function(data) {
-
                         $('#step-3').empty();
                         $('#step-3').html(data);
                 }
             });
         }
+        
+        function open_product_m(){
+            $('#ec_quickview_modal').modal('show');
+            select_lens('Single Vision/Powered Eyeglasses');
+        }
 
+
+        $(document).ready(function() {
+            getVariantPrice();
+        });
     </script>
 
     {{-- <script src="{{asset('public/frontend/assets/js/zoom-main.js')}}"></script> --}}

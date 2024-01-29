@@ -259,7 +259,7 @@
                                             <div>
                                                 <input type="radio" id="radioPowered" class="radio-custom"
                                                     name="radio-group" value="powered-eyeglasses"
-                                                    data-type="POWERED EYEGLASSES" onchange="select_lens('Single Vision/Powered Eyeglasses')">
+                                                    data-type="POWERED EYEGLASSES" onchange="select_lens('Single Vision/Powered Eyeglasses')" checked>
                                                 <label for="radioPowered" data-main-category="singlevision"
                                                     class="enable">
                                                     <div class="label-inner">
