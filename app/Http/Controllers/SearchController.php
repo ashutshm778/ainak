@@ -141,7 +141,7 @@ class SearchController extends Controller
         $gender=$request->gender;
         $class=$request->class;
 
-        $conditions = ['published' => 1];
+        $conditions = [];
 
         if($brand_id != null){
             $conditions = array_merge($conditions, ['brand_id' => $brand_id]);
@@ -271,8 +271,8 @@ class SearchController extends Controller
 
         $products = $products->paginate(20)->appends(request()->query());
       
-
-        return view('frontend.product_listing', compact('products', 'query', 'category_id', 'subcategory_id', 'subsubcategory_id', 'brand_id', 'sort_by', 'seller_id','min_price', 'max_price', 'attributes', 'selected_attributes', 'all_colors', 'selected_color'));
+        $list=$products;
+        return view('frontend.product_listing', compact('list','products', 'query', 'category_id', 'subcategory_id', 'subsubcategory_id', 'brand_id', 'sort_by', 'seller_id','min_price', 'max_price', 'attributes', 'selected_attributes', 'all_colors', 'selected_color'));
     }
 
 }

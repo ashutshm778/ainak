@@ -7,39 +7,39 @@
             <div class="col">
                 <ul class="breadcrumb">
                   <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="{{ route('home') }}">{{ translate('Home')}}</a>
+                     <a class="text-reset" href="#">Home</a>
                   </li>
                   @if(!isset($category_id) && !isset($subcategory_id) && !isset($subsubcategory_id))
                   <li class="breadcrumb-item fw-600  text-dark">
-                     <a class="text-reset" href="{{ route('products') }}">"{{ translate('All Categories')}}"</a>
+                     <a class="text-reset" href="#">"All Categories"</a>
                   </li>
                   @else
                   <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="{{ route('products') }}">{{ translate('All Categories')}}</a>
+                     <a class="text-reset" href="#">All Categories</a>
                   </li>
                   @endif
                   @if(isset($category_id))
                   <li class="text-dark fw-600 breadcrumb-item">
-                     <a class="text-reset" href="{{ route('products.category', \App\Category::find($category_id)->slug) }}">"{{ \App\Category::find($category_id)->getTranslation('name') }}"</a>
+                     <a class="text-reset" href="">"{{ \App\Models\Admin\Category::find($category_id)->name }}"</a>
                   </li>
                   @endif
                   @if(isset($subcategory_id))
                   <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="{{ route('products.category', \App\SubCategory::find($subcategory_id)->category->slug) }}">{{ \App\SubCategory::find($subcategory_id)->category->getTranslation('name') }}</a>
+                     <a class="text-reset" href="">{{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}</a>
                   </li>
                   <li class="text-dark fw-600 breadcrumb-item">
-                     <a class="text-reset" href="{{ route('products.subcategory', \App\SubCategory::find($subcategory_id)->slug) }}">"{{ \App\SubCategory::find($subcategory_id)->getTranslation('name') }}"</a>
+                     <a class="text-reset" href="">"{{ \App\Models\Admin\SubCategory::find($subcategory_id)->name }}"</a>
                   </li>
                   @endif
                   @if(isset($subsubcategory_id))
                   <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="{{ route('products.category', \App\SubSubCategory::find($subsubcategory_id)->subcategory->category->slug) }}">{{ \App\SubSubCategory::find($subsubcategory_id)->subcategory->category->getTranslation('name') }}</a>
+                     <a class="text-reset" href="">{{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}</a>
                   </li>
                   <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="{{ route('products.subcategory', \App\SubsubCategory::find($subsubcategory_id)->subcategory->slug) }}">{{ \App\SubsubCategory::find($subsubcategory_id)->subcategory->getTranslation('name') }}</a>
+                     <a class="text-reset" href="">{{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}</a>
                   </li>
                   <li class="text-dark fw-600 breadcrumb-item">
-                     <a class="text-reset" href="{{ route('products.subsubcategory', \App\SubSubCategory::find($subsubcategory_id)->slug) }}">"{{ \App\SubSubCategory::find($subsubcategory_id)->getTranslation('name') }}"</a>
+                     <a class="text-reset" href="">"{{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->name }}"</a>
                   </li>
                   @endif
                </ul>
@@ -50,96 +50,96 @@
 
 <section class="product">
    <div class="container-fluid sm-px-0">
-      <form class="" id="search-form" action="{{ route('search') }}" method="GET">
+      <form class="" id="search-form" action="" method="GET">
          <div class="row">
             <div class="side col-xl-3">
                <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-xl sidebar-right z-1035">
                   <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
                   <div class="collapse-sidebar c-scrollbar-light text-left">
                      <div class="d-flex d-xl-none justify-content-between align-items-center pl-3 border-bottom">
-                        <h3 class="h6 mb-0 fw-600">{{ translate('Filters') }}</h3>
+                        <h3 class="h6 mb-0 fw-600">Filters</h3>
                         <button type="button" class="btn btn-sm p-2 filter-sidebar-thumb" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
                         <i class="las la-times la-2x"></i>
                         </button>
                      </div>
                      <div class="vertical-filters-filters">
                         <div class="sidetit">
-                           {{ translate('Categories')}}
+                           Categories
                         </div>
                         <div class="pt-3">
                            <ul class="list-unstyled">
                               @if(!isset($category_id) && !isset($category_id) && !isset($subcategory_id) && !isset($subsubcategory_id))
-                              @foreach(\App\Category::all() as $category)
+                              @foreach(\App\Models\Admin\Category::all() as $category)
                               <li class="mb-2 ml-2">
-                                 <a class="text-reset fs-14" href="{{ route('products.category', $category->slug) }}">{{ $category->getTranslation('name') }}</a>
+                                 <a class="text-reset fs-14" href="">{{ $category->name }}</a>
                               </li>
                               @endforeach
                               @endif
                               @if(isset($category_id))
                               <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="{{ route('products') }}">
+                                 <a class="text-reset fs-14 fw-600" href="#">
                                  <i class="las la-angle-left"></i>
-                                 {{ translate('All Categories')}}
+                                 All Categories
                                  </a>
                               </li>
                               <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="{{ route('products.category', \App\Category::find($category_id)->slug) }}">
+                                 <a class="text-reset fs-14 fw-600" href="">
                                  <i class="las la-angle-left"></i>
-                                 {{  translate(\App\Category::find($category_id)->getTranslation('name')) }}
+                                 {{  translate(\App\Models\Admin\Category::find($category_id)->name) }}
                                  </a>
                               </li>
-                              @foreach (\App\Category::find($category_id)->subcategories as $key2 => $subcategory)
+                              @foreach (\App\Models\Admin\Category::find($category_id)->subcategories as $key2 => $subcategory)
                               <li class="ml-4 mb-2">
-                                 <a class="text-reset fs-14" href="{{ route('products.subcategory', $subcategory->slug) }}">{{ $subcategory->getTranslation('name') }}</a>
+                                 <a class="text-reset fs-14" href="">{{ $subcategory->name }}</a>
                               </li>
                               @endforeach
                               @endif
                               @if(isset($subcategory_id))
                               <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="{{ route('products') }}">
+                                 <a class="text-reset fs-14 fw-600" href="#">
                                  <i class="las la-angle-left"></i>
-                                 {{ translate('All Categories')}}
+                                 All Categories
                                  </a>
                               </li>
                               <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="{{ route('products.category', \App\SubCategory::find($subcategory_id)->category->slug) }}">
+                                 <a class="text-reset fs-14 fw-600" href="">
                                  <i class="las la-angle-left"></i>
-                                 {{ \App\SubCategory::find($subcategory_id)->category->getTranslation('name') }}
+                                 {{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}
                                  </a>
                               </li>
                               <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="{{ route('products.subcategory', \App\SubCategory::find($subcategory_id)->slug) }}">
+                                 <a class="text-reset fs-14 fw-600" href="">
                                  <i class="las la-angle-left"></i>
-                                 {{  \App\SubCategory::find($subcategory_id)->getTranslation('name') }}
+                                 {{  \App\Models\Admin\SubCategory::find($subcategory_id)->name }}
                                  </a>
                               </li>
-                              @foreach (\App\SubCategory::find($subcategory_id)->subsubcategories as $key3 => $subsubcategory)
+                              @foreach (\App\Models\Admin\SubCategory::find($subcategory_id)->subsubcategories as $key3 => $subsubcategory)
                               <li class="ml-4 mb-2">
-                                 <a class="text-reset fs-14" href="{{ route('products.subsubcategory', $subsubcategory->slug) }}">{{  $subsubcategory->getTranslation('name') }}</a>
+                                 <a class="text-reset fs-14" href="">{{  $subsubcategory->name }}</a>
                               </li>
                               @endforeach
                               @endif
                               @if(isset($subsubcategory_id))
                               <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="{{ route('products') }}">
+                                 <a class="text-reset fs-14 fw-600" href="#">
                                  <i class="las la-angle-left"></i>
-                                 {{ translate('All Categories')}}
+                                 All Categories
                                  </a>
                               </li>
                               <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="{{ route('products.category', \App\SubsubCategory::find($subsubcategory_id)->subcategory->category->slug) }}">
+                                 <a class="text-reset fs-14 fw-600" href="">
                                  <i class="las la-angle-left"></i>
-                                 {{  \App\SubSubCategory::find($subsubcategory_id)->subcategory->category->getTranslation('name') }}
+                                 {{  \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}
                                  </a>
                               </li>
                               <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="{{ route('products.subcategory', \App\SubsubCategory::find($subsubcategory_id)->subcategory->slug) }}">
+                                 <a class="text-reset fs-14 fw-600" href="">
                                  <i class="las la-angle-left"></i>
-                                 {{  \App\SubsubCategory::find($subsubcategory_id)->subcategory->getTranslation('name') }}
+                                 {{  \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}
                                  </a>
                               </li>
                               <li class="ml-4 mb-2">
-                                 <a class="text-reset fs-14" href="{{ route('products.subsubcategory', \App\SubsubCategory::find($subsubcategory_id)->slug) }}">{{  \App\SubsubCategory::find($subsubcategory_id)->getTranslation('name') }}</a>
+                                 <a class="text-reset fs-14" href="">{{  \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->name }}</a>
                               </li>
                               @endif
                            </ul>
@@ -148,14 +148,14 @@
                     
                      <div class="vertical-filters-filters">
                         <div class="sidetit">
-                           {{ translate('Price range')}}
+                           Price range
                         </div>
                         <div class="p-3">
                            <div class="aiz-range-slider">
                               <div
                                  id="input-slider-range"
-                                 data-range-value-min="@if(count(\App\Product::query()->get()) < 1) 0 @else {{ filter_products(\App\Product::query())->get()->min('unit_price') }} @endif"
-                                 data-range-value-max="@if(count(\App\Product::query()->get()) < 1) 0 @else {{ filter_products(\App\Product::query())->get()->max('unit_price') }} @endif"
+                                 data-range-value-min="@if(count(\App\Models\Admin\Product::query()->get()) < 1) 0 @else {{ \App\Models\Admin\Product::query()->get()->min('unit_price') }} @endif"
+                                 data-range-value-max="@if(count(\App\Models\Admin\Product::query()->get()) < 1) 0 @else {{ \App\Models\Admin\Product::query()->get()->max('unit_price') }} @endif"
                                  ></div>
                               <div class="row mt-2">
                                  <div class="col-6">
@@ -192,25 +192,25 @@
             <div class="col-xl-9">
             
                @isset($category_id)
-               <input type="hidden" name="category" value="{{ \App\Category::find($category_id)->slug }}">
+               <input type="hidden" name="category" value="{{ \App\Models\Admin\Category::find($category_id)->slug }}">
                @endisset
                @isset($subcategory_id)
-               <input type="hidden" name="subcategory" value="{{ \App\SubCategory::find($subcategory_id)->slug }}">
+               <input type="hidden" name="subcategory" value="{{ \App\Models\Admin\SubCategory::find($subcategory_id)->slug }}">
                @endisset
                @isset($subsubcategory_id)
-               <input type="hidden" name="subsubcategory" value="{{ \App\SubSubCategory::find($subsubcategory_id)->slug }}">
+               <input type="hidden" name="subsubcategory" value="{{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->slug }}">
                @endisset
               
                     
                <div class="sort-by">
                   <div class="d-flex">
                      <div class="form-group w-200px d-md-block">
-                        <label class="mb-0 opacity-50">{{ translate('Sort by')}}</label>
+                        <label class="mb-0 opacity-50">Sort by</label>
                         <select class="form-control form-control-sm aiz-selectpicker" name="sort_by" onchange="filter()">
-                        <option value="1" @isset($sort_by) @if ($sort_by == '1') selected @endif @endisset>{{ translate('Newest')}}</option>
-                        <option value="2" @isset($sort_by) @if ($sort_by == '2') selected @endif @endisset>{{ translate('Oldest')}}</option>
-                        <option value="3" @isset($sort_by) @if ($sort_by == '3') selected @endif @endisset>{{ translate('Price low to high')}}</option>
-                        <option value="4" @isset($sort_by) @if ($sort_by == '4') selected @endif @endisset>{{ translate('Price high to low')}}</option>
+                        <option value="1" @isset($sort_by) @if ($sort_by == '1') selected @endif @endisset>Newest</option>
+                        <option value="2" @isset($sort_by) @if ($sort_by == '2') selected @endif @endisset>Oldest</option>
+                        <option value="3" @isset($sort_by) @if ($sort_by == '3') selected @endif @endisset>Price low to high</option>
+                        <option value="4" @isset($sort_by) @if ($sort_by == '4') selected @endif @endisset>Price high to low</option>
                         </select>
                      </div>
                    
