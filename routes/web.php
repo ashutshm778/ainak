@@ -121,6 +121,7 @@ Route::get('/', [FrontController::class, 'index'])->name('index');
 //Search
 Route::get('search',[SearchController::class,'productSearch'])->name('product-search');
 Route::get('product-fillter',[SearchController::class,'productFillter'])->name('product.fillter');
+Route::get('n_search',[SearchController::class,'n_search'])->name('n_search');
 
 //Categories
 Route::get('categories', [FrontController::class, 'all_categories'])->name('categories');
