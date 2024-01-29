@@ -269,7 +269,7 @@ class ProductController extends Controller
     public function update(Request $request,$id)
     {
         //return $request->previous_url;
-        return redirect()->to($request->previous_url);
+        
         $search_category=$request->search_category_id;
         $search_subcategory=$request->search_subcategory_id;
         $search_subsubcategory=$request->search_subsubcategory_id;
@@ -418,8 +418,8 @@ class ProductController extends Controller
 
             $product->save();
         }
-
-        return redirect()->route('admin.products.index',['key='.$search.'&search_category_id='.$search_category.'&search_subcategory_id='.$search_subcategory.'&search_subsubcategory_id='.$search_subsubcategory.'&search_brand_id='.$search_brand.'&page='.$page])->with('success','Product Updated Successfully!');
+        return redirect()->to($request->previous_url);
+       // return redirect()->route('admin.products.index',['key='.$search.'&search_category_id='.$search_category.'&search_subcategory_id='.$search_subcategory.'&search_subsubcategory_id='.$search_subsubcategory.'&search_brand_id='.$search_brand.'&page='.$page])->with('success','Product Updated Successfully!');
     }
 
     public function destroy($id)
