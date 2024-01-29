@@ -307,7 +307,7 @@
         var search_val = e.value;
         $.ajax({
             type: 'GET',
-            url: "{{ route('product-search') }}?search=" + search_val,
+            url: "{{ route('search.ajax') }}?search=" + search_val,
             success: function(data) {
                 $(".searchRes").html(data);
                 $(".searchRes").css("display", "block");
@@ -320,7 +320,7 @@
             var search_val = $('.flip').val();
             $.ajax({
                 type: 'GET',
-                url: "{{ route('product-search') }}?search=" + search_val,
+                url: "{{ route('search.ajax') }}?search=" + search_val,
                 success: function(data) {
                     $(".searchRes").html(data);
                     $(".searchRes").slideToggle("slow");
