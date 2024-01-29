@@ -1,29 +1,16 @@
 @extends('frontend.layouts.app')
 @section('content')
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    {{-- <div class="row ec_breadcrumb_inner">
-                        <div class="col-md-6 col-sm-12">
-                            <h2 class="ec-breadcrumb-title">Manage Address</h2>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <ul class="ec-breadcrumb-list">
-                                <li class="ec-breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
-                                <li class="ec-breadcrumb-item active">Address</li>
-                            </ul>
-                        </div>
-                    </div> --}}
-                </div>
-            </div>
-        </div>
     </div>
-
+    <div class="desk_hide">
+      <a href="{{route('usermob_sidebar')}}" class="bck-btn"><i class="ecicon eci-arrow-left"></i> Back</a>
+    </div>
     <section class="ec-page-content ec-vendor-uploads ec-user-account section-space-p">
         <div class="container">
             <div class="row">
+                <div class="ec-shop-leftside ec-vendor-sidebar col-lg-3 col-md-12 mob_hide">
                 @include('frontend.user_sidebar')
+                </div>
                 <div class="ec-shop-rightside col-lg-9 col-md-12">
                     <div class="ec-vendor-dashboard-card ec-vendor-setting-card">
                         <div class="ec-vendor-card-body">
@@ -63,7 +50,7 @@
                                             <div>
                                                 <b>Address: </b>{{$customer_address->address}}<br>
                                             </div>
-                                            <div class="ec-header-user dropdown" style="position: absolute;right: 0;">
+                                            <div class="ec-header-user dropdown" style="position: absolute;right: 10px;top: -5px;border: 0;">
                                                 <button class="dropdown-toggle" data-bs-toggle="dropdown">
                                                     <img src="{{ asset('public/frontend/assets/images/icons/dots.png') }}" class="svg_img header_svg">
                                                 </button>

@@ -4,12 +4,17 @@
     <!-- Ec breadcrumb start -->
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
     </div>
+    <div class="w-100 desk_hide">
+    <a href="{{route('usermob_sidebar')}}" class="bck-btn"><i class="ecicon eci-arrow-left"></i> Back</a>
+    </div>
     <!-- Ec breadcrumb end -->
     <section class="ec-page-content ec-vendor-dashboard section-space-p">
         <div class="container">
             <div class="row">
                 <!-- Sidebar Area Start -->
+                <div class="ec-shop-leftside ec-vendor-sidebar col-lg-3 col-md-12 mob_hide">
                 @include('frontend.user_sidebar')
+                </div>
                 <div class="ec-shop-rightside col-lg-9 col-md-12">
                     <div class="row">
                         <div class="col-lg-3 col-md-6">

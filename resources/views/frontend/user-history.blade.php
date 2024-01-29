@@ -2,10 +2,15 @@
 @section('content')
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb">
     </div>
+    <div class="desk_hide">
+    <a href="{{route('usermob_sidebar')}}" class="bck-btn"><i class="ecicon eci-arrow-left"></i> Back</a>
+    </div>
     <section class="ec-page-content ec-vendor-uploads ec-user-account section-space-p">
         <div class="container">
             <div class="row">
+                <div class="ec-shop-leftside ec-vendor-sidebar col-lg-3 col-md-12 mob_hide">
                 @include('frontend.user_sidebar')
+                </div>
                 <div class="ec-shop-rightside col-lg-9 col-md-12">
                     <div class="ec-vendor-dashboard-card">
                         <div class="ec-vendor-card-header">

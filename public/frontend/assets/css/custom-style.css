@@ -2568,7 +2568,7 @@ div#ec_news_signup {
 }
 
 .ec-header-bottons .ec-header-btn {
-  padding: 0 12px;
+  padding: 0 12px 0 3px;
   min-height: 35px;
   margin-top: 5px;
 }
@@ -3021,6 +3021,12 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 }
 
 @media only screen and (max-width: 767px) {
+.desk_hide{
+  display: block !important;
+}
+.mob_hide{
+  display: none !important;
+}
 .header-logo img {
   width: 175px;
 }
@@ -3166,3 +3172,22 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   z-index: 10;
   background-color: #fff;
 }
+.desk_hide{
+  display: none;
+}
+.mob_hide{
+  display: block;
+}
+.bck-btn{
+  font-weight: 600;
+  padding-left: 10px;
+  min-height: 42px;
+  max-height: unset;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 19, 37, 0.16);
+}
+.bck-btn i{
+  padding-right: 5px;
+ }
