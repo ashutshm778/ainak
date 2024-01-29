@@ -1556,7 +1556,7 @@ body.ec-open:before {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  /* z-index: 17; */
+  z-index: 17;
   display: none;
 }
 
@@ -3190,4 +3190,16 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 }
 .bck-btn i{
   padding-right: 5px;
+ }
+.amount{
+  color: #f00;
+  font-size: 18px;
+ }
+.new-price{
+ color: #f00;
+ font-size: 18px;
+}
+  span del{
+  color: #000;
+  font-size: 13px;
  }

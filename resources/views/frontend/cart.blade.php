@@ -52,10 +52,10 @@
                                                             </a>
                                                            
                                                         </td>
-                                                        <td data-label="Price" class="ec-cart-pro-price">
-                                                            <span class="amount">₹{{$cart->product->retailer_selling_price}}</span><br>
+                                                        <td data-label="Price" class=" ">
+                                                            <span class="amount">₹ {{$cart->product->retailer_selling_price}} <del>{{$cart->product->retailer_selling_price}}</del></span><br>
                                                             @if(!empty($cart->lens_id))
-                                                            <span class="new-price">₹{{ $cart->lens->price }}</span>
+                                                            <span class="new-price">₹ {{ $cart->lens->price }} <del>{{ $cart->lens->price }}</del> </span>
                                                             @endif
                                                         </td>
                                                         {{-- <td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
