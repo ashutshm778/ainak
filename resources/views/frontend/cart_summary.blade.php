@@ -26,6 +26,12 @@
         <span class="text-right">₹{{$total_lens}}</span>
     </div>
     @endif
+    <div class="ec-checkout-coupan-content w-100">
+        <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form" method="post" action="#">
+            <input class="ec-coupan" type="text" required="" placeholder="Enter Your Coupan Code" name="ec-coupan" value="">
+            <button class="ec-coupan-btn button btn-primary" type="submit" name="subscribe" value="">Apply</button>
+        </form>
+    </div>
     <div>
         <span class="text-left">Discount Charges</span>
         <span class="text-right">₹{{$total_discount}}</span>
