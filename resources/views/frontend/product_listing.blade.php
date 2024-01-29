@@ -1,246 +1,615 @@
 @extends('frontend.layouts.app')
 @section('content')
-
-<div class="breadcrumb-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <ul class="breadcrumb">
-                  <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="#">Home</a>
-                  </li>
-                  @if(!isset($category_id) && !isset($subcategory_id) && !isset($subsubcategory_id))
-                  <li class="breadcrumb-item fw-600  text-dark">
-                     <a class="text-reset" href="#">"All Categories"</a>
-                  </li>
-                  @else
-                  <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="#">All Categories</a>
-                  </li>
-                  @endif
-                  @if(isset($category_id))
-                  <li class="text-dark fw-600 breadcrumb-item">
-                     <a class="text-reset" href="">"{{ \App\Models\Admin\Category::find($category_id)->name }}"</a>
-                  </li>
-                  @endif
-                  @if(isset($subcategory_id))
-                  <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="">{{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}</a>
-                  </li>
-                  <li class="text-dark fw-600 breadcrumb-item">
-                     <a class="text-reset" href="">"{{ \App\Models\Admin\SubCategory::find($subcategory_id)->name }}"</a>
-                  </li>
-                  @endif
-                  @if(isset($subsubcategory_id))
-                  <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="">{{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}</a>
-                  </li>
-                  <li class="breadcrumb-item opacity-50">
-                     <a class="text-reset" href="">{{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}</a>
-                  </li>
-                  <li class="text-dark fw-600 breadcrumb-item">
-                     <a class="text-reset" href="">"{{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->name }}"</a>
-                  </li>
-                  @endif
-               </ul>
+    <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb"></div>
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row ec_breadcrumb_inner">
+                        <div class="col-md-6 col-sm-12">
+                            <ul class="ec-breadcrumb-list">
+                                <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
+                                @if (!isset($category_id) && !isset($subcategory_id) && !isset($subsubcategory_id))
+                                    <li class="ec-breadcrumb-item">"All Categories"</li>
+                                @else
+                                    <li class="ec-breadcrumb-item">All Categories</li>
+                                @endif
+                                @if (isset($category_id))
+                                    <li class="ec-breadcrumb-item active">
+                                        "{{ \App\Models\Admin\Category::find($category_id)->name }}"</li>
+                                @endif
+                                @if (isset($subcategory_id))
+                                    <li class="ec-breadcrumb-item">
+                                        {{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}</li>
+                                    <li class="ec-breadcrumb-item">
+                                        "{{ \App\Models\Admin\SubCategory::find($subcategory_id)->name }}"</li>
+                                @endif
+                                @if (isset($subsubcategory_id))
+                                    <li class="ec-breadcrumb-item">
+                                        {{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}
+                                    </li>
+                                    <li class="ec-breadcrumb-item">
+                                        {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}
+                                    </li>
+                                    <li class="ec-breadcrumb-item">
+                                        "{{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->name }}"</li>
+                                @endif
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<section class="product">
-   <div class="container-fluid sm-px-0">
-      <form class="" id="search-form" action="" method="GET">
-         <div class="row">
-            <div class="side col-xl-3">
-               <div class="aiz-filter-sidebar collapse-sidebar-wrap sidebar-xl sidebar-right z-1035">
-                  <div class="overlay overlay-fixed dark c-pointer" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" data-same=".filter-sidebar-thumb"></div>
-                  <div class="collapse-sidebar c-scrollbar-light text-left">
-                     <div class="d-flex d-xl-none justify-content-between align-items-center pl-3 border-bottom">
-                        <h3 class="h6 mb-0 fw-600">Filters</h3>
-                        <button type="button" class="btn btn-sm p-2 filter-sidebar-thumb" data-toggle="class-toggle" data-target=".aiz-filter-sidebar" type="button">
-                        <i class="las la-times la-2x"></i>
-                        </button>
-                     </div>
-                     <div class="vertical-filters-filters">
-                        <div class="sidetit">
-                           Categories
+    <section class="ec-page-content section-space-p">
+        <div class="container">
+            <div class="row">
+                <div class="ec-shop-rightside col-lg-9 order-lg-last col-md-12 order-md-first margin-b-30">
+                    <div class="ec-pro-list-top d-flex">
+                        <div class="col-md-6 ec-grid-list">
+                            <div class="col header-top-res d-lg-none">
+                                <div class="ec-header-bottons">
+                                    <a href="#ec-filters" class="ec-header-btn ec-side-toggle text-dark d-lg-none"
+                                        style="width: auto !important;">
+                                        <i class="ecicon eci-filter text-dark"></i>&nbsp; Filters
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="pt-3">
-                           <ul class="list-unstyled">
-                              @if(!isset($category_id) && !isset($category_id) && !isset($subcategory_id) && !isset($subsubcategory_id))
-                              @foreach(\App\Models\Admin\Category::all() as $category)
-                              <li class="mb-2 ml-2">
-                                 <a class="text-reset fs-14" href="">{{ $category->name }}</a>
-                              </li>
-                              @endforeach
-                              @endif
-                              @if(isset($category_id))
-                              <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="#">
-                                 <i class="las la-angle-left"></i>
-                                 All Categories
-                                 </a>
-                              </li>
-                              <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="">
-                                 <i class="las la-angle-left"></i>
-                                 {{  translate(\App\Models\Admin\Category::find($category_id)->name) }}
-                                 </a>
-                              </li>
-                              @foreach (\App\Models\Admin\Category::find($category_id)->subcategories as $key2 => $subcategory)
-                              <li class="ml-4 mb-2">
-                                 <a class="text-reset fs-14" href="">{{ $subcategory->name }}</a>
-                              </li>
-                              @endforeach
-                              @endif
-                              @if(isset($subcategory_id))
-                              <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="#">
-                                 <i class="las la-angle-left"></i>
-                                 All Categories
-                                 </a>
-                              </li>
-                              <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="">
-                                 <i class="las la-angle-left"></i>
-                                 {{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}
-                                 </a>
-                              </li>
-                              <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="">
-                                 <i class="las la-angle-left"></i>
-                                 {{  \App\Models\Admin\SubCategory::find($subcategory_id)->name }}
-                                 </a>
-                              </li>
-                              @foreach (\App\Models\Admin\SubCategory::find($subcategory_id)->subsubcategories as $key3 => $subsubcategory)
-                              <li class="ml-4 mb-2">
-                                 <a class="text-reset fs-14" href="">{{  $subsubcategory->name }}</a>
-                              </li>
-                              @endforeach
-                              @endif
-                              @if(isset($subsubcategory_id))
-                              <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="#">
-                                 <i class="las la-angle-left"></i>
-                                 All Categories
-                                 </a>
-                              </li>
-                              <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="">
-                                 <i class="las la-angle-left"></i>
-                                 {{  \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}
-                                 </a>
-                              </li>
-                              <li class="mb-2">
-                                 <a class="text-reset fs-14 fw-600" href="">
-                                 <i class="las la-angle-left"></i>
-                                 {{  \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}
-                                 </a>
-                              </li>
-                              <li class="ml-4 mb-2">
-                                 <a class="text-reset fs-14" href="">{{  \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->name }}</a>
-                              </li>
-                              @endif
-                           </ul>
-                        </div>
-                     </div>
-                    
-                     <div class="vertical-filters-filters">
-                        <div class="sidetit">
-                           Price range
-                        </div>
-                        <div class="p-3">
-                           <div class="aiz-range-slider">
-                              <div
-                                 id="input-slider-range"
-                                 data-range-value-min="@if(count(\App\Models\Admin\Product::query()->get()) < 1) 0 @else {{ \App\Models\Admin\Product::query()->get()->min('unit_price') }} @endif"
-                                 data-range-value-max="@if(count(\App\Models\Admin\Product::query()->get()) < 1) 0 @else {{ \App\Models\Admin\Product::query()->get()->max('unit_price') }} @endif"
-                                 ></div>
-                              <div class="row mt-2">
-                                 <div class="col-6">
-                                    <span class="range-slider-value value-low fs-14 fw-600 opacity-70"
-                                    @if (isset($min_price))
-                                    data-range-value-low="{{ $min_price }}"
-                                    @elseif($products->min('unit_price') > 0)
-                                    data-range-value-low="{{ $products->min('unit_price') }}"
-                                    @else
-                                    data-range-value-low="0"
+                        <div class="col-md-4 ec-sort-select">
+                            <span class="sort-by">Sort by</span>
+                            <form class="fillter mb-0">
+                                <div class="ec-select-inner">
+                                    <select name="sort_by" id="ec-select" onchange="filler_product()">
+                                        <option value="asc" selected>Name, A to Z</option>
+                                        <option value="desc">Name, Z to A</option>
+                                        <option value="pasc">Price, low to high</option>
+                                        <option value="pdesc">Price, high to low</option>
+                                    </select>
+                                    @if (request('type') == 'subcategory')
+                                        <input type="hidden" name="subcat" value="{{ $slug }}">
                                     @endif
-                                    id="input-slider-range-value-low"
-                                    ></span>
-                                 </div>
-                                 <div class="col-6 text-right">
-                                    <span class="range-slider-value value-high fs-14 fw-600 opacity-70"
-                                    @if (isset($max_price))
-                                    data-range-value-high="{{ $max_price }}"
-                                    @elseif($products->max('unit_price') > 0)
-                                    data-range-value-high="{{ $products->max('unit_price') }}"
-                                    @else
-                                    data-range-value-high="0"
-                                    @endif
-                                    id="input-slider-range-value-high"
-                                    ></span>
-                                 </div>
-                              </div>
-                           </div>
+                                </div>
+                            </form>
                         </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-xl-9">
-            
-               @isset($category_id)
-               <input type="hidden" name="category" value="{{ \App\Models\Admin\Category::find($category_id)->slug }}">
-               @endisset
-               @isset($subcategory_id)
-               <input type="hidden" name="subcategory" value="{{ \App\Models\Admin\SubCategory::find($subcategory_id)->slug }}">
-               @endisset
-               @isset($subsubcategory_id)
-               <input type="hidden" name="subsubcategory" value="{{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->slug }}">
-               @endisset
-              
-                    
-               <div class="sort-by">
-                  <div class="d-flex">
-                     <div class="form-group w-200px d-md-block">
-                        <label class="mb-0 opacity-50">Sort by</label>
-                        <select class="form-control form-control-sm aiz-selectpicker" name="sort_by" onchange="filter()">
-                        <option value="1" @isset($sort_by) @if ($sort_by == '1') selected @endif @endisset>Newest</option>
-                        <option value="2" @isset($sort_by) @if ($sort_by == '2') selected @endif @endisset>Oldest</option>
-                        <option value="3" @isset($sort_by) @if ($sort_by == '3') selected @endif @endisset>Price low to high</option>
-                        <option value="4" @isset($sort_by) @if ($sort_by == '4') selected @endif @endisset>Price high to low</option>
-                        </select>
-                     </div>
-                   
-                     
-                     <div class="d-xl-none ml-auto ml-md-3 mr-0 form-group align-self-end">
-                        <button type="button" class="btn btn-icon p-0" data-toggle="class-toggle" data-target=".aiz-filter-sidebar">
-                        <i class="la la-filter la-2x"></i>
-                        </button>
-                     </div>
-                  </div>
-               </div>
-             
-               <input type="hidden" name="min_price" value="">
-               <input type="hidden" name="max_price" value="">
-               <div >
-               <div class="row gutters-5 row-cols-xxl-3 row-cols-xl-3 row-cols-lg-4 row-cols-md-3 row-cols-2 ">
+                        <div class="col-md-2 ec-sort-select d-none d-md-block">
+                            <div class="ec-offer-btn"> <a class="btn btn-primary"
+                                    href="javascript:window.location.href=window.location.href"
+                                    style="height: 34px; line-height: 2;">Clear All</a> </div>
+                        </div>
+                    </div>
                     <div class="shop-pro-content" id="product_list_data">
                         @include('frontend.product_list_data')
+                        <div class="kinetic" style="left: 40%;bottom: 80%; display: none"></div>
                     </div>
-                 </div>
-               </div>
-               
-                 
-              
-            </div>
-         </div>
-      </form>
-   </div>
-</section>
+                </div>
 
+
+                <div class="ec-shop-leftside col-lg-3 order-lg-first col-md-12 order-md-last d-none d-lg-block">
+                    <div id="shop_sidebar">
+                        <form class="fillter">
+                            <div class="ec-sidebar-wrap">
+                                <!--@if (featureActivation('retailer') == '1' ||
+                                        featureActivation('distributor') == '1' ||
+                                        featureActivation('wholeseller') == '1')
+    -->
+                                <!--    <div class="ec-sidebar-block">-->
+                                <!--        <div class="ec-sb-title">-->
+                                <!--            <h3 class="ec-sidebar-title">Price</h3>-->
+                                <!--        </div>-->
+                                <!--        <div class="ec-sb-block-content">-->
+                                <!--            <input type="hidden" name="search" value="{{ request()->search }}">-->
+                                <!--            <ul>-->
+                                <!--                <li>-->
+                                <!--                    <div class="ec-sidebar-block-item">-->
+                                <!--                        <input type="radio" name="price_filler" value="1000-5000" onclick="filler_product()"> <a href="#">₹ 1,000 to ₹ 5,000</a>-->
+                                <!--                        <span class="checked"></span>-->
+                                <!--                    </div>-->
+                                <!--                </li>-->
+                                <!--                <li>-->
+                                <!--                    <div class="ec-sidebar-block-item">-->
+                                <!--                        <input type="radio" name="price_filler" value="5000-10000" onclick="filler_product()"> <a href="#">₹ 5,000 to ₹ 10,000</a><span class="checked"></span>-->
+                                <!--                    </div>-->
+                                <!--                </li>-->
+                                <!--                <li>-->
+                                <!--                    <div class="ec-sidebar-block-item">-->
+                                <!--                        <input type="radio" name="price_filler" value="10000-20000" onclick="filler_product()"> <a href="#">₹ 10,000 to ₹ 20,000</a><span class="checked"></span>-->
+                                <!--                    </div>-->
+                                <!--                </li>-->
+                                <!--                <li>-->
+                                <!--                    <div class="ec-sidebar-block-item">-->
+                                <!--                        <input type="radio" name="price_filler" value="20000-50000" onclick="filler_product()"> <a href="#">₹ 20,000 to ₹ 50,000</a><span class="checked"></span>-->
+                                <!--                    </div>-->
+                                <!--                </li>-->
+                                <!--                <li>-->
+                                <!--                    <div class="ec-sidebar-block-item">-->
+                                <!--                        <input type="radio" name="price_filler" value="50000-100000" onclick="filler_product()"> <a href="#">₹ 50,000 to ₹ 1,00,000</a><span class="checked"></span>-->
+                                <!--                    </div>-->
+                                <!--                </li>-->
+                                <!--                <li>-->
+                                <!--                    <div class="ec-sidebar-block-item">-->
+                                <!--                        <input type="radio" name="price_filler" value="more than 100000" onclick="filler_product()"> <a href="#">More than ₹ 1,00,000</a><span class="checked"></span>-->
+                                <!--                    </div>-->
+                                <!--                </li>-->
+                                <!--            </ul>-->
+                                <!--        </div>-->
+                                <!--    </div>-->
+                                <!--
+    @endif-->
+                                <div class="ec-sidebar-block">
+                                    <div class="ec-sb-title">
+                                        <h3 class="ec-sidebar-title">Category</h3>
+                                    </div>
+                                    <div class="ec-sb-block-content">
+                                        <ul>
+                                            @if (!isset($category_id) && !isset($category_id) && !isset($subcategory_id) && !isset($subsubcategory_id))
+                                                @foreach (\App\Models\Admin\Category::all() as $category)
+                                                    <li>
+                                                        <div class="ec-sidebar-block-item">
+                                                            <a href="#">{{ $category->name }}</a>
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            @endif
+                                            @if (isset($category_id))
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <a href="#"> All Categories</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <a href="#">
+                                                            {{ translate(\App\Models\Admin\Category::find($category_id)->name) }}</a>
+                                                    </div>
+                                                </li>
+                                                @foreach (\App\Models\Admin\Category::find($category_id)->subcategories as $key2 => $subcategory)
+                                                    <li>
+                                                        <div class="ec-sidebar-block-item">
+                                                            <a href="#"> {{ $subcategory->name }}</a>
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            @endif
+                                            @if (isset($subcategory_id))
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <a href="#"> All Categories</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <a href="#">
+                                                            {{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <a href="#">
+                                                            {{ \App\Models\Admin\SubCategory::find($subcategory_id)->name }}</a>
+                                                    </div>
+                                                </li>
+                                                @foreach (\App\Models\Admin\SubCategory::find($subcategory_id)->subsubcategories as $key3 => $subsubcategory)
+                                                    <li>
+                                                        <div class="ec-sidebar-block-item">
+                                                            <a href="#"> {{ $subsubcategory->name }}</a>
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            @endif
+                                            @if (isset($subsubcategory_id))
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <a href="#"> All Categories</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <a href="#">
+                                                            {{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <a href="#">
+                                                            {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}</a>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <a href="#">
+                                                            {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->name }}</a>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        </ul>
+                                    </div>
+                                </div>
+                               {{--- @php
+                                    $colo_has = App\Models\Admin\Color::has('product')->get();
+                                @endphp
+                                @if (count($colo_has))
+                                    <div class="ec-sidebar-block">
+                                        <div class="ec-sb-title">
+                                            <h3 class="ec-sidebar-title">Color</h3>
+                                        </div>
+                                        <div class="ec-sb-block-content">
+                                            <ul>
+                                                @foreach (App\Models\Admin\Color::has('product')->get() as $color)
+                                                    <li>
+                                                        <div class="ec-sidebar-block-item">
+                                                            <input type="checkbox" name="color_filler[]"
+                                                                value="{{ $color->code }}" onclick="filler_product()">
+                                                            <a href="#">{{ $color->name }}</a><span
+                                                                class="checked"></span>
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endif
+                                @if (featureActivation('retailer') == '1' ||
+                                        featureActivation('distributor') == '1' ||
+                                        featureActivation('wholeseller') == '1')
+                                    <div class="ec-sidebar-block">
+                                        <div class="ec-sb-title">
+                                            <h3 class="ec-sidebar-title">Discount </h3>
+                                        </div>
+                                        <div class="ec-sb-block-content">
+                                            <ul>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="radio" name="discount_filler" value="10"
+                                                            onclick="filler_product()"> <a href="#">10% and
+                                                            Above</a><span class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="radio" name="discount_filler" value="20"
+                                                            onclick="filler_product()"> <a href="#">20% and
+                                                            Above</a><span class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="radio" name="discount_filler" value="30"
+                                                            onclick="filler_product()"> <a href="#">30% and
+                                                            Above</a><span class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="radio" name="discount_filler" value="40"
+                                                            onclick="filler_product()"> <a href="#">40% and
+                                                            Above</a><span class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="radio" name="discount_filler" value="50"
+                                                            onclick="filler_product()"> <a href="#">50% and
+                                                            Above</a><span class="checked"></span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="radio" name="discount_filler" value="60"
+                                                            onclick="filler_product()"> <a href="#">60% and
+                                                            Above</a><span class="checked"></span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                @endif --}}
+
+                                {{-- <div class="ec-sidebar-block">
+                                    <div class="ec-sb-title">
+                                        <h3 class="ec-sidebar-title">Brand </h3>
+                                    </div>
+                                    <div class="ec-sb-block-content">
+                                        <ul>
+                                            @foreach (App\Models\Admin\Brnad::where('is_active', 1)->get() as $side_bar_brnad)
+                                                <li>
+                                                    <div class="ec-sidebar-block-item">
+                                                        <input type="radio" name="brand_filler" value="{{$side_bar_brnad->id}}" onclick="filler_product()" @if (request()->brand == $side_bar_brnad->id) checked @endif> <a href="#">{{$side_bar_brnad->name}}</a><span class="checked"></span>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div> --}}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--- Filters In Mobile View --->
+
+    <div id="ec-filters" class="ec-side-cart ec-mobile-menu">
+        <div class="ec-menu-title">
+            <span class="menu_title">Filters</span>
+            <button class="ec-close">×</button>
+        </div>
+        <span class="ec-contact-wrap ec-contact-btn">
+            <a class="btn btn-primary" href="javascript:window.location.href=window.location.href"
+                style="height: 34px; line-height: 2.5;">Clear All</a>
+        </span>
+        <div id="shop_sidebar">
+            <form class="fillter">
+                <div class="ec-sidebar-wrap" style="border:none">
+                    @if (featureActivation('retailer') == '1' ||
+                            featureActivation('distributor') == '1' ||
+                            featureActivation('wholeseller') == '1')
+                        {{-- <div class="ec-sidebar-block">
+                            <div class="ec-sb-title">
+                                <h3 class="ec-sidebar-title">Price</h3>
+                            </div>
+                            <div class="ec-sb-block-content">
+                                <input type="hidden" name="search" value="{{request()->search}}">
+                                <ul>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="price_filler" value="1000-5000" onclick="filler_product()"> <a href="#">₹ 1,000 to ₹ 5,000</a>
+                                            <span class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="price_filler" value="5000-10000" onclick="filler_product()"> <a href="#">₹ 5,000 to ₹ 10,000</a><span class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="price_filler" value="10000-20000" onclick="filler_product()"> <a href="#">₹ 10,000 to ₹ 20,000</a><span class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="price_filler" value="20000-50000" onclick="filler_product()"> <a href="#">₹ 20,000 to ₹ 50,000</a><span class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="price_filler" value="50000-100000" onclick="filler_product()"> <a href="#">₹ 50,000 to ₹ 1,00,000</a><span class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="price_filler" value="more than 100000" onclick="filler_product()"> <a href="#">More than ₹ 1,00,000</a><span class="checked"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> --}}
+                    @endif
+                    <div class="ec-sidebar-block">
+                        <div class="ec-sb-title">
+                            <h3 class="ec-sidebar-title">Category</h3>
+                        </div>
+                        <div class="ec-sb-block-content">
+                           <ul>
+                              @if (!isset($category_id) && !isset($category_id) && !isset($subcategory_id) && !isset($subsubcategory_id))
+                                  @foreach (\App\Models\Admin\Category::all() as $category)
+                                      <li>
+                                          <div class="ec-sidebar-block-item">
+                                              <a href="#">{{ $category->name }}</a>
+                                          </div>
+                                      </li>
+                                  @endforeach
+                              @endif
+                              @if (isset($category_id))
+                                  <li>
+                                      <div class="ec-sidebar-block-item">
+                                          <a href="#"> All Categories</a>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="ec-sidebar-block-item">
+                                          <a href="#">
+                                              {{ translate(\App\Models\Admin\Category::find($category_id)->name) }}</a>
+                                      </div>
+                                  </li>
+                                  @foreach (\App\Models\Admin\Category::find($category_id)->subcategories as $key2 => $subcategory)
+                                      <li>
+                                          <div class="ec-sidebar-block-item">
+                                              <a href="#"> {{ $subcategory->name }}</a>
+                                          </div>
+                                      </li>
+                                  @endforeach
+                              @endif
+                              @if (isset($subcategory_id))
+                                  <li>
+                                      <div class="ec-sidebar-block-item">
+                                          <a href="#"> All Categories</a>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="ec-sidebar-block-item">
+                                          <a href="#">
+                                              {{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}</a>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="ec-sidebar-block-item">
+                                          <a href="#">
+                                              {{ \App\Models\Admin\SubCategory::find($subcategory_id)->name }}</a>
+                                      </div>
+                                  </li>
+                                  @foreach (\App\Models\Admin\SubCategory::find($subcategory_id)->subsubcategories as $key3 => $subsubcategory)
+                                      <li>
+                                          <div class="ec-sidebar-block-item">
+                                              <a href="#"> {{ $subsubcategory->name }}</a>
+                                          </div>
+                                      </li>
+                                  @endforeach
+                              @endif
+                              @if (isset($subsubcategory_id))
+                                  <li>
+                                      <div class="ec-sidebar-block-item">
+                                          <a href="#"> All Categories</a>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="ec-sidebar-block-item">
+                                          <a href="#">
+                                              {{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}</a>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="ec-sidebar-block-item">
+                                          <a href="#">
+                                              {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}</a>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <div class="ec-sidebar-block-item">
+                                          <a href="#">
+                                              {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->name }}</a>
+                                      </div>
+                                  </li>
+                              @endif
+                          </ul>
+                        </div>
+                    </div>
+                    @php
+                        $colo_has = App\Models\Admin\Color::has('product')->get();
+                    @endphp
+                    @if (count($colo_has))
+                        <div class="ec-sidebar-block">
+                            <div class="ec-sb-title">
+                                <h3 class="ec-sidebar-title">Color</h3>
+                            </div>
+                            <div class="ec-sb-block-content">
+                                <ul>
+                                    @foreach (App\Models\Admin\Color::has('product')->get() as $color)
+                                        <li>
+                                            <div class="ec-sidebar-block-item">
+                                                <input type="checkbox" name="color_filler[]" value="{{ $color->code }}"
+                                                    onclick="filler_product()"> <a
+                                                    href="#">{{ $color->name }}</a><span class="checked"></span>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    @endif
+                    @if (featureActivation('retailer') == '1' ||
+                            featureActivation('distributor') == '1' ||
+                            featureActivation('wholeseller') == '1')
+                        <div class="ec-sidebar-block">
+                            <div class="ec-sb-title">
+                                <h3 class="ec-sidebar-title">Discount </h3>
+                            </div>
+                            <div class="ec-sb-block-content">
+                                <ul>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="discount_filler" value="10"
+                                                onclick="filler_product()"> <a href="#">10% and Above</a><span
+                                                class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="discount_filler" value="20"
+                                                onclick="filler_product()"> <a href="#">20% and Above</a><span
+                                                class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="discount_filler" value="30"
+                                                onclick="filler_product()"> <a href="#">30% and Above</a><span
+                                                class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="discount_filler" value="40"
+                                                onclick="filler_product()"> <a href="#">40% and Above</a><span
+                                                class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="discount_filler" value="50"
+                                                onclick="filler_product()"> <a href="#">50% and Above</a><span
+                                                class="checked"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="discount_filler" value="60"
+                                                onclick="filler_product()"> <a href="#">60% and Above</a><span
+                                                class="checked"></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    @endif
+                    {{-- <div class="ec-sidebar-block">
+                        <div class="ec-sb-title">
+                            <h3 class="ec-sidebar-title">Brand </h3>
+                        </div>
+                        <div class="ec-sb-block-content">
+                            <ul>
+                                @foreach (App\Models\Admin\Brnad::where('is_active', 1)->get() as $side_bar_brnad)
+                                    <li>
+                                        <div class="ec-sidebar-block-item">
+                                            <input type="radio" name="brand_filler" value="{{$side_bar_brnad->id}}" onclick="filler_product()" @if (request()->brand == $side_bar_brnad->id) checked @endif> <a href="#">{{$side_bar_brnad->name}}</a><span class="checked"></span>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div> --}}
+                </div>
+            </form>
+        </div>
+
+    </div>
 
 @endsection
 
+<script src="{{ asset('public/dashboard_css/plugins/jquery/jquery.min.js') }}"></script>
+<script>
+    $(document).on('click', '.product_index a', function(event) {
+        event.preventDefault();
+        var page = $(this).attr('href').split('page=')[1];
+        filler_product(page);
+    });
+
+    function filler_product(page) {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
+        $.ajax({
+            type: 'GET',
+            url: "{{ route('product.fillter') }}?&page=" + page,
+            data: $('.fillter').serialize(),
+            beforeSend: function(msg) {
+                $('.kinetic').show()
+            },
+            success: function(data) {
+                $('.kinetic').hide()
+                $('#product_list_data').html(data)
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 'fast');
+            }
+        });
+    }
+</script>

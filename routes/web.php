@@ -49,6 +49,7 @@ Route::post('review/store',[FrontController::class,'review_store'])->name('revie
 
 Route::group(['middleware' => 'auth:customer'], function () {
     Route::view('user-profile', 'frontend.user-profile')->name('user_profile');
+    Route::view('user-profile-mob', 'frontend.usermob_sidebar')->name('usermob_sidebar');
     Route::post('add-to-cart',[CartController::class,'store'])->name('add.to.cart');
     Route::get('delete-to-cart/{cart_id}',[CartController::class,'destroy'])->name('delete.to.cart');
     Route::get('change-cart-qty/{product_id}/{qty}',[CartController::class,'changeCartQty'])->name('change.cart.qty');

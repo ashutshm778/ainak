@@ -250,15 +250,15 @@ class SearchController extends Controller
         //Color Filter
         $all_colors = array();
 
-        foreach ($non_paginate_products as $key => $product) {
-            if ($product->colors != null) {
-                foreach (json_decode($product->colors) as $key => $color) {
-                    if(!in_array($color, $all_colors)){
-                        array_push($all_colors, $color);
-                    }
-                }
-            }
-        }
+        // foreach ($non_paginate_products as $key => $product) {
+        //     if ($product->colors != null) {
+        //         foreach (json_decode($product->colors) as $key => $color) {
+        //             if(!in_array($color, $all_colors)){
+        //                 array_push($all_colors, $color);
+        //             }
+        //         }
+        //     }
+        // }
 
         $selected_color = null;
 
