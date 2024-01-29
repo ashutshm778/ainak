@@ -31,6 +31,16 @@ Route::get('/admin',function(){
 });
 
 
+Route::get('/search',[SearchController::class,'search'])->name('search');
+Route::get('/search?q={search}', [SearchController::class,'search'])->name('suggestion.search');
+Route::get('/ajax-search',[SearchController::class,'ajax_search'])->name('search.ajax');
+Route::get('/search?category={category_slug}', [SearchController::class,'search'])->name('products.category');
+Route::get('/search?subcategory={subcategory_slug}', 'HomeController@search')->name('products.subcategory');
+Route::get('/search?subsubcategory={subsubcategory_slug}', 'HomeController@search')->name('products.subsubcategory');
+Route::get('/search?brand={brand_slug}', 'HomeController@search')->name('products.brand');
+
+
+
 Route::get('product/get_best_seller',[FrontController::class,'get_best_seller_product'])->name('get_best_seller_product');
 Route::get('product/get_new_arrival',[FrontController::class,'get_new_arrival_product'])->name('get_new_arrival_product');
 Route::get('product/get_featured',[FrontController::class,'get_featured_product'])->name('get_featured_product');

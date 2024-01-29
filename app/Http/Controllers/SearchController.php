@@ -275,4 +275,16 @@ class SearchController extends Controller
         return view('frontend.product_listing', compact('list','products', 'query', 'category_id', 'subcategory_id', 'subsubcategory_id', 'brand_id', 'sort_by', 'seller_id','min_price', 'max_price', 'attributes', 'selected_attributes', 'all_colors', 'selected_color'));
     }
 
+    public function ajax_search(Request $request)
+    {
+        $search=$request->search;
+        $list=Product::where('is_active','1')->where(function ($query) use ($search){
+            $query->where('name','like','%'.$search.'%')->orWhere('tags','like','%'.$search.'%');
+        });
+        if($request->ajax()){
+            $list=$list->take(7)->get();
+            return vieW('frontend.layouts.search',compact('list'));
+        }
+    }
+
 }
