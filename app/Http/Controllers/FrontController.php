@@ -270,7 +270,7 @@ class FrontController extends Controller
         }
     }
 
-    public function search(Request $request, $slug)
+    public function details(Request $request, $slug)
     {
         try {
             if ($request->type == 'category') {

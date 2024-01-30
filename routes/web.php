@@ -137,7 +137,7 @@ Route::get('n_search',[SearchController::class,'search'])->name('n_search');
 //Categories
 Route::get('categories', [FrontController::class, 'all_categories'])->name('categories');
 Route::get('sub-categories/{category_id}', [FrontController::class, 'sub_categories'])->name('sub.categories');
-//Route::get('/{slug}', [FrontController::class, 'search'])->name('search');
+Route::get('/{slug}', [FrontController::class, 'details'])->name('details');
 
 
 //Product Detail

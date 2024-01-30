@@ -2,7 +2,7 @@
     <div class="ec-product-inner">
         <div class="ec-pro-image-outer">
             <div class="ec-pro-image">
-                <a href="{{ route('search',$productData->slug) }}?type=product" class="image">
+                <a href="{{ route('details',$productData->slug) }}?type=product" class="image">
                     @php
                         $gallery_images=explode(',',$productData->gallery_image);
                     @endphp
@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="ec-pro-content">
-            <h5 class="ec-pro-title"><a href="{{ route('search',$productData->slug) }}?type=product">{{$productData->name}}</a></h5>
+            <h5 class="ec-pro-title"><a href="{{ route('details',$productData->slug) }}?type=product">{{$productData->name}}</a></h5>
             <span class="ec-price">
                 @if($productprice['selling_price'] != $productprice['product_price'])
                     <span class="old-price">{{$productprice['selling_price']}}</span>

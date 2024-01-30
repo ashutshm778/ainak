@@ -97,11 +97,11 @@
                     <div class="col-md-2 col-xs-4 mb-3">
                         <div class="ec_cat_inner">
                             <div class="ec-cat-image">
-                                <a href="{{ route('search') }}?category={{$category->slug}}"> <img
+                                <a href="{{ route('details', $category->slug) }}?type=category"> <img
                                         src="{{ asset('public/' . api_asset($category->icon)) }}" alt="" /></a>
                             </div>
                             <div class="ec-cat-descs">
-                                <a href="{{ route('search') }}?category={{$category->slug}}"
+                                <a href="{{ route('details', $category->slug) }}?type=category"
                                     class="text-center">{{ $category->name }}</a>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                                         <div class="ec-product-inner">
                                             <div class="ec-pro-image-outer">
                                                 <div class="ec-pro-image">
-                                                    <a href="{{ route('search', $flash_product->product->slug) }}?type=product"
+                                                    <a href="{{ route('details', $flash_product->product->slug) }}?type=product"
                                                         class="image">
                                                         <img class="main-image"
                                                             src="{{ asset('public/' . api_asset($flash_product->product->thumbnail_image)) }}"
@@ -182,7 +182,7 @@
                                             </div>
                                             <div class="ec-pro-content">
                                                 <h5 class="ec-pro-title"><a
-                                                        href="{{ route('search', $flash_product->product->slug) }}?type=product">{{ $flash_product->product->name }}</a>
+                                                        href="{{ route('details', $flash_product->product->slug) }}?type=product">{{ $flash_product->product->name }}</a>
                                                 </h5>
                                                 <span class="ec-price">
                                                     <span class="old-price">{{ $flash_product->product_price }}</span>
@@ -364,7 +364,7 @@
                                 <div class="ec-product-inner">
                                     <div class="ec-pro-image-outer">
                                         <div class="ec-pro-image">
-                                            <a href="{{ route('search', $featured_category_product->slug) }}?type=product" class="image">
+                                            <a href="{{ route('details', $featured_category_product->slug) }}?type=product" class="image">
                                                 <img class="main-image"
                                                     src="{{ asset('public/' . api_asset($featured_category_product->thumbnail_image)) }}"
                                                     alt="Product" />
@@ -419,7 +419,7 @@
 
                                     <div class="ec-pro-content">
                                         <h5 class="ec-pro-title"><a
-                                                href="{{ route('search', $featured_category_product->slug) }}?type=product">{{ $featured_category_product->name }}</a>
+                                                href="{{ route('details', $featured_category_product->slug) }}?type=product">{{ $featured_category_product->name }}</a>
                                         </h5>
                                         <span class="ec-price">
                                             @if ($featured_category_product_price['selling_price'] != $featured_category_product_price['product_price'])
@@ -602,7 +602,7 @@
                             <ul class="category-list row">
                                 @foreach (App\Models\Admin\SubCategory::whereJsonContains('category_id', '' . $bottom_category->id)->where('is_active', 1)->take(4)->get() as $bottom_sub_category)
                                     <li class="col-sm-4 col-xs-4">
-                                        <a href="{{ route('search', $bottom_sub_category->slug) }}?type=subcategory">
+                                        <a href="{{ route('details', $bottom_sub_category->slug) }}?type=subcategory">
                                             <img class="lazy loaded"
                                                 src="{{ asset('public/' . api_asset($bottom_sub_category->image)) }}"
                                                 alt="{{ $bottom_sub_category->name }}" data-was-processed="true">
@@ -611,7 +611,7 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <a href="{{ route('search', $bottom_category->slug) }}?type=category" class="view-link">View
+                            <a href="{{ route('details', $bottom_category->slug) }}?type=category" class="view-link">View
                                 all <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.10059 3.8772L11.1006 8.87454L6.10059 13.8719" stroke="#515151"
