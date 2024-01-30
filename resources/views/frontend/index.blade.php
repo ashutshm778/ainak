@@ -41,7 +41,7 @@
             <div class=" col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1">
                     <div class="banner-block">
-                        <a href="glass-ec3cbds?type=subcategory"><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
+                        <a href="{{route('search')}}?subcategory="><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
             <div class="col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1">
                     <div class="banner-block">
-                        <a href="women-ecc567hbc?type=subcategory"><img src="{{ asset('public/frontend/assets/images/thumbnail-women.webp') }}"
+                        <a href="{{route('search')}}?subcategory="><img src="{{ asset('public/frontend/assets/images/thumbnail-women.webp') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
             <div class=" col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1 p-0">
                     <div class="banner-block">
-                        <a href="kids-a87345fqqw?type=subcategory"><img src="{{ asset('public/frontend/assets/images/kids.jpg') }}"
+                        <a href="{{route('search')}}?subcategory="><img src="{{ asset('public/frontend/assets/images/kids.jpg') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -97,11 +97,11 @@
                     <div class="col-md-2 col-xs-4 mb-3">
                         <div class="ec_cat_inner">
                             <div class="ec-cat-image">
-                                <a href="{{ route('search', $category->slug) }}?type=category"> <img
+                                <a href="{{ route('search') }}?category={{$category->slug}}"> <img
                                         src="{{ asset('public/' . api_asset($category->icon)) }}" alt="" /></a>
                             </div>
                             <div class="ec-cat-descs">
-                                <a href="{{ route('search', $category->slug) }}?type=category"
+                                <a href="{{ route('search') }}?category={{$category->slug}}"
                                     class="text-center">{{ $category->name }}</a>
                             </div>
                         </div>
