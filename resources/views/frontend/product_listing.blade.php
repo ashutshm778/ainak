@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="row ec_breadcrumb_inner">
-                        <div class="col-md-6 col-sm-12">
+                        <div class="col-md-12 col-sm-12">
                             <ul class="ec-breadcrumb-list">
                                 <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
                                 @if (isset($category_id))
@@ -443,7 +443,7 @@
                     @php
                         $colo_has = App\Models\Admin\Color::has('product')->get();
                     @endphp
-                    @if (count($colo_has))
+                   {{-- @if (count($colo_has))
                         <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
                                 <h3 class="ec-sidebar-title">Color</h3>
@@ -517,7 +517,7 @@
                                 </ul>
                             </div>
                         </div>
-                    @endif
+                    @endif --}}
                     {{-- <div class="ec-sidebar-block">
                         <div class="ec-sb-title">
                             <h3 class="ec-sidebar-title">Brand </h3>
