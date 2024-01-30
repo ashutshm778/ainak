@@ -124,7 +124,7 @@ class SearchController extends Controller
         return view('frontend.product_list_data',compact('list'));
     }
 
-    public function n_search(Request $request)
+    public function search(Request $request)
     {
         $query = $request->q;
         $brand_id = (Brnad::where('slug', $request->brand)->first() != null) ? Brnad::where('slug', $request->brand)->first()->id : null;
@@ -136,37 +136,34 @@ class SearchController extends Controller
         $max_price = $request->max_price;
         $seller_id = $request->seller_id;
         
-        $school_id=$request->school_id;
-        $school_category_id=$request->school_category_id;
-        $gender=$request->gender;
-        $class=$request->class;
-
         $conditions = [];
 
         if($brand_id != null){
             $conditions = array_merge($conditions, ['brand_id' => $brand_id]);
         }
-        if($category_id != null){
-            $conditions = array_merge($conditions, ['category_id' => $category_id]);
-        }
-        if($subcategory_id != null){
-            $conditions = array_merge($conditions, ['subcategory_id' => $subcategory_id]);
-        }
-        if($subsubcategory_id != null){
-            $conditions = array_merge($conditions, ['subsubcategory_id' => $subsubcategory_id]);
-        }
        
 
         $products = Product::where($conditions);
+
+        
+        if($category_id != null){
+            $products=$products->whereJsonContains('category_id',''.$category_id);
+        }
+        if($subcategory_id != null){
+            $products=$products->whereJsonContains('subcategory_id',''.$subcategory_id);
+        }
+        if($subsubcategory_id != null){
+            $products=$products->whereJsonContains('subsubcategory_id',''.$subsubcategory_id);
+        }
 
         if($min_price != null && $max_price != null){
             $products = $products->where('unit_price', '>=', $min_price)->where('unit_price', '<=', $max_price);
         }
 
-        
-      if($school_id != null){
-            $products = $products->where('school_id', $school_id)->whereJsonContains('gender',$gender)->whereJsonContains('class',$class);
+        if($query != null){
+            $products = $products->where('name', 'like', '%'.$query.'%')->orWhere('tags', 'like', '%'.$query.'%');
         }
+     
         if($sort_by != null){
             switch ($sort_by) {
                 case '1':
@@ -190,89 +187,11 @@ class SearchController extends Controller
 
         $non_paginate_products = $products->orderBy('id','desc')->get();
 
-        //Attribute Filter
-
-        $attributes = array();
-        foreach ($non_paginate_products as $key => $product) {
-            if($product->attributes != null && is_array(json_decode($product->attributes))){
-                foreach (json_decode($product->attributes) as $key => $value) {
-                    $flag = false;
-                    $pos = 0;
-                    foreach ($attributes as $key => $attribute) {
-                        if($attribute['id'] == $value){
-                            $flag = true;
-                            $pos = $key;
-                            break;
-                        }
-                    }
-                    if(!$flag){
-                        $item['id'] = $value;
-                        $item['values'] = array();
-                        foreach (json_decode($product->choice_options) as $key => $choice_option) {
-                            if($choice_option->attribute_id == $value){
-                                $item['values'] = $choice_option->values;
-                                break;
-                            }
-                        }
-                        array_push($attributes, $item);
-                    }
-                    else {
-                        foreach (json_decode($product->choice_options) as $key => $choice_option) {
-                            if($choice_option->attribute_id == $value){
-                                foreach ($choice_option->values as $key => $value) {
-                                    if(!in_array($value, $attributes[$pos]['values'])){
-                                        array_push($attributes[$pos]['values'], $value);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        $selected_attributes = array();
-
-        foreach ($attributes as $key => $attribute) {
-            if($request->has('attribute_'.$attribute['id'])){
-                foreach ($request['attribute_'.$attribute['id']] as $key => $value) {
-                    $str = '"'.$value.'"';
-                    $products = $products->where('choice_options', 'like', '%'.$str.'%');
-                }
-
-                $item['id'] = $attribute['id'];
-                $item['values'] = $request['attribute_'.$attribute['id']];
-                array_push($selected_attributes, $item);
-            }
-        }
-
-
-        //Color Filter
-        $all_colors = array();
-
-        // foreach ($non_paginate_products as $key => $product) {
-        //     if ($product->colors != null) {
-        //         foreach (json_decode($product->colors) as $key => $color) {
-        //             if(!in_array($color, $all_colors)){
-        //                 array_push($all_colors, $color);
-        //             }
-        //         }
-        //     }
-        // }
-
-        $selected_color = null;
-
-        if($request->has('color')){
-            $str = '"'.$request->color.'"';
-            $products = $products->where('colors', 'like', '%'.$str.'%');
-            $selected_color = $request->color;
-        }
-
 
         $products = $products->paginate(20)->appends(request()->query());
       
         $list=$products;
-        return view('frontend.product_listing', compact('list','products', 'query', 'category_id', 'subcategory_id', 'subsubcategory_id', 'brand_id', 'sort_by', 'seller_id','min_price', 'max_price', 'attributes', 'selected_attributes', 'all_colors', 'selected_color'));
+        return view('frontend.product_listing', compact('list','products', 'query', 'category_id', 'subcategory_id', 'subsubcategory_id', 'brand_id', 'sort_by', 'min_price', 'max_price'));
     }
 
     public function ajax_search(Request $request)

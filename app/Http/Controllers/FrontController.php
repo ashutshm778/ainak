@@ -28,7 +28,7 @@ class FrontController extends Controller
     public function index()
     {
         $categories = Category::select('id', 'slug', 'name', 'icon')->where('is_active', 1)->orderBy('top_priority', 'asc')->take(6)->get();
-        $featured_categories = Category::select('id', 'name')->where('is_active', 1)->where('is_feature', 1)->orderBy('priority', 'asc')->get();
+        $featured_categories = Category::select('id', 'name','slug')->where('is_active', 1)->where('is_feature', 1)->orderBy('priority', 'asc')->get();
        
         $features = Product::where('is_active', 1)->where('is_feature', 1)->take(12)->get();
         $best_sellers = Product::where('is_active', 1)->where('is_bestseller', 1)->take(12)->get();

@@ -23,5 +23,8 @@ class SubCategory extends Model
     protected $casts = [
         'category_id' => 'array',
     ];
+    
 
+    
+    
 }

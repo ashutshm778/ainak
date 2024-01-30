@@ -63,9 +63,9 @@
                     </div>
                     <div class="align-self-center ec-header-search">
                         <div class="header-search">
-                            <form class="ec-search-group-form" action="{{ route('product-search') }}" method="GET"
+                            <form class="ec-search-group-form" action="{{ route('search') }}" method="GET"
                                 autocomplete="off">
-                                <input class="form-control flip" name="search" value="{{ request()->search }}"
+                                <input class="form-control flip" name="q" value="{{ request()->search }}"
                                     placeholder="I’m searching for..." type="text" id="flip"
                                     onkeyup="searchs(this)">
                                 <button class="search_submit" type="submit">
@@ -177,9 +177,9 @@
                 </div>
                 <div class="col align-self-center ec-header-search">
                     <div class="header-search">
-                        <form class="ec-search-group-form" action="{{ route('product-search') }}" method="GET"
+                        <form class="ec-search-group-form" action="{{ route('search') }}" method="GET"
                             autocomplete="off">
-                            <input class="form-control flip" name="search" value="{{ request()->search }}"
+                            <input class="form-control flip" name="q" value="{{ request()->search }}"
                                 placeholder="I’m searching for..." type="text" id="flip"
                                 onkeyup="searchs(this)">
                             <button class="search_submit" type="submit">
@@ -217,7 +217,7 @@
                                         <ul class="sub-menu">
                                             @foreach (App\Models\Admin\SubCategory::where('is_active', 1)->whereJsonContains('category_id', '' . $header_category->id)->get() as $header_subcategory)
                                                 <li><a
-                                                        href="{{ route('product-search') }}?subcategory_filler={{ $header_subcategory->id }}">{{ $header_subcategory->name }}</a>
+                                                        href="{{ route('search') }}?subcategory={{ $header_subcategory->slug }}">{{ $header_subcategory->name }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -227,8 +227,7 @@
                                             href="javascript:void(0)">{{ $header_category->name }}</a>
                                         <ul class="sub-menu">
                                             @foreach (App\Models\Admin\SubCategory::where('is_active', 1)->whereJsonContains('category_id', '' . $header_category->id)->get() as $header_subcategory)
-                                                <li><a
-                                                        href="{{ route('product-search') }}?subcategory_filler={{ $header_subcategory->id }}">{{ $header_subcategory->name }}</a>
+                                                <li><a href="{{ route('search') }}?subcategory={{ $header_subcategory->slug }}">{{ $header_subcategory->name }}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -265,7 +264,7 @@
                         <li><a href="javascript:void(0)">{{ $mob_header_category->name }}</a>
                             <ul class="sub-menu">
                                 @foreach (App\Models\Admin\SubCategory::where('is_active', 1)->whereJsonContains('category_id', '' . $mob_header_category->id)->get() as $mob_header_subcategory)
-                                    <li><a href="{{ route('search', $mob_header_subcategory->slug) }}?type=subcategory">{{ $mob_header_subcategory->name }}</a></li>
+                                    <li><a href="{{ route('search') }}?subcategory={{$mob_header_subcategory->slug}}">{{ $mob_header_subcategory->name }}</a></li>
                                 @endforeach
                             </ul>
                         </li>

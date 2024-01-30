@@ -76,63 +76,7 @@
     </section>
 
 
-    <!-- <section class="section ec-trend-product section-space-p bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 section-title-block">
-                    <div class="section-title">
-                        <h2 class="ec-title">Kid Eyeglass</h2>
-                        <p class="sub-title">Kid Eyeglass & Repair Your Glass</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-md-6 col-sm-6 col-xs-12 pb-2">
-                    <div class="ec-pro">
-                        <a href="{{ route('product-search') }}">
-                            <img class="main-image" src="{{ asset('public/frontend/assets/images/kids-eyglasses.jpg') }}"
-                                alt="Product" />
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-md-6 d-none d-md-block">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 mb-3">
-                            <div class="ec-pro-image">
-                                <a href="#">
-                                    <img class="main-image"
-                                        src="{{ asset('public/frontend/assets/images/Hp-category-kids.jpg') }}"
-                                        alt="Product" />
-                                </a>
-                            </div>
-                            {{-- <div class="ec-pro-content">
-                                <h5 class="ec-pro-title"><a href="#">TV Units</a></h5>
-                            </div> --}}
-                    </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <div class="ec-pro-image">
-                                    <a href="#">
-                                        <img class="main-image"
-                                            src="{{ asset('public/frontend/assets/images/Home_Page_Thumb_250.webp') }}"
-                                            alt="Product" />
-                                    </a>
-                                </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <div class="ec-pro-image">
-                                    <a href="#" >
-                                        <img class="main-image"
-                                            src="{{ asset('public/frontend/assets/images/Home_Page_Thumb_500.webp') }}"
-                                            alt="Product" />
-                                    </a>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
+   
     <!--  category Section Start -->
     <section class="section ec-category-section section-space-p br-btm">
         <div class="container">
@@ -404,7 +348,7 @@
                             </div>
                             <div class="section-btn">
                                 <span class="ec-section-btn"><a class="btn-secondary"
-                                        href="{{ route('product-search') }}?category_filler={{ $featured_categorry->id }}">View
+                                        href="{{ route('search') }}?category={{ $featured_categorry->slug }}">View
                                         All</a></span>
                             </div>
                         </div>

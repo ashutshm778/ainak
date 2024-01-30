@@ -130,14 +130,14 @@ Route::get('customer-logout', [FrontController::class, 'attemptLogout'])->name('
 Route::get('/', [FrontController::class, 'index'])->name('index');
 
 //Search
-Route::get('search',[SearchController::class,'productSearch'])->name('product-search');
+//Route::get('search',[SearchController::class,'productSearch'])->name('product-search');
 Route::get('product-fillter',[SearchController::class,'productFillter'])->name('product.fillter');
-Route::get('n_search',[SearchController::class,'n_search'])->name('n_search');
+Route::get('n_search',[SearchController::class,'search'])->name('n_search');
 
 //Categories
 Route::get('categories', [FrontController::class, 'all_categories'])->name('categories');
 Route::get('sub-categories/{category_id}', [FrontController::class, 'sub_categories'])->name('sub.categories');
-Route::get('/{slug}', [FrontController::class, 'search'])->name('search');
+//Route::get('/{slug}', [FrontController::class, 'search'])->name('search');
 
 
 //Product Detail

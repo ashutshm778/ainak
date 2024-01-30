@@ -9,28 +9,17 @@
                         <div class="col-md-6 col-sm-12">
                             <ul class="ec-breadcrumb-list">
                                 <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-                                @if (!isset($category_id) && !isset($subcategory_id) && !isset($subsubcategory_id))
-                                    <li class="ec-breadcrumb-item">"All Categories"</li>
-                                @else
-                                    <li class="ec-breadcrumb-item">All Categories</li>
-                                @endif
                                 @if (isset($category_id))
                                     <li class="ec-breadcrumb-item active">
                                         "{{ \App\Models\Admin\Category::find($category_id)->name }}"</li>
                                 @endif
                                 @if (isset($subcategory_id))
-                                    <li class="ec-breadcrumb-item">
-                                        {{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}</li>
+                                   
                                     <li class="ec-breadcrumb-item">
                                         "{{ \App\Models\Admin\SubCategory::find($subcategory_id)->name }}"</li>
                                 @endif
                                 @if (isset($subsubcategory_id))
-                                    <li class="ec-breadcrumb-item">
-                                        {{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}
-                                    </li>
-                                    <li class="ec-breadcrumb-item">
-                                        {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}
-                                    </li>
+                                   
                                     <li class="ec-breadcrumb-item">
                                         "{{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->name }}"</li>
                                 @endif
@@ -146,7 +135,7 @@
                                                 @foreach (\App\Models\Admin\Category::all() as $category)
                                                     <li>
                                                         <div class="ec-sidebar-block-item">
-                                                            <a href="#">{{ $category->name }}</a>
+                                                            <a href="{{ route('search') }}?category={{$category->slug }}">{{ $category->name }}</a>
                                                         </div>
                                                     </li>
                                                 @endforeach
@@ -154,19 +143,19 @@
                                             @if (isset($category_id))
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <a href="#"> All Categories</a>
+                                                        <a href="{{route('search')}}"> All Categories</a>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <a href="#">
-                                                            {{ translate(\App\Models\Admin\Category::find($category_id)->name) }}</a>
+                                                        <a href="{{ route('search') }}?category={{\App\Models\Admin\Category::find($category_id)->slug }}">
+                                                            {{\App\Models\Admin\Category::find($category_id)->name }}</a>
                                                     </div>
                                                 </li>
-                                                @foreach (\App\Models\Admin\Category::find($category_id)->subcategories as $key2 => $subcategory)
+                                                @foreach (\App\Models\Admin\SubCategory::whereJsonContains('category_id',$category_id)->get() as $key2 => $subcategory)
                                                     <li>
                                                         <div class="ec-sidebar-block-item">
-                                                            <a href="#"> {{ $subcategory->name }}</a>
+                                                            <a href="{{ route('search') }}?subcategory={{ $subcategory->slug }}"> {{ $subcategory->name }}</a>
                                                         </div>
                                                     </li>
                                                 @endforeach
@@ -174,25 +163,20 @@
                                             @if (isset($subcategory_id))
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <a href="#"> All Categories</a>
+                                                        <a href="{{route('search')}}"> All Categories</a>
                                                     </div>
                                                 </li>
+                                               
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <a href="#">
-                                                            {{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}</a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="ec-sidebar-block-item">
-                                                        <a href="#">
+                                                        <a href="{{ route('search') }}?subcategory={{ \App\Models\Admin\SubCategory::find($subcategory_id)->slug }}">
                                                             {{ \App\Models\Admin\SubCategory::find($subcategory_id)->name }}</a>
                                                     </div>
                                                 </li>
-                                                @foreach (\App\Models\Admin\SubCategory::find($subcategory_id)->subsubcategories as $key3 => $subsubcategory)
+                                                @foreach (\App\Models\Admin\SubSubCategory::whereJsonContains('subcategory_id',$subcategory_id)->get() as $key3 => $subsubcategory)
                                                     <li>
                                                         <div class="ec-sidebar-block-item">
-                                                            <a href="#"> {{ $subsubcategory->name }}</a>
+                                                            <a href="{{ route('search') }}?subsubcategory={{ $subsubcategory->slug }}"> {{ $subsubcategory->name }}</a>
                                                         </div>
                                                     </li>
                                                 @endforeach
@@ -203,24 +187,15 @@
                                                         <a href="#"> All Categories</a>
                                                     </div>
                                                 </li>
+                                               
+                                                
                                                 <li>
                                                     <div class="ec-sidebar-block-item">
-                                                        <a href="#">
-                                                            {{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}</a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="ec-sidebar-block-item">
-                                                        <a href="#">
-                                                            {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}</a>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="ec-sidebar-block-item">
-                                                        <a href="#">
+                                                        <a href="{{ route('search') }}?subsubcategory={{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->slug }}">
                                                             {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->name }}</a>
                                                     </div>
                                                 </li>
+
                                             @endif
                                         </ul>
                                     </div>
@@ -401,7 +376,7 @@
                                   @foreach (\App\Models\Admin\Category::all() as $category)
                                       <li>
                                           <div class="ec-sidebar-block-item">
-                                              <a href="#">{{ $category->name }}</a>
+                                              <a href="{{ route('search') }}?category={{$category->slug }}">{{ $category->name }}</a>
                                           </div>
                                       </li>
                                   @endforeach
@@ -409,19 +384,19 @@
                               @if (isset($category_id))
                                   <li>
                                       <div class="ec-sidebar-block-item">
-                                          <a href="#"> All Categories</a>
+                                          <a href="{{route('search')}}"> All Categories</a>
                                       </div>
                                   </li>
                                   <li>
                                       <div class="ec-sidebar-block-item">
-                                          <a href="#">
-                                              {{ translate(\App\Models\Admin\Category::find($category_id)->name) }}</a>
+                                          <a href="{{ route('search') }}?category={{ \App\Models\Admin\Category::find($category_id)->name}}">
+                                              {{ \App\Models\Admin\Category::find($category_id)->name}}</a>
                                       </div>
                                   </li>
-                                  @foreach (\App\Models\Admin\Category::find($category_id)->subcategories as $key2 => $subcategory)
+                                  @foreach (\App\Models\Admin\SubCategory::whereJsonContains('category_id',$category_id)->get() as $key2 => $subcategory)
                                       <li>
                                           <div class="ec-sidebar-block-item">
-                                              <a href="#"> {{ $subcategory->name }}</a>
+                                              <a href="{{ route('search') }}?subcategory={{$subcategory->slug }}"> {{ $subcategory->name }}</a>
                                           </div>
                                       </li>
                                   @endforeach
@@ -429,25 +404,20 @@
                               @if (isset($subcategory_id))
                                   <li>
                                       <div class="ec-sidebar-block-item">
-                                          <a href="#"> All Categories</a>
+                                          <a href="{{route('search')}}"> All Categories</a>
                                       </div>
                                   </li>
+                                
                                   <li>
                                       <div class="ec-sidebar-block-item">
-                                          <a href="#">
-                                              {{ \App\Models\Admin\SubCategory::find($subcategory_id)->category->name }}</a>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="ec-sidebar-block-item">
-                                          <a href="#">
+                                          <a href="{{ route('search') }}?subcategory={{ \App\Models\Admin\SubCategory::find($subcategory_id)->name }}">
                                               {{ \App\Models\Admin\SubCategory::find($subcategory_id)->name }}</a>
                                       </div>
                                   </li>
-                                  @foreach (\App\Models\Admin\SubCategory::find($subcategory_id)->subsubcategories as $key3 => $subsubcategory)
+                                  @foreach (\App\Models\Admin\SubSubCategory::whereJsonContains('subcategory_id',$subcategory_id)->get() as $key3 => $subsubcategory)
                                       <li>
                                           <div class="ec-sidebar-block-item">
-                                              <a href="#"> {{ $subsubcategory->name }}</a>
+                                              <a href="{{ route('search') }}?subsubcategory={{$subsubcategory->slug }}"> {{ $subsubcategory->name }}</a>
                                           </div>
                                       </li>
                                   @endforeach
@@ -458,21 +428,11 @@
                                           <a href="#"> All Categories</a>
                                       </div>
                                   </li>
+                                 
+                                  
                                   <li>
                                       <div class="ec-sidebar-block-item">
-                                          <a href="#">
-                                              {{ \App\Models\Admin\SubSubCategory::find($subsubcategory_id)->subcategory->category->name }}</a>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="ec-sidebar-block-item">
-                                          <a href="#">
-                                              {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->subcategory->name }}</a>
-                                      </div>
-                                  </li>
-                                  <li>
-                                      <div class="ec-sidebar-block-item">
-                                          <a href="#">
+                                          <a href="{{ route('search') }}?subsubcategory={{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->name }}">
                                               {{ \App\Models\Admin\SubsubCategory::find($subsubcategory_id)->name }}</a>
                                       </div>
                                   </li>

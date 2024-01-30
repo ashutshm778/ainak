@@ -27,4 +27,6 @@ class Category extends Model
         'meta_descrption',
     ];
 
+    
+
 }
