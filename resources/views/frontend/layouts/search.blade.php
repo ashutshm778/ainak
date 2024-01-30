@@ -1,7 +1,7 @@
 <ul>
     @forelse ($list as $data)
         <li>
-            <a href="{{ route('search',$data->slug) }}?type=product">
+            <a href="{{ route('details',$data->slug) }}?type=product">
                 <img src="{{ asset('public/vendor/images/products/'.$data->thumbnail_image) }}" onerror="this.onerror=null;this.src='{{asset('public/no-image.png')}}'">
                 @if($data->variant_name)
                     {{$data->variant_name}}

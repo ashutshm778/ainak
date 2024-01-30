@@ -12,7 +12,9 @@
                         <div class="col-md-6 col-sm-12">
                             <ul class="ec-breadcrumb-list">
                                 <li class="ec-breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-                                <li class="ec-breadcrumb-item active">Product Details</li>
+                                <li class="ec-breadcrumb-item active">{{App\Models\Admin\Category::where('id',$data->category_id[0])->first()->name}}</li>
+                                <li class="ec-breadcrumb-item active">{{App\Models\Admin\SubCategory::where('id',$data->subcategory_id[0])->first()->name}}</li>
+                                <li class="ec-breadcrumb-item active">{{$data->name}}</li>
                             </ul>
                         </div>
                     </div>
