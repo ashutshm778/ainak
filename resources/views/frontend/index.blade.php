@@ -796,13 +796,27 @@
        function new_arriavl_product(){
             event.preventDefault();
             var page = $("a[name='example']:last").attr('href').split('page=')[1];
-            trending(page);
+            var current_page_trending = $("input[name='current_page_trending']:last").val();
+            var last_page_trending = $("input[name='last_page_trending']:last").val();
+            if(current_page_trending!=last_page_trending){
+                trending(page);
+            }
+            if(current_page_trending==last_page_trending){
+                $('#view_more_trending').hide();
+            }
         }
 
         function featured_product(){
             event.preventDefault();
             var page = $("a[name='example1']:last").attr('href').split('page=')[1];
-            feature(page);
+            var current_page_featured = $("input[name='current_page_featured']:last").val();
+            var last_page_featured = $("input[name='last_page_featured']:last").val();
+            if(current_page_featured!=last_page_featured){
+                feature(page);
+            }
+            if(current_page_featured==last_page_featured){
+                $('#view_more_featured').hide();
+            }
         }
 
         function best_seller_product(){
@@ -810,9 +824,12 @@
             var page = $("a[name='example2']:last").attr('href').split('page=')[1];
             var current_page_best_seller = $("input[name='current_page_best_seller']:last").val();
             var last_page_best_seller = $("input[name='last_page_best_seller']:last").val();
-            console.log(current_page_best_seller);
-            console.log(last_page_best_seller);
-            seller(page);
+            if(current_page_best_seller!=last_page_best_seller){
+               seller(page);
+            }
+            if(current_page_best_seller==last_page_best_seller){
+                $('#view_more_best_seller').hide();
+            }
         }
      </script>
 @endsection
