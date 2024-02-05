@@ -5,4 +5,6 @@
 @endphp
 @include('frontend.product')
 @endforeach
-<a style="display:none;" id="current_page_best_sellers" name="example2" class="btn btn-secondary rds {{ ($best_sellers->currentPage() == $best_sellers->lastPage()) ? ' disabled' : '' }}" href="{{ $best_sellers->url($best_sellers->currentPage()+1) }}"   >View More {{$best_sellers->currentPage()}},{{$best_sellers->lastPage()}} <i class="ecicon eci-chevron-right"></i></a>
+<a style="display:none;" id="current_page_best_sellers" name="example2" class="btn btn-secondary rds {{ ($best_sellers->currentPage() == $best_sellers->lastPage()) ? ' disabled' : '' }}" href="{{ $best_sellers->url($best_sellers->currentPage()+1) }}"   >View More <i class="ecicon eci-chevron-right"></i></a>
+<input type="hidden" name="current_page_best_seller" value="{{$best_sellers->currentPage()}}" />
+<input type="hidden" name="last_page_best_seller" value="{{$best_sellers->lastPage()}}" />

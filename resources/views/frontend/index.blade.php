@@ -808,6 +808,10 @@
         function best_seller_product(){
             event.preventDefault();
             var page = $("a[name='example2']:last").attr('href').split('page=')[1];
+            var current_page_best_seller = $("input[name='current_page_best_seller']:last").val();
+            var last_page_best_seller = $("input[name='last_page_best_seller']:last").val();
+            console.log(current_page_best_seller);
+            console.log(last_page_best_seller);
             seller(page);
         }
      </script>
