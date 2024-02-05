@@ -811,6 +811,8 @@
             var page = $("a[name='example1']:last").attr('href').split('page=')[1];
             var current_page_featured = $("input[name='current_page_featureds']:last").val();
             var last_page_featured = $("input[name='last_page_featureds']:last").val();
+            console.log(current_page_featured);
+            console.log(last_page_featured);
             if(current_page_featured!=last_page_featured){
                 feature(page);
             }
