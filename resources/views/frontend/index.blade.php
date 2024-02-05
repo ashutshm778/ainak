@@ -808,7 +808,7 @@
 
         function featured_product(){
             event.preventDefault();
-            var page = $("a[name='example1']:last").attr('href').split('page=')[1];
+            var page = $("a[name='example12']:last").attr('href').split('page=')[1];
             var current_page_featured = $("input[name='current_page_featureds']:last").val();
             var last_page_featured = $("input[name='last_page_featureds']:last").val();
             console.log(current_page_featured);
