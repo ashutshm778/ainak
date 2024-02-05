@@ -180,7 +180,12 @@ class FrontController extends Controller
                 if(!empty($request->from)){
                     return redirect($request->from);
                 }
+                if(strstr(strtolower($_SERVER['HTTP_USER_AGENT']), 'mobile') || strstr(strtolower($_SERVER['HTTP_USER_AGENT']), 'android')) {
+                    return redirect()->route('usermob_sidebar')->with('success', 'You Have Successfully Login !');
+                 } else {
                 return redirect()->route('user_profile')->with('success', 'You Have Successfully Login !');
+                 }
+
             }else{
                 $validator->getMessageBag()->add('password', 'Wrong Password');
                 return back()->withErrors($validator)->withInput();

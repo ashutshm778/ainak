@@ -269,7 +269,7 @@
                             </ul>
                         </li>
                     @endforeach
-                    <li><a href="{{ route('user.login') }}">Profile</a></li> 
+                    <li> @if (Auth::guard('customer')->check()) <a href="{{ route('usermob_sidebar') }}">Profile</a>  @else<a href="{{ route('user.login') }}">Profile</a>@endif</li> 
                     <li><a href="{{ route('about') }}">About Us</a></li> 
                     <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
