@@ -2,7 +2,7 @@
 @section('content')
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb"></div>
     <div class="desk_hide">
-      <a href="{{route('usermob_sidebar')}}" class="bck-btn"><i class="ecicon eci-arrow-left"></i> Back</a>
+        <a href="{{ route('usermob_sidebar') }}" class="bck-btn"><i class="ecicon eci-arrow-left"></i> Back</a>
     </div>
     <section class="ec-page-content checkout_page section-space-p">
         <div class="container">
@@ -123,43 +123,44 @@
                                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                     <div class="ec-bl-block-content">
-                                                        <div class="col-sm-12">
+                                                        <div class="row">
                                                             @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
                                                                 @php
                                                                     $product_prices = getProductDiscountedPrice($cart->product_id, 'retailer');
                                                                 @endphp
-                                                                <div class="order-sumary pt-2">
-                                                                    <div class="pro-img">
-                                                                        <a href="#">
-                                                                            <img class="main-image"
-                                                                                src="{{ asset('public/' . api_asset($cart->product->thumbnail_image)) }}"
-                                                                                class="w-100" alt="Product" />
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="pro-content">
-                                                                        <h5><a
-                                                                                href="#">{{ $cart->product->name }}</a>
-                                                                        </h5>
-                                                                        <span class="ec-price">
-                                                                            @if ($product_prices['selling_price'] > $product_prices['product_price'])
-                                                                                <span
-                                                                                    class="old-price">₹{{ $product_prices['selling_price'] }}</span>
-                                                                                <span
-                                                                                    class="new-price">₹{{ $product_prices['product_price'] }}</span>
-                                                                                * {{ $cart->quantity }}
-                                                                            @else
-                                                                                <span
-                                                                                    class="new-price">₹{{ $product_prices['product_price'] }}</span>
-                                                                                * {{ $cart->quantity }}
-                                                                            @endif
-                                                                        </span>
-                                                                        @if (!empty($cart->lens_id))
-                                                                            <br>
-                                                                            <span> Lens : {{ $cart->lens->name }} </span>
-                                                                            <span
-                                                                                class="new-price">₹{{ $cart->lens->price }}</span>
-                                                                            * {{ $cart->quantity }}
-                                                                        @endif
+                                                                <div class="col-md-6 mb-2">
+                                                                    <div class="cards">
+                                                                        <div class="row">
+                                                                            <div class="col-md-4">
+                                                                                <div class="pro-img">
+                                                                                    <a href="#">
+                                                                                        <img class="main-image"
+                                                                                            src="{{ asset('public/' . api_asset($cart->product->thumbnail_image)) }}"
+                                                                                            class="w-100"
+                                                                                            alt="Product" />
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-8">
+                                                                                <div class="pro-contents">
+                                                                                    <h5><a href="#">{{ $cart->product->name }}</a></h5>
+                                                                                    <span class="ec-price">
+                                                                                        @if ($product_prices['selling_price'] > $product_prices['product_price'])
+                                                                                            <del class="old-price">₹ {{ $product_prices['selling_price'] }}</del>
+                                                                                            <span>₹ {{ $product_prices['product_price'] }} x {{ $cart->quantity }}</span>
+                                                                                        @else
+                                                                                            <span>₹ {{ $product_prices['product_price'] }} x {{ $cart->quantity }}</span>
+                                                                                            
+                                                                                        @endif
+                                                                                    </span>
+                                                                                    @if (!empty($cart->lens_id))
+                                                                                        <br>
+                                                                                        <span> Lens : {{ $cart->lens->name }} </span>
+                                                                                        <span>₹ {{ $cart->lens->price }} x {{ $cart->quantity }}</span>
+                                                                                    @endif
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             @endforeach
@@ -174,36 +175,41 @@
                                                     data-bs-target="#collapseFour" aria-expanded="true"
                                                     aria-controls="collapseFour">Payment Option </button>
                                             </h2>
-                                            <div id="collapseFour" class="accordion-collapse collapse show"
+                                            <div id="collapseFour" class="accordion-collapse collapse"
                                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                     <div class="row">
-                                                        <div class="col-md-6 col-xs-6">
-                                                            <label class="aiz-megabox d-block mb-3">
-                                                                <a onclick="make_order('razorpay')">
-                                                                    <span class="d-block p-2 aiz-megabox-elem">
+                                                        <div class="col-6 col-xl-6 col-md-4">
+                                                            <a onclick="make_order('razorpay')">
+                                                                <label class="aiz-megabox d-block mb-3">
+                                                                    <input class="online_payment" type="radio"
+                                                                        name="payment_option">
+                                                                    <span class="d-block aiz-megabox-elem rounded-0 p-3">
                                                                         <img src="{{ asset('public/frontend/assets/images/rozarpay.png') }}"
-                                                                            class="img-fluid mb-2">
+                                                                            class="img-fit mb-2">
                                                                         <span class="d-block text-center">
-                                                                            <h4 class="ec-sidebar-title">Pay Online</h4>
+                                                                            <span class="d-block fw-600 fs-15">Pay
+                                                                                Online</span>
                                                                         </span>
                                                                     </span>
-                                                                </a>
-                                                            </label>
+                                                                </label>
+                                                            </a>
                                                         </div>
-                                                        <div class="col-md-6 col-xs-6">
-                                                            <label class="aiz-megabox d-block mb-3">
-                                                                <a onclick="make_order('cod')">
-                                                                    <span class="d-block p-2 aiz-megabox-elem">
+                                                        <div class="col-6 col-xl-6 col-md-4">
+                                                            <a onclick="make_order('cod')">
+                                                                <label class="aiz-megabox d-block mb-3">
+                                                                    <input value="mercadopago" class="online_payment"
+                                                                        type="radio" name="payment_option">
+                                                                    <span class="d-block aiz-megabox-elem rounded-0 p-3">
                                                                         <img src="{{ asset('public/frontend/assets/images/cod.png') }}"
-                                                                            class="img-fluid mb-2">
+                                                                            class="img-fit mb-2">
                                                                         <span class="d-block text-center">
-                                                                            <h4 class="ec-sidebar-title">Cash on Delivery
-                                                                            </h4>
+                                                                            <span class="d-block fw-600 fs-15">Cash on
+                                                                                Delivery</span>
                                                                         </span>
                                                                     </span>
-                                                                </a>
-                                                            </label>
+                                                                </label>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                     {{-- <div class="ec-bl-block-content">
@@ -289,11 +295,11 @@
                                         <span class="text-left">Sub-Total</span>
                                         <span class="text-right">₹{{ $sub_total_amount }}</span>
                                     </div>
-                                    @if($total_lens > 0)
-                                    <div>
-                                        <span class="text-left">Total Lens</span>
-                                        <span class="text-right">₹{{$total_lens}}</span>
-                                    </div>
+                                    @if ($total_lens > 0)
+                                        <div>
+                                            <span class="text-left">Total Lens</span>
+                                            <span class="text-right">₹{{ $total_lens }}</span>
+                                        </div>
                                     @endif
                                     <div>
                                         <span class="text-left">Discount Charges</span>
@@ -302,7 +308,16 @@
 
                                     <div class="ec-checkout-summary-total">
                                         <span class="text-left">Total Amount</span>
-                                        <span class="text-right">₹{{ $total_amount+$total_lens }}</span>
+                                        <span class="text-right">₹{{ $total_amount + $total_lens }}</span>
+                                    </div>
+                                    <div class="ec-checkout-coupan-content w-100">
+                                        <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
+                                            method="post" action="#">
+                                            <input class="ec-coupan" type="text" required=""
+                                                placeholder="Enter Your Coupan Code" name="ec-coupan" value="">
+                                            <button class="ec-coupan-btn button btn-primary" type="submit"
+                                                name="subscribe" value="">Apply</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

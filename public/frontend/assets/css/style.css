@@ -24024,7 +24024,8 @@ i.ecicon.eci-star-o {
 
 /*-----  Checkout Summary CSS  ------*/
 .ec-checkout-summary .ec-checkout-coupan-content {
-  display: none;
+  /* display: none; */
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
@@ -24034,6 +24035,8 @@ i.ecicon.eci-star-o {
   display: flex;
   border: 1px solid #ededed;
   padding: 5px;
+  width: 100%;
+  margin-bottom: 0;
 }
 .ec-checkout-coupan-form .ec-coupan {
   display: inline-block;
