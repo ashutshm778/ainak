@@ -20016,7 +20016,7 @@ section.ec-instagram-section {
   }
 
   .ec-header-bottom {
-    padding: 25px 0;
+    padding: 5px 0;
     /* border-bottom: 1px solid #eeeeee; */
   }
 
@@ -20108,8 +20108,8 @@ section.ec-instagram-section {
 
   .ec-header-search {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 70%;
-            flex: 0 0 70%;
+        -ms-flex: 0 0 85%;
+            flex: 0 0 85%;
   }
 
 
@@ -20134,6 +20134,7 @@ section.ec-instagram-section {
     justify-content: space-between;
     max-width: 100%;
     padding: 0 5px;
+    display: none;
   }
 
   .ec-category-menu
@@ -20153,6 +20154,8 @@ section.ec-instagram-section {
     -ms-flex-pack: end;
     justify-content: start;
     margin-top: 5px;
+    margin-top: 32px;
+    font-size: 50px;
 }
 
   .ec-category-block {
