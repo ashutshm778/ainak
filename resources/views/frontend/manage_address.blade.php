@@ -78,7 +78,7 @@
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close" style="line-height: 1;">x</button>
                 <div class="modal-body" id="modal_body">
                     <h3 id="header_text">Add Address</h3>
                     <form action="{{route('store.customer.address')}}" method="POST">
