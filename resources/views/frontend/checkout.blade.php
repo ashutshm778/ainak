@@ -131,7 +131,7 @@
                                                                 <div class="col-md-6 mb-2">
                                                                     <div class="cards">
                                                                         <div class="row">
-                                                                            <div class="col-md-4">
+                                                                            <div class="col-4">
                                                                                 <div class="pro-img">
                                                                                     <a href="#">
                                                                                         <img class="main-image"
@@ -141,7 +141,7 @@
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-md-8">
+                                                                            <div class="col-8">
                                                                                 <div class="pro-contents">
                                                                                     <h5><a href="#">{{ $cart->product->name }}</a></h5>
                                                                                     <span class="ec-price">
