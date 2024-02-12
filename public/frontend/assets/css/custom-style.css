@@ -2866,7 +2866,7 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   flex-direction: column;
 }
 .slide-header {
-  height: 248px;
+  /* height: 248px; */
   padding: 10px 15px;
 }
 .wrap-additional-note {

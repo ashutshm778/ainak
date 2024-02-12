@@ -7,6 +7,64 @@
     <section class="ec-page-content checkout_page section-space-p">
         <div class="container">
             <div class="row">
+            <div class="col-lg-4 col-md-12 desk_hide">
+                    <div class="ec-sidebar-wrap">
+                        <div class="ec-sidebar-block">
+                            <div class="ec-sb-title">
+                                <h3 class="ec-sidebar-title">Summary</h3>
+                            </div>
+                            @php
+                                $sub_total_amount = 0;
+                                $total_discount = 0;
+                                $total_amount = 0;
+                                $total_lens = 0;
+                            @endphp
+                            @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
+                                @php
+                                    $product_prices = getProductDiscountedPrice($cart->product_id, 'retailer');
+                                    $sub_total_amount = $sub_total_amount + $product_prices['selling_price'] * $cart->quantity;
+                                    $total_discount = ($total_discount + $product_prices['selling_price'] - $product_prices['product_price']) * $cart->quantity;
+                                    $total_amount = $total_amount + $product_prices['product_price'] * $cart->quantity;
+                                    if (!empty($cart->lens_id)) {
+                                        $total_lens = $total_lens + $cart->lens->price;
+                                    }
+                                @endphp
+                            @endforeach
+                            <div class="ec-sb-block-content">
+                                <div class="ec-checkout-summary">
+                                    <div>
+                                        <span class="text-left">Sub-Total</span>
+                                        <span class="text-right">₹{{ $sub_total_amount }}</span>
+                                    </div>
+                                    @if ($total_lens > 0)
+                                        <div>
+                                            <span class="text-left">Total Lens</span>
+                                            <span class="text-right">₹{{ $total_lens }}</span>
+                                        </div>
+                                    @endif
+                                    <div>
+                                        <span class="text-left">Discount Charges</span>
+                                        <span class="text-right">₹{{ $total_discount }}</span>
+                                    </div>
+
+                                    <div class="ec-checkout-summary-total">
+                                        <span class="text-left">Total Amount</span>
+                                        <span class="text-right">₹{{ $total_amount + $total_lens }}</span>
+                                    </div>
+                                    <div class="ec-checkout-coupan-content w-100">
+                                        <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
+                                            method="post" action="#">
+                                            <input class="ec-coupan" type="text" required=""
+                                                placeholder="Enter Your Coupan Code" name="ec-coupan" value="">
+                                            <button class="ec-coupan-btn button btn-primary" type="submit"
+                                                name="subscribe" value="">Apply</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="ec-checkout-leftside col-lg-8 col-md-12 ">
                     <div class="ec-checkout-content">
                         <div class="ec-checkout-inner">
@@ -169,7 +227,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        {{-- <div class="accordion-item ec-faq-block">
+                                        <div class="accordion-item ec-faq-block">
                                             <h2 class="accordion-header">
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseFour" aria-expanded="true"
@@ -253,18 +311,18 @@
                                                                 <p> Add and secure your card as per RBI guidelines.</p>
                                                             </div>
                                                         </span>
-                                                    </div> 
+                                                    </div> --}}
                                                 </div>
                                             </div>
-                                        </div> --}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="ec-offer-btn"><a href="#" class="btn btn-lg btn-primary w-100">Proceed to Payment <i class="ecicon eci-chevron-right"></i></a></div>
+                         {{--  <div class="ec-offer-btn"><a href="#" class="btn btn-lg btn-primary w-100">Proceed to Payment <i class="ecicon eci-chevron-right"></i></a></div> --}}
                         </div>
                     </div>
                 </div>
-                <div class="ec-checkout-rightside col-lg-4 col-md-12">
+                <div class="ec-checkout-rightside col-lg-4 col-md-12 mob_hide">
                     <div class="ec-sidebar-wrap">
                         <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
