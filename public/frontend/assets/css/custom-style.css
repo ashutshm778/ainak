@@ -1250,7 +1250,6 @@ div#ec-main-menu-desk {
     padding: 0px 6px;
     line-height: 50px;
     text-decoration: none;
-    text-transform: uppercase;
     color: #fff;
     display: block;
     position: relative;
@@ -3323,4 +3322,11 @@ div#ec-main-menu-desk {
 .header-top-res{
   float: left;
 }
+}
+
+.hor-swipe {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
