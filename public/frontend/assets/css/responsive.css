@@ -1651,9 +1651,12 @@
     -webkit-box-pack: start;
     margin-left: 0px;
     -ms-flex-pack: end;
+    margin-top: 8px;
     /* justify-content: start; */
 }
-
+.ec-header-bottons .ec-header-btn i {
+  font-size: 29px;
+}
 .ec-category-menu .ec-category-toggle {
     min-height: 35px;
     -webkit-box-pack: justify;

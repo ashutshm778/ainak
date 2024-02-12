@@ -20421,6 +20421,19 @@ section.ec-instagram-section {
   }
 }
 @media only screen and (max-width: 767px) {
+  .ec-header-bottons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    margin-left: 0px;
+    -ms-flex-pack: end;
+    margin-top: 8px;
+    /* justify-content: start; */
+}
+.ec-header-bottons .ec-header-btn i {
+  font-size: 29px;
+}
   .m_hide{
     display: none !important;
   }
