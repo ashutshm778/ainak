@@ -3236,6 +3236,10 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 }
 
 @media only screen and (max-width: 991px) {
+  .header-search {
+    width: 100%;
+    margin-left: 0;
+  }
   .ec-header-bottons .ec-header-btn i {
     font-size: 42px;
     line-height: 1;
@@ -3287,6 +3291,7 @@ align-items: center;
 }
 .ec-header-bottons {
   margin-top: 38px;
+  justify-content: left;
 }
 .ec-nav-toolbar {
   height: 50px;

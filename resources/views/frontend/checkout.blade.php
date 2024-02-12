@@ -169,7 +169,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item ec-faq-block">
+                                        {{-- <div class="accordion-item ec-faq-block">
                                             <h2 class="accordion-header">
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseFour" aria-expanded="true"
@@ -253,16 +253,14 @@
                                                                 <p> Add and secure your card as per RBI guidelines.</p>
                                                             </div>
                                                         </span>
-                                                    </div> --}}
+                                                    </div> 
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
-                            {{-- <span class="ec-check-order-btn">
-                                <a class="btn btn-primary" href="#">Place Order</a>
-                            </span> --}}
+                            <div class="ec-offer-btn"><a href="#" class="btn btn-lg btn-primary w-100">Proceed to Payment <i class="ecicon eci-chevron-right"></i></a></div>
                         </div>
                     </div>
                 </div>

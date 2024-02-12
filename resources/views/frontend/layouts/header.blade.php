@@ -156,7 +156,7 @@
                 <div class="col-2 header-top-res d-lg-none">
                     <div class="ec-header-bottons">
                         <a href="#ec-mobile-menu" class="ec-header-btn ec-side-toggle d-lg-none">
-                         <i class="ecicon eci-bars" style="color: #333;"></i>
+                         <i class="ecicon eci-bars" style="color: #555;"></i>
                         </a>
                     </div>
                </div>

@@ -20108,11 +20108,13 @@ section.ec-instagram-section {
 
   .ec-header-search {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 85%;
-            flex: 0 0 85%;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
   }
-
-
+  .header-search {
+    /* width: 70%; */
+    margin-left: 0 !important;
+  }
   .ec-side-cart .ec-menu-inner .ec-menu-content ul li .sub-menu li a {
     font-size: 14px;
   }
