@@ -1072,8 +1072,8 @@ div#ec-main-menu-desk {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* -ms-flex-wrap: wrap;
-      flex-wrap: wrap; */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
