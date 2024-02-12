@@ -3353,7 +3353,7 @@ div#ec-main-menu-desk {
 .c-scrollbar-light::-webkit-scrollbar,
 .uppy-Dashboard-files::-webkit-scrollbar,
 .bootstrap-select .dropdown-menu .inner::-webkit-scrollbar {
-    width: 4px;
+    width: 2px;
     background: rgba(24, 28, 41, 0.08);
     border-radius: 3px;
 }
