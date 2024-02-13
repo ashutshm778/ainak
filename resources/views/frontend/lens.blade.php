@@ -1,5 +1,5 @@
 
-<div class="col-md-3 col-6 brdr mb-3">
+<div class="col-md-3 col-6 brdr mb-3 wdth">
     <div class="slide-container">
         <div class="slide-header">
             <div class="wrap-additional-note">

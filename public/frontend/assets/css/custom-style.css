@@ -3035,6 +3035,9 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
 }
 
 @media only screen and (max-width: 767px) {
+  .wdth{
+    width: 160px !important;
+  }
 .desk_hide{
   display: block !important;
 }
