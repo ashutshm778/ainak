@@ -249,9 +249,7 @@
             <div class="ec-nav-panel-icons">
                 @if (Auth::guard('customer')->check())
                     <a href="{{ route('usermob_sidebar') }}" class="ec-header-btn">
-                        <img src="{{ asset('public/frontend/assets/images/icons/user.svg') }}"
-                            class="svg_img header_svg" alt="icon" />
-
+                        <span class="nme">{{strtoupper(mb_substr(Auth::guard('customer')->user()->first_name, 0, 1))}}</span>
                     </a>
                 @else
                     @if (featureActivation('retailer') == '1' ||
