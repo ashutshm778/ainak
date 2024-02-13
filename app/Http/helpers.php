@@ -575,5 +575,6 @@ if (! function_exists('lensDiscountPrice')) {
         $lens= Lens::find($id);
         return ($lens->price-($lens->price*$lens->discount)/100);
     }
+}
 
 ?>
