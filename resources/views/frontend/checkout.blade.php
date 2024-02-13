@@ -205,16 +205,16 @@
                                                                                     <span class="ec-price">
                                                                                         @if ($product_prices['selling_price'] > $product_prices['product_price'])
                                                                                             <del class="old-price">₹ {{ $product_prices['selling_price'] }}</del>
-                                                                                            <span>₹ {{ $product_prices['product_price'] }} x {{ $cart->quantity }}</span>
+                                                                                            <span>₹ {{ $product_prices['product_price'] }} </span>
                                                                                         @else
-                                                                                            <span>₹ {{ $product_prices['product_price'] }} x {{ $cart->quantity }}</span>
+                                                                                            <span>₹ {{ $product_prices['product_price'] }} </span>
                                                                                             
                                                                                         @endif
                                                                                     </span>
                                                                                     @if (!empty($cart->lens_id))
                                                                                         <br>
                                                                                         <span> Lens : {{ $cart->lens->name }} </span>
-                                                                                        <span>@if($cart->lens->discount > 0)₹ {{lensDiscountPrice($cart->lens->id)}}  <del>₹ {{ $cart->lens->price }}<del> @else₹ {{ $cart->lens->price }}@endif x {{ $cart->quantity }}</span>
+                                                                                        <span>@if($cart->lens->discount > 0)₹ {{lensDiscountPrice($cart->lens->id)}}  <del>₹ {{ $cart->lens->price }}<del> @else₹ {{ $cart->lens->price }}@endif </span>
                                                                                     @endif
                                                                                 </div>
                                                                             </div>
