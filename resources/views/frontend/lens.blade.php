@@ -112,7 +112,7 @@
                     alt="diesel" width="100" height="27">
             </div>
             <div class="title">{{$lens->name}} </div>
-            <div class="price price-modi">@if($lens->discount > 0)₹  {{($lens->price-($lens->price*$lens->discount)/100)}}  <del>₹ {{$lens->price}}</del> @else ₹ {{$lens->price}}@endif
+            <div class="price price-modi">@if($lens->discount > 0)₹  {{lensDiscountPrice($lens->id)}}  <del>₹ {{$lens->price}}</del> @else ₹ {{$lens->price}}@endif
             </div>
             <button class="btn btn-primary btn-ht w-100" onclick="buyLens('{{$lens->id}}')">Select This Lens </button>
             {{-- <div class="buy-one-get" style="">

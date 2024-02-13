@@ -570,4 +570,10 @@ if (! function_exists('wholesalerPrice')) {
     }
 }
 
+if (! function_exists('lensDiscountPrice')) {
+    function lensDiscountPrice($id){
+        $lens= Lens::find($id);
+        return ($lens->price-($lens->price*$lens->discount)/100);
+    }
+
 ?>
