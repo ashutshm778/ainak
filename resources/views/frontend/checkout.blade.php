@@ -7,64 +7,6 @@
     <section class="ec-page-content checkout_page section-space-p">
         <div class="container">
             <div class="row">
-            <div class="col-lg-4 col-md-12 desk_hide">
-                    <div class="ec-sidebar-wrap">
-                        <div class="ec-sidebar-block">
-                            <div class="ec-sb-title">
-                                <h3 class="ec-sidebar-title">Summary</h3>
-                            </div>
-                            @php
-                                $sub_total_amount = 0;
-                                $total_discount = 0;
-                                $total_amount = 0;
-                                $total_lens = 0;
-                            @endphp
-                            @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
-                                @php
-                                    $product_prices = getProductDiscountedPrice($cart->product_id, 'retailer');
-                                    $sub_total_amount = $sub_total_amount + $product_prices['selling_price'] * $cart->quantity;
-                                    $total_discount = ($total_discount + $product_prices['selling_price'] - $product_prices['product_price']) * $cart->quantity;
-                                    $total_amount = $total_amount + $product_prices['product_price'] * $cart->quantity;
-                                    if (!empty($cart->lens_id)) {
-                                        $total_lens = $total_lens + $cart->lens->price;
-                                    }
-                                @endphp
-                            @endforeach
-                            <div class="ec-sb-block-content">
-                                <div class="ec-checkout-summary">
-                                    <div>
-                                        <span class="text-left">Sub-Total</span>
-                                        <span class="text-right">₹{{ $sub_total_amount }}</span>
-                                    </div>
-                                    @if ($total_lens > 0)
-                                        <div>
-                                            <span class="text-left">Total Lens</span>
-                                            <span class="text-right">₹{{ $total_lens }}</span>
-                                        </div>
-                                    @endif
-                                    <div>
-                                        <span class="text-left">Discount Charges</span>
-                                        <span class="text-right">₹{{ $total_discount }}</span>
-                                    </div>
-
-                                    <div class="ec-checkout-summary-total">
-                                        <span class="text-left">Total Amount</span>
-                                        <span class="text-right">₹{{ $total_amount + $total_lens }}</span>
-                                    </div>
-                                    <div class="ec-checkout-coupan-content w-100">
-                                        <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
-                                            method="post" action="#">
-                                            <input class="ec-coupan" type="text" required=""
-                                                placeholder="Enter Your Coupan Code" name="ec-coupan" value="">
-                                            <button class="ec-coupan-btn button btn-primary" type="submit"
-                                                name="subscribe" value="">Apply</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="ec-checkout-leftside col-lg-8 col-md-12 ">
                     <div class="ec-checkout-content">
                         <div class="ec-checkout-inner">
@@ -227,102 +169,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item ec-faq-block">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseFour" aria-expanded="true"
-                                                    aria-controls="collapseFour">Payment Option </button>
-                                            </h2>
-                                            <div id="collapseFour" class="accordion-collapse collapse"
-                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <div class="row">
-                                                        <div class="col-6 col-xl-6 col-md-4">
-                                                            <a onclick="make_order('razorpay')">
-                                                                <label class="aiz-megabox d-block mb-3">
-                                                                    <input class="online_payment" type="radio"
-                                                                        name="payment_option">
-                                                                    <span class="d-block aiz-megabox-elem rounded-0 p-3">
-                                                                        <img src="{{ asset('public/frontend/assets/images/rozarpay.png') }}"
-                                                                            class="img-fit mb-2">
-                                                                        <span class="d-block text-center">
-                                                                            <span class="d-block fw-600 fs-15">Pay
-                                                                                Online</span>
-                                                                        </span>
-                                                                    </span>
-                                                                </label>
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-6 col-xl-6 col-md-4">
-                                                            <a onclick="make_order('cod')">
-                                                                <label class="aiz-megabox d-block mb-3">
-                                                                    <input value="mercadopago" class="online_payment"
-                                                                        type="radio" name="payment_option">
-                                                                    <span class="d-block aiz-megabox-elem rounded-0 p-3">
-                                                                        <img src="{{ asset('public/frontend/assets/images/cod.png') }}"
-                                                                            class="img-fit mb-2">
-                                                                        <span class="d-block text-center">
-                                                                            <span class="d-block fw-600 fs-15">Cash on
-                                                                                Delivery</span>
-                                                                        </span>
-                                                                    </span>
-                                                                </label>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    {{-- <div class="ec-bl-block-content">
-                                                        <span class="ec-bill-option">
-                                                            <div class="address">
-                                                                <input type="radio" id="info" name="radio-group">
-                                                                <label for="info">
-                                                                    <img src="{{ asset('public/frontend/assets/images/icons/payment1.png') }}" style="width: 35px;"> &nbsp; <b>Credit Card
-                                                                    <small>XXXX XXXX XXXX 1234</small></b>
-                                                                </label>
-                                                            </div>
-                                                            <div class="address">
-                                                                <input type="radio" id="upid" name="radio-group">
-                                                                <label for="upid">
-                                                                    <img src="{{ asset('public/frontend/assets/images/icons/upi.png') }}" style="width: 35px;"> &nbsp;<b>UPI ID
-                                                                    <small>1123456789@ybl</small></b>
-                                                                </label>
-                                                            </div>
-                                                            <div class="address">
-                                                                <input type="radio" id="phonepay" name="radio-group">
-                                                                <label for="phonepay">
-                                                                    <img src="{{ asset('public/frontend/assets/images/icons/phonepe.png') }}" style="width: 35px;"> &nbsp;<b>Phonepay
-                                                                    UPI<small>1123456789@ybl</small></b>
-                                                                </label>
-                                                            </div>
-                                                            <div class="address">
-                                                                <input type="radio" id="upi" name="radio-group">
-                                                                <label for="upi">
-                                                                    <img src="{{ asset('public/frontend/assets/images/icons/g-pay.png') }}" style="width: 35px;"> &nbsp;<b>UPI</b>
-                                                                </label>
-                                                            </div>
-                                                            <div class="address">
-                                                                <input type="radio" id="wallet" name="radio-group">
-                                                                <label for="wallet">
-                                                                    <img src="{{ asset('public/frontend/assets/images/icons/phonepe.png') }}" style="width: 35px;"> &nbsp;<b>Wallet</b>
-                                                                </label>
-                                                            </div>
-                                                            <div class="address">
-                                                                <input type="radio" id="card" name="radio-group">
-                                                                <label for="card"><b>Credi / Debit / ATM Card</b></label>
-                                                                <p> Add and secure your card as per RBI guidelines.</p>
-                                                            </div>
-                                                        </span>
-                                                    </div> --}}
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
-                         {{--  <div class="ec-offer-btn"><a href="#" class="btn btn-lg btn-primary w-100">Proceed to Payment <i class="ecicon eci-chevron-right"></i></a></div> --}}
                         </div>
                     </div>
                 </div>
-                <div class="ec-checkout-rightside col-lg-4 col-md-12 mob_hide">
+                <div class="ec-checkout-rightside col-lg-4 col-md-12">
                     <div class="ec-sidebar-wrap">
                         <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
@@ -346,27 +199,7 @@
                                 @endphp
                             @endforeach
                             <div class="ec-sb-block-content">
-                                <div class="ec-checkout-summary">
-                                    <div>
-                                        <span class="text-left">Sub-Total</span>
-                                        <span class="text-right">₹{{ $sub_total_amount }}</span>
-                                    </div>
-                                    @if ($total_lens > 0)
-                                        <div>
-                                            <span class="text-left">Total Lens</span>
-                                            <span class="text-right">₹{{ $total_lens }}</span>
-                                        </div>
-                                    @endif
-                                    <div>
-                                        <span class="text-left">Discount Charges</span>
-                                        <span class="text-right">₹{{ $total_discount }}</span>
-                                    </div>
-
-                                    <div class="ec-checkout-summary-total">
-                                        <span class="text-left">Total Amount</span>
-                                        <span class="text-right">₹{{ $total_amount + $total_lens }}</span>
-                                    </div>
-                                    <div class="ec-checkout-coupan-content w-100">
+                            <div class="ec-checkout-coupan-content w-100 mb-3">
                                         <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
                                             method="post" action="#">
                                             <input class="ec-coupan" type="text" required=""
@@ -374,6 +207,29 @@
                                             <button class="ec-coupan-btn button btn-primary" type="submit"
                                                 name="subscribe" value="">Apply</button>
                                         </form>
+                                    </div>
+                                <div class="ec-checkout-summary">
+                                    <div>
+                                        <span class="text-left">Sub-Total</span>
+                                        <span class="text-right">₹{{ $sub_total_amount }} <del>100</del></span>
+                                    </div>
+                                    @if ($total_lens > 0)
+                                        <div>
+                                            <span class="text-left">Total Lens</span>
+                                            <span class="text-right">₹{{ $total_lens }} <del>100</del></span>
+                                        </div>
+                                    @endif
+                                    <div>
+                                        <span class="text-left">Discount Charges</span>
+                                        <span class="text-right">₹{{ $total_discount }} <del>100</del></span>
+                                    </div>
+                                    <div>
+                                        <span class="text-left">Coupon Applicable Amt.</span>
+                                        <span class="text-right">₹{{ $total_discount }} <del>100</del></span>
+                                    </div>
+                                    <div class="ec-checkout-summary-total">
+                                        <span class="text-left">Total Amount</span>
+                                        <span class="text-right"> <span class="badge badge-success">save Rs.200/-</span> ₹{{ $total_amount + $total_lens }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -385,36 +241,8 @@
                                 <h3 class="ec-sidebar-title">Payment Method</h3>
                             </div>
                             <div class="ec-sb-block-content">
-                                <div class="ec-check-pay-img-inner">
-                                    <div class="ec-check-pay-img">
-                                        <img src="{{ asset('public/frontend/assets/images/icons/payment1.png') }}"
-                                            alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="{{ asset('public/frontend/assets/images/icons/payment2.png') }}"
-                                            alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="{{ asset('public/frontend/assets/images/icons/payment3.png') }}"
-                                            alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="{{ asset('public/frontend/assets/images/icons/payment4.png') }}"
-                                            alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="{{ asset('public/frontend/assets/images/icons/payment5.png') }}"
-                                            alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="{{ asset('public/frontend/assets/images/icons/payment6.png') }}"
-                                            alt="">
-                                    </div>
-                                    <div class="ec-check-pay-img">
-                                        <img src="{{ asset('public/frontend/assets/images/icons/payment7.png') }}"
-                                            alt="">
-                                    </div>
-                                </div>
+                            <div><a href="#" class="btn btn-lg btn-primary w-100 mb-3">Pay to Online <i class="ecicon eci-chevron-right"></i></a></div>
+                            <div><a href="#" class="btn btn-lg btn-info w-100">Place COD Order <i class="ecicon eci-chevron-right"></i></a></div>
                             </div>
                         </div>
                     </div>
