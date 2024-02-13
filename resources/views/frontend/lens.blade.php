@@ -108,7 +108,7 @@
     <div class="slide-container">
         <div class="slide-header">
             <div class="brand-logo">
-                <img src="{{ asset('public/frontend/assets/images/gkb.png') }}"
+                <img src="{{asset('public/'.api_asset($lens->icon))}}"
                     alt="diesel" width="100" height="27">
             </div>
             <div class="title">{{$lens->name}} </div>

@@ -353,7 +353,7 @@ class FrontController extends Controller
 
     public function get_lens(Request $request){
         $power_type=$request->power_type;
-        $lenses=Lens::where('power_type', $power_type)->get();
+        $lenses=Lens::where('power_type', $power_type)->where('is_active',1)->get();
         return view('frontend.lens',compact('lenses'))->render();
     }
 

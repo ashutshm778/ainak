@@ -659,6 +659,10 @@
             },
             success: function(data) {
                 $('.ec-cart-wishlist').html(data.wishlist_count);
+                var current_route="{{request()->route()->getName()}}";
+                if(current_route=='wishlist'){
+                    location.reload();
+                }
             }
         });
     }
