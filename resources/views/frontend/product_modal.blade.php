@@ -72,7 +72,7 @@
 
     .slide-header .price {
         font-weight: var(--font-bold);
-        font-size: 26px;
+        font-size: 20px;
         text-align: center;
         color: var(--text-color);
         margin: 5px 0;
