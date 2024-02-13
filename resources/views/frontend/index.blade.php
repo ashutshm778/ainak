@@ -355,7 +355,7 @@
                     </div>
 
                     <div class="ec-trend-slider">
-                        @foreach (App\Models\Admin\Product::where('is_active', 1)->whereJsonContains('category_id', '' . $featured_categorry->id)->take(8)->get() as $featured_category_product)
+                        @foreach (App\Models\Admin\Product::where('is_active', 1)->whereJsonContains('category_id', '' . $featured_categorry->id)->orderBy('id','desc')->take(8)->get() as $featured_category_product)
                             @php
                                 $featured_category_product_price = homePrice($featured_category_product->id);
                             @endphp
