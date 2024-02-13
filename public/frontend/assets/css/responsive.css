@@ -2069,12 +2069,6 @@
   }
 }
 @media only screen and (max-width: 575px) {
-  .wdth{
-    width: 160px !important;
-  }
-  .slide-header {
-    padding: 10px 0 !important;
-   }
   .additional-note-pres-upload {
     font-size: 10px !important;
   }

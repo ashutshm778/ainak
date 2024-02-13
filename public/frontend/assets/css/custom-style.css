@@ -3017,6 +3017,7 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+
 .bk_amt1:after {
   content: '';
   position: absolute;
@@ -3033,6 +3034,14 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+@media only screen and (max-width: 575px) {
+  .wdth{
+    width: 160px !important;
+  }
+  .slide-header {
+    padding: 10px 0 !important;
+   }
+  }
 
 @media only screen and (max-width: 767px) {
 .desk_hide{
