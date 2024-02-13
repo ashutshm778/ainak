@@ -104,7 +104,7 @@
 </div>
 
 @foreach($lenses as $lens)
-<div class="col-md-3 col-6 brdr mb-3">
+<div class="col-md-2 col-4 brdr mb-3">
     <div class="slide-container">
         <div class="slide-header">
             <div class="brand-logo">
@@ -114,7 +114,7 @@
             <div class="title">{{$lens->name}} </div>
             <div class="price price-modi">@if($lens->discount > 0)₹  {{lensDiscountPrice($lens->id)}}  <del>₹ {{$lens->price}}</del> @else ₹ {{$lens->price}}@endif
             </div>
-            <button class="btn btn-primary btn-ht w-100" onclick="buyLens('{{$lens->id}}')">Select This Lens </button>
+            <button class="btn btn-primary btn-ht w-100 fnt" onclick="buyLens('{{$lens->id}}')">Select This Lens </button>
             {{-- <div class="buy-one-get" style="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12"
                     height="12" viewBox="0 0 12 12" fill="none">

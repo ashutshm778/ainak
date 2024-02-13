@@ -2888,6 +2888,7 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
  .additional-note-pres-upload {
   margin-left: 8px;
   padding-right: 8px;
+  font-size: 12px;
 }
 .sticky-lenseInfoBlock .slide-container .title {
   font-weight: var(--font-semibold);
