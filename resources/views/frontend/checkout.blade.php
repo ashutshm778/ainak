@@ -214,7 +214,7 @@
                                                                                     @if (!empty($cart->lens_id))
                                                                                         <br>
                                                                                         <span> Lens : {{ $cart->lens->name }} </span>
-                                                                                        <span>₹ {{ $cart->lens->price }} x {{ $cart->quantity }}</span>
+                                                                                        <span>@if($cart->lens->discount > 0)₹ {{lensDiscountPrice($cart->lens->id)}}  <del>₹ {{ $cart->lens->price }}<del> @else₹ {{ $cart->lens->price }}@endif x {{ $cart->quantity }}</span>
                                                                                     @endif
                                                                                 </div>
                                                                             </div>
