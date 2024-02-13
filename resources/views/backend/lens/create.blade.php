@@ -88,6 +88,12 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
+                                                        <label for="name">Discount %</label>
+                                                        <input type="text" class="form-control" id="discount" name="discount" placeholder="Enter Discount Percentage..." >
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
                                                         <label>Icon</label>
                                                         <div class="input-group" data-toggle="aizuploader" data-type="image" data-multiple="false">
                                                             <div class="form-control file-amount">Choose Icon</div>

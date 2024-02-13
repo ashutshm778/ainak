@@ -87,6 +87,12 @@
                                                         <input type="text" class="form-control" id="price" name="price" placeholder="Enter Price..." value="{{$lens->price}}" required>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="name">Discount %</label>
+                                                        <input type="text" class="form-control" id="discount" name="discount" placeholder="Enter Discount Percentage..." value="{{$lens->discount}}">
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label>Icon</label>
