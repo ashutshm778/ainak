@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Lens;
 use App\Models\Upload;
 use App\Models\Admin\Brnad;
 use App\Models\Admin\Product;
