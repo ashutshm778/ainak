@@ -87,6 +87,9 @@ Route::group(['middleware' => 'auth:customer'], function () {
     })->name('customer.order.list');
     Route::post('add-to-wishlist',[WishlistController::class,'store'])->name('add.to.wishlist');
     Route::post('delete-to-wishlist',[WishlistController::class,'delete'])->name('delete.to.wishlist');
+
+    Route::post('/checkout/apply_coupon_code', [CartController::class,'apply_coupon_code'])->name('checkout.apply_coupon_code');
+    Route::post('/checkout/remove_coupon_code', [CartController::class,'remove_coupon_code'])->name('checkout.remove_coupon_code');
 });
 
 Route::get('send-otp/{phone}', [FrontController::class, 'sendOtp'])->name('send.otp');
