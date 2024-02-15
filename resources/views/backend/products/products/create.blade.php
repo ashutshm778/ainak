@@ -231,13 +231,13 @@
                                                             <input type="text" class="form-control" name="sku[]" placeholder="SKU...">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-2 form_div">
+                                                    <div class="col-md-3 form_div">
                                                         <div class="form-group">
                                                             <label for="retailer_selling_price">Retailer Selling Price</label>
                                                             <input type="text" class="form-control" name="retailer_selling_price[]" value="0.00" placeholder="Selling Price...">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 form_div">
+                                                    <div class="col-md-5 form_div">
                                                         <div class="input-group">
                                                             <div class="form-group" style="width: 49%;">
                                                                 <label for="retailer_discount_type">Discount Type</label>
