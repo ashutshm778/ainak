@@ -149,11 +149,11 @@
                                                                                     </h5>
                                                                                     <span class="ec-price">
                                                                                         @if ($product_prices['selling_price'] > $product_prices['product_price'])
-                                                                                            <del class="old-price">₹
+                                                                                        <span>₹
+                                                                                            {{ $product_prices['product_price'] }}
+                                                                                        </span>    
+                                                                                        <del class="old-price">₹
                                                                                                 {{ $product_prices['selling_price'] }}</del>
-                                                                                            <span>₹
-                                                                                                {{ $product_prices['product_price'] }}
-                                                                                            </span>
                                                                                         @else
                                                                                             <span>₹
                                                                                                 {{ $product_prices['product_price'] }}
