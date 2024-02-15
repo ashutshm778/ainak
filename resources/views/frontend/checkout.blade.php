@@ -195,7 +195,7 @@
                     <div class="ec-sidebar-wrap">
                         <div class="ec-sidebar-block">
                             <div class="ec-sb-title">
-                                <h3 class="ec-sidebar-title">Summary</h3>
+                                <h3 class="ec-sidebar-title">Coupan</h3>
                             </div>
                             @php
                                 $sub_total_amount = 0;
@@ -242,6 +242,9 @@
                                         <li id="coupon_18">RH10 <button type="button" id="ref-cpurl-btn" class="code" data-attrcpy="Copied" onclick="CopyToClipboard('coupon_18')"><i class="ecicon eci-copy"></i> </button></li>
                                     </div>
                                 </ul>
+                                </div>
+                                <div class="ec-sb-title">
+                                    <h3 class="ec-sidebar-title">Summery</h3>
                                 </div>
                                 <div class="ec-checkout-summary">
                                     <div>
