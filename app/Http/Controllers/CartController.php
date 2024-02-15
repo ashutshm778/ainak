@@ -99,4 +99,74 @@ class CartController extends Controller
             return redirect()->route('index')->with('error', 'Cart Is Empty!');
         }
     }
+
+    public function apply_coupon_code(Request $request)
+    {
+        //dd($request->all());
+        $coupon = Coupon::where('code', $request->code)->first();
+
+        if ($coupon != null) {
+            if (strtotime(date('d-m-Y')) >= $coupon->start_date && strtotime(date('d-m-Y')) <= $coupon->end_date) {
+                if (CouponUsage::where('coupon_id', $coupon->id)->count() <= $coupon->no_of_usage) {
+                    $coupon_details = json_decode($coupon->details);
+
+                    if ($coupon->type == 'cart_base') {
+                        $subtotal = 0;
+                        $tax = 0;
+                        $shipping = 0;
+                        foreach (Cart::where('user_id',Auth::user()->id)->get() as $key => $cartItem) {
+                            $subtotal += $cartItem['price'] * $cartItem['quantity'];
+                            $tax += $cartItem['tax'] * $cartItem['quantity'];
+                            $shipping += $cartItem['shipping'] * $cartItem['quantity'];
+                        }
+                        $sum = $subtotal + $tax + $shipping;
+
+                        if ($sum >= $coupon_details->min_buy) {
+                            if ($coupon->discount_type == 'percent') {
+                                $coupon_discount = ($sum * $coupon->discount) / 100;
+                                if ($coupon_discount > $coupon_details->max_discount) {
+                                    $coupon_discount = $coupon_details->max_discount;
+                                }
+                            } elseif ($coupon->discount_type == 'amount') {
+                                $coupon_discount = $coupon->discount;
+                            }
+                            $request->session()->put('coupon_id', $coupon->id);
+                            $request->session()->put('coupon_discount', $coupon_discount);
+                            flash(translate('Coupon has been applied'))->success();
+                        }
+                    } elseif ($coupon->type == 'product_base') {
+                        $coupon_discount = 0;
+                        foreach (Cart::where('user_id',Auth::user()->id)->get() as $key => $cartItem) {
+                            foreach ($coupon_details as $key => $coupon_detail) {
+                                if ($coupon_detail->product_id == $cartItem['product_id']) {
+                                    if ($coupon->discount_type == 'percent') {
+                                        $coupon_discount += $cartItem['price'] * $coupon->discount / 100;
+                                    } elseif ($coupon->discount_type == 'amount') {
+                                        $coupon_discount += $coupon->discount;
+                                    }
+                                }
+                            }
+                        }
+                        $request->session()->put('coupon_id', $coupon->id);
+                        $request->session()->put('coupon_discount', $coupon_discount);
+                        flash(translate('Coupon has been applied'))->success();
+                    }
+                } else {
+                    flash(translate('Coupon Maximum Limit exited !!'))->warning();
+                }
+            } else {
+                flash(translate('Coupon expired!'))->warning();
+            }
+        } else {
+            flash(translate('Invalid coupon!'))->warning();
+        }
+        return back();
+    }
+
+    public function remove_coupon_code(Request $request)
+    {
+        $request->session()->forget('coupon_id');
+        $request->session()->forget('coupon_discount');
+        return back();
+    }
 }
