@@ -19,20 +19,10 @@
                                 @php
                                     $gallery_images = explode(',', $data->gallery_image);
                                 @endphp
-                                @foreach ($gallery_images as $new_key => $gallery_image)
-                                    @if (count($gallery_images) >= 2)
-                                        @if ($new_key == 0)
-                                            <img class="main-image" src="{{ asset('public/' . api_asset($gallery_image)) }}"
+                                
+                                            <img class="main-image" src="{{ asset('public/' . api_asset($data->thumbnail_image)) }}"
                                                 alt="Product" />
-                                        @else
-                                            <img class="hover-image"
-                                                src="{{ asset('public/' . api_asset($gallery_image)) }}" alt="Product" />
-                                        @endif
-                                    @else
-                                        <img class="main-image" src="{{ asset('public/' . api_asset($gallery_image)) }}"
-                                            alt="Product" />
-                                    @endif
-                                @endforeach
+                                      
                             </a>
                             @php
                                 $product_id = $data->id;

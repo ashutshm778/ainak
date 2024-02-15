@@ -43,7 +43,7 @@
                                                 @endphp
                                                     <tr>
                                                         <td data-label="Product" class="ec-cart-pro-name">
-                                                            <a href="product-left-sidebar.html"><img class="ec-cart-pro-img mr-4" src="{{asset('public/'.api_asset($cart->product->thumbnail_image))}}" alt="" />
+                                                            <a href="{{ route('details',$cart->product->slug) }}?type=product"><img class="ec-cart-pro-img mr-4" src="{{asset('public/'.api_asset($cart->product->thumbnail_image))}}" alt="" />
                                                                 {{$cart->product->name}}
                                                                 @if(!empty($cart->lens_id))
                                                                 <br>
