@@ -3334,3 +3334,28 @@ div#ec-main-menu-desk {
   float: left;
 }
 }
+.side {
+  margin-bottom: 10px !important;
+}
+.coupon {
+  margin-top: 5px;
+}
+.side ul li {
+  padding: 5px 5px !important;
+  border-bottom: 1px solid #f7f1f1;
+}
+.coupon li {
+  line-height: 28px;
+  font-size: 15px;
+  color: #000;
+}
+.code {
+  float: right;
+  margin-right: 5px;
+  background: #f24b24;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  padding: 6px 6px;
+  border-radius: 30px;
+}

@@ -143,20 +143,36 @@
                                                                             </div>
                                                                             <div class="col-8">
                                                                                 <div class="pro-contents">
-                                                                                    <h5><a href="#">{{ $cart->product->name }}</a></h5>
+                                                                                    <h5><a
+                                                                                            href="#">{{ $cart->product->name }}</a>
+                                                                                    </h5>
                                                                                     <span class="ec-price">
                                                                                         @if ($product_prices['selling_price'] > $product_prices['product_price'])
-                                                                                            <del class="old-price">₹ {{ $product_prices['selling_price'] }}</del>
-                                                                                            <span>₹ {{ $product_prices['product_price'] }} </span>
+                                                                                            <del class="old-price">₹
+                                                                                                {{ $product_prices['selling_price'] }}</del>
+                                                                                            <span>₹
+                                                                                                {{ $product_prices['product_price'] }}
+                                                                                            </span>
                                                                                         @else
-                                                                                            <span>₹ {{ $product_prices['product_price'] }} </span>
-                                                                                            
+                                                                                            <span>₹
+                                                                                                {{ $product_prices['product_price'] }}
+                                                                                            </span>
                                                                                         @endif
                                                                                     </span>
                                                                                     @if (!empty($cart->lens_id))
                                                                                         <br>
-                                                                                        <span> Lens : {{ $cart->lens->name }} </span>
-                                                                                        <span>@if($cart->lens->discount > 0)₹ {{lensDiscountPrice($cart->lens->id)}}  <del>₹ {{ $cart->lens->price }}<del> @else₹ {{ $cart->lens->price }}@endif </span>
+                                                                                        <span> Lens :
+                                                                                            {{ $cart->lens->name }} </span>
+                                                                                        <span>
+                                                                                            @if ($cart->lens->discount > 0)
+                                                                                                ₹
+                                                                                                {{ lensDiscountPrice($cart->lens->id) }}
+                                                                                                <del>₹
+                                                                                                    {{ $cart->lens->price }}<del>
+                                                                                                    @else₹
+                                                                                                        {{ $cart->lens->price }}
+                                                                                            @endif
+                                                                                        </span>
                                                                                     @endif
                                                                                 </div>
                                                                             </div>
@@ -199,15 +215,34 @@
                                 @endphp
                             @endforeach
                             <div class="ec-sb-block-content">
-                            <div class="ec-checkout-coupan-content w-100 mb-3">
-                                        <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
-                                            method="post" action="#">
-                                            <input class="ec-coupan" type="text" required=""
-                                                placeholder="Enter Your Coupan Code" name="ec-coupan" value="">
-                                            <button class="ec-coupan-btn button btn-primary" type="submit"
-                                                name="subscribe" value="">Apply</button>
-                                        </form>
+                                <div class="ec-checkout-coupan-content w-100 mb-3">
+                                    <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form" method="post"
+                                        action="#">
+                                        <input class="ec-coupan" type="text" required=""
+                                            placeholder="Enter Your Coupan Code" name="ec-coupan" value="">
+                                        <button class="ec-coupan-btn button btn-primary" type="submit" name="subscribe"
+                                            value="">Apply</button>
+                                    </form>
+                                </div>
+                                <div class="ec-checkout-coupan-content w-100 mb-3">
+                                    <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form" method="post"
+                                        action="#">
+                                        <input class="ec-coupan" type="text" name="ec-coupan" value="NEW10">
+                                        <button class="ec-coupan-btn button btn-primary" type="submit" name="subscribe"
+                                            value="">Change</button>
+                                    </form>
+                                </div>
+                                <div class="side">
+                                <div class="card-header">
+                                <h55 class="mb-0">Suggested Coupon</h5>
+                                </div>
+                                <ul class="coupon">
+                                    <div class="form-group"> 
+                                        <li id="coupon_18">RH10 <button type="button" id="ref-cpurl-btn" class="code" data-attrcpy="Copied" onclick="CopyToClipboard('coupon_18')"><i class="ecicon eci-copy"></i> </button></li>
+                                        <li id="coupon_18">RH10 <button type="button" id="ref-cpurl-btn" class="code" data-attrcpy="Copied" onclick="CopyToClipboard('coupon_18')"><i class="ecicon eci-copy"></i> </button></li>
                                     </div>
+                                </ul>
+                                </div>
                                 <div class="ec-checkout-summary">
                                     <div>
                                         <span class="text-left">Sub-Total</span>
@@ -229,7 +264,8 @@
                                     </div>
                                     <div class="ec-checkout-summary-total">
                                         <span class="text-left">Total Amount</span>
-                                        <span class="text-right"> <span class="badge badge-success">save Rs.200/-</span> ₹{{ $total_amount + $total_lens }}</span>
+                                        <span class="text-right"> <span class="badge badge-success">You save Rs.200/-</span>
+                                            ₹{{ $total_amount + $total_lens }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -241,8 +277,10 @@
                                 <h3 class="ec-sidebar-title">Payment Method</h3>
                             </div>
                             <div class="ec-sb-block-content">
-                            <div><a href="#" class="btn btn-lg btn-primary w-100 mb-3">Pay to Online <i class="ecicon eci-chevron-right"></i></a></div>
-                            <div><a href="#" class="btn btn-lg btn-info w-100">Place COD Order <i class="ecicon eci-chevron-right"></i></a></div>
+                                <div><a href="#" class="btn btn-lg btn-primary w-100 mb-3">Pay to Online <i
+                                            class="ecicon eci-chevron-right"></i></a></div>
+                                <div><a href="#" class="btn btn-lg btn-info w-100">Place COD Order <i
+                                            class="ecicon eci-chevron-right"></i></a></div>
                             </div>
                         </div>
                     </div>
