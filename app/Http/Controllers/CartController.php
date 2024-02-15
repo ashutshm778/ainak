@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\Admin\Coupon;
 use Illuminate\Http\Request;
+use App\Models\Admin\CouponUsage;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -108,57 +110,62 @@ class CartController extends Controller
         if ($coupon != null) {
             if (strtotime(date('d-m-Y')) >= $coupon->start_date && strtotime(date('d-m-Y')) <= $coupon->end_date) {
                 if (CouponUsage::where('coupon_id', $coupon->id)->count() <= $coupon->no_of_usage) {
-                    $coupon_details = json_decode($coupon->details);
 
-                    if ($coupon->type == 'cart_base') {
+                    if ($coupon->type == 'total_order_amount') {
                         $subtotal = 0;
-                        $tax = 0;
+                        $lens = 0;
                         $shipping = 0;
                         foreach (Cart::where('user_id',Auth::user()->id)->get() as $key => $cartItem) {
-                            $subtotal += $cartItem['price'] * $cartItem['quantity'];
-                            $tax += $cartItem['tax'] * $cartItem['quantity'];
-                            $shipping += $cartItem['shipping'] * $cartItem['quantity'];
-                        }
-                        $sum = $subtotal + $tax + $shipping;
 
-                        if ($sum >= $coupon_details->min_buy) {
+                            $product_prices = getProductDiscountedPrice($cartItem->product_id, 'retailer');
+
+                            $subtotal +=  $product_prices['product_price'] * $cartItem->quantity;
+                            if(!empty($cartItem->lens_id)){
+                              $lens +=lensDiscountPrice($cartItem->lens->id) ;
+                            }
+                            $shipping += 0;
+                        }
+                        $sum = $subtotal + $lens + $shipping;
+
+                        if ($sum >= $coupon->minimum_order_value) {
                             if ($coupon->discount_type == 'percent') {
                                 $coupon_discount = ($sum * $coupon->discount) / 100;
-                                if ($coupon_discount > $coupon_details->max_discount) {
-                                    $coupon_discount = $coupon_details->max_discount;
+                                if ($coupon_discount > $coupon->maximum_discount_amount) {
+                                    $coupon_discount = $coupon->maximum_discount_amount;
                                 }
                             } elseif ($coupon->discount_type == 'amount') {
                                 $coupon_discount = $coupon->discount;
                             }
                             $request->session()->put('coupon_id', $coupon->id);
                             $request->session()->put('coupon_discount', $coupon_discount);
-                            flash(translate('Coupon has been applied'))->success();
+                            return back()->with('success', 'Coupon has been applied!');
                         }
                     } elseif ($coupon->type == 'product_base') {
+                        $coupon_details=explode(",",$coupon->product_ids);
                         $coupon_discount = 0;
                         foreach (Cart::where('user_id',Auth::user()->id)->get() as $key => $cartItem) {
-                            foreach ($coupon_details as $key => $coupon_detail) {
-                                if ($coupon_detail->product_id == $cartItem['product_id']) {
+                            $product_prices = getProductDiscountedPrice($cartItem->product_id, 'retailer');
+                                if (in_array($cartItem->product_id,$coupon_details)) {
                                     if ($coupon->discount_type == 'percent') {
-                                        $coupon_discount += $cartItem['price'] * $coupon->discount / 100;
+                                        $coupon_discount += $product_prices['product_price'] * $coupon->discount / 100;
                                     } elseif ($coupon->discount_type == 'amount') {
                                         $coupon_discount += $coupon->discount;
                                     }
                                 }
-                            }
+                           
                         }
                         $request->session()->put('coupon_id', $coupon->id);
                         $request->session()->put('coupon_discount', $coupon_discount);
-                        flash(translate('Coupon has been applied'))->success();
+                        return back()->with('success', 'Coupon has been applied!');
                     }
                 } else {
-                    flash(translate('Coupon Maximum Limit exited !!'))->warning();
+                    return back()->with('error', 'Coupon Maximum Limit exited!');
                 }
             } else {
-                flash(translate('Coupon expired!'))->warning();
+                return back()->with('error', 'Coupon expired!');
             }
         } else {
-            flash(translate('Invalid coupon!'))->warning();
+            return back()->with('error', 'Invalid coupon!');
         }
         return back();
     }
@@ -167,6 +174,6 @@ class CartController extends Controller
     {
         $request->session()->forget('coupon_id');
         $request->session()->forget('coupon_discount');
-        return back();
+        return back()->with('success', 'Coupon has been removed!');
     }
 }

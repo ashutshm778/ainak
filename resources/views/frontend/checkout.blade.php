@@ -7,6 +7,7 @@
     <section class="ec-page-content checkout_page section-space-p">
         <div class="container">
             <div class="row">
+               
                 <div class="ec-checkout-leftside col-lg-8 col-md-12 ">
                     <div class="ec-checkout-content">
                         <div class="ec-checkout-inner">
@@ -202,6 +203,11 @@
                                 $total_discount = 0;
                                 $total_amount = 0;
                                 $total_lens = 0;
+                                $total_lens_discount=0;
+                                $coupon_discount=0;
+                                if(Session::get('coupon_discount') > 0){
+                                    $coupon_discount=Session::get('coupon_discount');
+                                }
                             @endphp
                             @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
                                 @php
@@ -209,37 +215,47 @@
                                     $sub_total_amount = $sub_total_amount + $product_prices['selling_price'] * $cart->quantity;
                                     $total_discount = ($total_discount + $product_prices['selling_price'] - $product_prices['product_price']) * $cart->quantity;
                                     $total_amount = $total_amount + $product_prices['product_price'] * $cart->quantity;
-                                    if (!empty($cart->lens_id)) {
+                                    if(!empty($cart->lens_id)) {
                                         $total_lens = $total_lens + $cart->lens->price;
+                                        $total_lens_discount = $total_lens_discount + lensDiscountPrice($cart->lens->id);
                                     }
                                 @endphp
                             @endforeach
+                            <div id="addtocart_toast" class="addtocart_toast">
+                                <div class="desc">Coupon Copy Successfully</div>
+                            </div>
                             <div class="ec-sb-block-content">
+                                @if (Session::has('coupon_discount'))
                                 <div class="ec-checkout-coupan-content w-100 mb-3">
-                                    <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form" method="post"
-                                        action="#">
-                                        <input class="ec-coupan" type="text" required=""
-                                            placeholder="Enter Your Coupan Code" name="ec-coupan" value="">
-                                        <button class="ec-coupan-btn button btn-primary" type="submit" name="subscribe"
-                                            value="">Apply</button>
-                                    </form>
-                                </div>
-                                <div class="ec-checkout-coupan-content w-100 mb-3">
-                                    <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form" method="post"
-                                        action="#">
-                                        <input class="ec-coupan" type="text" name="ec-coupan" value="NEW10">
-                                        <button class="ec-coupan-btn button btn-primary" type="submit" name="subscribe"
+                                    <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form" method="POST"
+                                        action="{{route('checkout.remove_coupon_code')}}">
+                                        @csrf
+                                        <input class="ec-coupan" type="text" name="code" value=" {{ App\Models\Admin\Coupon::find(Session::get('coupon_id'))->code }}">
+                                        <button class="ec-coupan-btn button btn-primary" type="submit" 
                                             value="">Change</button>
                                     </form>
                                 </div>
+                                @else
+                                <div class="ec-checkout-coupan-content w-100 mb-3">
+                                    <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form" method="POST"
+                                        action="{{route('checkout.apply_coupon_code')}}">
+                                        @csrf
+                                        <input class="ec-coupan" type="text" required=""
+                                            placeholder="Enter Your Coupan Code"  id="coupon_coupon_code" name="code" value="">
+                                        <button class="ec-coupan-btn button btn-primary" type="submit" 
+                                            value="">Apply</button>
+                                    </form>
+                                </div>
+                                @endif
                                 <div class="side">
                                 <div class="card-header">
                                 <h55 class="mb-0">Suggested Coupon</h5>
                                 </div>
                                 <ul class="coupon">
                                     <div class="form-group"> 
-                                        <li id="coupon_18">RH10 <button type="button" id="ref-cpurl-btn" class="code" data-attrcpy="Copied" onclick="CopyToClipboard('coupon_18')"><i class="ecicon eci-copy"></i> </button></li>
-                                        <li id="coupon_18">RH10 <button type="button" id="ref-cpurl-btn" class="code" data-attrcpy="Copied" onclick="CopyToClipboard('coupon_18')"><i class="ecicon eci-copy"></i> </button></li>
+                                        @foreach (App\Models\Admin\Coupon::get() as $coupon)
+                                        <li id="coupon_{{ $coupon->id }}">{{$coupon->code}} <button type="button" id="ref-cpurl-btn" class="code" data-attrcpy="Copied" onclick="CopyToClipboard('coupon_{{ $coupon->id }}')"><i class="ecicon eci-copy"></i> </button></li>
+                                        @endforeach
                                     </div>
                                 </ul>
                                 </div>
@@ -249,26 +265,28 @@
                                 <div class="ec-checkout-summary">
                                     <div>
                                         <span class="text-left">Sub-Total</span>
-                                        <span class="text-right">₹{{ $sub_total_amount }} <del>100</del></span>
+                                        <span class="text-right">₹{{ $total_amount }} <del>{{$sub_total_amount}}</del></span>
                                     </div>
                                     @if ($total_lens > 0)
                                         <div>
                                             <span class="text-left">Total Lens</span>
-                                            <span class="text-right">₹{{ $total_lens }} <del>100</del></span>
+                                            <span class="text-right">₹{{ $total_lens_discount }} <del>{{$total_lens}}</del></span>
                                         </div>
                                     @endif
                                     <div>
                                         <span class="text-left">Discount Charges</span>
-                                        <span class="text-right">₹{{ $total_discount }} <del>100</del></span>
+                                        <span class="text-right">₹{{ $total_discount }} </span>
                                     </div>
+                                    @if (Session::has('coupon_discount'))
                                     <div>
                                         <span class="text-left">Coupon Applicable Amt.</span>
-                                        <span class="text-right">₹{{ $total_discount }} <del>100</del></span>
+                                        <span class="text-right">₹{{ Session::get('coupon_discount') }}</span>
                                     </div>
+                                    @endif
                                     <div class="ec-checkout-summary-total">
                                         <span class="text-left">Total Amount</span>
-                                        <span class="text-right"> <span class="badge badge-success">You save Rs.200/-</span>
-                                            ₹{{ $total_amount + $total_lens }}</span>
+                                        <span class="text-right"> <span class="badge badge-success">You save Rs.{{$total_discount+$coupon_discount}}/-</span>
+                                            ₹{{ $total_amount + $total_lens_discount - $coupon_discount }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -333,4 +351,15 @@
             }
         });
     }
+
+    function CopyToClipboard(containerid) {
+        var coupon = $('#' + containerid).text();
+        $('#coupon_coupon_code').empty();
+        $('#coupon_coupon_code').val(coupon);
+        $("#addtocart_toast").addClass("show");
+            setTimeout(function() {
+                $("#addtocart_toast").removeClass("show")
+            }, 3000);
+    }
+
 </script>
