@@ -509,15 +509,18 @@
                                                                     <input type="text" class="form-control" name="retailer_selling_price[]" value="{{$product->retailer_selling_price}}" placeholder="Selling Price...">
                                                                 </div>
                                                             </div>
+                                                            
                                                             <div class="col-md-5 form_div">
                                                                 <div class="input-group">
+                                                                    <div class="input-group-prepend">
                                                                     <div class="form-group">
                                                                         <label for="retailer_discount_type">Discount Type</label>
-                                                                        <select name="retailer_discount_type[]" class="form-control" style="width: 192px;">
+                                                                        <select name="retailer_discount_type[]" class="form-control">
                                                                             <option value="amount" @if($product->retailer_discount_type == 'amount') selected @endif>Flat</option>
                                                                             <option value="percent" @if($product->retailer_discount_type == 'percent') selected @endif>Percent</option>
                                                                         </select>
                                                                     </div>
+                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="retailer_discount">Discount</label>
                                                                         <input type="text" class="form-control" name="retailer_discount[]" value="{{$product->retailer_discount}}" min="0.00" placeholder="Discount...">
