@@ -3343,12 +3343,13 @@ div#ec-main-menu-desk {
 }
 .side {
   margin-bottom: 10px !important;
+  border: 1px solid #ddd;
 }
 .coupon {
   margin-top: 5px;
 }
 .side ul li {
-  padding: 5px 5px !important;
+  padding: 5px 10px !important;
   border-bottom: 1px solid #f7f1f1;
 }
 .coupon li {
@@ -3365,4 +3366,7 @@ div#ec-main-menu-desk {
   border: none;
   padding: 6px 6px;
   border-radius: 30px;
+}
+.dscnt span{
+  color: #ff5a47 !important;
 }

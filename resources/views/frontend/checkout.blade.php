@@ -1,5 +1,10 @@
 @extends('frontend.layouts.app')
 @section('content')
+<style>
+    .badge {
+        padding: 3px 5px;
+    }
+</style>
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb"></div>
     <div class="desk_hide">
         <a href="{{ route('usermob_sidebar') }}" class="bck-btn"><i class="ecicon eci-arrow-left"></i> Back</a>
@@ -7,18 +12,12 @@
     <section class="ec-page-content checkout_page section-space-p">
         <div class="container">
             <div class="row">
-               
                 <div class="ec-checkout-leftside col-lg-8 col-md-12 ">
                     <div class="ec-checkout-content">
                         <div class="ec-checkout-inner">
                             <div class="ec-checkout-wrap margin-bottom-30">
                                 <div class="ec-checkout-block ec-check-bill">
                                     <h3 class="ec-checkout-title">Billing Details</h3>
-                                    @if (session()->has('success'))
-                                        <div class="alert alert-success">
-                                            {{ session()->get('success') }}
-                                        </div>
-                                    @endif
                                     <div class="accordion" id="accordionExample">
                                         <div class="accordion-item ec-faq-block">
                                             <h2 class="accordion-header" id="headingOne">
@@ -221,6 +220,11 @@
                                     }
                                 @endphp
                             @endforeach
+                            @if (session()->has('success'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success') }}
+                            </div>
+                            @endif
                             <div id="addtocart_toast" class="addtocart_toast">
                                 <div class="desc">Coupon Copy Successfully</div>
                             </div>
@@ -264,28 +268,26 @@
                                 </div>
                                 <div class="ec-checkout-summary">
                                     <div>
-                                        <span class="text-left">Sub-Total</span>
-                                        <span class="text-right">₹{{ $total_amount }} <del>{{$sub_total_amount}}</del></span>
+                                        <span class="text-left">Item Total(L+F)</span>
+                                        <span class="text-right">₹{{$sub_total_amount}}</span>
                                     </div>
-                                    @if ($total_lens > 0)
-                                        <div>
-                                            <span class="text-left">Total Lens</span>
-                                            <span class="text-right">₹{{ $total_lens_discount }} <del>{{$total_lens}}</del></span>
-                                        </div>
-                                    @endif
+                                    <div class="dscnt">
+                                        <span class="text-left">Total Offer Discount</span>
+                                        <span class="text-right">₹{{$sub_total_amount-$total_amount}}</span>
+                                    </div>
                                     <div>
-                                        <span class="text-left">Discount Charges</span>
-                                        <span class="text-right">₹{{ $total_discount }} </span>
+                                        <span class="text-left">Net Item Total</span>
+                                        <span class="text-right">₹{{$total_amount}}</span>
                                     </div>
                                     @if (Session::has('coupon_discount'))
-                                    <div>
-                                        <span class="text-left">Coupon Applicable Amt.</span>
+                                    <div class="dscnt">
+                                        <span class="text-left">Coupon (Single) </span>
                                         <span class="text-right">₹{{ Session::get('coupon_discount') }}</span>
                                     </div>
                                     @endif
                                     <div class="ec-checkout-summary-total">
-                                        <span class="text-left">Total Amount</span>
-                                        <span class="text-right"> <span class="badge badge-success">You save Rs.{{$total_discount+$coupon_discount}}/-</span>
+                                        <span class="text-left">Total Payable</span>
+                                        <span class="text-right"> <span class="badge badge-success" style="font-size: 10px;">You saved Rs.{{$total_discount+$coupon_discount}}/-</span>
                                             ₹{{ $total_amount + $total_lens_discount - $coupon_discount }}</span>
                                     </div>
                                 </div>
