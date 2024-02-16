@@ -337,6 +337,7 @@
 
     function make_order(type) {
         var shipping_address_id = $('input[name="address_select"]:checked').val();
+        if(shipping_address_id){
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}'
@@ -353,6 +354,9 @@
                 window.location.href = "{{ route('order.summary') }}";
             }
         });
+       }else{
+            alert('Please Add Address');
+       }
     }
 
     function CopyToClipboard(containerid) {

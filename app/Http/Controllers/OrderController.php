@@ -40,7 +40,7 @@ class OrderController extends Controller
         $order->user_id = $user_id;
         $order->grand_total= $discounted_prices;
         $order->total_product_discount= $selling_prices - $discounted_prices;
-        $order->coupon_discount= Session::get('coupon_discount');
+        $order->coupon_discount=!empty(Session::get('coupon_discount'))? Session::get('coupon_discount') : 0.00 ;
         $order->wallet_discount= 0.00;
         $order->shipping_address= CustomerAddress::where('id',$request->shipping_address_id)->with(['state','city'])->first();
         $order->payment_type= $request->payment_type;
