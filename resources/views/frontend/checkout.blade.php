@@ -4,6 +4,9 @@
     .badge {
         padding: 3px 5px;
     }
+    .accordion-body p {
+    margin-bottom: 0;
+}
 </style>
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb"></div>
     <div class="desk_hide">
@@ -148,11 +151,11 @@
                                                                                     </h5>
                                                                                     <span class="ec-price">
                                                                                         @if ($product_prices['selling_price'] > $product_prices['product_price'])
-                                                                                        <span>₹
-                                                                                            {{ $product_prices['product_price'] }}
-                                                                                        </span>    
-                                                                                        <del class="old-price">₹
-                                                                                                {{ $product_prices['selling_price'] }}</del>
+                                                                                           
+                                                                                        <del>₹ {{ $product_prices['selling_price'] }}</del>
+                                                                                        <span>
+                                                                                            ₹ {{ $product_prices['product_price'] }}
+                                                                                        </span> 
                                                                                         @else
                                                                                             <span>₹
                                                                                                 {{ $product_prices['product_price'] }}
@@ -161,16 +164,14 @@
                                                                                     </span>
                                                                                     @if (!empty($cart->lens_id))
                                                                                         <br>
-                                                                                        <span> Lens :
-                                                                                            {{ $cart->lens->name }} </span>
+                                                                                        <p> Lens :
+                                                                                            {{ $cart->lens->name }} </p>
                                                                                         <span>
                                                                                             @if ($cart->lens->discount > 0)
-                                                                                                ₹
-                                                                                                {{ lensDiscountPrice($cart->lens->id) }}
-                                                                                                <del>₹
-                                                                                                    {{ $cart->lens->price }}<del>
+                                                                                            <del>₹ {{ $cart->lens->price }}</del>
+                                                                                                ₹ {{ lensDiscountPrice($cart->lens->id) }}
                                                                                                     @else₹
-                                                                                                        {{ $cart->lens->price }}
+                                                                                                {{ $cart->lens->price }}
                                                                                             @endif
                                                                                         </span>
                                                                                     @endif
@@ -258,7 +259,7 @@
                                 <ul class="coupon">
                                     <div class="form-group"> 
                                         @foreach (App\Models\Admin\Coupon::get() as $coupon)
-                                        <li id="coupon_{{ $coupon->id }}">{{$coupon->code}} <button type="button" id="ref-cpurl-btn" class="code" data-attrcpy="Copied" onclick="CopyToClipboard('coupon_{{ $coupon->id }}')"><i class="ecicon eci-copy"></i> </button></li>
+                                        <li id="coupon_{{ $coupon->id }}">{{$coupon->code}} <button type="button" id="ref-cpurl-btn" class="code" data-attrcpy="Copied" onclick="CopyToClipboard('coupon_{{ $coupon->id }}')">Apply </button></li>
                                         @endforeach
                                     </div>
                                 </ul>
@@ -302,7 +303,7 @@
                             <div class="ec-sb-block-content">
                                 <div><a href="#" class="btn btn-lg btn-primary w-100 mb-3">Pay to Online <i
                                             class="ecicon eci-chevron-right"></i></a></div>
-                                <div><button  onclick="make_order('COD')" class="btn btn-lg btn-info w-100">Place COD Order <i
+                                <div><button onclick="make_order('COD')" class="btn btn-lg btn-info w-100">Place COD Order <i
                                             class="ecicon eci-chevron-right"></i></button></div>
                             </div>
                         </div>

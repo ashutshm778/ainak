@@ -81,11 +81,12 @@
                                 @endif
                             </a></h5>
                         <span class="ec-price">
+                        MRP
                             @if ($new_price['selling_price'] != $new_price['product_price'])
-                                <span class="old-price">{{ $new_price['selling_price'] }}</span>
-                                <span class="new-price">{{ $new_price['product_price'] }}</span>
+                                <span class="old-price"> {{ $new_price['selling_price'] }}</span>
+                                <span class="new-price"> {{ $new_price['product_price'] }}</span>
                             @else
-                                <span class="new-price">{{ $new_price['product_price'] }}</span>
+                                <span class="new-price"> {{ $new_price['product_price'] }}</span>
                             @endif
                         </span>
                         @if ($data->colors)

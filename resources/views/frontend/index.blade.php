@@ -421,15 +421,15 @@
                                         <h5 class="ec-pro-title"><a
                                                 href="{{ route('details', $featured_category_product->slug) }}?type=product">{{ $featured_category_product->name }}</a>
                                         </h5>
-                                        <span class="ec-price">
+                                        <span class="ec-price"> MRP
                                             @if ($featured_category_product_price['selling_price'] != $featured_category_product_price['product_price'])
                                                 <span
-                                                    class="old-price">{{ $featured_category_product_price['selling_price'] }}</span>
+                                                    class="old-price"> {{ $featured_category_product_price['selling_price'] }}</span>
                                                 <span
-                                                    class="new-price">{{ $featured_category_product_price['product_price'] }}</span>
+                                                    class="new-price"> {{ $featured_category_product_price['product_price'] }}</span>
                                             @else
                                                 <span
-                                                    class="new-price">{{ $featured_category_product_price['product_price'] }}</span>
+                                                    class="new-price"> {{ $featured_category_product_price['product_price'] }}</span>
                                             @endif
                                         </span>
                                     </div>

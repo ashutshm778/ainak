@@ -59,12 +59,12 @@
         </div>
         <div class="ec-pro-content">
             <h5 class="ec-pro-title"><a href="{{ route('details',$productData->slug) }}?type=product">{{$productData->name}}</a></h5>
-            <span class="ec-price">
+            <span class="ec-price">MRP
                 @if($productprice['selling_price'] != $productprice['product_price'])
-                    <span class="old-price">{{$productprice['selling_price']}}</span>
-                    <span class="new-price">{{$productprice['product_price']}}</span>
+                    <span class="old-price"> {{$productprice['selling_price']}}</span>
+                    <span class="new-price"> {{$productprice['product_price']}}</span>
                 @else
-                    <span class="new-price">{{$productprice['product_price']}}</span>
+                    <span class="new-price"> {{$productprice['product_price']}}</span>
                 @endif
             </span>
         </div>

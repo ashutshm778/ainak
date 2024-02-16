@@ -62,7 +62,7 @@
             <div class="ec-single-price-stoke">
                 <div class="ec-single-price">
                     @if ($product_price['selling_price'] != $product_price['product_price'])
-                        <span class="new-price"><del class="discount">{{ $product_price['selling_price'] }}</del>
+                        <span class="new-price"> MRP <del class="discount">{{ $product_price['selling_price'] }}</del>
                             {{ $product_price['product_price'] }} <small class="discount" style="font-size: 16px;"> <i>
                                     {{$product_price['discount']}}@if($product_price['discount_type']=='percent'){{'%'}}@else {{'Rs'}} @endif OFF</i></small></span>
                     @else

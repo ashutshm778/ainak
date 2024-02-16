@@ -707,8 +707,7 @@
 
 .single-pro-content .ec-single-price span.new-price {
     color: #000;
-    
-    font-size: 25px;
+    font-size: 22px !important;
     line-height: 1.2;
     letter-spacing: 0;
 }
@@ -881,7 +880,7 @@
 
   .discount
   {
-      font-size: 20px;
+      font-size: 18px;
       padding-right: 5px;
       color: #da251c;
   }
@@ -3036,6 +3035,12 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   transform: translateX(-50%);
 }
 @media only screen and (max-width: 575px) {
+  .breadcrumb {
+    margin-bottom: 0 !important;
+}
+  span del {
+    font-size: 14px !important;
+}
   .wdth{
     width: 160px !important;
   }
@@ -3218,21 +3223,20 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   -webkit-box-align: center;
   align-items: center;
   border-bottom: 1px solid rgba(0, 19, 37, 0.16);
+  display: none;
 }
 .bck-btn i{
   padding-right: 5px;
  }
 .amount{
   color: #f00;
-  font-size: 18px;
  }
 .new-price{
  color: #f00;
- font-size: 18px;
+ font-size: 18px !important;
 }
   span del{
-  color: #000;
-  font-size: 13px;
+  font-size: 14px;
  }
 .cards{
     background: #fff;
@@ -3249,7 +3253,8 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   color: #000;
 }
 .pro-contents span{
-  font-size: 12px;
+  font-size: 14px;
+  color: #ff001b;
 }
 
 @media only screen and (max-width: 991px) {
@@ -3359,14 +3364,14 @@ div#ec-main-menu-desk {
 }
 .code {
   float: right;
-  margin-right: 5px;
+  margin-right: 0;
   background: #f24b24;
-  font-size: 14px;
+  font-size: 12px;
   color: #fff;
   border: none;
-  padding: 6px 6px;
+  padding: 0px 10px;
   border-radius: 30px;
 }
 .dscnt span{
-  color: #ff5a47 !important;
+  color: #f11e06 !important;
 }

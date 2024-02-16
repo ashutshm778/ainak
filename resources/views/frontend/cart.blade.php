@@ -54,9 +54,9 @@
                                                         </td>
                                                         @php $product_prices = getProductDiscountedPrice($cart->product_id, 'retailer'); @endphp
                                                         <td data-label="Price" class=" ">
-                                                            <span class="amount">₹ {{$product_prices['product_price']}} <del>{{$product_prices['selling_price']}}</del></span><br>
+                                                            <span class="amount">₹ <del>{{$product_prices['selling_price']}}</del> {{$product_prices['product_price']}}</span><br>
                                                             @if(!empty($cart->lens_id))
-                                                            <span class="new-price">₹ {{ lensDiscountPrice($cart->lens->id) }} <del>{{ $cart->lens->price }}</del> </span>
+                                                            <span class="new-price">₹ <del>{{ $cart->lens->price }}</del>  {{ lensDiscountPrice($cart->lens->id) }} </span>
                                                             @endif
                                                         </td>
                                                         {{-- <td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
