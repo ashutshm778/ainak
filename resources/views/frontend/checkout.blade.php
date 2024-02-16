@@ -268,16 +268,16 @@
                                 </div>
                                 <div class="ec-checkout-summary">
                                     <div>
-                                        <span class="text-left">Item Total(L+F)</span>
-                                        <span class="text-right">₹{{$sub_total_amount}}</span>
+                                        <span class="text-left">Item Total(F @if($total_lens > 0) + L @endif)</span>
+                                        <span class="text-right">₹{{$sub_total_amount+$total_lens}}</span>
                                     </div>
                                     <div class="dscnt">
                                         <span class="text-left">Total Offer Discount</span>
-                                        <span class="text-right">₹{{$sub_total_amount-$total_amount}}</span>
+                                        <span class="text-right">₹{{($sub_total_amount+$total_lens)-($total_amount+$total_lens_discount)}}</span>
                                     </div>
                                     <div>
                                         <span class="text-left">Net Item Total</span>
-                                        <span class="text-right">₹{{$total_amount}}</span>
+                                        <span class="text-right">₹{{$total_amount+$total_lens_discount}}</span>
                                     </div>
                                     @if (Session::has('coupon_discount'))
                                     <div class="dscnt">
@@ -287,7 +287,7 @@
                                     @endif
                                     <div class="ec-checkout-summary-total">
                                         <span class="text-left">Total Payable</span>
-                                        <span class="text-right"> <span class="badge badge-success" style="font-size: 10px;">You saved Rs.{{$total_discount+$coupon_discount}}/-</span>
+                                        <span class="text-right"> <span class="badge badge-success" style="font-size: 10px;">You saved Rs.{{(($sub_total_amount+$total_lens)-($total_amount+$total_lens_discount))+$coupon_discount}}/-</span>
                                             ₹{{ $total_amount + $total_lens_discount - $coupon_discount }}</span>
                                     </div>
                                 </div>
@@ -302,8 +302,8 @@
                             <div class="ec-sb-block-content">
                                 <div><a href="#" class="btn btn-lg btn-primary w-100 mb-3">Pay to Online <i
                                             class="ecicon eci-chevron-right"></i></a></div>
-                                <div><a href="#" class="btn btn-lg btn-info w-100">Place COD Order <i
-                                            class="ecicon eci-chevron-right"></i></a></div>
+                                <div><button  onclick="make_order('COD')" class="btn btn-lg btn-info w-100">Place COD Order <i
+                                            class="ecicon eci-chevron-right"></i></button></div>
                             </div>
                         </div>
                     </div>

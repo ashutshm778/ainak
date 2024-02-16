@@ -52,10 +52,11 @@
                                                             </a>
                                                            
                                                         </td>
+                                                        @php $product_prices = getProductDiscountedPrice($cart->product_id, 'retailer'); @endphp
                                                         <td data-label="Price" class=" ">
-                                                            <span class="amount">₹ {{$cart->product->retailer_selling_price}} <del>{{$cart->product->retailer_selling_price}}</del></span><br>
+                                                            <span class="amount">₹ {{$product_prices['product_price']}} <del>{{$product_prices['selling_price']}}</del></span><br>
                                                             @if(!empty($cart->lens_id))
-                                                            <span class="new-price">₹ {{ $cart->lens->price }} <del>{{ $cart->lens->price }}</del> </span>
+                                                            <span class="new-price">₹ {{ lensDiscountPrice($cart->lens->id) }} <del>{{ $cart->lens->price }}</del> </span>
                                                             @endif
                                                         </td>
                                                         {{-- <td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
@@ -72,9 +73,9 @@
                                                         <td data-label="Total" class="ec-cart-pro-subtotal">
                                                             @php 
                                                               $total_price=0;
-                                                              $total_price= $total_price+$cart->product->retailer_selling_price * $cart->quantity;
+                                                              $total_price= $total_price+$product_prices['product_price'] * $cart->quantity;
                                                               if(!empty($cart->lens_id)){
-                                                                $total_price= $total_price+$cart->lens->price;
+                                                                $total_price= $total_price+lensDiscountPrice($cart->lens->id);
                                                               }
                                                             @endphp
                                                             ₹{{$total_price}}

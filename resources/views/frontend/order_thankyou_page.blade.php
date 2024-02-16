@@ -3,7 +3,10 @@
 <style>
     #ec-progressbar {
         overflow: hidden;
-        margin: 20px -32% 20px 10%;
+        margin: 20px -45% 20px 10%;
+    }
+    .table > :not(caption) > * > * {
+        text-align: left;
     }
 </style>
 
@@ -162,11 +165,11 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-5 col-md-6 ml-auto mr-0">
+                                <div class="col-xl-4 col-md-6 ml-auto mr-0">
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <th>Product Subtotal</th>
+                                                <th>Item Total</th>
                                                 <td class="text-right">
                                                     <span class="fw-600">₹ {{$sub_total}}</span>
                                                 </td>
@@ -178,7 +181,13 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th><span class="fw-600">TOTAL</span></th>
+                                                <th>Coupon Discount</th>
+                                                <td class="text-right">
+                                                    <span class="fw-600">₹ {{$order->coupon_discount}}</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th><span class="fw-600">Total</span></th>
                                                 <td class="text-right">
                                                     <strong><span>₹ {{$order->grand_total}}</span></strong>
                                                 </td>

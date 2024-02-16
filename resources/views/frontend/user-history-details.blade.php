@@ -123,9 +123,15 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
+                                                                    <th>Coupon Discount:</th>
+                                                                    <td class="d-flex justify-content-end">₹
+                                                                        {{$order->coupon_discount}}
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
                                                                     <th>Total Amount:</th>
                                                                     <td class="d-flex justify-content-end">₹
-                                                                        {{$total_final_amount+$total_lens}}
+                                                                        {{$total_final_amount+$total_lens-$order->coupon_discount}}
                                                                     </td>
                                                                 </tr>
                                                             </tbody>

@@ -11,6 +11,7 @@ use App\Models\Admin\Product;
 use App\Models\CustomerAddress;
 use App\Models\CustomerOrderStatus;
 use Illuminate\Support\Facades\Mail;
+use Session;
 
 class OrderController extends Controller
 {
@@ -39,7 +40,7 @@ class OrderController extends Controller
         $order->user_id = $user_id;
         $order->grand_total= $discounted_prices;
         $order->total_product_discount= $selling_prices - $discounted_prices;
-        $order->coupon_discount= 0.00;
+        $order->coupon_discount= Session::get('coupon_discount');
         $order->wallet_discount= 0.00;
         $order->shipping_address= CustomerAddress::where('id',$request->shipping_address_id)->with(['state','city'])->first();
         $order->payment_type= $request->payment_type;
@@ -83,8 +84,8 @@ class OrderController extends Controller
                     if(!empty($cart->lens_id)){
                         $order_details->lens_name = $cart->lens->name;
                         $order_details->lens_mrp = $cart->lens->price;
-                        $order_details->lens_price = $cart->lens->price;
-                        $total_lens= $total_lens + $cart->lens->price;
+                        $order_details->lens_price = lensDiscountPrice($cart->lens->id);
+                        $total_lens= $total_lens +lensDiscountPrice($cart->lens->id);
                     }
                     $order_details->save();
 
@@ -97,9 +98,14 @@ class OrderController extends Controller
                     Cart::destroy($cart->id);
                 }
             }
+            $coupon_discount=0;
+            if(Session::has('coupon_discount')){
+                $coupon_discount=Session::get('coupon_discount');
+            }
+
 
             Order::where('id',$order->id)->update([
-                'grand_total'=>$discounted_prices+$total_lens,
+                'grand_total'=>$discounted_prices+$total_lens-$coupon_discount,
                 'total_product_discount'=>$selling_prices - $discounted_prices
             ]);
             
