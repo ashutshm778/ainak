@@ -90,6 +90,9 @@ Route::group(['middleware' => 'auth:customer'], function () {
 
     Route::post('/checkout/apply_coupon_code', [CartController::class,'apply_coupon_code'])->name('checkout.apply_coupon_code');
     Route::post('/checkout/remove_coupon_code', [CartController::class,'remove_coupon_code'])->name('checkout.remove_coupon_code');
+
+    Route::post('rozer/payment/pay-success', [CartController::class,'pay_success'])->name('payment.rozerpay');
+
 });
 
 Route::get('send-otp/{phone}', [FrontController::class, 'sendOtp'])->name('send.otp');
@@ -168,3 +171,4 @@ Route::get('/aiz-uploader/get_uploaded_files', [AizUploadController::class, 'get
 Route::delete('/aiz-uploader/destroy/{id}', [AizUploadController::class, 'destroy']);
 Route::post('/aiz-uploader/get_file_by_ids', [AizUploadController::class, 'get_preview_files']);
 Route::get('/aiz-uploader/download/{id}', [AizUploadController::class, 'attachment_download'])->name('download_attachment');
+

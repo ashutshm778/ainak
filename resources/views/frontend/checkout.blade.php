@@ -1,13 +1,14 @@
 @extends('frontend.layouts.app')
 @section('content')
-<style>
-    .badge {
-        padding: 3px 5px;
-    }
-    .accordion-body p {
-    margin-bottom: 0;
-}
-</style>
+    <style>
+        .badge {
+            padding: 3px 5px;
+        }
+
+        .accordion-body p {
+            margin-bottom: 0;
+        }
+    </style>
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb"></div>
     <div class="desk_hide">
         <a href="{{ route('usermob_sidebar') }}" class="bck-btn"><i class="ecicon eci-arrow-left"></i> Back</a>
@@ -151,11 +152,12 @@
                                                                                     </h5>
                                                                                     <span class="ec-price">
                                                                                         @if ($product_prices['selling_price'] > $product_prices['product_price'])
-                                                                                           
-                                                                                        <del>₹ {{ $product_prices['selling_price'] }}</del>
-                                                                                        <span>
-                                                                                            ₹ {{ $product_prices['product_price'] }}
-                                                                                        </span> 
+                                                                                            <del>₹
+                                                                                                {{ $product_prices['selling_price'] }}</del>
+                                                                                            <span>
+                                                                                                ₹
+                                                                                                {{ $product_prices['product_price'] }}
+                                                                                            </span>
                                                                                         @else
                                                                                             <span>₹
                                                                                                 {{ $product_prices['product_price'] }}
@@ -168,9 +170,11 @@
                                                                                             {{ $cart->lens->name }} </p>
                                                                                         <span>
                                                                                             @if ($cart->lens->discount > 0)
-                                                                                            <del>₹ {{ $cart->lens->price }}</del>
-                                                                                                ₹ {{ lensDiscountPrice($cart->lens->id) }}
-                                                                                                    @else₹
+                                                                                                <del>₹
+                                                                                                    {{ $cart->lens->price }}</del>
+                                                                                                ₹
+                                                                                                {{ lensDiscountPrice($cart->lens->id) }}
+                                                                                            @else₹
                                                                                                 {{ $cart->lens->price }}
                                                                                             @endif
                                                                                         </span>
@@ -203,10 +207,10 @@
                                 $total_discount = 0;
                                 $total_amount = 0;
                                 $total_lens = 0;
-                                $total_lens_discount=0;
-                                $coupon_discount=0;
-                                if(Session::get('coupon_discount') > 0){
-                                    $coupon_discount=Session::get('coupon_discount');
+                                $total_lens_discount = 0;
+                                $coupon_discount = 0;
+                                if (Session::get('coupon_discount') > 0) {
+                                    $coupon_discount = Session::get('coupon_discount');
                                 }
                             @endphp
                             @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
@@ -215,80 +219,91 @@
                                     $sub_total_amount = $sub_total_amount + $product_prices['selling_price'] * $cart->quantity;
                                     $total_discount = ($total_discount + $product_prices['selling_price'] - $product_prices['product_price']) * $cart->quantity;
                                     $total_amount = $total_amount + $product_prices['product_price'] * $cart->quantity;
-                                    if(!empty($cart->lens_id)) {
+                                    if (!empty($cart->lens_id)) {
                                         $total_lens = $total_lens + $cart->lens->price;
                                         $total_lens_discount = $total_lens_discount + lensDiscountPrice($cart->lens->id);
                                     }
                                 @endphp
                             @endforeach
                             @if (session()->has('success'))
-                            <div class="alert alert-success">
-                                {{ session()->get('success') }}
-                            </div>
+                                <div class="alert alert-success">
+                                    {{ session()->get('success') }}
+                                </div>
                             @endif
                             <div id="addtocart_toast" class="addtocart_toast">
                                 <div class="desc">Coupon Copy Successfully</div>
                             </div>
                             <div class="ec-sb-block-content">
                                 @if (Session::has('coupon_discount'))
-                                <div class="ec-checkout-coupan-content w-100 mb-3">
-                                    <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form" method="POST"
-                                        action="{{route('checkout.remove_coupon_code')}}">
-                                        @csrf
-                                        <input class="ec-coupan" type="text" name="code" value=" {{ App\Models\Admin\Coupon::find(Session::get('coupon_id'))->code }}">
-                                        <button class="ec-coupan-btn button btn-primary" type="submit" 
-                                            value="">Change</button>
-                                    </form>
-                                </div>
+                                    <div class="ec-checkout-coupan-content w-100 mb-3">
+                                        <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
+                                            method="POST" action="{{ route('checkout.remove_coupon_code') }}">
+                                            @csrf
+                                            <input class="ec-coupan" type="text" name="code"
+                                                value=" {{ App\Models\Admin\Coupon::find(Session::get('coupon_id'))->code }}">
+                                            <button class="ec-coupan-btn button btn-primary" type="submit"
+                                                value="">Change</button>
+                                        </form>
+                                    </div>
                                 @else
-                                <div class="ec-checkout-coupan-content w-100 mb-3">
-                                    <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form" method="POST"
-                                        action="{{route('checkout.apply_coupon_code')}}">
-                                        @csrf
-                                        <input class="ec-coupan" type="text" required=""
-                                            placeholder="Enter Your Coupan Code"  id="coupon_coupon_code" name="code" value="">
-                                        <button class="ec-coupan-btn button btn-primary" type="submit" 
-                                            value="">Apply</button>
-                                    </form>
-                                </div>
+                                    <div class="ec-checkout-coupan-content w-100 mb-3">
+                                        <form class="ec-checkout-coupan-form" name="ec-checkout-coupan-form"
+                                            method="POST" action="{{ route('checkout.apply_coupon_code') }}">
+                                            @csrf
+                                            <input class="ec-coupan" type="text" required=""
+                                                placeholder="Enter Your Coupan Code" id="coupon_coupon_code"
+                                                name="code" value="">
+                                            <button class="ec-coupan-btn button btn-primary" type="submit"
+                                                value="">Apply</button>
+                                        </form>
+                                    </div>
                                 @endif
                                 <div class="side">
-                                <div class="card-header">
-                                <h55 class="mb-0">Suggested Coupon</h5>
-                                </div>
-                                <ul class="coupon">
-                                    <div class="form-group"> 
-                                        @foreach (App\Models\Admin\Coupon::get() as $coupon)
-                                        <li id="coupon_{{ $coupon->id }}">{{$coupon->code}} <button type="button" id="ref-cpurl-btn" class="code" data-attrcpy="Copied" onclick="CopyToClipboard('coupon_{{ $coupon->id }}')">Apply </button></li>
-                                        @endforeach
+                                    <div class="card-header">
+                                        <h55 class="mb-0">Suggested Coupon</h5>
                                     </div>
-                                </ul>
+                                    <ul class="coupon">
+                                        <div class="form-group">
+                                            @foreach (App\Models\Admin\Coupon::get() as $coupon)
+                                                <li id="coupon_{{ $coupon->id }}">{{ $coupon->code }} <button
+                                                        type="button" id="ref-cpurl-btn" class="code"
+                                                        data-attrcpy="Copied"
+                                                        onclick="CopyToClipboard('coupon_{{ $coupon->id }}')">Apply
+                                                    </button></li>
+                                            @endforeach
+                                        </div>
+                                    </ul>
                                 </div>
                                 <div class="ec-sb-title">
                                     <h3 class="ec-sidebar-title">Summery</h3>
                                 </div>
                                 <div class="ec-checkout-summary">
                                     <div>
-                                        <span class="text-left">Item Total(F @if($total_lens > 0) + L @endif)</span>
-                                        <span class="text-right">₹{{$sub_total_amount+$total_lens}}</span>
+                                        <span class="text-left">Item Total(F @if ($total_lens > 0)
+                                                + L
+                                            @endif)</span>
+                                        <span class="text-right">₹{{ $sub_total_amount + $total_lens }}</span>
                                     </div>
                                     <div class="dscnt">
                                         <span class="text-left">Total Offer Discount</span>
-                                        <span class="text-right">₹{{($sub_total_amount+$total_lens)-($total_amount+$total_lens_discount)}}</span>
+                                        <span
+                                            class="text-right">₹{{ $sub_total_amount + $total_lens - ($total_amount + $total_lens_discount) }}</span>
                                     </div>
                                     <div>
                                         <span class="text-left">Net Item Total</span>
-                                        <span class="text-right">₹{{$total_amount+$total_lens_discount}}</span>
+                                        <span class="text-right">₹{{ $total_amount + $total_lens_discount }}</span>
                                     </div>
                                     @if (Session::has('coupon_discount'))
-                                    <div class="dscnt">
-                                        <span class="text-left">Coupon (Single) </span>
-                                        <span class="text-right">₹{{ Session::get('coupon_discount') }}</span>
-                                    </div>
+                                        <div class="dscnt">
+                                            <span class="text-left">Coupon (Single) </span>
+                                            <span class="text-right">₹{{ Session::get('coupon_discount') }}</span>
+                                        </div>
                                     @endif
                                     <div class="ec-checkout-summary-total">
                                         <span class="text-left">Total Payable</span>
-                                        <span class="text-right"> <span class="badge badge-success" style="font-size: 10px;">You saved Rs.{{(($sub_total_amount+$total_lens)-($total_amount+$total_lens_discount))+$coupon_discount}}/-</span>
+                                        <span class="text-right"> <span class="badge badge-success"
+                                                style="font-size: 10px;">You saved
+                                                Rs.{{ $sub_total_amount + $total_lens - ($total_amount + $total_lens_discount) + $coupon_discount }}/-</span>
                                             ₹{{ $total_amount + $total_lens_discount - $coupon_discount }}</span>
                                     </div>
                                 </div>
@@ -301,10 +316,11 @@
                                 <h3 class="ec-sidebar-title">Payment Method</h3>
                             </div>
                             <div class="ec-sb-block-content">
-                                <div><a href="#" class="btn btn-lg btn-primary w-100 mb-3">Pay to Online <i
+                                <div><button onclick="make_order('razorpay')"
+                                        class="btn btn-lg btn-primary w-100 mb-3">Pay to Online <i
                                             class="ecicon eci-chevron-right"></i></a></div>
-                                <div><button onclick="make_order('COD')" class="btn btn-lg btn-info w-100">Place COD Order <i
-                                            class="ecicon eci-chevron-right"></i></button></div>
+                                <div><button onclick="make_order('COD')" class="btn btn-lg btn-info w-100">Place COD Order
+                                        <i class="ecicon eci-chevron-right"></i></button></div>
                             </div>
                         </div>
                     </div>
@@ -313,7 +329,19 @@
         </div>
     </section>
 @endsection
+<script>
+    //     document.addEventListener("contextmenu", (e) => {
+    //  e.preventDefault();
+    // }, false);
 
+    // document.addEventListener("keydown", (e) => {
+    //  if (e.ctrlKey || e.keyCode==123) {
+    //   e.stopPropagation();
+    //   e.preventDefault();
+    //  }
+    // });
+</script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
     function get_address() {
         var pincode = $('#pincode').val()
@@ -337,26 +365,79 @@
 
     function make_order(type) {
         var shipping_address_id = $('input[name="address_select"]:checked').val();
-        if(shipping_address_id){
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        if (shipping_address_id) {
+            if (type == 'COD') {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('customer.store.order') }}",
+                    data: {
+                        shipping_address_id: shipping_address_id,
+                        payment_type: type,
+                    },
+                    success: function(data) {
+                        window.location.href = "{{ route('order.summary') }}";
+                    }
+                });
             }
-        });
-        $.ajax({
-            type: 'POST',
-            url: "{{ route('customer.store.order') }}",
-            data: {
-                shipping_address_id: shipping_address_id,
-                payment_type: type,
-            },
-            success: function(data) {
-                window.location.href = "{{ route('order.summary') }}";
+            if (type == 'razorpay') {
+
+                amount = "{{$total_amount + $total_lens_discount - $coupon_discount}}";
+
+                var options = {
+                    "key": "{{env('RKEY')}}", // Enter the Key ID generated from the Dashboard
+                    "amount": amount *
+                        100, // Amount is in currency subunits. Default currency is INR. Hence, 10 refers to 1000 paise
+                    "currency": "INR",
+                    "name": "Aynak",
+                    "description": "Order Payment",
+                    "image": "https://aynak.in/public/uploads/all/logo.png",
+                    "order_id": "", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                    "handler": function(response) {
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                            }
+                        });
+                        $.ajax({
+                            type: 'POST',
+                            url: "{{ route('payment.rozerpay') }}",
+                            data: {
+                                razorpay_payment_id: response.razorpay_payment_id,
+                                shipping_address_id: shipping_address_id,
+                                payment_type: type,
+                            },
+                            success: function(data) {
+                                if(data==1){
+                                 window.location.href ="{{ route('order.summary') }}";
+                                }
+                                if(data==0){
+                                 location.reload();
+                                }
+
+                            }
+                        });
+                    },
+                    "prefill": {
+                        "name": "{{ Auth::guard('customer')->user()->first_name }}",
+                        "email": "{{ Auth::guard('customer')->user()->email }}",
+                        "contact": "{{ Auth::guard('customer')->user()->phone }}"
+                    },
+                    "theme": {
+                        "color": "#EB5353"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
             }
-        });
-       }else{
+
+        } else {
             alert('Please Add Address');
-       }
+        }
     }
 
     function CopyToClipboard(containerid) {
@@ -364,9 +445,8 @@
         $('#coupon_coupon_code').empty();
         $('#coupon_coupon_code').val(coupon);
         $("#addtocart_toast").addClass("show");
-            setTimeout(function() {
-                $("#addtocart_toast").removeClass("show")
-            }, 3000);
+        setTimeout(function() {
+            $("#addtocart_toast").removeClass("show")
+        }, 3000);
     }
-
 </script>

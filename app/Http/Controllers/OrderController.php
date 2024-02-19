@@ -44,7 +44,7 @@ class OrderController extends Controller
         $order->wallet_discount= 0.00;
         $order->shipping_address= CustomerAddress::where('id',$request->shipping_address_id)->with(['state','city'])->first();
         $order->payment_type= $request->payment_type;
-        $order->payment_details= '';
+        $order->payment_details= $request->payment_details;
         $order->payment_status= 'pending';
         $order->remark= '';
 
