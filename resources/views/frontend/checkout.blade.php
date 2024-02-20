@@ -316,6 +316,34 @@
                                 <h3 class="ec-sidebar-title">Payment Method</h3>
                             </div>
                             <div class="ec-sb-block-content">
+                                <div class="ec-check-pay-img-inner">
+                                    <div class="ec-check-pay-img">
+                                        <img src="{{ asset('public/frontend/assets/images/icons/payment1.png') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="ec-check-pay-img">
+                                        <img src="{{ asset('public/frontend/assets/images/icons/payment2.png') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="ec-check-pay-img">
+                                        <img src="{{ asset('public/frontend/assets/images/icons/payment3.png') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="ec-check-pay-img">
+                                        <img src="{{ asset('public/frontend/assets/images/icons/payment4.png') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="ec-check-pay-img">
+                                        <img src="{{ asset('public/frontend/assets/images/icons/payment5.png') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="ec-check-pay-img">
+                                        <img src="{{ asset('public/frontend/assets/images/icons/payment6.png') }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ec-sb-block-content">
                                 <div><button onclick="make_order('razorpay')"
                                         class="btn btn-lg btn-primary w-100 mb-3">Pay to Online <i
                                             class="ecicon eci-chevron-right"></i></a></div>

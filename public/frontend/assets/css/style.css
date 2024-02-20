@@ -15703,7 +15703,7 @@ li {
 }
 .btn {
   padding: 0;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 0;
   height: 45px;
   border: 0;
@@ -24013,6 +24013,7 @@ i.ecicon.eci-star-o {
 .ec-check-pay-img-wrap .ec-check-pay-img {
   margin-bottom: 18px;
   margin-right: 5px;
+  width: 50px;
 }
 .ec-check-pay-img-wrap .ec-check-pay-img:last-child {
   margin-bottom: 0;
