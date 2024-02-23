@@ -54,6 +54,7 @@ Route::view('blog', 'frontend.blog')->name('blog');
 Route::view('blog-details', 'frontend.blog-details')->name('blog_details');
 Route::view('term-and-condition', 'frontend.term-and-condition')->name('term_and_condition');
 Route::view('privacy-policy', 'frontend.privacy-policy')->name('privacy_policy');
+Route::view('cancel-and-refund-policy', 'frontend.cancel_and_refund_policy')->name('cancel_and_refund_policy');
 
 Route::post('review/store',[FrontController::class,'review_store'])->name('review.store');
 

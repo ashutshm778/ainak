@@ -71,7 +71,7 @@
                                                 class="ecicon eci-chevron-right"></i> Privacy Policy </a></li>
                                     <li class="ec-footer-link"><a href="{{ route('term_and_condition') }}"> <i
                                                 class="ecicon eci-chevron-right"></i> Term & condition</a></li>
-                                    <li class="ec-footer-link"><a href="#"> <i
+                                    <li class="ec-footer-link"><a href="{{route('cancel_and_refund_policy')}}"> <i
                                                 class="ecicon eci-chevron-right"></i> Cancellation Policy</a></li>
                                 </ul>
                             </div>
