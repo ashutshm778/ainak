@@ -6,17 +6,7 @@
                     @php
                         $gallery_images=explode(',',$productData->gallery_image);
                     @endphp
-                    @foreach ($gallery_images as $new_key=>$gallery_image)
-                        @if(count($gallery_images) >= 2)
-                            @if($new_key == 0)
-                                <img class="main-image" src="{{asset('public/'.api_asset($gallery_image))}}" alt="Product" />
-                            @else
-                                <img class="hover-image" src="{{asset('public/'.api_asset($gallery_image))}}" alt="Product" />
-                            @endif
-                        @else
-                            <img class="main-image" src="{{asset('public/'.api_asset($gallery_image))}}" alt="Product" />
-                        @endif
-                    @endforeach
+                        <img class="main-image" src="{{ asset('public/' . api_asset($productData->thumbnail_image)) }}" alt="Product" />
                 </a>
                 @if($productprice['discount'])
                     <span class="flags">
