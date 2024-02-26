@@ -18284,7 +18284,7 @@ select.selectpicker {
 	outline: 0;
 	position: relative;
 	transition: .1s;
-    height: 32px;
+    height: 36px;
 }
 
 @keyframes tags--bump {

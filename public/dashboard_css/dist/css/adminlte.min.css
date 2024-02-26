@@ -4631,7 +4631,7 @@ pre code {
 
 	width: 100%;
 
-	height: 32px;
+	height: 36px;
 
 	padding: .375rem .75rem;
 
@@ -8278,7 +8278,7 @@ input[type=submit].btn-block {
 
 	border-radius: .25rem;
 
-    height: 32px;
+    height: 36px;
 
 }
 
@@ -8332,7 +8332,7 @@ input[type=submit].btn-block {
 
 .input-group-sm>.form-control:not(textarea) {
 
-	height: 32px;
+	height: 36px;
 
 }
 
@@ -8355,7 +8355,7 @@ input[type=submit].btn-block {
 	font-size: .875rem;
 
 	line-height: 1.5;
-    height: 32px;
+    height: 36px;
 
 }
 
@@ -75136,10 +75136,7 @@ body.iframe-mode-fullscreen .content-wrapper.iframe-mode {
 
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-search.select2-search--inline .select2-search__field {
-
 	border: 0;
-
-	margin-top: 6px
 
 }
 
@@ -75331,7 +75328,6 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
 
 select.form-control-sm~.select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-search.select2-search--inline .select2-search__field {
 
-	margin-top: 6px
 
 }
 
