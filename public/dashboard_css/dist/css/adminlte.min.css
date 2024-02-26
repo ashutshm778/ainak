@@ -109772,6 +109772,7 @@ table thead {
     margin-left: auto;
     margin-right: auto;
 }
-.fas .fa-plus{
-    padding-left: 10px;
+.fa-plus{
+    padding-left: 10px !important;
+	
 }
