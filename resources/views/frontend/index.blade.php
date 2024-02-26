@@ -217,7 +217,7 @@
                             <li class="nav-item"><a class="nav-link " data-bs-toggle="tab"
                                     href="#tab-pro-new-arrivals">New Arrivals</a></li>
                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                    href="#tab-pro-special-offer">Weekly Featured</a></li>
+                                    href="#tab-pro-special-offer">Trending</a></li>
                         </ul>
                     </div>
                 </div>

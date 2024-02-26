@@ -205,7 +205,7 @@
                 </a>
             </div> --}}
             <div class="ec-nav-panel-icons">
-                <a href="https://wa.me/+911234567890" class="ec-header-btn" target="_blank">
+                <a href="https://wa.me/+919219949495" class="ec-header-btn" target="_blank">
                     <img src="{{ asset('public/frontend/assets/images/icons/whatsapp.svg') }}"
                         class="svg_img header_svg" alt="" />
                 </a>

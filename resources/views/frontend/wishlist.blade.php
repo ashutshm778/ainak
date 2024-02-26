@@ -20,7 +20,7 @@
                                         <div class="ec-product-inner">
                                             <div class="ec-pro-image-outer">
                                                 <div class="ec-pro-image">
-                                                    <a href="{{ route('search',$wishlist->product->slug) }}?type=product" class="image">
+                                                    <a href="{{ route('details', $wishlist->product->slug) }}?type=product" class="image">
                                                         @php
                                                             $gallery_images=explode(',',$wishlist->product->gallery_image);
                                                         @endphp
@@ -42,31 +42,10 @@
                                                             <span class="percentage">@if($wishlist_price['discount_type'] == 'amount') ₹{{$wishlist_price['discount']}} @else {{$wishlist_price['discount']}}% @endif OFF</span>
                                                         </span>
                                                     @endif
-                                                    {{-- <a href="#" class="ec-btn-group quickview" onclick="open_product_model({{$wishlist->product->id}})"><img src="{{ asset('public/frontend/assets/images/icons/quickview.svg') }}" class="svg_img pro_svg" alt="" /></a>
-                                                     <div class="ec-pro-actions">
-
-                                                        <form id="new_arrival_form_{{$wishlist->product->id}}">
-                                                            <input type="hidden" name="product_id" value="{{$wishlist->product->id}}">
-                                                            <button type="button" title="Add To Cart" class="add-to-cart" onclick="addtocart({{$wishlist->product->id}},'new_arrival_form')">
-                                                                <img src="{{ asset('public/frontend/assets/images/icons/cart.svg') }}" class="svg_img pro_svg" alt="" /> Add To Cart
-                                                            </button>
-                                                        </form>
-                                                    </div> --}}
                                                 </div>
                                             </div>
                                             <div class="ec-pro-content">
-                                                <h5 class="ec-pro-title"><a href="{{ route('search',$wishlist->product->slug) }}?type=product">{{$wishlist->product->name}}</a></h5>
-                                                {{-- <div class="ec-pro-rating">
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star fill"></i>
-                                                    <i class="ecicon eci-star"></i>
-                                                </div> --}}
-                                                {{-- <div class="ec-pro-list-desc">
-                                                    Lorem Ipsum is simply dummy text of the printing
-                                                    and typesetting industry. Lorem Ipsum is simply dutmmy text ever since the
-                                                    1500s, when an unknown printer took a galley.</div> --}}
+                                                <h5 class="ec-pro-title"><a href="{{ route('details', $wishlist->product->slug) }}?type=product">{{$wishlist->product->name}}</a></h5>
                                                 <span class="ec-price">
                                                     @if($wishlist_price['selling_price'] != $wishlist_price['product_price'])
                                                         <span class="old-price">₹{{$wishlist_price['selling_price']}}</span>
