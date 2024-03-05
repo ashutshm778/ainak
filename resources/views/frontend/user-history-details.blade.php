@@ -62,17 +62,17 @@
                                                         <div class="row">
                                                             <div class="col-8">
                                                                 <div class="pro-contents">
-                                                                    <h5><a href="#">{{ $order_detail->product->name }}<br>
+                                                                    <h5 style="font-size: 12px;">{{ $order_detail->product->name }}<br>
                                                                         @if (!empty($order_detail->lens_name))
                                                                             {{ $order_detail->lens_name }}
-                                                                        @endif</a></h5>
-                                                                    <p style="font-size: 13px; margin-bottom: 0;">MRP <del style="color:red;">₹ {{ $order_detail->discounted_price }} </del>
+                                                                        @endif</h5>
+                                                                    <p style="font-size: 12px; margin-bottom: 0;">MRP <del style="color:red;">₹ {{ $order_detail->discounted_price }} </del>
                                                                      ₹ {{ $order_detail->mrp_price }}<br>
                                                                      @if (!empty($order_detail->lens_mrp))
                                                                      MRP ₹ {{ $order_detail->lens_mrp }}
                                                                      @endif
                                                                     </p>
-                                                                    <p style="margin-top:0"> Qty : {{ $order_detail->quantity }} </p>
+                                                                    <p style="font-size: 12px; margin-bottom: 0;"> Qty : {{ $order_detail->quantity }} </p>
                                                                 </div>
                                                             </div>
                                                             <div class="col-4">
@@ -163,7 +163,7 @@
                                                 <div class="col-md-8"></div>
                                                 <div class="col-md-4">
                                                     <div class="table-responsive">
-                                                        <table class="table">
+                                                        <table class="ab table">
                                                             <tbody>
                                                                 <tr>
                                                                     <th>Discount Amount:</th>

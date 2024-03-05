@@ -3050,6 +3050,13 @@ text-shadow: 1px 1px #ffffff8f, -1px 1px #ffffff8f, 1px -1px #fff, -1px -1px #ff
   }
 
 @media only screen and (max-width: 767px) {
+  address {
+    font-size: 12px !important;
+    width: 100% !important;
+  }
+  .ab th, td{
+    font-size: 13px !important;
+  }
   .nme{
     font-size: 30px;
     border: 1px solid #ddd;
