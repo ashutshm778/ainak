@@ -48,10 +48,10 @@
                                                 <h5 class="ec-pro-title"><a href="{{ route('details', $wishlist->product->slug) }}?type=product">{{$wishlist->product->name}}</a></h5>
                                                 <span class="ec-price">
                                                     @if($wishlist_price['selling_price'] != $wishlist_price['product_price'])
-                                                        <span class="old-price">₹{{$wishlist_price['selling_price']}}</span>
+                                                      MRP <span class="old-price">₹{{$wishlist_price['selling_price']}}</span>
                                                         <span class="new-price">₹{{$wishlist_price['product_price']}}</span>
                                                     @else
-                                                        <span class="new-price">₹{{$wishlist_price['product_price']}}</span>
+                                                      MRP <span class="new-price">₹{{$wishlist_price['product_price']}}</span>
                                                     @endif
                                                 </span>
                                             </div>

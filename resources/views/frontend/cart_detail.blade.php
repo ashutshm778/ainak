@@ -27,7 +27,7 @@
                                 class="cart_pro_title">{{ $cart->product->name }}</a>
                             <span class="cart-price">
                                 @if ($product_prices['selling_price'] != $product_prices['product_price'])
-                                    <span class="new-price"><del
+                                    <span class="new-price">MRP  <del
                                             class="discount">{{ $product_prices['selling_price'] }}</del>
                                         {{ $product_prices['product_price'] }}</span>
                                 @else
