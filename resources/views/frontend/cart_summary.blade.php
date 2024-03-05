@@ -25,7 +25,7 @@
 </div>
 <div class="dscnt">
     <span class="text-left">Total Offer Discount</span>
-    <span class="text-right">₹{{($sub_total_amount+$total_lens)-($total_amount+$total_lens_discount)}}</span>
+    <span class="text-right">- ₹{{($sub_total_amount+$total_lens)-($total_amount+$total_lens_discount)}}</span>
 </div>
 <div>
     <span class="text-left">Net Item Total</span>

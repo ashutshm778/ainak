@@ -147,21 +147,14 @@
                                                                             </div>
                                                                             <div class="col-8">
                                                                                 <div class="pro-contents">
-                                                                                    <h5><a
-                                                                                            href="#">{{ $cart->product->name }}</a>
+                                                                                    <h5><a href="#">{{ $cart->product->name }}</a>
                                                                                     </h5>
                                                                                     <span class="ec-price">
                                                                                         @if ($product_prices['selling_price'] > $product_prices['product_price'])
-                                                                                            <del>₹
-                                                                                                {{ $product_prices['selling_price'] }}</del>
-                                                                                            <span>
-                                                                                                ₹
-                                                                                                {{ $product_prices['product_price'] }}
-                                                                                            </span>
+                                                                                            MRP <del>₹ {{ $product_prices['selling_price'] }}</del>
+                                                                                            <span> ₹ {{ $product_prices['product_price'] }}</span>
                                                                                         @else
-                                                                                            <span>₹
-                                                                                                {{ $product_prices['product_price'] }}
-                                                                                            </span>
+                                                                                            <span> ₹ {{ $product_prices['product_price'] }} </span>
                                                                                         @endif
                                                                                     </span>
                                                                                     @if (!empty($cart->lens_id))
@@ -170,10 +163,8 @@
                                                                                             {{ $cart->lens->name }} </p>
                                                                                         <span>
                                                                                             @if ($cart->lens->discount > 0)
-                                                                                                <del>₹
-                                                                                                    {{ $cart->lens->price }}</del>
-                                                                                                ₹
-                                                                                                {{ lensDiscountPrice($cart->lens->id) }}
+                                                                                               MRP <del>₹ {{ $cart->lens->price }}</del>
+                                                                                                ₹ {{ lensDiscountPrice($cart->lens->id) }}
                                                                                             @else₹
                                                                                                 {{ $cart->lens->price }}
                                                                                             @endif
@@ -287,7 +278,7 @@
                                     <div class="dscnt">
                                         <span class="text-left">Total Offer Discount</span>
                                         <span
-                                            class="text-right">₹{{ $sub_total_amount + $total_lens - ($total_amount + $total_lens_discount) }}</span>
+                                            class="text-right">- ₹{{ $sub_total_amount + $total_lens - ($total_amount + $total_lens_discount) }}</span>
                                     </div>
                                     <div>
                                         <span class="text-left">Net Item Total</span>
@@ -296,7 +287,7 @@
                                     @if (Session::has('coupon_discount'))
                                         <div class="dscnt">
                                             <span class="text-left">Coupon (Single) </span>
-                                            <span class="text-right">₹{{ Session::get('coupon_discount') }}</span>
+                                            <span class="text-right">- ₹{{ Session::get('coupon_discount') }}</span>
                                         </div>
                                     @endif
                                     <div class="ec-checkout-summary-total">
