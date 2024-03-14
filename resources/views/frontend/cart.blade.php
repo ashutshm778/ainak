@@ -1,11 +1,10 @@
 @extends('frontend.layouts.app')
 @section('content')
-
     <!-- Ec breadcrumb start -->
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb"></div>
     <!-- Ec breadcrumb end -->
     <div class="desk_hide">
-    <a href="{{route('usermob_sidebar')}}" class="bck-btn"><i class="ecicon eci-arrow-left"></i> Back</a>
+        <a href="{{ route('usermob_sidebar') }}" class="bck-btn"><i class="ecicon eci-arrow-left"></i> Back</a>
     </div>
     <!-- Ec cart page -->
     <section class="ec-page-content section-space-p">
@@ -16,86 +15,74 @@
                     <div class="ec-cart-content">
                         <div class="ec-cart-inner">
                             <div class="row">
-                                <form action="#">
-                                    <div class="table-content cart-table-content">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Product</th>
-                                                    <th>Price</th>
-                                                    {{-- <th style="text-align: center;">Quantity</th> --}}
-                                                    <th>Total</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @php
-                                                    $sub_total_amount = 0;
-                                                    $total_discount = 0;
-                                                    $total_amount = 0;
-                                                @endphp
-                                                @foreach (App\Models\Cart::where('user_id',Auth::guard('customer')->user()->id)->get() as $cart)
-                                                @php
-                                                    $product_prices = homePrice($cart->product_id);
-                                                    $sub_total_amount = $sub_total_amount + $product_prices['s_p'] * $cart->quantity;
-                                                    $total_discount = ($total_discount + $product_prices['s_p'] - $product_prices['p_p']) * $cart->quantity;
-                                                    $total_amount = $total_amount + $product_prices['p_p'] * $cart->quantity;
-                                                @endphp
-                                                    <tr>
-                                                        <td data-label="Product" class="ec-cart-pro-name">
-                                                            <a href="{{ route('details',$cart->product->slug) }}?type=product"><img class="ec-cart-pro-img mr-4" src="{{asset('public/'.api_asset($cart->product->thumbnail_image))}}" alt="" />
-                                                                {{$cart->product->name}}
-                                                                @if(!empty($cart->lens_id))
-                                                                <br>
-                                                                Lens : {{$cart->lens->name}} 
-                                                                @endif
-                                                            </a>
-                                                           
-                                                        </td>
-                                                        @php $product_prices = getProductDiscountedPrice($cart->product_id, 'retailer'); @endphp
-                                                        <td data-label="Price" class=" ">
-                                                           MRP <span class="amount">₹ <del>{{$product_prices['selling_price']}}</del> {{$product_prices['product_price']}}</span><br>
-                                                            @if(!empty($cart->lens_id))
-                                                           MRP <span class="new-price">₹ <del>{{ $cart->lens->price }}</del>  {{ lensDiscountPrice($cart->lens->id) }} </span>
-                                                            @endif
-                                                        </td>
-                                                        {{-- <td data-label="Quantity" class="ec-cart-pro-qty" style="text-align: center;">
-                                                            <div class="row">
-                                                                <button type="button" class="btn btn-danger btn-number" onclick="update_qty('minus',{{$cart->product_id}},{{ $product_prices['min_qty'] > 0 ? $product_prices['min_qty'] :'null' }},'ajax')" style="width: auto;">
-                                                                    <span class="ecicon eci-minus"></span>
-                                                                </button>
-                                                                <input type="number" id="quantity" name="product_qty" class="form-control text-center qty_value_{{$cart->product_id}}" value="{{$cart->quantity}}" min="{{$cart->product->retailer_min_qty}}" max="{{$cart->product->retailer_max_qty}}" style="width:60px; padding: 0 10px; height: auto;">
-                                                                <button type="button" class="btn btn-danger btn-number btn-number"  onclick="update_qty('plus',{{$cart->product_id}},{{ $product_prices['max_qty'] > 0 ? $product_prices['max_qty'] :'null' }},'ajax')" style="width: auto;">
-                                                                    <span class="ecicon eci-plus"></span>
-                                                                </button>
-                                                             </div>
-                                                        </td> --}}
-                                                        <td data-label="Total" class="ec-cart-pro-subtotal">
-                                                            @php 
-                                                              $total_price=0;
-                                                              $total_price= $total_price+$product_prices['product_price'] * $cart->quantity;
-                                                              if(!empty($cart->lens_id)){
-                                                                $total_price= $total_price+lensDiscountPrice($cart->lens->id);
-                                                              }
-                                                            @endphp
-                                                            ₹{{$total_price}}
-                                                        </td>
-                                                        <td data-label="Remove" class="ec-cart-pro-remove">
-                                                            <a href="{{route('delete.to.cart',$cart->id)}}"><i class="ecicon eci-trash-o"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="ec-cart-update-bottom">
-                                                <a href="{{route('index')}}">Continue Shopping</a>
+                                @php
+                                $sub_total_amount = 0;
+                                $total_discount = 0;
+                                $total_amount = 0;
+                            @endphp
+                            @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
+                                @php
+                                    $product_prices = homePrice($cart->product_id);
+                                    $sub_total_amount =
+                                        $sub_total_amount +
+                                        $product_prices['s_p'] * $cart->quantity;
+                                    $total_discount =
+                                        ($total_discount +
+                                            $product_prices['s_p'] -
+                                            $product_prices['p_p']) *
+                                        $cart->quantity;
+                                    $total_amount =
+                                        $total_amount + $product_prices['p_p'] * $cart->quantity;
+                                @endphp
+                                <div class="col-md-6 mb-2">
+                                    <div class="cards">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <div class="pro-contents">
+                                                    <h5 style="font-size: 12px;">                                                            {{ $cart->product->name }}
+                                                        @if (!empty($cart->lens_id))
+                                                            <br>
+                                                            Lens : {{ $cart->lens->name }}
+                                                        @endif
+                                                    </h5>
+                                                    @php $product_prices = getProductDiscountedPrice($cart->product_id, 'retailer'); @endphp
+                                                    <p style="font-size: 12px; margin-bottom: 0;">
+                                                        MRP <span class="amount">₹
+                                                            <del>{{ $product_prices['selling_price'] }}</del>
+                                                            {{ $product_prices['product_price'] }}</span><br>
+                                                        @if (!empty($cart->lens_id))
+                                                            MRP <span class="amount">₹
+                                                                <del>{{ $cart->lens->price }}</del>
+                                                                {{ lensDiscountPrice($cart->lens->id) }} </span>
+                                                        @endif
+                                                    </p>
+                                                    <a href="{{ route('delete.to.cart', $cart->id) }}" style="color:#ff6240;">Remove <i
+                                                        class="ecicon eci-trash-o"></i></a>
+                                                    {{-- <p style="font-size: 12px; margin-bottom: 0;"> Qty : 1 </p> --}}
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="pro-img">
+                                                    <a href="{{ route('details', $cart->product->slug) }}?type=product">
+                                                        <img class="main-image"
+                                                            src="{{ asset('public/' . api_asset($cart->product->thumbnail_image)) }}"
+                                                            alt="Product">
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
+                                @endforeach
+                            </div>
+                            <div class="row">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="ec-cart-update-bottom">
+                                                <a href="{{ route('index') }}">Continue Shopping</a>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -120,7 +107,8 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="ec-cart-update-bottom">
-                                                <a class="btn btn-primary text-white" href="{{route('checkout')}}">Proceed to Check Out</a>
+                                                <a class="btn btn-primary text-white"
+                                                    href="{{ route('checkout') }}">Proceed to Check Out</a>
                                             </div>
                                         </div>
                                     </div>
@@ -133,5 +121,4 @@
             </div>
         </div>
     </section>
-
-    @endsection
+@endsection
