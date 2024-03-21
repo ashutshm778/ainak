@@ -21653,6 +21653,9 @@ h4.ec-faq-title::after, .ec-faq-title.h4::after {
 .single-pro-content .ec-single-social ul li a:hover {
   color: #fff;
 }
+.single-pro-content .ec-single-social ul li.linkedin a {
+  background: #0A66C2;
+}
 .single-pro-content .ec-single-social ul li.facebook a {
   background: #3c5a98;
 }
