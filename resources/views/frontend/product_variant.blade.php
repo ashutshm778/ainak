@@ -228,9 +228,9 @@
             <div class="ec-single-social">
                 Share This: 
                 <ul class="mb-0 ml-3">
-                    <li class="list-inline-item facebook"><a href="#"><i class="ecicon eci-facebook"></i></a>
+                    <li class="list-inline-item facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{route('search',$data->slug)}}?type=product"><i class="ecicon eci-facebook"></i></a>
                     </li>
-                    <li class="list-inline-item twitter"><a href="#"><i class="ecicon eci-twitter"></i></a>
+                    <li class="list-inline-item twitter"><a href="https://twitter.com/intent/post?url={{route('search',$data->slug)}}?type=product]&text={{$data->name}}"><i class="ecicon eci-twitter"></i></a>
                     </li>
                     <li class="list-inline-item instagram"><a href="#"><i class="ecicon eci-instagram"></i></a>
                     </li>
