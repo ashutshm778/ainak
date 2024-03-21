@@ -41,10 +41,22 @@
                         <div class="col-md-7 ec-cms-block ec-abcms-block">
                             <div class="ec-cms-block-inner">
                                 <h3 class="ec-cms-block-title mb-30 text-left">About Of Ainak</h3> <br>
-                                <p class="pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                </p>
-                                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                                <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <p class="pt-2">AYNAK focus to enhance people's lives by providing innovative eyewear solutions. Established in 2023,
+                                    we're renowned for our stylish eyewear, friendly staff, and vibrant work environment. Our passion lies in
+                                    improving vision clarity, offering a diverse selection of over 1000 trendy Eyeglasses, Sunglasses, Power
+                                    Sunglasses, Contact Lenses, Reading Glasses, Computer Glasses, and more!</p>
+                                <p>We seamlessly blend fashion and functionality, ensuring you never feels out of place with bulky or
+                                    mundane glasses. From staying ahead of the latest eyewear trends to providing affordable and accessible
+                                    eyewear, we're committed to being your go-to destination for all things vision-related. Whether you need
+                                    assistance choosing the perfect pair or guidance on sizing, our dedicated team is here to support you every
+                                    step of the way.</p>
+                                <p>AYNAK proudly presents exclusive eyewear collections for men, women, and kids, featuring over 1000+
+                                    unique designs. With a loyal customer base of 1000+, we're dedicated to ensuring you fall in love with
+                                    your glasses time and time again!</p>
+                                <p>With us, you can effortlessly receive your order within 48 hours, along with access to various services
+                                    such as glass repairs, eye tests by appointment, consultations, and more, all listed on aynak.in. We cater to
+                                    your needs both individually and through our partnership with Apnidawaa, ensuring you feel confident in
+                                    trusting us to elevate your Fashionista with latest Spectacles.</p>
                             </div>
                         </div>
                     </div>
@@ -64,16 +76,11 @@
                  </div>
                  <div class="col-md-10">
                     <h4>Mission</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <p>Our mission of #ChloUnkiAnkhoKaKhyalRakhteHai_JinhoneHmeDuniyaDekhnaSikhayaHai inspires our
+                        daily endeavors, motivating us to unite, tackle challenges, and create a brighter future for all, both within
+                        and beyond our AynakCrew. We champion taking risks and view failure as a mere pause, not the end of
+                        the road.</p>
                  </div>
-
-                <div class="col-md-2">
-                    <img class="a-img" src="{{asset('public/frontend/assets/images/mission.png')}}" alt="Vision">
-                </div>
-                <div class="col-md-10">
-                    <h4>Vision</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-               </div>
               </div>
             </div>
         </div>

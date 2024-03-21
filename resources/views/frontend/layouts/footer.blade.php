@@ -112,19 +112,17 @@
         <div class="footer-last">
             <div class="container">
                 <div class="section-title text-left">
-                    <h1>Lorem ipsum is a placeholder text commonly used to demonstrate. </h1>
+                    <h1>Explore the Finest Eyewear Selection Exclusively at AYNAK!</h1>
                 </div>
-                <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a
-                    typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before
-                    final copy is available.</p>
-                <h5>Lorem ipsum is a placeholder text commonly</h5>
-                <p> Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a
-                    typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before
-                    final copy is available.</p>
+                <p> AYNAK is your go-to destination for more than just online eyeglass shopping. Discover a premium
+                    collection of eyeglasses, sunglasses, and contact lenses from leading brands all in one place. Avail special
+                    offers, where you can enjoy a Buy 1, Get 1 free deal.</p>
+                <p>Enjoy complimentary shipping, Cash on Delivery, and instant refunds with every purchase! AYNAK
+                   boasts a growing community of 1000+ customers, making it one of the rapidly growing eyeglass
+                   platforms for the modern Indian consumer.</p>
+
                 <ul class="desk">
-                    <li><strong>Lorem ipsum is a placeholder text commonly :</strong> Lorem ipsum is a placeholder text
-                        commonly used to demonstrate the visual form of a document or a typeface without relying on
-                        meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.
+                    <li>
                         <div class="section-title text-left">
                             <h2>Popular Search Keyword in Lucknow</h2>
                         </div>
