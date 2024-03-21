@@ -232,7 +232,7 @@
                     </li>
                     <li class="list-inline-item twitter"><a href="https://twitter.com/intent/post?url={{route('search',$data->slug)}}?type=product]&text={{$data->name}}"><i class="ecicon eci-twitter"></i></a>
                     </li>
-                    <li class="list-inline-item instagram"><a href="#"><i class="ecicon eci-instagram"></i></a>
+                    <li class="list-inline-item linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&url={{route('search',$data->slug)}}?type=product"><i class="ecicon eci-linkedin"></i></a>
                     </li>
                     <li class="list-inline-item whatsapp"><a href="https://web.whatsapp.com/send?text={{route('search',$data->slug)}}?type=product" target="_blank"><i class="ecicon eci-whatsapp"></i></a>
                     </li>
