@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-7 ec-cms-block ec-abcms-block">
                             <div class="ec-cms-block-inner">
-                                <h3 class="ec-cms-block-title mb-30 text-left">About Of Ainak</h3> <br>
+                                <h3 class="ec-cms-block-title mb-30 text-left">About Of Aynak</h3> <br>
                                 <p class="pt-2">AYNAK focus to enhance people's lives by providing innovative eyewear solutions. Established in 2023,
                                     we're renowned for our stylish eyewear, friendly staff, and vibrant work environment. Our passion lies in
                                     improving vision clarity, offering a diverse selection of over 1000 trendy Eyeglasses, Sunglasses, Power

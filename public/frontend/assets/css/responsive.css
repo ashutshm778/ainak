@@ -2585,9 +2585,14 @@
   }
 
   .single-product-cover img {
-    height: 285px !important;
+    /* height: 285px !important; */
 }
-
+.ec-single-pro-tab-content .ec-ratting-content span{
+  font-size: 11px;
+}
+.rate:not(:checked) > label {
+  font-size: 28px !important;
+}
 .single-nav-thumb .single-slide {
     padding: 5px 5px 0 8px;
 }

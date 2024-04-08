@@ -46,7 +46,7 @@
                         </div>
                         <div class="contact-info-content">
                             <h5>Contact us Anytime</h5>
-                            <p>Mobile: <a href="tel:+91-9876543210"> +91-9876543210 </a></p>
+                            <p>Mobile: <a href="tel:+91-9219949495"> +91-9219949495 </a></p>
                             <p></p>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="contact-info-content">
                             <h5>Write Some Words</h5>
-                            <p><a href="mailto:ainak@gmail.com">ainak@gmail.com</a></p>
+                            <p><a href="mailto:aynakpvtltd@gmail.com">aynakpvtltd@gmail.com</a></p>
                             <p></p>
                         </div>
                     </div>
