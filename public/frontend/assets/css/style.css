@@ -20562,10 +20562,12 @@ select::-ms-expand {
     font-weight: 600;
 }
 
+
 .mission-vision p
 {
     line-height: 26px;
     text-align: justify;
+    word-wrap: break-word;
 }
 
 .mission-vision img
