@@ -32103,3 +32103,13 @@ body.ec-open:before {
 .wslst a i:hover {
   color: red;
 }
+.ec-vendor-dashboard-card {
+  border: 1px solid #eeeeee;
+}
+.ec-vendor-card-body {
+  padding: 30px;
+}
+.ec-vendor-card-header {
+  padding: 15px 10px;
+  border-bottom: 1px solid #eeeeee;
+}
