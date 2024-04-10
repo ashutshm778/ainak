@@ -46,6 +46,7 @@ Route::get('product/get_new_arrival',[FrontController::class,'get_new_arrival_pr
 Route::get('product/get_featured',[FrontController::class,'get_featured_product'])->name('get_featured_product');
 
 Route::view('about-us', 'frontend.about-us')->name('about');
+Route::view('repair_eyeglass', 'frontend.repair_eyeglass')->name('repair_eyeglass');
 Route::view('contact-us', 'frontend.contact-us')->name('contact');
 Route::view('faq', 'frontend.faq')->name('faq');
 Route::post('check_phone',[FrontController::class,'check_phone'])->name('check_phone');

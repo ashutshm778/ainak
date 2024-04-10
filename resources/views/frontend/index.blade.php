@@ -67,7 +67,7 @@
             <div class="col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1 p-0">
                     <div class="banner-block">
-                        <a href="#"><img src="{{ asset('public/frontend/assets/images/repaire.jpg') }}"
+                        <a href="{{route('repair_eyeglass')}}"><img src="{{ asset('public/frontend/assets/images/repaire.jpg') }}"
                                 alt=""></a>
                     </div>
                 </div>

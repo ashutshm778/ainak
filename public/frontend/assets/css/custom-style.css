@@ -3382,3 +3382,433 @@ div#ec-main-menu-desk {
 .dscnt span{
   color: #f11e06 !important;
 }
+
+/* Lable */
+
+
+[dir=rtl] .floating-label > input + label,
+[dir=rtl] .floating-label > textarea + label {
+  right: 0;
+  left: auto !important;
+}
+[dir=rtl] .floating-label > input:not([placeholder]):not([value]) + label,
+[dir=rtl] .floating-label > textarea:not([placeholder]):empty + label, [dir=rtl] .floating-label > input[placeholder]:not(:placeholder-shown) + label,
+[dir=rtl] .floating-label > textarea[placeholder]:not(:placeholder-shown) + label, [dir=rtl] .floating-label > input:-webkit-autofill + label,
+[dir=rtl] .floating-label > textarea:-webkit-autofill + label, [dir=rtl] .floating-label > input:focus + label,
+[dir=rtl] .floating-label > textarea:focus + label, [dir=rtl] .floating-label > select + label {
+  right: 0.5rem;
+  left: auto !important;
+}
+
+.floating-label {
+  position: relative;
+}
+.floating-label > select + label,
+.floating-label > select + label.label-sm {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.7875rem;
+  font-size: 0.875rem;
+}
+.floating-label > select + label.label-md {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.9rem;
+  font-size: 1rem;
+}
+.floating-label > select + label.label-lg {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -1.125rem;
+  font-size: 1.25rem;
+}
+.floating-label > select:disabled + label, .floating-label > select[readonly] + label {
+  background-color: #e9ecef;
+}
+.floating-label > input + label,
+.floating-label > textarea + label {
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  color: #6c757d;
+  pointer-events: none;
+  font-size: 1rem;
+  padding: calc(0.6rem + 1px) calc(0.75rem + 1px);
+}
+.floating-label > input.form-control-sm + label,
+.floating-label > textarea.form-control-sm + label {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  color: #6c757d;
+  pointer-events: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem + 1px) calc(0.5rem + 1px);
+}
+.floating-label > input.form-control-lg + label,
+.floating-label > textarea.form-control-lg + label {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  color: #6c757d;
+  pointer-events: none;
+  font-size: 1.25rem;
+  padding: calc(0.5rem + 1px) calc(1rem + 1px);
+}
+.floating-label > input::placeholder,
+.floating-label > textarea::placeholder {
+  color: transparent;
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.floating-label > label + input::placeholder,
+.floating-label > label + textarea::placeholder {
+  color: #6c757d;
+}
+.floating-label > input:focus::placeholder,
+.floating-label > textarea:focus::placeholder {
+  color: #6c757d;
+}
+.floating-label > input:focus + label,
+.floating-label > input:focus + label.label-sm,
+.floating-label > textarea:focus + label,
+.floating-label > textarea:focus + label.label-sm {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.7875rem;
+  font-size: 0.875rem;
+}
+.floating-label > input:focus + label.label-md,
+.floating-label > textarea:focus + label.label-md {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.9rem;
+  font-size: 1rem;
+}
+.floating-label > input:focus + label.label-lg,
+.floating-label > textarea:focus + label.label-lg {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -1.125rem;
+  font-size: 1.25rem;
+}
+.floating-label > input:focus[readonly] + label,
+.floating-label > textarea:focus[readonly] + label {
+  background-color: #e9ecef;
+}
+
+.floating-label > input:-webkit-autofill + label,
+.floating-label > input:-webkit-autofill + label.label-sm,
+.floating-label > textarea:-webkit-autofill + label,
+.floating-label > textarea:-webkit-autofill + label.label-sm {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.7875rem;
+  font-size: 0.875rem;
+}
+.floating-label > input:-webkit-autofill + label.label-md,
+.floating-label > textarea:-webkit-autofill + label.label-md {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.9rem;
+  font-size: 1rem;
+}
+.floating-label > input:-webkit-autofill + label.label-lg,
+.floating-label > textarea:-webkit-autofill + label.label-lg {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -1.125rem;
+  font-size: 1.25rem;
+}
+
+.floating-label > input[placeholder]:not(:placeholder-shown) + label,
+.floating-label > input[placeholder]:not(:placeholder-shown) + label.label-sm,
+.floating-label > textarea[placeholder]:not(:placeholder-shown) + label,
+.floating-label > textarea[placeholder]:not(:placeholder-shown) + label.label-sm {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.7875rem;
+  font-size: 0.875rem;
+}
+.floating-label > input[placeholder]:not(:placeholder-shown) + label.label-md,
+.floating-label > textarea[placeholder]:not(:placeholder-shown) + label.label-md {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.9rem;
+  font-size: 1rem;
+}
+.floating-label > input[placeholder]:not(:placeholder-shown) + label.label-lg,
+.floating-label > textarea[placeholder]:not(:placeholder-shown) + label.label-lg {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -1.125rem;
+  font-size: 1.25rem;
+}
+.floating-label > input[placeholder]:not(:placeholder-shown):disabled + label, .floating-label > input[placeholder]:not(:placeholder-shown)[readonly] + label,
+.floating-label > textarea[placeholder]:not(:placeholder-shown):disabled + label,
+.floating-label > textarea[placeholder]:not(:placeholder-shown)[readonly] + label {
+  background-color: #e9ecef;
+}
+.floating-label > input:not([placeholder]):not([value]) + label,
+.floating-label > input:not([placeholder]):not([value]) + label.label-sm,
+.floating-label > textarea:not([placeholder]):empty + label,
+.floating-label > textarea:not([placeholder]):empty + label.label-sm {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.7875rem;
+  font-size: 0.875rem;
+}
+.floating-label > input:not([placeholder]):not([value]) + label.label-md,
+.floating-label > textarea:not([placeholder]):empty + label.label-md {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -0.9rem;
+  font-size: 1rem;
+}
+.floating-label > input:not([placeholder]):not([value]) + label.label-lg,
+.floating-label > textarea:not([placeholder]):empty + label.label-lg {
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 0.5rem;
+  padding: 0 0.3rem;
+  color: inherit;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  top: -1.125rem;
+  font-size: 1.25rem;
+}
+.floating-label > input:not([placeholder]):not([value]):disabled + label, .floating-label > input:not([placeholder]):not([value])[readonly] + label,
+.floating-label > textarea:not([placeholder]):empty:disabled + label,
+.floating-label > textarea:not([placeholder]):empty[readonly] + label {
+  background-color: #e9ecef;
+}
+.special-label {
+    background: #fff;
+    font-size: 14px;
+    left: 25px;
+    padding: 0 5px;
+    position: absolute;
+    top: -12px;
+    z-index: 1;
+}
+
+.special-label-2 {
+    background: #fff;
+    font-size: 14px;
+    left: 225px;
+    padding: 0 5px;
+    position: absolute;
+    top: -12px;
+    z-index: 9999;
+}
+.mb-25 {
+  margin-bottom: 20px;
+}
+
+.rs-login .main-part {
+	max-width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 5px
+}
+.rs-login .noticed {
+    padding: 35px 35px!important;
+    background: #fff;
+    box-shadow: 0px 0px 0px 5px rgb(255 255 255 / 40%), 0px 4px 20px rgb(0 0 0 / 33%);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    position: static;
+}
+.rs-login .noticed .main-part .method-account .login {
+	font-size: 40px;
+	line-height: 50px;
+	color: #111
+}
+
+
+
+.rs-login .noticed .main-part .method-account select {
+  font-size: 15px;
+  font-weight: 400;
+  color: #505050;
+  width: 100%;
+  display: block;
+  border: none;
+  height: 50px;
+  padding: 10px 18px;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 0 30px #eee;
+  /* border: 1px solid #ced4da; */
+  border: 1px solid #767676;
+}
+
+.rs-login .noticed .main-part .method-account span {
+    font-size: 11px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #505050;
+    margin-top: -10px;
+}
+
+.rs-login .noticed .main-part .method-account .last-password p {
+	color: #505050;
+	margin: 0
+}
+
+.rs-login .noticed .main-part .method-account .last-password p a {
+	font-size: 15px;
+	line-height: 26px;
+	font-weight: 400;
+	color: #3d7e78
+}
+
+.rs-login .noticed .main-part .method-account .last-password p a:hover {
+	color: #505050
+}
