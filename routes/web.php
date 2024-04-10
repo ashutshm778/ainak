@@ -43,7 +43,7 @@ Route::get('/search?brand={brand_slug}', 'HomeController@search')->name('product
 
 Route::get('product/get_best_seller',[FrontController::class,'get_best_seller_product'])->name('get_best_seller_product');
 Route::get('product/get_new_arrival',[FrontController::class,'get_new_arrival_product'])->name('get_new_arrival_product');
-Route::get('product/get_featured',[FrontController::class,'get_featured_product'])->name('get_featured_product');
+Route::get('product/get_trending_product',[FrontController::class,'get_trending_product'])->name('get_trending_product');
 
 Route::view('about-us', 'frontend.about-us')->name('about');
 Route::view('repair_eyeglass', 'frontend.repair_eyeglass')->name('repair_eyeglass');

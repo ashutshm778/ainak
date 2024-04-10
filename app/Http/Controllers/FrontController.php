@@ -41,8 +41,8 @@ class FrontController extends Controller
         return view('frontend.index', compact('categories', 'features', 'best_sellers', 'sliders', 'top_banner', 'mid_banner', 'bottom_banner', 'featured_categories'));
     }
 
-    public function get_featured_product(Request $request){
-        $features = Product::where('is_active', 1)->where('is_feature', 1)->orderBy('id','desc')->limit(12)->paginate(4);
+    public function get_trending_product(Request $request){
+        $features = Product::where('is_active', 1)->where('is_trending', 1)->orderBy('id','desc')->limit(12)->paginate(4);
         return view('frontend.featured',compact('features'))->render();
     }
 
