@@ -71,7 +71,7 @@
                                                 class="ecicon eci-chevron-right"></i> Privacy Policy </a></li>
                                     <li class="ec-footer-link"><a href="{{ route('term_and_condition') }}"> <i
                                                 class="ecicon eci-chevron-right"></i> Term & condition</a></li>
-                                    <li class="ec-footer-link"><a href="{{route('cancel_and_refund_policy')}}"> <i
+                                    <li class="ec-footer-link"><a href="{{ route('cancel_and_refund_policy') }}"> <i
                                                 class="ecicon eci-chevron-right"></i> Cancellation Policy</a></li>
                                 </ul>
                             </div>
@@ -115,11 +115,12 @@
                     <h1>Explore the Finest Eyewear Selection Exclusively at AYNAK!</h1>
                 </div>
                 <p> AYNAK is your go-to destination for more than just online eyeglass shopping. Discover a premium
-                    collection of eyeglasses, sunglasses, and contact lenses from leading brands all in one place. Avail special
+                    collection of eyeglasses, sunglasses, and contact lenses from leading brands all in one place. Avail
+                    special
                     offers, where you can enjoy a Buy 1, Get 1 free deal.</p>
                 <p>Enjoy complimentary shipping, Cash on Delivery, and instant refunds with every purchase! AYNAK
-                   boasts a growing community of 1000+ customers, making it one of the rapidly growing eyeglass
-                   platforms for the modern Indian consumer.</p>
+                    boasts a growing community of 1000+ customers, making it one of the rapidly growing eyeglass
+                    platforms for the modern Indian consumer.</p>
 
                 <ul class="desk">
                     <li>
@@ -247,7 +248,8 @@
             <div class="ec-nav-panel-icons">
                 @if (Auth::guard('customer')->check())
                     <a href="{{ route('usermob_sidebar') }}" class="ec-header-btn">
-                        <span class="nme">{{strtoupper(mb_substr(Auth::guard('customer')->user()->first_name, 0, 1))}}</span>
+                        <span
+                            class="nme">{{ strtoupper(mb_substr(Auth::guard('customer')->user()->first_name, 0, 1)) }}</span>
                     </a>
                 @else
                     @if (featureActivation('retailer') == '1' ||
@@ -274,20 +276,20 @@
                     <div class="row">
                         <h3 class="bk_amt text-center">Book Appointment</h3>
                         <div class="form-group mb-3">
-                            <input type="text" name="name" placeholder="Enter your name" required="">
+                            <input type="text" name="name" id="name" placeholder="Enter your name" required >
                         </div>
                         <div class="form-group mb-3">
-                            <input type="email" class="form-control" name="email"
-                                placeholder="Enter your email address" required="">
+                            <input type="email" class="form-control" name="email" id="email"
+                                placeholder="Enter your email address" required >
                         </div>
                         <div class="form-group mb-3">
-                            <input type="text" name="phonenumber" placeholder="Enter your phone number"
-                                required="">
+                            <input type="text" name="phone_number" id="phone_number" placeholder="Enter your phone number"
+                                required >
                         </div>
                         <div class="form-group mb-2">
-                            <textarea name="address" placeholder="Please leave your messege here.."></textarea>
+                            <textarea name="message" id="message" placeholder="Please leave your messege here.."></textarea>
                         </div>
-                        <div class="ec-offer-btn"><a href="#" class="btn btn-lg btn-primary w-100">Pay ₹.99/-
+                        <div class="ec-offer-btn"><a href="#" class="btn btn-lg btn-primary w-100" onclick="pay_enquiry()">Pay ₹.49/-
                                 Only <i class="ecicon eci-chevron-right"></i></a></div>
                 </form>
             </div>
@@ -346,7 +348,7 @@
 <script src="{{ asset('public/frontend/assets/js/plugins/jquery.sticky-sidebar.js') }}"></script>
 
 
-{{--@if (Route::currentRouteName() == 'search')
+{{-- @if (Route::currentRouteName() == 'search')
     <script src="{{ asset('public/frontend/assets/js/main.js') }}"></script>
 @endif --}}
 
@@ -417,8 +419,7 @@
 
 <script>
     function getVariantPrice() {
-        @if (request()->route()->getName() != 'index' &&
-                request()->route()->getName() != 'cart')
+        @if (request()->route()->getName() != 'index' && request()->route()->getName() != 'cart')
             $.ajax({
                 type: "GET",
                 url: '{{ route('product.get_varinat_price') }}',
@@ -543,8 +544,8 @@
                 @if (featureActivation('retailer') == '1' ||
                         featureActivation('distributor') == '1' ||
                         featureActivation('wholesaler') == '1')
-                    var from_url = "{{url()->full()}}";
-                    window.location.href = "{{ route('user.login') }}?from="+from_url;
+                    var from_url = "{{ url()->full() }}";
+                    window.location.href = "{{ route('user.login') }}?from=" + from_url;
                 @endif
             }
         });
@@ -635,8 +636,8 @@
 
             },
             error: function(error) {
-                    var from_url = "{{url()->full()}}";
-                    window.location.href = "{{ route('user.login') }}?from="+from_url;
+                var from_url = "{{ url()->full() }}";
+                window.location.href = "{{ route('user.login') }}?from=" + from_url;
             }
         });
     }
@@ -655,8 +656,8 @@
             },
             success: function(data) {
                 $('.ec-cart-wishlist').html(data.wishlist_count);
-                var current_route="{{request()->route()->getName()}}";
-                if(current_route=='wishlist'){
+                var current_route = "{{ request()->route()->getName() }}";
+                if (current_route == 'wishlist') {
                     location.reload();
                 }
             }
@@ -756,6 +757,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
     jQuery.validator.addMethod("selectphone", function(value, element) {
         var isValid = false;
@@ -805,4 +807,67 @@
         });
 
     });
+
+    function pay_enquiry() {
+       
+        var name =$('#name').val();
+        var email =$('#email').val();
+        var phone =$('#phone_number').val();
+        var message =$('#message').val();
+
+        if(name &&  email && phone){
+
+            amount = 49;
+
+            var options = {
+                "key": "{{ env('RKEY') }}", // Enter the Key ID generated from the Dashboard
+                "amount": amount *
+                    100, // Amount is in currency subunits. Default currency is INR. Hence, 10 refers to 1000 paise
+                "currency": "INR",
+                "name": "Aynak",
+                "description": "Order Payment",
+                "image": "https://aynak.in/public/uploads/all/logo.png",
+                "order_id": "", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                "handler": function(response) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        }
+                    });
+                    $.ajax({
+                        type: 'POST',
+                        url: "{{ route('payment_enquiry.rozerpay') }}",
+                        data: {
+                            razorpay_payment_id: response.razorpay_payment_id,
+                            name:name,
+                            email:email,
+                            phone:phone,
+                            message:message
+
+                        },
+                        success: function(data) {
+
+                            if (data == 1) {
+                                location.reload();
+                            }
+
+                        }
+                    });
+                },
+                "prefill": {
+                    "name": name,
+                    "email": email,
+                    "contact":phone
+                },
+                "theme": {
+                    "color": "#EB5353"
+                }
+            };
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        }else{
+            alert('Please Fill Required Fields');
+        }
+       
+    }
 </script>

@@ -94,6 +94,8 @@ Route::group(['middleware' => 'auth:customer'], function () {
 
     Route::post('rozer/payment/pay-success', [CartController::class,'pay_success'])->name('payment.rozerpay');
 
+    Route::post('rozer/payment_enquiry/pay-success', [CartController::class,'payment_enquiry'])->name('payment_enquiry.rozerpay');
+
 });
 
 Route::get('send-otp/{phone}', [FrontController::class, 'sendOtp'])->name('send.otp');

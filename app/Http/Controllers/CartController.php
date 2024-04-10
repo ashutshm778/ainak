@@ -225,4 +225,34 @@ class CartController extends Controller
         return 0;
       
     }
+
+    public function payment_enquiry(Request $request)
+    {
+       
+        $input = $request->all();
+        $api = new Api(env('RKEY'), env('RSECRET'));
+
+        $payment = $api->payment->fetch($request->razorpay_payment_id);
+
+        if (count($input)  && !empty($request->razorpay_payment_id)) {
+            $payment_detalis = null;
+            try {
+                $response = $api->payment->fetch($request->razorpay_payment_id)->capture(array('amount' => $payment['amount']));
+                if($response['amount']/100 == 49){
+                 $payment_detalis = json_encode(array('id' => $response['id'], 'method' => $response['method'], 'amount' => $response['amount']/100, 'currency' => $response['currency']));
+                 $request->merge(['payment_detalis' => $payment_detalis]);
+               
+                    
+
+
+                 return 1;
+                }
+            } catch (\Exception $e) {
+                return back()->with('error', $e->getMessage());
+            }
+        }
+
+        return 0;
+      
+    }
 }

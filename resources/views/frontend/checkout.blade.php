@@ -256,11 +256,15 @@
                                     <ul class="coupon">
                                         <div class="form-group">
                                             @foreach (App\Models\Admin\Coupon::get() as $coupon)
-                                                <li id="coupon_{{ $coupon->id }}">{{ $coupon->code }} <button
-                                                        type="button" id="ref-cpurl-btn" class="code"
-                                                        data-attrcpy="Copied"
-                                                        onclick="CopyToClipboard('coupon_{{ $coupon->id }}')">Apply
-                                                    </button></li>
+                                                <li id="coupon_{{ $coupon->id }}">
+                                                    {{ $coupon->code }}
+                                                    <form  method="POST" action="{{ route('checkout.apply_coupon_code') }}">
+                                                    @csrf
+                                                    <input type="hidden" name="code" value="{{$coupon->code}}">
+                                                    <button type="submit"  class="code" >Apply </button>
+                                                </form>
+                                                    
+                                                   </li>
                                             @endforeach
                                         </div>
                                     </ul>
