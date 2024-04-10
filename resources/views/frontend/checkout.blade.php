@@ -231,7 +231,7 @@
                                             method="POST" action="{{ route('checkout.remove_coupon_code') }}">
                                             @csrf
                                             <input class="ec-coupan" type="text" name="code"
-                                                value=" {{ App\Models\Admin\Coupon::find(Session::get('coupon_id'))->code }}">
+                                                value="{{ App\Models\Admin\Coupon::find(Session::get('coupon_id'))->code }}">
                                             <button class="ec-coupan-btn button btn-primary" type="submit"
                                                 value="">Change</button>
                                         </form>
@@ -290,7 +290,7 @@
                                     </div>
                                     @if (Session::has('coupon_discount'))
                                         <div class="dscnt">
-                                            <span class="text-left">Coupon (Single) </span>
+                                            <span class="text-left">Coupon ({{ App\Models\Admin\Coupon::find(Session::get('coupon_id'))->code }}) </span>
                                             <span class="text-right">- ₹{{ Session::get('coupon_discount') }}</span>
                                         </div>
                                     @endif
