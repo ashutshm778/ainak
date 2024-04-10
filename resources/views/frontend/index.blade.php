@@ -41,7 +41,7 @@
             <div class=" col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1">
                     <div class="banner-block">
-                        <a href="{{route('search')}}??subcategory=glass-ec3cbds"><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
+                        <a href="{{route('search')}}?subcategory=glass-ec3cbds"><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
                                 alt=""></a>
                     </div>
                 </div>
