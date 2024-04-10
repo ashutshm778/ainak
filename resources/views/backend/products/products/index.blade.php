@@ -119,8 +119,21 @@
                                     </form>
                                 </div>
                                 </div>
+                                <form method="POST" action="{{route('admin.apply_discount')}}">
+                                    @csrf
+                                <div class="input-group input-group-sm">
+                                    <input type="text" name="discount"  class="col-md-3 form-control" placeholder="Discount">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-success" type="submit" >
+                                           Apply
+                                        </button>
+                                    </div>
+                                </div>
+                                </form>
                             </div>
 
+
+                            
                             <div class="card-body table-responsive p-2">
                                 <table class="table table-bordered table-striped">
                                     <thead>
