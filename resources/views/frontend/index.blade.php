@@ -877,7 +877,7 @@
         }
      
         function feature(page){
-         $.get('{{ route('get_featured_product') }}', {_token:'{{ csrf_token() }}',page:page}, function(data){
+         $.get('{{ route('get_trending_product') }}', {_token:'{{ csrf_token() }}',page:page}, function(data){
                 $('#featured').append(data);
             });
         }
