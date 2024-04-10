@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\Models\Cart;
+use Razorpay\Api\Api;
+use App\Models\Enquiry;
 use App\Models\Admin\Coupon;
 use Illuminate\Http\Request;
 use App\Models\Admin\CouponUsage;
 use Illuminate\Support\Facades\Auth;
-use Razorpay\Api\Api;
 
 class CartController extends Controller
 {
@@ -240,10 +241,14 @@ class CartController extends Controller
                 $response = $api->payment->fetch($request->razorpay_payment_id)->capture(array('amount' => $payment['amount']));
                 if($response['amount']/100 == 49){
                  $payment_detalis = json_encode(array('id' => $response['id'], 'method' => $response['method'], 'amount' => $response['amount']/100, 'currency' => $response['currency']));
-                 $request->merge(['payment_detalis' => $payment_detalis]);
-               
-                    
 
+                 $enquiry = new Enquiry;
+                 $enquiry->name=$request->name;
+                 $enquiry->email=$request->email;
+                 $enquiry->phone=$request->phone;
+                 $enquiry->message=$request->message;
+                 $enquiry->payment_detail=$payment_detalis;
+                 $enquiry->save();
 
                  return 1;
                 }
