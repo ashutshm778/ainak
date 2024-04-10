@@ -49,6 +49,8 @@ Route::prefix("admin")->group(function(){
         //Dashboard
         Route::get('home', [HomeController::class, 'index'])->name('home');
 
+        Route::post('apply_discount', [HomeController::class,'apply_discount'])->name('apply_discount');
+
         //Category
         Route::resource('categories', CategoryController::class)->except('destroy');
         Route::get('categories-feature/{id}', [CategoryController::class,'feature'])->name('categories.feature');
