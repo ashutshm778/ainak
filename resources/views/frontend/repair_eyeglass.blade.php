@@ -147,17 +147,6 @@
                                                 <label for="text-placeholder">Upload your Prescription *</label>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 mt-2">
-                                            <div class="form-group floating-label mb-25">
-                                                <select class="form-select" id="city" name="district" value=""
-                                                    required="">
-                                                    <option value="">Glass Types</option>
-                                                    <option value="1">1 </option>
-                                                    <option value="2">2</option>
-                                                </select>
-                                                <label for="text-placeholder">Glass Types *</label>
-                                            </div>
-                                        </div>
                                         <span class="ec-contact-wrap ec-contact-btn mt-3">
                                             <button class="btn btn-primary" type="submit">Book your Pickup</button>
                                         </span>
