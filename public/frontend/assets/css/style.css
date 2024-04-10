@@ -21635,14 +21635,14 @@ h4.ec-faq-title::after, .ec-faq-title.h4::after {
   display: initial;
 }
 .single-pro-content .ec-single-social ul li a {
-  width: 30px;
-  height: 30px;
+  width: 120px;
+  height: 38px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background: #efefef;
-  border-radius: 100%;
+  border-radius: 10px;
   color: #fff;
   -webkit-box-align: center;
       -ms-flex-align: center;

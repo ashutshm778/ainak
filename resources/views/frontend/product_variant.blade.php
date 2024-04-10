@@ -228,13 +228,13 @@
             <div class="ec-single-social">
                 Share This: 
                 <ul class="mb-0 ml-3">
-                    <li class="list-inline-item facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{route('search',$data->slug)}}?type=product"><i class="ecicon eci-facebook"></i></a>
+                    {{-- <li class="list-inline-item facebook"><a href="https://www.facebook.com/sharer/sharer.php?u={{route('search',$data->slug)}}?type=product"><i class="ecicon eci-facebook"></i></a>
                     </li>
                     <li class="list-inline-item twitter"><a href="https://twitter.com/intent/post?url={{route('search',$data->slug)}}?type=product]&text={{$data->name}}"><i class="ecicon eci-twitter"></i></a>
                     </li>
                     <li class="list-inline-item linkedin"><a href="https://www.linkedin.com/shareArticle?mini=true&url={{route('search',$data->slug)}}?type=product"><i class="ecicon eci-linkedin"></i></a>
-                    </li>
-                    <li class="list-inline-item whatsapp"><a href="https://web.whatsapp.com/send?text={{route('search',$data->slug)}}?type=product" target="_blank"><i class="ecicon eci-whatsapp"></i></a>
+                    </li> --}}
+                    <li class="list-inline-item whatsapp"><a href="https://wa.me/send?text={{route('search',$data->slug)}}?type=product" target="_blank">Whatsapp <i class="ecicon eci-whatsapp" style="padding-left: 6px"></i></a>
                     </li>
                 </ul>
             </div> 
