@@ -41,7 +41,7 @@
             <div class=" col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1">
                     <div class="banner-block">
-                        <a href="{{route('search')}}?subcategory="><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
+                        <a href="{{route('search')}}?subcategory=glass-ec3cbds"><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
             <div class="col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1">
                     <div class="banner-block">
-                        <a href="{{route('search')}}?subcategory="><img src="{{ asset('public/frontend/assets/images/thumbnail-women.webp') }}"
+                        <a href="{{route('search')}}?subcategory=women-ecc567hbc"><img src="{{ asset('public/frontend/assets/images/thumbnail-women.webp') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
             <div class=" col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1 p-0">
                     <div class="banner-block">
-                        <a href="{{route('search')}}?subcategory="><img src="{{ asset('public/frontend/assets/images/kids.jpg') }}"
+                        <a href="{{route('search')}}?subcategory=kids-a87345fqqw"><img src="{{ asset('public/frontend/assets/images/kids.jpg') }}"
                                 alt=""></a>
                     </div>
                 </div>
