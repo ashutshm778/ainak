@@ -32116,3 +32116,6 @@ body.ec-open:before {
 .coupon button{
   margin-top:-30px
 }
+.coupon form{
+  margin:0;
+}
