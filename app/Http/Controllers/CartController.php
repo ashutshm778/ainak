@@ -104,6 +104,20 @@ class CartController extends Controller
         }
     }
 
+    public function cart_file_upload(Request $request){
+        $cart = Cart::find($request->cart_id);
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            $name = rand() . time() . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/public/frontend/cart');
+            $image->move($destinationPath, $name);
+            $cart->file= $name;
+        } 
+        
+        $cart->save();
+        return 1;
+    }
+
     public function apply_coupon_code(Request $request)
     {
         //dd($request->all());

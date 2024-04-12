@@ -76,6 +76,7 @@ class OrderController extends Controller
                     $order_details->order_id = $order->id;
                     $order_details->product_id = $cart->product_id;
                     $order_details->quantity = $cart->quantity;
+                    $order_details->file = $cart->file;
                     $order_details->mrp_price = $product->retailer_selling_price;
                     $order_details->price = $product->retailer_selling_price - $discount_amount;
                     $order_details->discounted_price = $discount_amount;

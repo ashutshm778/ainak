@@ -18,6 +18,7 @@ class CreateCartsTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('product_id');
             $table->bigInteger('lens_id')->nullable();
+            $table->string('file')->nullable();
             $table->bigInteger('quantity');
             $table->timestamps();
         });

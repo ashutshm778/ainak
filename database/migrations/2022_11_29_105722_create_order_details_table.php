@@ -19,6 +19,7 @@ class CreateOrderDetailsTable extends Migration
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->bigInteger('product_id');
             $table->integer('quantity');
+            $table->string('file');
             $table->double('mrp_price',8,2);
             $table->double('price',8,2);
             $table->double('lens_name')->nullable();

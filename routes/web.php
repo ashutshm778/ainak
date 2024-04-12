@@ -63,6 +63,7 @@ Route::post('review/store',[FrontController::class,'review_store'])->name('revie
 
 
 Route::group(['middleware' => 'auth:customer'], function () {
+
     Route::view('user-profile', 'frontend.user-profile')->name('user_profile');
     Route::view('user-profile-mob', 'frontend.usermob_sidebar')->name('usermob_sidebar');
     Route::post('add-to-cart',[CartController::class,'store'])->name('add.to.cart');
@@ -99,6 +100,8 @@ Route::group(['middleware' => 'auth:customer'], function () {
     Route::post('rozer/payment/pay-success', [CartController::class,'pay_success'])->name('payment.rozerpay');
 
     Route::post('rozer/payment_enquiry/pay-success', [CartController::class,'payment_enquiry'])->name('payment_enquiry.rozerpay');
+
+    Route::post('cart_file_upload',[CartController::class,'cart_file_upload'])->name('add.cart_file_upload');
 
 });
 

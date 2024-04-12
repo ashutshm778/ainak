@@ -130,7 +130,10 @@
                                                         <div class="row">
                                                             @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
                                                                 @php
-                                                                    $product_prices = getProductDiscountedPrice($cart->product_id, 'retailer');
+                                                                    $product_prices = getProductDiscountedPrice(
+                                                                        $cart->product_id,
+                                                                        'retailer',
+                                                                    );
                                                                 @endphp
                                                                 <div class="col-md-6 mb-2">
                                                                     <div class="cards">
@@ -147,17 +150,24 @@
                                                                             </div>
                                                                             <div class="col-8">
                                                                                 <div class="pro-contents">
-                                                                                    <h5><a href="#">{{ $cart->product->name }}</a>
+                                                                                    <h5><a
+                                                                                            href="#">{{ $cart->product->name }}</a>
                                                                                     </h5>
                                                                                     <span class="ec-price">
                                                                                         @if ($product_prices['selling_price'] > $product_prices['product_price'])
-                                                                                            MRP <del>₹ {{ $product_prices['selling_price'] }}</del>
-                                                                                            <span> ₹ {{ $product_prices['product_price'] }}</span>
+                                                                                            MRP <del>₹
+                                                                                                {{ $product_prices['selling_price'] }}</del>
+                                                                                            <span> ₹
+                                                                                                {{ $product_prices['product_price'] }}</span>
                                                                                         @else
-                                                                                            <span> ₹ {{ $product_prices['product_price'] }} </span>
+                                                                                            <span> ₹
+                                                                                                {{ $product_prices['product_price'] }}
+                                                                                            </span>
                                                                                         @endif
-                                                                                        <a href="{{ route('delete.to.cart', $cart->id) }}" style="color:#ff6240;">Remove <i
-                                                                                            class="ecicon eci-trash-o"></i></a>
+                                                                                        <a href="{{ route('delete.to.cart', $cart->id) }}"
+                                                                                            style="color:#ff6240;">Remove
+                                                                                            <i
+                                                                                                class="ecicon eci-trash-o"></i></a>
                                                                                     </span>
                                                                                     @if (!empty($cart->lens_id))
                                                                                         <br>
@@ -165,13 +175,18 @@
                                                                                             {{ $cart->lens->name }} </p>
                                                                                         <span>
                                                                                             @if ($cart->lens->discount > 0)
-                                                                                               MRP <del>₹ {{ $cart->lens->price }}</del>
-                                                                                                ₹ {{ lensDiscountPrice($cart->lens->id) }}
+                                                                                                MRP <del>₹
+                                                                                                    {{ $cart->lens->price }}</del>
+                                                                                                ₹
+                                                                                                {{ lensDiscountPrice($cart->lens->id) }}
                                                                                             @else₹
                                                                                                 {{ $cart->lens->price }}
                                                                                             @endif
                                                                                         </span>
-                                                                                        <input type="file" name="lens_prescription_{{$cart->id}}" />
+                                                                                        <input type="file"
+                                                                                            name="lens_prescription_{{ $cart->id }}"
+                                                                                            id="fileInput_{{ $cart->id }}"
+                                                                                            onchange="uploadFile('{{ $cart->id }}')" />
                                                                                     @endif
                                                                                 </div>
                                                                             </div>
@@ -210,12 +225,18 @@
                             @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
                                 @php
                                     $product_prices = getProductDiscountedPrice($cart->product_id, 'retailer');
-                                    $sub_total_amount = $sub_total_amount + $product_prices['selling_price'] * $cart->quantity;
-                                    $total_discount = ($total_discount + $product_prices['selling_price'] - $product_prices['product_price']) * $cart->quantity;
+                                    $sub_total_amount =
+                                        $sub_total_amount + $product_prices['selling_price'] * $cart->quantity;
+                                    $total_discount =
+                                        ($total_discount +
+                                            $product_prices['selling_price'] -
+                                            $product_prices['product_price']) *
+                                        $cart->quantity;
                                     $total_amount = $total_amount + $product_prices['product_price'] * $cart->quantity;
                                     if (!empty($cart->lens_id)) {
                                         $total_lens = $total_lens + $cart->lens->price;
-                                        $total_lens_discount = $total_lens_discount + lensDiscountPrice($cart->lens->id);
+                                        $total_lens_discount =
+                                            $total_lens_discount + lensDiscountPrice($cart->lens->id);
                                     }
                                 @endphp
                             @endforeach
@@ -261,13 +282,15 @@
                                             @foreach (App\Models\Admin\Coupon::get() as $coupon)
                                                 <li id="coupon_{{ $coupon->id }}">
                                                     {{ $coupon->code }}
-                                                    <form  method="POST" action="{{ route('checkout.apply_coupon_code') }}">
-                                                    @csrf
-                                                    <input type="hidden" name="code" value="{{$coupon->code}}">
-                                                    <button type="submit"  class="code" >Apply </button>
-                                                </form>
-                                                    
-                                                   </li>
+                                                    <form method="POST"
+                                                        action="{{ route('checkout.apply_coupon_code') }}">
+                                                        @csrf
+                                                        <input type="hidden" name="code"
+                                                            value="{{ $coupon->code }}">
+                                                        <button type="submit" class="code">Apply </button>
+                                                    </form>
+
+                                                </li>
                                             @endforeach
                                         </div>
                                     </ul>
@@ -284,8 +307,8 @@
                                     </div>
                                     <div class="dscnt">
                                         <span class="text-left">Total Offer Discount</span>
-                                        <span
-                                            class="text-right">- ₹{{ $sub_total_amount + $total_lens - ($total_amount + $total_lens_discount) }}</span>
+                                        <span class="text-right">-
+                                            ₹{{ $sub_total_amount + $total_lens - ($total_amount + $total_lens_discount) }}</span>
                                     </div>
                                     <div>
                                         <span class="text-left">Net Item Total</span>
@@ -293,7 +316,9 @@
                                     </div>
                                     @if (Session::has('coupon_discount'))
                                         <div class="dscnt">
-                                            <span class="text-left">Coupon ({{ App\Models\Admin\Coupon::find(Session::get('coupon_id'))->code }}) </span>
+                                            <span class="text-left">Coupon
+                                                ({{ App\Models\Admin\Coupon::find(Session::get('coupon_id'))->code }})
+                                            </span>
                                             <span class="text-right">- ₹{{ Session::get('coupon_discount') }}</span>
                                         </div>
                                     @endif
@@ -356,15 +381,15 @@
     </section>
 @endsection
 <script>
-        document.addEventListener("contextmenu", (e) => {
-     e.preventDefault();
+    document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
     }, false);
 
     document.addEventListener("keydown", (e) => {
-     if (e.ctrlKey || e.keyCode==123) {
-      e.stopPropagation();
-      e.preventDefault();
-     }
+        if (e.ctrlKey || e.keyCode == 123) {
+            e.stopPropagation();
+            e.preventDefault();
+        }
     });
 </script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -412,10 +437,10 @@
             }
             if (type == 'razorpay') {
 
-                amount = "{{$total_amount + $total_lens_discount - $coupon_discount}}";
+                amount = "{{ $total_amount + $total_lens_discount - $coupon_discount }}";
 
                 var options = {
-                    "key": "{{env('RKEY')}}", // Enter the Key ID generated from the Dashboard
+                    "key": "{{ env('RKEY') }}", // Enter the Key ID generated from the Dashboard
                     "amount": amount *
                         100, // Amount is in currency subunits. Default currency is INR. Hence, 10 refers to 1000 paise
                     "currency": "INR",
@@ -438,11 +463,11 @@
                                 payment_type: type,
                             },
                             success: function(data) {
-                                if(data==1){
-                                 window.location.href ="{{ route('order.summary') }}";
+                                if (data == 1) {
+                                    window.location.href = "{{ route('order.summary') }}";
                                 }
-                                if(data==0){
-                                 location.reload();
+                                if (data == 0) {
+                                    location.reload();
                                 }
 
                             }
@@ -474,5 +499,32 @@
         setTimeout(function() {
             $("#addtocart_toast").removeClass("show")
         }, 3000);
+    }
+
+
+    function uploadFile(id) {
+        var formData = new FormData();
+        var file = document.getElementById("fileInput_" + id).files[0];
+        formData.append("file", file);
+        formData.append("cart_id", id);
+        // Send AJAX request
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('add.cart_file_upload') }}",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                console.log("File uploaded successfully!");
+            },
+            error: function(xhr, status, error) {
+                console.error("Error occurred while uploading file:", error);
+            }
+        });
     }
 </script>
