@@ -144,7 +144,7 @@
                                         <div class="col-lg-12 mt-2">
                                             <div class="form-group floating-label mb-25">
                                                 <input type="file" name="file"
-                                                    accept="image/png, image/jpg, image/jpeg" required="">
+                                                    accept="image/png, image/jpg, image/jpeg" required>
                                                 <label for="text-placeholder">Upload your Prescription *</label>
                                             </div>
                                         </div>
