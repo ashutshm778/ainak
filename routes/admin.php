@@ -119,6 +119,9 @@ Route::prefix("admin")->group(function(){
 
      Route::get('all_review',[CustomerController::class,'all_review'])->name('customers.all_review');
      Route::get('review-status-update/{id}/{status}', [CustomerController::class,'reviewStatusUpdate'])->name('review.status.update');
+
+     Route::get('all_enquiry',[CustomerController::class,'all_enquiry'])->name('customers.all_enquiry');
+     Route::get('all_repair_glass_enquiry',[CustomerController::class,'all_repair_glass_enquiry'])->name('customers.all_repair_glass_enquiry');
     
         //App Setting
         Route::get('customers-index',[CustomerController::class,'index'])->name('customers.index');

@@ -156,6 +156,8 @@
                                                                                         @else
                                                                                             <span> ₹ {{ $product_prices['product_price'] }} </span>
                                                                                         @endif
+                                                                                        <a href="{{ route('delete.to.cart', $cart->id) }}" style="color:#ff6240;">Remove <i
+                                                                                            class="ecicon eci-trash-o"></i></a>
                                                                                     </span>
                                                                                     @if (!empty($cart->lens_id))
                                                                                         <br>
@@ -169,6 +171,7 @@
                                                                                                 {{ $cart->lens->price }}
                                                                                             @endif
                                                                                         </span>
+                                                                                        <input type="file" name="lens_prescription_{{$cart->id}}" />
                                                                                     @endif
                                                                                 </div>
                                                                             </div>

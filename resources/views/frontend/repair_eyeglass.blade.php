@@ -49,7 +49,8 @@
                     <div class="noticed">
                         <div class="main-part">
                             <div class="method-account">
-                                <form method="post" action="" enctype="multipart/form-data"> 
+                                <form method="POST" action="{{route('repair_glass.store')}}" enctype="multipart/form-data"> 
+                                    @csrf
                                     <div class="row clearfix">
                                         <!-- Form Group -->
                                         <div class="col-lg-12">
@@ -142,7 +143,7 @@
                                         <h5 style="text-align: left;">OR</h5><hr/>
                                         <div class="col-lg-12 mt-2">
                                             <div class="form-group floating-label mb-25">
-                                                <input type="file" name="profile_img"
+                                                <input type="file" name="file"
                                                     accept="image/png, image/jpg, image/jpeg" required="">
                                                 <label for="text-placeholder">Upload your Prescription *</label>
                                             </div>

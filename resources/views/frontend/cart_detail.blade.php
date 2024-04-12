@@ -54,9 +54,9 @@
                                     <span class="ecicon eci-plus"></span>
                                 </button>
                             </div> --}}
-                            <a href="#"
+                            {{-- <a href="#"
                                 style="line-height: 1.5;position: absolute;top: 0;right: 0;padding: 0 9px;color: red;font-size: 16px;"
-                                onclick="remove_to_cart({{ $cart->id }})">×</a>
+                                onclick="remove_to_cart({{ $cart->id }})">×</a> --}}
                         </div>
                     </li>
                 @endforeach

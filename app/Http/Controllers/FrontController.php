@@ -11,6 +11,7 @@ use App\Models\Review;
 use App\Models\Customer;
 use App\Models\Admin\Brnad;
 use App\Models\Admin\Offer;
+use App\Models\RepairGlass;
 use Illuminate\Http\Request;
 use App\Models\Admin\Product;
 use App\Models\Admin\Category;
@@ -392,6 +393,35 @@ class FrontController extends Controller
             $review->save();
 
             return back();
+    }
+
+    public function repair_glass(Request $request){
+
+        $repair_glass=new RepairGlass;
+        $repair_glass->name=$request->name;
+        $repair_glass->house_no=$request->house_no;
+        $repair_glass->pincode=$request->pincode;
+        $repair_glass->district=$request->district;
+        $repair_glass->state=$request->state;
+        $repair_glass->landmark=$request->landmark;
+        $repair_glass->left_eye_lense=$request->left_eye_lense;
+        $repair_glass->power_left=$request->power_left;
+        $repair_glass->right_eye_lense=$request->right_eye_lense;
+        $repair_glass->power_right=$request->power_right;
+        
+
+        if ($request->file('file')) {
+            $file = $request->file('file');
+            $filename = date('YmdHi') . $file->getClientOriginalName();
+            $file->move(public_path('public/repair_glass'), $filename);
+        }
+
+        $repair_glass->file=$filename;
+
+        $repair_glass->save();
+        
+        return back();
+
     }
 
 

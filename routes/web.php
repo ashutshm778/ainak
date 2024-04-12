@@ -30,6 +30,7 @@ Route::get('/admin',function(){
     return redirect()->route('login');
 });
 
+Route::post('repair_glass/store',[FrontController::class,'repair_glass'])->name('repair_glass.store');
 
 Route::get('/search',[SearchController::class,'search'])->name('search');
 Route::get('/search?q={search}', [SearchController::class,'search'])->name('suggestion.search');
@@ -58,6 +59,8 @@ Route::view('privacy-policy', 'frontend.privacy-policy')->name('privacy_policy')
 Route::view('cancel-and-refund-policy', 'frontend.cancel_and_refund_policy')->name('cancel_and_refund_policy');
 
 Route::post('review/store',[FrontController::class,'review_store'])->name('review.store');
+
+
 
 Route::group(['middleware' => 'auth:customer'], function () {
     Route::view('user-profile', 'frontend.user-profile')->name('user_profile');

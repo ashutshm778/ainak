@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\Review;
+use App\Models\Enquiry;
 use App\Models\Customer;
+use App\Models\RepairGlass;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -60,6 +62,20 @@ class CustomerController extends Controller
         $review->status = $status;
         $review->save();
             return 1;
+    }
+
+    public function all_enquiry(Request $request){
+
+        $enquiries = Enquiry::paginate(10);
+        return view('backend.enquiry',compact('enquiries'),['page_title'=>'All Enquiry']);
+       
+    }
+
+    public function all_repair_glass_enquiry(Request $request){
+
+        $repair_glass_enquiry = RepairGlass::paginate(10);
+        return view('backend.repair_glass_enquiry',compact('repair_glass_enquiry'),['page_title'=>'Repair Glass']);
+       
     }
 
 }
