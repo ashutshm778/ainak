@@ -66,6 +66,7 @@
                                                     <th>Qty</th>
                                                     <th class="d-flex justify-content-end">Total Amount</th>
                                                     <th class="text-center">Status</th>
+                                                    <th>Prescription</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -130,6 +131,11 @@
                                                                 $total_lens = $total_lens + $order_detail->lens_price;
                                                             }
                                                         @endphp
+
+                                                    <td class="text-center">
+                                                        <img src="{{asset('public/public/frontend/cart/'.$order_detail->file)}}" alt="" style="width: 100px;"><br>
+                                                        <a href="{{asset('public/public/frontend/cart/'.$order_detail->file)}}" target="_blank"><b>View Prescription</b></a>
+                                                    </td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>
