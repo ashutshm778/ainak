@@ -402,10 +402,7 @@
             </div>
         </div>
     </section>
-@endsection
-
-  
-<!-- Modal Start-->
+    <!-- Modal Start-->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
@@ -414,12 +411,27 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <div class="mb-2">
+            <div class="mb-3">
                 <div class="offer-item-wrap">
                     <div class="cntr" aria-hidden="true">
                         <div class="cntr-strp--mid"><div>
                             <div class="ttl-wrpr">
-                                <span class="xtra--ttl">CHEESY60</span><span class="item--ttl">Get ₹60 OFF</span>
+                                <span class="xtra--ttl">NEW10</span><span class="item--ttl">Get ₹60 OFF</span>
+                            </div>
+                            <div class="item--dscrptn">Get 30% off up to ₹60 on orders of ₹200 or more</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btm--lnk">
+                    <span class="btm--lnk__tnc">T&amp;C</span><span class="btm--lnk__aply">APPLY</span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="offer-item-wrap">
+                    <div class="cntr" aria-hidden="true">
+                        <div class="cntr-strp--mid"><div>
+                            <div class="ttl-wrpr">
+                                <span class="xtra--ttl">NEW10</span><span class="item--ttl">Get ₹60 OFF</span>
                             </div>
                             <div class="item--dscrptn">Get 30% off up to ₹60 on orders of ₹200 or more</div>
                         </div>
@@ -435,6 +447,9 @@
     </div>
   </div>
 {{-- Model End --}}
+@endsection
+
+
 
 <script>
     document.addEventListener("contextmenu", (e) => {
