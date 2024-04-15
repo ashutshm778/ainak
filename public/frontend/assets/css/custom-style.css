@@ -3814,11 +3814,19 @@ div#ec-main-menu-desk {
 }
 
 .rmve{
+<<<<<<< HEAD
   color: #ff6240 !important;
   position: relative;
   top: 0px;
   right: -120px;
   font-size: 16px !important;
+=======
+  color: #ff6240;
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  font-size: 16px;
+>>>>>>> 81cdf0d (new update)
 }
 .inpt-cls{
   line-height: 16px !important;
