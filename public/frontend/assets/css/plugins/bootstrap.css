@@ -1977,9 +1977,11 @@ progress {
 }
 .table > thead {
   vertical-align: bottom;
+  background: #ff6240;
+  color: #fff;
 }
 .table > :not(:first-child) {
-  border-top: 2px solid currentColor;
+  border-top: 1px solid currentColor;
 }
 
 .caption-top {

@@ -63,13 +63,13 @@
                                         <tr>
                                             <th class="text-center">#</th>
                                             <th class="text-center">Order ID</th>
+                                            <th class="text-center">Prescription</th>
                                             <th class="text-center">Customer Details</th>
                                             <th class="text-center">Grand Total</th>
                                             <th class="text-center">Total Product</th>
                                             <th class="text-center">Shipping Address</th>
                                             <th class="text-center">Delivery Status</th>
-                                            <th class="text-center">Payment Method</th>
-                                            <th class="text-center">Payment Status</th>
+                                            <th class="text-center">Payment Details</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
@@ -82,6 +82,10 @@
                                                     $customer_details = json_decode($order->shipping_address);
                                                     $customer = App\Models\Customer::where('id',$customer_details->user_id)->first();
                                                 @endphp
+                                                <td class="text-center">
+                                                    <img src="{{asset('public/'.api_asset($order->thumbnail_image))}}" alt="" style="width: 100px;"><br>
+                                                    <a href="{{asset('public/'.api_asset($order->thumbnail_image))}}" target="_blank"><b>View Prescription</b></a>
+                                                </td>
                                                 <td class="text-left">
                                                     <b>Name: </b>{{$customer_details->name}} <br>
                                                     <b>Phone: </b>{{$customer->phone}} <br>
@@ -115,15 +119,13 @@
                                                         {{ucwords(str_replace('_',' ',$order->order_status))}}
                                                     </span>
                                                 </td>
-                                                <td class="text-center">
-                                                    @if($order->payment_type == 'cod')
+                                                <td>
+                                                    <b>Payment type :</b> @if($order->payment_type == 'cod')
                                                         Cash On Delivery
                                                     @else
                                                         Razorpay
-                                                    @endif
-                                                </td>
-                                                <td class="text-center">
-                                                    @if($order->payment_status == 'pending')
+                                                    @endif <br>
+                                                    <b>Payment Status :</b> @if($order->payment_status == 'pending')
                                                         <span class="badge bg-danger">Unpaid</span>
                                                     @else
                                                         <span class="badge bg-success">Paid</span>

@@ -55,7 +55,8 @@
                                                     Lense :   {{$data->right_eye_lense}}<br>
                                                     Power :   {{$data->power_right}}<br>
                                                    </td>
-                                                <td class="text-center"><img src="{{asset('public/public/repair_glass/'.$data->file)}}" style="height:100px;"></td>
+                                                <td class="text-center"><img src="{{asset('public/public/repair_glass/'.$data->file)}}" style="height:100px; width:150px;"><br>
+                                                    <a href="{{asset('public/public/repair_glass/'.$data->file)}}" target="_blank"><b>View Prescription</b></a></td>
                                             </tr>
                                         @empty
                                             <tr class="footable-empty">
