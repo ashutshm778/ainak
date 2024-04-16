@@ -150,21 +150,10 @@
                                             </div>
                                             <div class="col-8">
                                                 <div class="pro-contents">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a8052d1 (new update)
                                                     <h5><a href="#">{{ $cart->product->name }}</a>
                                                             <a href="{{ route('delete.to.cart', $cart->id) }}" class="rmve">
                                                                 <i class="ecicon eci-trash-o"></i>
                                                             </a>
-<<<<<<< HEAD
-=======
-                                                    <h5><a
-                                                            href="#">{{ $cart->product->name }}</a>
->>>>>>> 81cdf0d (new update)
-=======
->>>>>>> a8052d1 (new update)
                                                     </h5>
                                                     <span class="ec-price">
                                                         @if ($product_prices['selling_price'] > $product_prices['product_price'])
@@ -177,16 +166,6 @@
                                                                 {{ $product_prices['product_price'] }}
                                                             </span>
                                                         @endif
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-                                                        <a href="{{ route('delete.to.cart', $cart->id) }}"
-                                                            class="rmve">
-                                                            <i
-                                                                class="ecicon eci-trash-o"></i></a>
->>>>>>> 81cdf0d (new update)
-=======
->>>>>>> a8052d1 (new update)
                                                         <small
                                                             class="prcnt">({{ $product_prices['discount'] }}
                                                             @if ($product_prices['discount_type'] == 'percent')
