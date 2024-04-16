@@ -105,7 +105,8 @@ class ProductController extends Controller
         $search_subsubcategory=$request->search_subsubcategory_id;
         $search_brand=$request->search_brand_id;
         $page=$request->page;
-        return view('backend.products.products.create',compact('key','page','search_category','search_subcategory','search_subsubcategory','search_brand'),['page_title'=>'Add Product']);
+        $prevoius_url=url()->previous();
+        return view('backend.products.products.create',compact('key','page','search_category','search_subcategory','search_subsubcategory','search_brand','prevoius_url'),['page_title'=>'Add Product']);
     }
 
     public function store(Request $request)
@@ -243,8 +244,8 @@ class ProductController extends Controller
 
             $product->save();
         }
-
-        return redirect()->route('admin.products.index')->with('success','Product Added Successfully!');
+        return redirect()->to($request->previous_url)->with('success','Product Added Successfully!');
+       
     }
 
     public function show(Product $product)
@@ -261,7 +262,7 @@ class ProductController extends Controller
         $search_subsubcategory=$request->search_subsubcategory_id;
         $search_brand=$request->search_brand_id;
         $page=$request->page;
-         $prevoius_url=url()->previous();
+        $prevoius_url=url()->previous();
 
         return view('backend.products.products.edit',compact('prevoius_url','product','key','page','search_category','search_subcategory','search_subsubcategory','search_brand'),['page_title'=>'Edit Product']);
     }
@@ -418,7 +419,7 @@ class ProductController extends Controller
 
             $product->save();
         }
-        return redirect()->to($request->previous_url);
+        return redirect()->to($request->previous_url)->with('success','Product Updated Successfully!');
        // return redirect()->route('admin.products.index',['key='.$search.'&search_category_id='.$search_category.'&search_subcategory_id='.$search_subcategory.'&search_subsubcategory_id='.$search_subsubcategory.'&search_brand_id='.$search_brand.'&page='.$page])->with('success','Product Updated Successfully!');
     }
 

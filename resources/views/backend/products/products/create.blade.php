@@ -40,6 +40,7 @@
                                         <input type="hidden" name="search_subsubcategory_id" value="{{$search_subsubcategory}}">
                                         <input type="hidden" name="search_brand_id" value="{{$search_brand}}">
                                         <input type="hidden" name="page" value="{{$page}}">
+                                        <input type="hidden" name="previous_url" value="{{$prevoius_url}}">
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-md-6 form_div">
