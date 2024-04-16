@@ -3815,11 +3815,15 @@ div#ec-main-menu-desk {
 
 .rmve{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a8052d1 (new update)
   color: #ff6240 !important;
   position: relative;
   top: 0px;
   right: -120px;
   font-size: 16px !important;
+<<<<<<< HEAD
 =======
   color: #ff6240;
   position: absolute;
@@ -3827,6 +3831,8 @@ div#ec-main-menu-desk {
   right: 10px;
   font-size: 16px;
 >>>>>>> 81cdf0d (new update)
+=======
+>>>>>>> a8052d1 (new update)
 }
 .inpt-cls{
   line-height: 16px !important;

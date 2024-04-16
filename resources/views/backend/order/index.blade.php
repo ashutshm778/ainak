@@ -63,7 +63,6 @@
                                         <tr>
                                             <th class="text-center">#</th>
                                             <th class="text-center">Order ID</th>
-                                            <th class="text-center">Prescription</th>
                                             <th class="text-center">Customer Details</th>
                                             <th class="text-center">Grand Total</th>
                                             <th class="text-center">Total Product</th>
@@ -82,10 +81,6 @@
                                                     $customer_details = json_decode($order->shipping_address);
                                                     $customer = App\Models\Customer::where('id',$customer_details->user_id)->first();
                                                 @endphp
-                                                <td class="text-center">
-                                                    <img src="{{asset('public/'.api_asset($order->thumbnail_image))}}" alt="" style="width: 100px;"><br>
-                                                    <a href="{{asset('public/'.api_asset($order->thumbnail_image))}}" target="_blank"><b>View Prescription</b></a>
-                                                </td>
                                                 <td class="text-left">
                                                     <b>Name: </b>{{$customer_details->name}} <br>
                                                     <b>Phone: </b>{{$customer->phone}} <br>
