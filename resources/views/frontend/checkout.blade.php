@@ -134,7 +134,7 @@
                                                 <div class="accordion-body">
                                                     <div class="ec-bl-block-content">
                                                         <div class="row">
-                                                            @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
+                                                            @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->orderBy('id','desc')->get() as $cart)
                                                                 @php
                                                                     $product_prices = getProductDiscountedPrice(
                                                                         $cart->product_id,
