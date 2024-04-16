@@ -150,8 +150,10 @@
                                             </div>
                                             <div class="col-8">
                                                 <div class="pro-contents">
-                                                    <h5><a
-                                                            href="#">{{ $cart->product->name }}</a>
+                                                    <h5><a href="#">{{ $cart->product->name }}</a>
+                                                            <a href="{{ route('delete.to.cart', $cart->id) }}" class="rmve">
+                                                                <i class="ecicon eci-trash-o"></i>
+                                                            </a>
                                                     </h5>
                                                     <span class="ec-price">
                                                         @if ($product_prices['selling_price'] > $product_prices['product_price'])
@@ -164,10 +166,6 @@
                                                                 {{ $product_prices['product_price'] }}
                                                             </span>
                                                         @endif
-                                                        <a href="{{ route('delete.to.cart', $cart->id) }}"
-                                                            class="rmve">
-                                                            <i
-                                                                class="ecicon eci-trash-o"></i></a>
                                                         <small
                                                             class="prcnt">({{ $product_prices['discount'] }}
                                                             @if ($product_prices['discount_type'] == 'percent')
