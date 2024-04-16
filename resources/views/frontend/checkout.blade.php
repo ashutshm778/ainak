@@ -8,6 +8,12 @@
         .accordion-body p {
             margin-bottom: 0;
         }
+
+        .alert-danger {
+            color: #f9f5f5;
+            background-color: #ed2020;
+            border-color: #b9b9b9;
+        }
     </style>
     <div class="sticky-header-next-sec  ec-breadcrumb section-space-mb"></div>
     <div class="desk_hide">
@@ -117,114 +123,118 @@
                                                 </div>
                                             </div>
                                         </div>
-        <div class="accordion-item ec-faq-block">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree" aria-expanded="true"
-                    aria-controls="collapseThree"> Order Summary </button>
-            </h2>
-            <div id="collapseThree" class="accordion-collapse collapse show"
-                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <div class="ec-bl-block-content">
-                        <div class="row">
-                            @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
-                                @php
-                                    $product_prices = getProductDiscountedPrice(
-                                        $cart->product_id,
-                                        'retailer',
-                                    );
-                                @endphp
-                                <div class="col-md-6 mb-2">
-                                    <div class="cards">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="pro-img">
-                                                    <a href="#">
-                                                        <img class="main-image"
-                                                            src="{{ asset('public/' . api_asset($cart->product->thumbnail_image)) }}"
-                                                            class="w-100"
-                                                            alt="Product" />
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="pro-contents">
-                                                    <h5><a href="#">{{ $cart->product->name }}</a>
-                                                            <a href="{{ route('delete.to.cart', $cart->id) }}" class="rmve">
-                                                                <i class="ecicon eci-trash-o"></i>
-                                                            </a>
-                                                    </h5>
-                                                    <span class="ec-price">
-                                                        @if ($product_prices['selling_price'] > $product_prices['product_price'])
-                                                            MRP <del>₹
-                                                                {{ $product_prices['selling_price'] }}</del>
-                                                            <span> ₹
-                                                                {{ $product_prices['product_price'] }}</span>
-                                                        @else
-                                                            <span> ₹
-                                                                {{ $product_prices['product_price'] }}
-                                                            </span>
-                                                        @endif
-                                                        <small
-                                                            class="prcnt">({{ $product_prices['discount'] }}
-                                                            @if ($product_prices['discount_type'] == 'percent')
-                                                                {{ '%' }}
-                                                            @else
-                                                                {{ 'Rs' }}
-                                                            @endif
-                                                            OFF)</small>
-                                                    </span>
-                                                    @if (!empty($cart->lens_id))
-                                                        <br>
-                                                        <p> Lens :
-                                                            {{ $cart->lens->name }} </p>
-                                                        <span>
-                                                            @if ($cart->lens->discount > 0)
-                                                                MRP <del>₹
-                                                                    {{ $cart->lens->price }}</del>
-                                                                ₹
-                                                                {{ lensDiscountPrice($cart->lens->id) }}
-                                                            @else₹
-                                                                {{ $cart->lens->price }}
-                                                            @endif
-                                                            @if($cart->lens->discount > 0)
-                                                            <small
-                                                                class="prcnt">({{ $cart->lens->discount }}%
-                                                                Off)</small>
-                                                                @endif
-                                                        </span>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="cards-footer">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <h6>Upload Prescription</h6>
-                                                </div>
-                                                <div class="col-6">
-                                                    <input type="file" class="inpt-cls"
-                                                        name="lens_prescription_{{ $cart->id }}"
-                                                        id="fileInput_{{ $cart->id }}"
-                                                        onchange="uploadFile('{{ $cart->id }}')" />
+                                        <div class="accordion-item ec-faq-block">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseThree" aria-expanded="true"
+                                                    aria-controls="collapseThree"> Order Summary </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse show"
+                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <div class="ec-bl-block-content">
+                                                        <div class="row">
+                                                            @foreach (App\Models\Cart::where('user_id', Auth::guard('customer')->user()->id)->get() as $cart)
+                                                                @php
+                                                                    $product_prices = getProductDiscountedPrice(
+                                                                        $cart->product_id,
+                                                                        'retailer',
+                                                                    );
+                                                                @endphp
+                                                                <div class="col-md-6 mb-2">
+                                                                    <div class="cards">
+                                                                        <div class="row">
+                                                                            <div class="col-4">
+                                                                                <div class="pro-img">
+                                                                                    <a href="#">
+                                                                                        <img class="main-image"
+                                                                                            src="{{ asset('public/' . api_asset($cart->product->thumbnail_image)) }}"
+                                                                                            class="w-100"
+                                                                                            alt="Product" />
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-8">
+                                                                                <div class="pro-contents">
+                                                                                    <h5><a
+                                                                                            href="#">{{ $cart->product->name }}</a>
+                                                                                        <a href="{{ route('delete.to.cart', $cart->id) }}"
+                                                                                            class="rmve">
+                                                                                            <i
+                                                                                                class="ecicon eci-trash-o"></i>
+                                                                                        </a>
+                                                                                    </h5>
+                                                                                    <span class="ec-price">
+                                                                                        @if ($product_prices['selling_price'] > $product_prices['product_price'])
+                                                                                            MRP <del>₹
+                                                                                                {{ $product_prices['selling_price'] }}</del>
+                                                                                            <span> ₹
+                                                                                                {{ $product_prices['product_price'] }}</span>
+                                                                                        @else
+                                                                                            <span> ₹
+                                                                                                {{ $product_prices['product_price'] }}
+                                                                                            </span>
+                                                                                        @endif
+                                                                                        <small
+                                                                                            class="prcnt">({{ $product_prices['discount'] }}
+                                                                                            @if ($product_prices['discount_type'] == 'percent')
+                                                                                                {{ '%' }}
+                                                                                            @else
+                                                                                                {{ 'Rs' }}
+                                                                                            @endif
+                                                                                            OFF)
+                                                                                        </small>
+                                                                                    </span>
+                                                                                    @if (!empty($cart->lens_id))
+                                                                                        <br>
+                                                                                        <p> Lens :
+                                                                                            {{ $cart->lens->name }} </p>
+                                                                                        <span>
+                                                                                            @if ($cart->lens->discount > 0)
+                                                                                                MRP <del>₹
+                                                                                                    {{ $cart->lens->price }}</del>
+                                                                                                ₹
+                                                                                                {{ lensDiscountPrice($cart->lens->id) }}
+                                                                                            @else₹
+                                                                                                {{ $cart->lens->price }}
+                                                                                            @endif
+                                                                                            @if ($cart->lens->discount > 0)
+                                                                                                <small
+                                                                                                    class="prcnt">({{ $cart->lens->discount }}%
+                                                                                                    Off)</small>
+                                                                                            @endif
+                                                                                        </span>
+                                                                                    @endif
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="cards-footer">
+                                                                            <div class="row">
+                                                                                <div class="col-6">
+                                                                                    <h6>Upload Prescription</h6>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <input type="file" class="inpt-cls"
+                                                                                        name="lens_prescription_{{ $cart->id }}"
+                                                                                        id="fileInput_{{ $cart->id }}"
+                                                                                        onchange="uploadFile('{{ $cart->id }}')" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
                 <div class="ec-checkout-rightside col-lg-4 col-md-12">
                     <div class="ec-sidebar-wrap">
                         <div class="ec-sidebar-block">
@@ -265,6 +275,11 @@
                                     {{ session()->get('success') }}
                                 </div>
                             @endif
+                            @if (session()->has('error'))
+                                <div class="alert alert-danger">
+                                    {{ session()->get('error') }}
+                                </div>
+                            @endif
                             <div id="addtocart_toast" class="addtocart_toast">
                                 <div class="desc">Coupon Copy Successfully</div>
                             </div>
@@ -291,7 +306,8 @@
                                             <button class="ec-coupan-btn button btn-primary" type="submit"
                                                 value="">Apply</button>
                                         </form>
-                                        <a href="#" style="float:right; font-size:12px;" data-bs-toggle="modal" data-bs-target="#exampleModal"> View Coupan Details</a>
+                                        <a href="#" style="float:right; font-size:12px;" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal"> View Coupan Details</a>
                                     </div>
                                 @endif
                                 <div class="side">
@@ -401,50 +417,50 @@
         </div>
     </section>
     <!-- Modal Start-->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Coupan Details</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="mb-3">
-                <div class="offer-item-wrap">
-                    <div class="cntr" aria-hidden="true">
-                        <div class="cntr-strp--mid"><div>
-                            <div class="ttl-wrpr">
-                                <span class="xtra--ttl">NEW10</span><span class="item--ttl">Get ₹60 OFF</span>
-                            </div>
-                            <div class="item--dscrptn">Get 30% off up to ₹60 on orders of ₹200 or more</div>
-                        </div>
-                    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Coupan Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="btm--lnk">
-                    <span class="btm--lnk__tnc">T&amp;C</span><span class="btm--lnk__aply">APPLY</span>
+                <div class="modal-body">
+                    @foreach (App\Models\Admin\Coupon::get() as $coupon)
+                        <div class="mb-3">
+                            <div class="offer-item-wrap">
+                                <div class="cntr" aria-hidden="true">
+                                    <div class="cntr-strp--mid">
+                                        <div>
+                                            <div class="ttl-wrpr">
+                                                <span class="xtra--ttl">{{ $coupon->code }}</span><span
+                                                    class="item--ttl">Get {{ $coupon->discount }} @if ($coupon->discount_type == 'percent')
+                                                        % OFF
+                                                        @endif @if ($coupon->discount_type == 'flat')
+                                                            Rs OFF
+                                                        @endif
+                                                </span>
+                                            </div>
+                                            <div class="item--dscrptn">{!! $coupon->description !!}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btm--lnk">
+                                    <span class="btm--lnk__tnc">T&amp;C</span><span class="btm--lnk__aply">
+                                        <form method="POST" action="{{ route('checkout.apply_coupon_code') }}">
+                                            @csrf
+                                            <input type="hidden" name="code" value="{{ $coupon->code }}">
+                                            <button type="submit" class="code">Apply </button>
+                                        </form>
+                                    </span>
+                                </div>
+                            </div>
+                    @endforeach
                 </div>
             </div>
-            <div class="mb-3">
-                <div class="offer-item-wrap">
-                    <div class="cntr" aria-hidden="true">
-                        <div class="cntr-strp--mid"><div>
-                            <div class="ttl-wrpr">
-                                <span class="xtra--ttl">NEW10</span><span class="item--ttl">Get ₹60 OFF</span>
-                            </div>
-                            <div class="item--dscrptn">Get 30% off up to ₹60 on orders of ₹200 or more</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="btm--lnk">
-                    <span class="btm--lnk__tnc">T&amp;C</span><span class="btm--lnk__aply">APPLY</span>
-                </div>
-            </div>
         </div>
-        </div>
-      </div>
     </div>
-  </div>
-{{-- Model End --}}
+    </div>
+    {{-- Model End --}}
 @endsection
 
 
