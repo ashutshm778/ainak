@@ -12,7 +12,7 @@
                     <div class="ec-compare-content">
                         <div class="ec-compare-inner">
                             <div class="row margin-minus-b-30">
-                                @foreach (App\Models\Wishlist::where('user_id',Auth::user()->id)->with('product')->get() as $wishlist)
+                                @foreach (App\Models\Wishlist::where('user_id',Auth::user()->id)->orderBy('id','desc')->with('product')->get() as $wishlist)
                                     @php
                                         $wishlist_price=getProductDiscountedPrice($wishlist->product->id,'retailer');
                                     @endphp
