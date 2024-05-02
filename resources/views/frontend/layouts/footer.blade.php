@@ -163,12 +163,9 @@
                 <div class="row align-items-center">
                     <div class="col-md-8 footer-copy">
                         <div class="footer-bottom-copy ">
-                            <div class="ec-copy mb-2">Copyright &copy;
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script> All Rights Reserved. Developed By <a
-                                    href="https://www.techuptechnologies.com/" class="site-name"> Techup Technologies.
-                                </a>
+                            <div class="ec-copy mb-2">
+                                &copy;<script>document.write(new Date().getFullYear())
+                                </script> All Rights Reserved. Developed By <a href="https://www.techuptechnologies.com/" class="site-name"> Techup Technologies.</a>
                             </div>
                         </div>
                     </div>
