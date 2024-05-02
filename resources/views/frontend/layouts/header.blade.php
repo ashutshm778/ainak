@@ -278,14 +278,14 @@
                 <div class="header-res-social">
                     <div class="header-top-social">
                         <ul class="mb-0">
-                            <li class="list-inline-item"><a class="hdr-facebook" href="#"><i
+                            <li class="list-inline-item"><a class="hdr-twitter" href="https://wa.me/+919219949495" target="_blank"><i
+                                class="ecicon eci-whatsapp"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-facebook" href="https://www.facebook.com/people/Aynak/61554822281623/?mibextid=ZbWKwL" target="_blank"><i
                                         class="ecicon eci-facebook"></i></a></li>
-                            <li class="list-inline-item"><a class="hdr-twitter" href="#"><i
-                                        class="ecicon eci-twitter"></i></a></li>
-                            <li class="list-inline-item"><a class="hdr-instagram" href="#"><i
-                                        class="ecicon eci-instagram"></i></a></li>
-                            <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i
-                                        class="ecicon eci-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a class="hdr-instagram" href="https://www.instagram.com/aynak.in/?igsh=eDgyZzA5OHVqOHRj" target="_blank"><i
+                                            class="ecicon eci-instagram"></i></a></li>
+                            {{-- <li class="list-inline-item"><a class="hdr-linkedin" href="#"><i
+                                        class="ecicon eci-linkedin"></i></a></li> --}}
                         </ul>
                     </div>
                 </div>

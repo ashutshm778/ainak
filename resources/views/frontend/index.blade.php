@@ -41,7 +41,7 @@
             <div class=" col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1">
                     <div class="banner-block">
-                        <a href="{{route('search')}}?subcategory=glass-ec3cbds"><img src="{{ asset('public/frontend/assets/images/thumbnail-men.webp') }}"
+                        <a href="{{route('search')}}?subcategory=glass-ec3cbds"><img src="{{ asset('public/frontend/assets/images/men.jpg') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
             <div class="col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1">
                     <div class="banner-block">
-                        <a href="{{route('search')}}?subcategory=women-ecc567hbc"><img src="{{ asset('public/frontend/assets/images/thumbnail-women.webp') }}"
+                        <a href="{{route('search')}}?subcategory=women-ecc567hbc"><img src="{{ asset('public/frontend/assets/images/women.jpg') }}"
                                 alt=""></a>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
             <div class="col-sm-6 col-xs-6 plr">
                 <div class="ec-banner-block-1 p-0">
                     <div class="banner-block">
-                        <a href="{{route('repair_eyeglass')}}"><img src="{{ asset('public/frontend/assets/images/repaire.jpg') }}"
+                        <a href="{{route('repair_eyeglass')}}"><img src="{{ asset('public/frontend/assets/images/repair-eyeglass.jpg') }}"
                                 alt=""></a>
                     </div>
                 </div>
