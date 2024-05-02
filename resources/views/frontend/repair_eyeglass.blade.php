@@ -114,30 +114,26 @@
                                         <h5 style="text-align: left;">Your power detail</h5><hr/>
                                         <div class="col-lg-6">
                                             <div class="form-group floating-label mb-25">
-                                                <input type="text" name="left_eye_lense" value="" placeholder="Left eye lense type"
-                                                    required="">
-                                                <label for="text-placeholder">Left eye lense type*</label>
+                                                <input type="text" name="left_eye_lense" value="" placeholder="Left eye lense type">
+                                                <label for="text-placeholder">Left eye lense type</label>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group floating-label mb-25">
-                                                <input type="text" name="power_left" value="" placeholder="Left eye power"
-                                                    required="">
-                                                <label for="text-placeholder">Left eye power*</label>
+                                                <input type="text" name="power_left" value="" placeholder="Left eye power">
+                                                <label for="text-placeholder">Left eye power</label>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group floating-label mb-25">
-                                                <input type="text" name="right_eye_lense" value="" placeholder="Right eye lense type"
-                                                    required="">
-                                                <label for="text-placeholder">Right eye lense type*</label>
+                                                <input type="text" name="right_eye_lense" value="" placeholder="Right eye lense type">
+                                                <label for="text-placeholder">Right eye lense type</label>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group floating-label mb-25">
-                                                <input type="text" name="power_right" value="" placeholder="Right eye power"
-                                                    required="">
-                                                <label for="text-placeholder">Right eye power*</label>
+                                                <input type="text" name="power_right" value="" placeholder="Right eye power">
+                                                <label for="text-placeholder">Right eye power</label>
                                             </div>
                                         </div>
                                         <h5 style="text-align: left;">OR</h5><hr/>
