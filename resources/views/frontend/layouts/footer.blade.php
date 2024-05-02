@@ -122,40 +122,43 @@
                     boasts a growing community of 1000+ customers, making it one of the rapidly growing eyeglass
                     platforms for the modern Indian consumer.</p>
 
+                <div class="nav-style-separated">
                 <ul class="desk">
                     <li>
-                        <div class="section-title text-left">
-                            <h2>Popular Search Keyword in Lucknow</h2>
+                        <div class="section-title text-left" style="margin-bottom: 15px;">
+                            <h2>Popular Searchs</h2>
                         </div>
                         <ul>
-                            <li><a href="#">Sunglasses in Varanasi</a></li>
-                            <li><a href="#">Sunglasses in Varanasi</a></li>
-                            <li><a href="#">Sunglasses in Varanasi</a></li>
+                            <li><a href="#">Eye glasses</a></li>
+                            <li><a href="#">Blue cut lens</a></li>
+                            <li><a href="#">Goggles</a></li>
+                            <li><a href="#">Goggles for Men</a></li>
+                            <li><a href="#">Mirrored sunglasses</a></li>
+                            <li><a href="#">Glasses for men</a></li>
+                            <li><a href="#">Transparent glasses</a></li>
+                            <li><a href="#">Goggles for Women</a></li>
+                            <li><a href="#">Glasses for Women</a></li>
+                            <li><a href="#">Glasses frames</a></li>
+                            <li><a href="#">Prescription glasses</a></li>
+                            <li><a href="#">Designer eyeglasses</a></li>
+                            <li><a href="#">Fashion eyewear</a></li>
+                            <li><a href="#">Online eyeglasses</a></li>
+                            <li><a href="#">Eyeglasses store</a></li>
+                            <li><a href="#">Reading glasses</a></li>
+                            <li><a href="#">Blue light glasses</a></li>
+                            <li><a href="#">Polarized sunglasses</a></li>
+                            <li><a href="#">Rimless glasses</a></li>
+                            <li><a href="#">Vintage glasses</a></li>
+                            <li><a href="#">Eyeglass lenses</a></li>
+                            <li><a href="#">Fashionable spectacles</a></li>
+                            <li><a href="#">Optical frames</a></li>
+                            <li><a href="#">Kids' glasses</a></li>
+                            <li><a href="#">Sports glasses</a></li>
+                            <li><a href="#">Glasses for men/women</a></li>
                         </ul>
-                        <div class="section-title text-left">
-                            <h2>Popular Search Keyword in Varanasi</h2>
-                        </div>
-                        <ul>
-                            <li><a href="#">Sunglasses in Varanasi</a></li>
-                            <li><a href="#">Sunglasses in Varanasi</a></li>
-                            <li><a href="#">Sunglasses in Varanasi</a></li>
-
-                        </ul>
-                        <div class="section-title text-left">
-                            <h2>Popular Search Keyword in Delhi</h2>
-                        </div>
-                        <ul>
-                            <li><a href="#">Sunglasses in Delhi</a></li>
-                            <li><a href="#">Sunglasses in Delhi</a></li>
-                        </ul>
-                        <div class="section-title text-left">
-                            <h2>Popular Search Keyword in Noida</h2>
-                        </div>
-                        <ul>
-                            <li><a href="#">Sunglasses in Varanasi</a></li>
-                            <li><a href="#">Sunglasses in Varanasi</a></li>
-                            <li><a href="#">Sunglasses in Varanasi</a></li>
-                        </ul>
+                    </li>
+                </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
