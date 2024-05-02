@@ -173,14 +173,14 @@
                         <div class="footer-bottom-payment d-flex justify-content-end">
                             <div class="ec-footer-links">
                                 <ul class="align-items-center">
-                                    <li class="list-inline-item"><a href="#" class="prt-social-facebook"><i
+                                    <li class="list-inline-item"><a href="https://wa.me/+919219949495" class="prt-social-twitter" target="_blank"><i
+                                        class="ecicon eci-whatsapp"></i></a></li>
+                                    <li class="list-inline-item"><a href="https://www.facebook.com/people/Aynak/61554822281623/?mibextid=ZbWKwL" class="prt-social-facebook" target="_blank"><i
                                                 class="ecicon eci-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="prt-social-twitter"><i
-                                                class="ecicon eci-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="prt-social-instagram"><i
+                                    <li class="list-inline-item"><a href="https://www.instagram.com/aynak.in/?igsh=eDgyZzA5OHVqOHRj" class="prt-social-instagram" target="_blank"><i
                                                 class="ecicon eci-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#" class="prt-social-linkedin"><i
-                                                class="ecicon eci-linkedin"></i></a></li>
+                                    {{-- <li class="list-inline-item"><a href="#" class="prt-social-linkedin" target="_blank"><i
+                                                class="ecicon eci-linkedin"></i></a></li> --}}
                                 </ul>
                             </div>
                         </div>

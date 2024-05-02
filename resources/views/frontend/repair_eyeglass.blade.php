@@ -145,7 +145,7 @@
                                             <div class="form-group floating-label mb-25">
                                                 <input type="file" name="file"
                                                     accept="image/png, image/jpg, image/jpeg">
-                                                <label for="text-placeholder">Upload your Prescription *</label>
+                                                <label for="text-placeholder">Upload your Prescription</label>
                                             </div>
                                         </div>
                                         <span class="ec-contact-wrap ec-contact-btn mt-3">
