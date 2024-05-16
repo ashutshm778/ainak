@@ -23,7 +23,7 @@
                         <img src="{{asset('public/'.api_asset($offer_product->thumbnail_image))}}" style="height:80px;width: 80px;margin-right: 10px;">
                     </td>
                     <td class="text-center">@if($offer_product->variant_name){{$offer_product->variant_name}}@else{{$offer_product->name}}@endif</td>
-                    <td class="text-center">{{$offer_product->retailer_selling_price}}</td>
+                    <td class="text-center">{{$offer_product->current_stock}}</td>
                     @if(featureActivation('retailer') == '1' || featureActivation('distributor') == '1' || featureActivation('wholeseller') == '1')
                     <td class="text-center">
                         @if(featureActivation('retailer') == '1')
