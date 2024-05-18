@@ -66,8 +66,8 @@
                                                                         @if (!empty($order_detail->lens_name))
                                                                             {{ $order_detail->lens_name }}
                                                                         @endif</h5>
-                                                                    <p style="font-size: 12px; margin-bottom: 0;">MRP <del style="color:red;">₹ {{ $order_detail->discounted_price }} </del>
-                                                                     ₹ {{ $order_detail->mrp_price }}<br>
+                                                                    <p style="font-size: 12px; margin-bottom: 0;">MRP ₹ {{ $order_detail->discounted_price }} 
+                                                                        <del style="color:red;"> ₹ {{ $order_detail->mrp_price }}</del><br>
                                                                      @if (!empty($order_detail->lens_mrp))
                                                                      MRP ₹ {{ $order_detail->lens_mrp }}
                                                                      @endif

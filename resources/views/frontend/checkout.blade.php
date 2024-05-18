@@ -217,7 +217,8 @@
                                                                                     <input type="file" class="inpt-cls"
                                                                                         name="lens_prescription_{{ $cart->id }}"
                                                                                         id="fileInput_{{ $cart->id }}"
-                                                                                        onchange="uploadFile('{{ $cart->id }}')" />
+                                                                                        onchange="uploadFile('{{ $cart->id }}')"  />
+                                                                                        <div id="messageContainer_{{ $cart->id }}"></div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -606,6 +607,8 @@
             contentType: false,
             success: function(response) {
                 console.log("File uploaded successfully!");
+                $('#messageContainer_'+id).empty();
+                 $('#messageContainer_'+id).append('<span style="font-size:10px;color:green;">File uploaded successfully!</span>');
             },
             error: function(xhr, status, error) {
                 console.error("Error occurred while uploading file:", error);

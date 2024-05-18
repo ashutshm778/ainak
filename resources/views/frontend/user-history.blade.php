@@ -41,8 +41,10 @@
                                                 <th scope="row"><span>{{$order_history->order_id}}</span></th>
                                                 <td><span>{{$order_history->created_at->format('d-M-Y h:i A')}}</span></td>
                                                 <td><span>{{$order_history->grand_total}}</span></td>
-                                                <td><span>Pending</span></td>
-                                                <td><span>{{ucFirst($order_history->payment_status)}}</span></td>
+                                                <td>
+                                                    <small class="badge bg-@if($order_history->order_status=='pending')info @elseif($order_history->order_status=='confirm')success @elseif($order_history->order_status=='cancel')danger @elseif($order_history->order_status=='on_delivery')warning @endif"> {{ ucFirst($order_history->order_status) }}</small>
+                                                </td>
+                                                <td><small class="badge bg-@if($order_history->payment_status=='success')success @elseif($order_history->payment_status=='cancel')danger @elseif($order_history->payment_status=='pending')info @endif">{{ $order_history->payment_status }}</small></td>
                                                 <td>
                                                     <span class="tbl-btn"><a class="btn btn-lg btn-primary" href="{{route('user_history_details',$order_history->id)}}">View</a></span>
                                                 </td>
